@@ -12,6 +12,7 @@
 
 
 <body>
+    <!-- action htmlspecialchars converts special characters to html entities avoids exploits -->
     <form action="bufstar.php" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
         <div class="name">
@@ -118,19 +119,21 @@
     </form>
 
     <?php
-    include 'ecc/css/starbull.css';
+    //PHP File Upload Script
     if (isset($_POST['SubmitBtn'])) {
-        $fileName = $_FILES['resume']['name'];
-        $fileName = $_FILES['resume']['size'];
-        $fileName = $_FILES['resume']['type'];
-        $fileName = $_FILES['resume']['tmp-name'];
+        $fileName = $_FILES['resume']['name']; //uploaded file name
+        $fileSize = $_FILES['resume']['size']; //uploaded file size
+        $fileType = $_FILES['resume']['type']; //uploaded file type
+        $fileTmpName = $_FILES['resume']['tmp-name']; //uploaded file temp file name
 
         if ($fileType == "application/msword") {
             if ($fileSize <= 200) {
+                //New file name
                 $random = rand(1111, 9999);
-
+                $newFileName = $random . $fileName;
+                //File upload path
                 $uploadPath = "testUpload/" . $newFileName;
-
+                //function for upload file
                 if (move_uploaded_file($fileTmpName, $uploadPath)) {
                     echo "Successful";
                     echo "File Name:" . $newFileName;
@@ -144,17 +147,22 @@
             }
         }
     }
-    function sanitize_email($email)
-    {
-        $email =
-            filter_var($email, FILTER_VALIDATE_EMAIL);
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    /* //code removes all characters except those acceptable
+        function sanitize_email($email)
+        {
+            $email =
+                filter_var($email, FILTER_VALIDATE_EMAIL);
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                return true;
+            } else {
+                return false;
+            }
+        }*/
+
     //created error variables and set to empty
+    //error variables hold error messages for required fields
+    //if else statement to check if $_POST variable is empty using the empty function
+    //if empty error message is stored in the error variables, if not user input goes through test_input function
     $nameErr = $dobErr = $addressErr = $phoneErr = $emailErr = "";
     $name = $dob = $address = $phone = $email = "";
 
@@ -185,10 +193,11 @@
             $email = test_input($_POST["email"]);
         }
     }
+    /*strips unnecessary characters and remove backslashes. Function does all the checking*/
     $name = $dob = $address = $phone = $email = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = test_input($_POST["$name"]);
+        $name = test_input($_POST["name"]);
         $dob = test_input($_POST["dob"]);
         $address = test_input($_POST["address"]);
         $phone = test_input($_POST["phone"]);
