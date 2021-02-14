@@ -1,6 +1,29 @@
-.name {
-     background-color: red;
-    color: #0e3255;
-    border: 1px solid;
-    border-radius: 4px;
+.form-container {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: rgb(202, 202, 202);
+    padding: 10px;
+    }
+
+input {
+    width: 100%;
+    color: black;
+    }
+
+.name, .dob, .phone, .address, .email {
+   display: inline-block;
+    color: black;
+    border-radius: 2px;
+    padding-right: 5px;
+}
+
+.submit > input[type=submit]
+{
+padding: 2% 2%;
+border-radius: 6px;
+}
+.image {
+   box-shadow: 6px 6px 1px 0px rgba(0,0,0,.6);
+ border-top: 2px solid maroon;
+ border-left: 2px solid maroon;
 }
