@@ -10,9 +10,9 @@
 <body>
     <h1>STARBULLS
         <div class="topnav">
-            <a class="active" href="#home">Menu</a>
+            <a class="active" href="mainPage.html">Home</a>
             <a href="specialsOTW.html">Specials Of The Week</a>
-            <a href="">About Us</a>
+            <a href="us.html">About Us</a>
             <a href="starbull.php">Apply Now</a>
         </div>
     </h1>
