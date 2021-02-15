@@ -125,16 +125,30 @@ border-radius: 6px;
 }
 #columns2 {
     column-count: 2;
-    column-width: 500px;
+    column-width: 1000px;
    padding-top: 20px;
 }
 .column-left2 {
     width: 50%;
-    margin-left: 0%;
-    border: 2px solid black;
-    border-radius: 6px;
+     margin-left: 0%;
+     padding-left: 80px;
+     position: relative;
+
 }
 .column-right2 {
-    width: 80%;
-    padding-top: 2px;
+    width: 50%;
+    float: right;
+    padding-right: 60px;
+    position: relative;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+}
+.company, .heritage, .tools {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 6px;
+    text-align: center;
+    padding: 4%;
 }
