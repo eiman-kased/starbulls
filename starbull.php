@@ -8,9 +8,29 @@
 </head>
 
 <body>
+    <h1>STARBULLS
+        <div class="topnav">
+            <a class="active" href="#home">Menu</a>
+            <a href="specialsOTW.html">Specials Of The Week</a>
+            <a href="">About Us</a>
+            <a href="">Apply Now</a>
+        </div>
+    </h1>
+
+
+    <div id="socialMedia">
+        <a href="http://www.instagram.com/" class="btn btn-default" target="_blank">
+            <img src="images\instagram.png" alt="Instagram"></a>
+        <a href="http://www.facebook.com/" class="btn btn-default" target="_blank">
+            <img src="images\fb.png" alt="facebook"></a>
+        <a href="http://www.twitter.com/" class="btn btn-default" target="_blank">
+            <img src="images\_twitter.png" alt="twitter"></a>
+    </div>
+
+
     <div class="hero">
         <div class="hero-text">
-            <h1>Become a Part of the StarBulls</h1>
+            <h2>Become a Part of the StarBulls</h2>
             <p>Appy Today!</p>
         </div>
     </div>
@@ -19,7 +39,7 @@
         <div class="column-wrap">
             <div class="column-left">
                 <!--left content-->
-                <h1>Application</h1>
+                <h2>Application</h2>
                 <h3>*required fields</h3>
                 <div class="form-container">
                     <!-- action htmlspecialchars converts special characters to html entities avoids exploits -->
@@ -137,7 +157,7 @@
             </div>
         </div>
         <div class="column-right">
-            <h1>Reviews</h1>
+            <h2>Reviews</h2>
             <div class="review1">
                 <p>McLovin:"No fake ID required: they'll hire you at 16!"</p>
             </div> </br>
