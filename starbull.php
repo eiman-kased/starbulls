@@ -13,7 +13,7 @@
             <a class="active" href="#home">Menu</a>
             <a href="specialsOTW.html">Specials Of The Week</a>
             <a href="">About Us</a>
-            <a href="">Apply Now</a>
+            <a href="starbull.php">Apply Now</a>
         </div>
     </h1>
 
