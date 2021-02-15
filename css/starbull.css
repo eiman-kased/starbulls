@@ -123,3 +123,18 @@ border-radius: 6px;
     transition: .4s;
     border: 1px solid black;
 }
+#columns2 {
+    column-count: 2;
+    column-width: 500px;
+   padding-top: 20px;
+}
+.column-left2 {
+    width: 50%;
+    margin-left: 0%;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+.column-right2 {
+    width: 80%;
+    padding-top: 2px;
+}
