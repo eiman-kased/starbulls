@@ -1,8 +1,14 @@
+h1 {
+    font-family: merriweather;
+    font-size: 40px;
+}
 .form-container {
     display: inline-block;
     box-sizing: border-box;
     background-color: rgb(202, 202, 202);
-    padding: 10px;
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 2%;
     }
 
 input {
@@ -38,4 +44,41 @@ border-radius: 6px;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+
+#columns {
+    column-count: 2;
+    column-width: 500px;
+   padding-top: 20px;
+}
+
+ 
+.column-left {
+    width: 50%;
+    margin-left: 20%;
+}
+
+.column-right {
+    width: 80%;
+    padding-top: 2px;
+}
+.review1 {
+    background-color: rgba(122, 242, 132, 0.461);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 6px;
+    text-align: center;
+    padding: 6%;
+}
+.review2 {
+    background-color: rgba(116, 108, 108, 0.742);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 6px;
+    text-align: center;
+    padding: 4%;
+}
+
+.review1:hover, .review2:hover {
+    background-color: rgba(255, 255, 255, .4);
+    transition: .4s;
+    border: 1px solid black;
 }
