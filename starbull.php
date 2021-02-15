@@ -43,37 +43,37 @@
                 <h3>*required fields</h3>
                 <div class="form-container">
                     <!-- action htmlspecialchars converts special characters to html entities avoids exploits -->
+                    <!--<span class="error"> <?php echo $addressErr; ?></span> -->
 
                     <form action="starbull.php" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
                         <div class="name">
                             <!--span includes the script to generate the correct eror message created in php-->
-                            First Name:*<input type="text" name="name" id="firstname value=" <?php echo $name; ?>"required /><span class=" error">* <?php echo $nameErr; ?></span>
+                            First Name:*<input type="text" name="name" id="firstname value=" <?php echo $name; ?>"required /><span class=" error"> <?php echo $nameErr; ?></span>
                             Middle Initial:<input type=" text" name="name" id="middle" value="<?php echo $name; ?>" /></br></br>
-                            Last Name:*<input type="text" name="name" id="lastname" value="<?php echo $name; ?>" required /><span class="error">* <?php echo $nameErr; ?></span> </br>
+                            Last Name:*<input type="text" name="name" id="lastname" value="<?php echo $name; ?>" required /><span class="error"> <?php echo $nameErr; ?></span> </br>
                         </div>
                         </br>
                         <div class="dob">
                             <label for="dob">DOB*</label>
-                            <input type="date" id="dob" name="dob" value="<?php echo $dob; ?>" required /><span class="error">* <?php echo $dobErr; ?></span>
+                            <input type="date" id="dob" name="dob" value="<?php echo $dob; ?>" required /><span class="error"><?php echo $dobErr; ?></span>
                         </div>
                         </br>
                         <div class="phone">
                             <label for="phone">Phone Number*</label>
-                            <input type="tel" id="phone" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" value="<?php echo $tel; ?>" required /><span class="error">* <?php echo $telErr; ?></span>
+                            <input type="tel" id="phone" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" value="<?php echo $tel; ?>" required /><span class="error"> <?php echo $telErr; ?></span>
                             <br><br>
                         </div>
                         </br>
                         <div class="address">
                             <p>Please Enter Your Address:</p>
-                            Street Address:* <input type="text" name="address" id="address1" value="<?php echo $address; ?>" required /><span class="error">* <?php echo $addressErr; ?></span><br></br>
+                            Street Address:* <input type="text" name="address" id="address1" value="<?php echo $address; ?>" required /><span class="error"><?php echo $addressErr; ?></span><br></br>
 
                             Address Line 2:<input type="text" name="address" id="line2" value="<?php echo $address; ?>" /> </br></br>
 
-                            City:*<input type="text" name="address" id="city" value="<?php echo $address; ?>" required /><span class="error">* <?php echo $addressErr; ?></span><br></br>
+                            City:*<input type="text" name="address" id="city" value="<?php echo $address; ?>" required /><span class="error"> <?php echo $addressErr; ?></span><br></br>
 
-                            State:*<input list="state" id="state" name="address" value="<?php echo $address; ?>" required><span class="error">* <?php echo $addressErr; ?></span>
-                            <datalist id="state">
+                            State:<select id="state" name="address" required>
                                 <option value=></option>
                                 <option value="AL">AL</option>
                                 <option value="AK">AK</option>
@@ -126,17 +126,20 @@
                                 <option value=“WV”>WV</option>
                                 <option value=“WI”>WI</option>
                                 <option value=“WY”>WY</option>
-                            </datalist> </br></br>
-                            ZIP:*<input type="number" name="address" id="zip" maxlength="5" value="<?php echo $address; ?>" required /><span class="error">* <?php echo $addressErr; ?></span></br></br>
+                            </select><span class="error">* <?php echo $addressErr; ?></span>
+                            </br></br>
+                            ZIP:*<input type="number" name="address" id="zip" maxlength="5" value="<?php echo $address; ?>" required /><span class="error"> <?php echo $addressErr; ?></span></br></br>
 
-                            Country:*<input type="text" name="address" id="country" pattern="[A-Za-z]{3}" value="<?php echo $address; ?>" required /><span class="error">* <?php echo $addressErr; ?></span>
-                            <</br> </br> </div> </br> <div class="email">
-                                <label for="email">Enter an Email:*</label>
-                                <input type="email" id="email" name="email" placeholder="email@example.com" value="<?php echo $email; ?>" required /><span class="error">* <?php echo $emailErr; ?></span> </br></br>
+                            Country:*<input type="text" name="address" id="country" pattern="[A-Za-z]{3}" value="<?php echo $address; ?>" required /><span class="error"> <?php echo $addressErr; ?></span>
+                            </br> </br>
+                        </div> </br>
+                        <div class="email">
+                            <label for="email">Enter an Email:*</label>
+                            <input type="email" id="email" name="email" placeholder="email@example.com" value="<?php echo $email; ?>" required /><span class="error"> <?php echo $emailErr; ?></span> </br></br>
                         </div>
                         </br>
                         <div class="title">
-                            <label for="title">Job Title Applying For:</label> <span class="error">* <?php echo $titleErr; ?></span></br>
+                            <label for="title">Job Title Applying For:</label> <span class="error"> <?php echo $titleErr; ?></span></br>
                             <select id="title" name="title" required>
                                 <option value></option>
                                 <option value="retail">Retail</option>
@@ -149,7 +152,7 @@
                         </br>
                         <div class="file">
                             <h3>Upload Resume:</h3>
-                            <input type="file" name="resume" id="resume" /><span class="error">* <?php echo $resumeErr; ?></span>
+                            <input type="file" name="resume" id="resume" /><span class="error"> <?php echo $resumeErr; ?></span>
                         </div>
 
                         </br>
