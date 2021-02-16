@@ -49,14 +49,17 @@
 
                         <div class="name">
                             <!--span includes the script to generate the correct eror message created in php-->
-                            First Name:*<input type="text" name="name" id="firstname value=" <?php echo $name; ?>"required /><span class=" error"> <?php echo $nameErr; ?></span>
-                            Middle Initial:<input type=" text" name="name" id="middle" value="<?php echo $name; ?>" /></br></br>
-                            Last Name:*<input type="text" name="name" id="lastname" value="<?php echo $name; ?>" required /><span class="error"> <?php echo $nameErr; ?></span> </br>
+                            First Name:*<input type="text" name="firstName" id="firstName" <?= ($firstName ? 'value="' . $firstName . '"' : ''); ?> required />
+                            <span class=" error"> <?php echo $nameErr; ?></span>
+                            Middle Initial:<input type="text" name="middleName" id="middleName" <?= ($middleName ? 'value="' . $middleName . '"' : ''); ?> <?php echo $name; ?>" /></br></br>
+                            Last Name:*<input type="text" name="lastName" id="lastName" <?= ($lastName ? 'value="' . $lastName . '"' : ''); ?><?php echo $name; ?>" required />
+                            <span class="error"> <?php echo $nameErr; ?></span> </br>
                         </div>
                         </br>
                         <div class="dob">
                             <label for="dob">DOB*</label>
-                            <input type="date" id="dob" name="dob" value="<?php echo $dob; ?>" required /><span class="error"><?php echo $dobErr; ?></span>
+                            <input type="date" id="dob" name="dob" required />
+                            <span class="error"><?php echo $dobErr; ?></span>
                         </div>
                         </br>
                         <div class="phone">
@@ -186,11 +189,11 @@
                 </p>
             </div> </br>
 
-            <div class='review2'>
+            <!-- <div class='review2'>
                 <p>Anna K:"Great place to work!"</p>
-            </div></br>
+            </div></br>-->
 
-            <div class="review1">
+            <div class="review2">
                 <p>John L: "StarBulls offers a great astmosphere; everyone is very relaxed!"</p>
             </div></br>
         </div>
@@ -201,86 +204,80 @@
     <?php
     //form validation
     //calling out the variables and setting them to empty
-    $name = $dob = $tel = $address = $email = $title = $resume = "";
-    if (isset($_POST["submit_btn"]) == "POST") {
-        $name = test_input($_POST["name"]);
-        $dob = test_input($_POST["dob"]);
-        $tel = test_input($_POST["tel"]);
-        $address = test_input($_POST["address"]);
-        $email = test_input($_POST["email"]);
-        $title = test_input($_POST["title"]);
-        $resume = test_input($_POST["resume"]);
-    }
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    //form required fields
-    //adding error variables
+    $firstName = $middleName = $lastName = $dob = $tel = $address = $email = $title = $resume = "";
     $nameErr = $dobErr = $telErr = $addressErr = $emailErr = $titleErr = $resumeErr = "";
-    $name = $dob = $tel = $address = $email = $title = $resume = "";
-    //if the user presses submit using post check the following: if the '' field is empty echo error message, else use the test_input function to test the data
-    //preg_match checks a string for a pattern, returns true if it exists and false if otherwise
-    if (isset($_POST["submit_btn"]) == "POST") {
+    if (isset($_POST["submit_btn"])) {
+        $firstName = format_input($_POST["firstName"]);
+        $middleName = format_input($_POST["middleName"]);
+        $lastName = format_input($_POST["lastName"]);
+        $dob = format_input($_POST["dob"]);
+        $tel = format_input($_POST["tel"]);
+        $address = format_input($_POST["address"]);
+        $email = format_input($_POST["email"]);
+        $title = format_input($_POST["title"]);
+        $resume = format_input($_POST["resume"]);
+
         if (empty($_POST["name"])) {
             $nameErr = "Name is required";
         } else {
-            $name = test_input($_POST["name"]);
-            if (!preg_match("/^[a-zA-Z' ]*$", $name)) {
+            $name = format_input($_POST["name"]);
+            if (preg_match("/^[a-zA-Z' ]*$", $name)) {
                 $nameErr = "Only letters and white space allowed";
             }
         }
-    }
-
-    if (empty($_POST["dob"])) {
-        $dobErr = "Date of Birth is required";
-    } else {
-        $dob = test_input($_POST["dob"]);
-    }
 
 
-    if (empty($_POST["tel"])) {
-        $telErr = "Phone Number is required";
-    } else {
-        $tel = test_input($_POST["tel"]);
-    }
+        if (empty($_POST["dob"])) {
+            $dobErr = "Date of Birth is required";
+        } else {
+            $dob = format_input($_POST["dob"]);
+        }
 
 
-    if (empty($_POST["address"])) {
-        $addressErr = "Address field is required";
-    } else {
-        $address = test_input($_POST["address"]);
-    }
+        if (empty($_POST["tel"])) {
+            $telErr = "Phone Number is required";
+        } else {
+            $tel = format_input($_POST["tel"]);
+        }
 
 
-    if (empty($_POST["email"])) {
-        $emailErr = "An Email is required";
-    } else {
-        $email = test_input($_POST["email"]);
-        //checking email address formation
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailErr = "Invalid email format";
+        if (empty($_POST["address"])) {
+            $addressErr = "Address field is required";
+        } else {
+            $address = format_input($_POST["address"]);
+        }
+
+
+        if (empty($_POST["email"])) {
+            $emailErr = "An Email is required";
+        } else {
+            $email = format_input($_POST["email"]);
+            //checking email address formation
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid email format";
+            }
+        }
+
+
+        if (empty($_POST["title"])) {
+            $titleErr = "Please choose a Job Title";
+        } else {
+            $title = format_input($_POST["title"]);
+        }
+
+
+        if (empty($_POST["resume"])) {
+            $resumerErr = "Upload your Resume";
+        } else {
+            $resume = format_input($_POST["resume"]);
         }
     }
-
-
-    if (empty($_POST["title"])) {
-        $titleErr = "Please choose a Job Title";
-    } else {
-        $title = test_input($_POST["title"]);
+    function format_input($data)
+    {
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
-
-
-    if (empty($_POST["resume"])) {
-        $resumerErr = "Upload your Resume";
-    } else {
-        $resume = test_input($_POST["resume"]);
-    }
-
     ?>
 
 
