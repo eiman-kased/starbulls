@@ -25,7 +25,7 @@ body {
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 1000px;
+    width: 2000px;
 }
 
 table, th, td {
@@ -106,7 +106,11 @@ dt{
   color: black;
 }
 
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
+.header img {
+    float: left;
+    width: 140px;
+    height: 136px;
+    position:relative;
+    left:500px;   
+    top: 3px;
 }
