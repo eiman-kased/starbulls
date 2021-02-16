@@ -2,12 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/starbull.css" />
     <title>Apply</title>
 </head>
 
 <body>
+    <div id="form" name="form">
+        <?php
+        $firstName =  $lastName = $dob = $tel = $address1 = $city = $state = $zip = $email = $title = $_POST[""];
+
+        if (isset($_POST["submit_btn"])) {
+            if (!empty($_POST['firstName'])) {
+                $firstName = $_POST['firstName'];
+            } else {
+                echo "<h1 style='color:red'>First Name Required</h1>";
+            }
+
+            if (!empty($_POST['lastName'])) {
+                $lastName = $_POST['lastName'];
+            } else {
+                echo "<h3 style='color:red'>Last Name Required</h3>";
+            }
+
+            if (!empty($_POST['dob'])) {
+                $dob = $_POST['dob'];
+            } else {
+                echo "<h3 style='color:red'>Date of Birth Required</h3>";
+            }
+
+            if (!empty($_POST['tel'])) {
+                $tel = $_POST['tel'];
+            } else {
+                echo "<h3 style='color;red'>Phone Number is Required</h3>";
+            }
+
+            if (!empty($_POST['address1'])) {
+                $address1 = $_POST['addresss1'];
+            } else {
+                echo "<h3 style='color:red'>Street Address is Required</h3>";
+            }
+
+            if (!empty($_POST['city'])) {
+                $city = $_POST['city'];
+            } else {
+                echo "<h3 style='color:red'>City field is Required</h3>";
+            }
+
+            if (!empty($_POST['state'])) {
+                $state = $_POST['state'];
+            } else {
+                echo "<h3 style='color:red'>Please Select a State</h3>";
+            }
+
+            if (!empty($_POST['zip'])) {
+                $zip = $_POST['zip'];
+            } else {
+                echo "<h3 style='color:red'>Zip Code is Required</h3>";
+            }
+            if (!empty($_POST['country'])) {
+                $zip = $_POST['country'];
+            } else {
+                echo "<h3 style='color:red'>Country is Required</h3>";
+            }
+
+            if (!empty($_POST['email'])) {
+                $email = $_POST['email'];
+            } else {
+                echo
+                    "<h3 style='color:red'>An Email is Required</h3>";
+            }
+
+            if (!empty($_POST['title'])) {
+                $title = $_POST['title'];
+            } else {
+                echo
+                    "<h3 style='color:red'>Please Select One</h3>";
+            }
+        }
+        ?>
+    </div>
+
     <h1>STARBULLS
         <div class="topnav">
             <a class="active" href="mainPage.html">Home</a>
@@ -42,13 +117,11 @@
                 <h2>Application</h2>
                 <h3>*required fields</h3>
                 <div class="form-container">
-                    <!-- action htmlspecialchars converts special characters to html entities avoids exploits -->
-                    <!--<span class="error"> <?php echo $addressErr; ?></span> -->
 
                     <form action="starbull.php" method="post" enctype="multipart/form-data">
 
                         <div class="name">
-                            <!--span includes the script to generate the correct eror message created in php-->
+
                             First Name:*<input type="text" name="firstName" id="firstName" <?= ($firstName ? 'value="' . $firstName . '"' : ''); ?> required />
 
                             Middle Initial:<input type="text" name="middleName" id="middleName" /> </br></br>
@@ -65,7 +138,7 @@
                         </br>
                         <div class="phone">
                             <label for="phone">Phone Number*</label>
-                            <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" <?= ($tel ? 'value="' . $tel . '"' : ''); ?>required />
+                            <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" <?= ($tel ? 'value="' . $tel . '"' : ''); ?> required />
 
                             <br><br>
                         </div>
@@ -80,7 +153,7 @@
                             City:*<input type="text" name="city" id="city" <?= ($city ? 'value="' . $city . '"' : ''); ?> required />
                             <br></br>
 
-                            State:<select id="state" name="state" <?= ($state ? 'value="' . $state . '"' : ''); ?>required>
+                            State:<select id="state" name="state" <?= ($state ? 'value="' . $state . '"' : ''); ?> required>
                                 <option value=></option>
                                 <option value="AL">AL</option>
                                 <option value="AK">AK</option>
@@ -136,7 +209,7 @@
                             </select>
 
                             </br></br>
-                            ZIP:*<input type="number" name="zip" id="zip" maxlength="5" <?= ($zip ? 'value="' . $zip . '"' : ''); ?>required />
+                            ZIP:*<input type="number" name="zip" id="zip" maxlength="5" <?= ($zip ? 'value="' . $zip . '"' : ''); ?> required />
                             </br></br>
 
                             Country:*<input type="text" name="country" id="country" pattern="[A-Za-z]{3}" <?= ($country ? 'value="' . $country . '"' : ''); ?> required />
@@ -145,14 +218,14 @@
                         </div> </br>
                         <div class="email">
                             <label for="email">Enter an Email:*</label>
-                            <input type="email" id="email" name="email" placeholder="email@example.com" <?= ($email ? 'value="' . $email . '"' : ''); ?>required />
+                            <input type="email" id="email" name="email" placeholder="email@example.com" <?= ($email ? 'value="' . $email . '"' : ''); ?> required />
                             </br></br>
                         </div>
                         </br>
                         <div class="title">
                             <label for="title">Job Title Applying For:</label>
                             </br>
-                            <select id="title" name="title" required>
+                            <select id="title" name="title" <?= ($title ? 'value="' . $title . '"' : ''); ?> required>
                                 <option value></option>
                                 <option value="retail">Retail</option>
                                 <option value="retail leadership">Retail Leadership</option>
@@ -199,86 +272,12 @@
                 </p>
             </div> </br>
 
-            <!-- <div class='review2'>
-                <p>Anna K:"Great place to work!"</p>
-            </div></br>-->
-
             <div class="review2">
                 <p>John L: "StarBulls offers a great astmosphere; everyone is very relaxed!"</p>
             </div></br>
         </div>
     </div>
 
-
-    <div id="form" name="form">
-        <?php
-        $firstName =  $lastName = $dob = $tel = $address1 = $city = $state = $zip = $email = $title = $_POST[""];
-
-        if (isset($_POST["submit_btn"])) {
-            if (!empty($_POST['firstName'])) {
-                $firstName = $_POST['firstName'];
-            } else {
-                echo "<h1 style='color:red'>First Name Required</h1>";
-            }
-
-            if (!empty($_POST['lastName'])) {
-                $lastName = $_POST['lastName'];
-            } else {
-                echo "<h3 style='color:red'>Last Name Required</h3>";
-            }
-
-            if (!empty($_POST['dob'])) {
-                $dob = $_POST['dob'];
-            } else {
-                echo "<h3 style='color:red'>Date of Birth Required</h3>";
-            }
-
-            if (!empty($_POST['tel'])) {
-                $tel = $_POST['tel'];
-            } else {
-                echo "<h3 style='color;red'>Phone Number is Required</h3>";
-            }
-
-            if (!empty($_POST['address1'])) {
-                $address1 = $_POST['addresss1'];
-            } else {
-                echo "<h3 style='color:red'>Street Address is Required</h3>";
-            }
-
-            if (!empty($_POST['city'])) {
-                $city = $_POST['city'];
-            } else {
-                echo "<h3 style='color:red'>City field is Required</h3>";
-            }
-
-            if (!empty($_POST['state'])) {
-                $state = $_POST['state'];
-            } else {
-                echo "<h3 style='color:red'>Please Select a State</h3>";
-            }
-
-            if (!empty($_POST['zip'])) {
-                $zip = $_POST['zip'];
-            } else {
-                echo "<h3 style='color:red'>Zip Code is Required</h3>";
-            }
-
-            if (!empty($_POST['email'])) {
-                $email = $_POST['email'];
-            } else {
-                echo
-                    "<h3 style='color:red'>An Email is Required</h3>";
-            }
-
-            if (!empty($_POST['title'])) {
-                $title = $_POST['title'];
-            } else {
-                echo
-                    "<h3 style='color:red'>Please Select One</h3>";
-            }
-        }
-        ?>
-    </div>
 </body>
 
 </html>
