@@ -8,89 +8,18 @@
 </head>
 
 <body>
-    <div id="form" name="form">
-        <?php
-        $firstName =  $lastName = $dob = $tel = $address1 = $city = $state = $zip = $email = $title = $_POST[""];
-
-        if (isset($_POST["submit_btn"])) {
-            if (!empty($_POST['firstName'])) {
-                $firstName = $_POST['firstName'];
-            } else {
-                echo "<h1 style='color:red'>First Name Required</h1>";
-            }
-
-            if (!empty($_POST['lastName'])) {
-                $lastName = $_POST['lastName'];
-            } else {
-                echo "<h3 style='color:red'>Last Name Required</h3>";
-            }
-
-            if (!empty($_POST['dob'])) {
-                $dob = $_POST['dob'];
-            } else {
-                echo "<h3 style='color:red'>Date of Birth Required</h3>";
-            }
-
-            if (!empty($_POST['tel'])) {
-                $tel = $_POST['tel'];
-            } else {
-                echo "<h3 style='color;red'>Phone Number is Required</h3>";
-            }
-
-            if (!empty($_POST['address1'])) {
-                $address1 = $_POST['addresss1'];
-            } else {
-                echo "<h3 style='color:red'>Street Address is Required</h3>";
-            }
-
-            if (!empty($_POST['city'])) {
-                $city = $_POST['city'];
-            } else {
-                echo "<h3 style='color:red'>City field is Required</h3>";
-            }
-
-            if (!empty($_POST['state'])) {
-                $state = $_POST['state'];
-            } else {
-                echo "<h3 style='color:red'>Please Select a State</h3>";
-            }
-
-            if (!empty($_POST['zip'])) {
-                $zip = $_POST['zip'];
-            } else {
-                echo "<h3 style='color:red'>Zip Code is Required</h3>";
-            }
-            if (!empty($_POST['country'])) {
-                $zip = $_POST['country'];
-            } else {
-                echo "<h3 style='color:red'>Country is Required</h3>";
-            }
-
-            if (!empty($_POST['email'])) {
-                $email = $_POST['email'];
-            } else {
-                echo
-                    "<h3 style='color:red'>An Email is Required</h3>";
-            }
-
-            if (!empty($_POST['title'])) {
-                $title = $_POST['title'];
-            } else {
-                echo
-                    "<h3 style='color:red'>Please Select One</h3>";
-            }
-        }
-        ?>
+    <div class="header">
+        <img src="images/starbullslogo.png" alt="logo" />
+        <h1>STARBULLS
+            <div class="topnav">
+                <a class="active" href="#home">Home</a>
+                <a href="">Menu</a>
+                <a href="specialsOTW.html">Specials Of The Week</a>
+                <a href="us.html">About Us</a>
+                <a href="starbull.php">Apply Now</a>
+            </div>
+        </h1>
     </div>
-
-    <h1>STARBULLS
-        <div class="topnav">
-            <a class="active" href="mainPage.html">Home</a>
-            <a href="specialsOTW.html">Specials Of The Week</a>
-            <a href="us.html">About Us</a>
-            <a href="starbull.php">Apply Now</a>
-        </div>
-    </h1>
 
 
     <div id="socialMedia">

@@ -1,5 +1,5 @@
 # starbulls
-<h2>Creating a concept comopany called Starbulls where you can get both: your wings and coffee fix.</h2> </br>
+<h2>Creating a concept company called Starbulls where you can get both: your wings and coffee fix.</h2> </br>
 It's a 5 page site</br>
 <ul>
 <li>Home</li>
