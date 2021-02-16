@@ -8,80 +8,7 @@
 </head>
 
 <body>
-    <div id="form" name="form">
-        <?php
-        $firstName =  $lastName = $dob = $tel = $address1 = $city = $state = $zip = $email = $title = $_POST[""];
 
-        if (isset($_POST["submit_btn"])) {
-            if (!empty($_POST['firstName'])) {
-                $firstName = $_POST['firstName'];
-            } else {
-                echo "<h1 style='color:red'>First Name Required</h1>";
-            }
-
-            if (!empty($_POST['lastName'])) {
-                $lastName = $_POST['lastName'];
-            } else {
-                echo "<h3 style='color:red'>Last Name Required</h3>";
-            }
-
-            if (!empty($_POST['dob'])) {
-                $dob = $_POST['dob'];
-            } else {
-                echo "<h3 style='color:red'>Date of Birth Required</h3>";
-            }
-
-            if (!empty($_POST['tel'])) {
-                $tel = $_POST['tel'];
-            } else {
-                echo "<h3 style='color;red'>Phone Number is Required</h3>";
-            }
-
-            if (!empty($_POST['address1'])) {
-                $address1 = $_POST['addresss1'];
-            } else {
-                echo "<h3 style='color:red'>Street Address is Required</h3>";
-            }
-
-            if (!empty($_POST['city'])) {
-                $city = $_POST['city'];
-            } else {
-                echo "<h3 style='color:red'>City field is Required</h3>";
-            }
-
-            if (!empty($_POST['state'])) {
-                $state = $_POST['state'];
-            } else {
-                echo "<h3 style='color:red'>Please Select a State</h3>";
-            }
-
-            if (!empty($_POST['zip'])) {
-                $zip = $_POST['zip'];
-            } else {
-                echo "<h3 style='color:red'>Zip Code is Required</h3>";
-            }
-            if (!empty($_POST['country'])) {
-                $zip = $_POST['country'];
-            } else {
-                echo "<h3 style='color:red'>Country is Required</h3>";
-            }
-
-            if (!empty($_POST['email'])) {
-                $email = $_POST['email'];
-            } else {
-                echo
-                    "<h3 style='color:red'>An Email is Required</h3>";
-            }
-
-            if (!empty($_POST['title'])) {
-                $title = $_POST['title'];
-            } else {
-                echo
-                    "<h3 style='color:red'>Please Select One</h3>";
-            }
-        }
-        ?>
-    </div>
 
     <h1>STARBULLS
         <div class="topnav">
@@ -117,6 +44,87 @@
                 <h2>Application</h2>
                 <h3>*required fields</h3>
                 <div class="form-container">
+
+                    <?php
+
+                    $firstName = '';
+                    $lastName = '';
+                    $dob = '';
+                    $tel = '';
+                    $address1 = '';
+                    $city = '';
+                    $state = '';
+                    $zip = '';
+                    $email = '';
+                    $title = '';
+
+                    if (isset($_POST["submit_btn"])) {
+                        if (!empty(trim($_POST['firstName']))) {
+                            $firstName = trim($_POST['firstName']);
+                        } else {
+                            echo '<span class="error">First Name Required</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['lastName']))) {
+                            $lastName = trim($_POST['lastName']);
+                        } else {
+                            echo '<span class="error">Last Name Required</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['dob']))) {
+                            $dob = trim($_POST['dob']);
+                        } else {
+                            echo '<span class="error">Date of Birth Required</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['tel']))) {
+                            $tel = trim($_POST['tel']);
+                        } else {
+                            echo '<span class="error">Phone Number is Required</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['address1']))) {
+                            $address1 = trim($_POST['addresss1']);
+                        } else {
+                            echo '<span class="error">Street Address is Required</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['city']))) {
+                            $city = trim($_POST['city']);
+                        } else {
+                            echo '<span class="error">City field is Required</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['state']))) {
+                            $state = trim($_POST['state']);
+                        } else {
+                            echo '<span class="error">Please Select a State</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['zip']))) {
+                            $zip = trim($_POST['zip']);
+                        } else {
+                            echo '<span class="error">Zip Code is Required</span> </br>';
+                        }
+                        if (!empty(trim($_POST['country']))) {
+                            $zip = trim($_POST['country']);
+                        } else {
+                            echo '<span class="error">Country is Required</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['email']))) {
+                            $email = trim($_POST['email']);
+                        } else {
+                            echo '<span class="error">An Email is Required</span> </br>';
+                        }
+
+                        if (!empty(trim($_POST['title']))) {
+                            $title = trim($_POST['title']);
+                        } else {
+                            echo '<span class="error">Please Select One</span> </br>';
+                        }
+                    }
+                    ?>
 
                     <form action="starbull.php" method="post" enctype="multipart/form-data">
 
@@ -243,7 +251,7 @@
 
                         </br>
                         <div class="submit">
-                            <input type="submit" name="submit_btn" value="submit_btn" />
+                            <input type="submit" name="submit_btn" value="Submit Application" />
                         </div>
                     </form>
                 </div>
