@@ -45,38 +45,42 @@
                     <!-- action htmlspecialchars converts special characters to html entities avoids exploits -->
                     <!--<span class="error"> <?php echo $addressErr; ?></span> -->
 
-                    <form action="starbull.php" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <form action="starbull.php" method="post" enctype="multipart/form-data">
 
-                        <div class="name">
+                        <div class=" name">
                             <!--span includes the script to generate the correct eror message created in php-->
                             First Name:*<input type="text" name="firstName" id="firstName" <?= ($firstName ? 'value="' . $firstName . '"' : ''); ?> required />
-                            <span class=" error"> <?php echo $nameErr; ?></span>
-                            Middle Initial:<input type="text" name="middleName" id="middleName" <?= ($middleName ? 'value="' . $middleName . '"' : ''); ?> <?php echo $name; ?>" /></br></br>
-                            Last Name:*<input type="text" name="lastName" id="lastName" <?= ($lastName ? 'value="' . $lastName . '"' : ''); ?><?php echo $name; ?>" required />
-                            <span class="error"> <?php echo $nameErr; ?></span> </br>
+
+                            Middle Initial:<input type="text" name="middleName" id="middleName" <?= ($middleName ? 'value="' . $middleName . '"' : ''); ?> /> </br></br>
+
+                            Last Name:*<input type="text" name="lastName" id="lastName" <?= ($lastName ? 'value="' . $lastName . '"' : ''); ?> required />
+                            </br>
                         </div>
                         </br>
                         <div class="dob">
                             <label for="dob">DOB*</label>
-                            <input type="date" id="dob" name="dob" required />
-                            <span class="error"><?php echo $dobErr; ?></span>
+                            <input type="date" id="dob" name="dob" <?= ($dob ? 'value="' . $dob . '"' : ''); ?> required />
+
                         </div>
                         </br>
                         <div class="phone">
                             <label for="phone">Phone Number*</label>
-                            <input type="tel" id="phone" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" value="<?php echo $tel; ?>" required /><span class="error"> <?php echo $telErr; ?></span>
+                            <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" <?= ($tel ? 'value="' . $tel . '"' : ''); ?>required />
+
                             <br><br>
                         </div>
                         </br>
                         <div class="address">
                             <p>Please Enter Your Address:</p>
-                            Street Address:* <input type="text" name="address" id="address1" value="<?php echo $address; ?>" required /><span class="error"><?php echo $addressErr; ?></span><br></br>
+                            Street Address:* <input type="text" name="address1" id="address1" <?= ($address1 ? 'value="' . $address1 . '"' : ''); ?> required />
+                            <br></br>
 
-                            Address Line 2:<input type="text" name="address" id="line2" value="<?php echo $address; ?>" /> </br></br>
+                            Address Line 2:<input type="text" name="address2" id="address2" <?= ($address2 ? 'value="' . $address2 . '"' : ''); ?> /> </br></br>
 
-                            City:*<input type="text" name="address" id="city" value="<?php echo $address; ?>" required /><span class="error"> <?php echo $addressErr; ?></span><br></br>
+                            City:*<input type="text" name="city" id="city" value="<?php echo $city; ?>" <?= ($city ? 'value="' . $city . '"' : ''); ?> required />
+                            <br></br>
 
-                            State:<select id="state" name="address" required>
+                            State:<select id="state" name="state" <?= ($state ? 'value="' . $state . '"' : ''); ?>required>
                                 <option value=></option>
                                 <option value="AL">AL</option>
                                 <option value="AK">AK</option>
@@ -129,20 +133,25 @@
                                 <option value=“WV”>WV</option>
                                 <option value=“WI”>WI</option>
                                 <option value=“WY”>WY</option>
-                            </select><span class="error">* <?php echo $addressErr; ?></span>
-                            </br></br>
-                            ZIP:*<input type="number" name="address" id="zip" maxlength="5" value="<?php echo $address; ?>" required /><span class="error"> <?php echo $addressErr; ?></span></br></br>
+                            </select>
 
-                            Country:*<input type="text" name="address" id="country" pattern="[A-Za-z]{3}" value="<?php echo $address; ?>" required /><span class="error"> <?php echo $addressErr; ?></span>
+                            </br></br>
+                            ZIP:*<input type="number" name="zip" id="zip" maxlength="5" value="<?php echo $address; ?>" <?= ($zip ? 'value="' . $zip . '"' : ''); ?>required />
+                            </br></br>
+
+                            Country:*<input type="text" name="country" id="country" pattern="[A-Za-z]{3}" value="<?php echo $address; ?>" <?= ($country ? 'value="' . $country . '"' : ''); ?> required />
+
                             </br> </br>
                         </div> </br>
                         <div class="email">
                             <label for="email">Enter an Email:*</label>
-                            <input type="email" id="email" name="email" placeholder="email@example.com" value="<?php echo $email; ?>" required /><span class="error"> <?php echo $emailErr; ?></span> </br></br>
+                            <input type="email" id="email" name="email" placeholder="email@example.com" value="<?php echo $email; ?>" <?= ($email ? 'value="' . $email . '"' : ''); ?>required />
+                            </br></br>
                         </div>
                         </br>
                         <div class="title">
-                            <label for="title">Job Title Applying For:</label> <span class="error"> <?php echo $titleErr; ?></span></br>
+                            <label for="title">Job Title Applying For:</label>
+                            </br>
                             <select id="title" name="title" required>
                                 <option value></option>
                                 <option value="retail">Retail</option>
@@ -155,12 +164,13 @@
                         </br>
                         <div class="file">
                             <h3>Upload Resume:</h3>
-                            <input type="file" name="resume" id="resume" /><span class="error"> <?php echo $resumeErr; ?></span>
+                            <input type="file" name="resume" id="resume" <?= ($resume ? 'value="' . $resume . '"' : ''); ?> />
+
                         </div>
 
                         </br>
                         <div class="submit">
-                            <input type="submit" value="submit" />
+                            <input type="submit" name="submit_btn" value="submit_btn" />
                         </div>
                     </form>
                 </div>
@@ -200,85 +210,177 @@
     </div>
 
 
+    <div id="form" name="form">
+        <?php
+        //form validation
+        //calling out the variables and setting them to empty
+        $firstName = $middleName = $lastName = $dob = $tel = $address1 = $address2 = $city = $state = $zip = $email = $title = $resume = "";
 
-    <?php
-    //form validation
-    //calling out the variables and setting them to empty
-    $firstName = $middleName = $lastName = $dob = $tel = $address = $email = $title = $resume = "";
-    $nameErr = $dobErr = $telErr = $addressErr = $emailErr = $titleErr = $resumeErr = "";
-    if (isset($_POST["submit_btn"])) {
-        $firstName = format_input($_POST["firstName"]);
-        $middleName = format_input($_POST["middleName"]);
-        $lastName = format_input($_POST["lastName"]);
-        $dob = format_input($_POST["dob"]);
-        $tel = format_input($_POST["tel"]);
-        $address = format_input($_POST["address"]);
-        $email = format_input($_POST["email"]);
-        $title = format_input($_POST["title"]);
-        $resume = format_input($_POST["resume"]);
+        if (isset($_POST["submit_btn"])) {
+            if (!empty($_POST['firstName'])) {
+                $first = $_POST['firstName'];
+            } else {
+                echo "<h1 style='color:red'>First Name Required</h1>";
+            }
 
-        if (empty($_POST["name"])) {
-            $nameErr = "Name is required";
-        } else {
-            $name = format_input($_POST["name"]);
-            if (preg_match("/^[a-zA-Z' ]*$", $name)) {
-                $nameErr = "Only letters and white space allowed";
+            if (!empty($_POST['lastName'])) {
+                $last = $_POST['lastName'];
+            } else {
+                echo "<h3 style='color:red'>Last Name Required</h3>";
+            }
+
+            if (!empty($_POST['dob'])) {
+                $dob = $_POST['dob'];
+            } else {
+                echo "<h3 style='color:red'>Date of Birth Required</h3>";
+            }
+
+            if (!empty($_POST['tel'])) {
+                $tel = $_POST['tel'];
+            } else {
+                echo "<h3 style='color;red'>Phone Number is Required</h3>";
+            }
+
+            if (!empty($_POST['address1'])) {
+                $address1 = $_POST['addresss1'];
+            } else {
+                echo "<h3 style='color:red'>Street Address is Required</h3>";
+            }
+
+            if (!empty($_POST['city'])) {
+                $city = $_POST['city'];
+            } else {
+                echo "<h3 style='color:red'>City field is Required</h3>";
+            }
+
+            if (!empty($_POST['state'])) {
+                $state = $_POST['state'];
+            } else {
+                echo "<h3 style='color:red'>Please Select a State</h3>";
+            }
+
+            if (!empty($_POST['zip'])) {
+                $zip = $_POST['zip'];
+            } else {
+                echo "<h3 style='color:red'>Zip Code is Required</h3>";
+            }
+
+            if (!empty($_POST['email'])) {
+                $email = $_POST['email'];
+            } else {
+                echo
+                    "<h3 style='color:red'>An Email is Required</h3>";
+            }
+
+            if (!empty($_POST['title'])) {
+                $title = $_POST['title'];
+            } else {
+                echo
+                    "<h3 style='color:red'>Please Select One</h3>";
             }
         }
 
 
-        if (empty($_POST["dob"])) {
-            $dobErr = "Date of Birth is required";
-        } else {
+        /* $firstNameErr = $middleNameErr = $lastNameErr = $dobErr = $telErr = $address1Err = $cityErr = $stateErr = $zipErr = $emailErr = $titleErr = $resumeErr = "";
+         if (isset($_POST["submit_btn"])) {
+            $firstName = format_input($_POST["firstName"]);
+            $middleName = format_input($_POST["middleName"]);
+            $lastName = format_input($_POST["lastName"]);
             $dob = format_input($_POST["dob"]);
-        }
-
-
-        if (empty($_POST["tel"])) {
-            $telErr = "Phone Number is required";
-        } else {
             $tel = format_input($_POST["tel"]);
-        }
-
-
-        if (empty($_POST["address"])) {
-            $addressErr = "Address field is required";
-        } else {
-            $address = format_input($_POST["address"]);
-        }
-
-
-        if (empty($_POST["email"])) {
-            $emailErr = "An Email is required";
-        } else {
+            $address1 = format_input($_POST["address1"]);
+            $address2 = format_input($_POST["address2"]);
+            $city = format_input($_POST["city"]);
+            $state = format_input($_POST["state"]);
+            $zip = format_input($_POST["zip"]);
             $email = format_input($_POST["email"]);
-            //checking email address formation
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailErr = "Invalid email format";
+            $title = format_input($_POST["title"]);
+            $resume = format_input($_POST["resume"]);
+
+           
+             if (empty($_POST["firstName"])) {
+                $firstNameErr = "Name is required";
+            } else {
+                $firstName = format_input($_POST["firstName"]);
+                if (preg_match("/^[a-zA-Z' ]*$", $firstName)) {
+                    $firstNameErr = "Only letters and white space allowed";
+                }
+            }
+
+            if (empty($_POST["lastName"])) {
+                $lastNameErr = "Name is required";
+            } else {
+                $lastName = format_input($_POST["lastName"]);
+                if (preg_match("/^[a-zA-Z' ]*$", $lastName)) {
+                    $lastNameErr = "Only letters and white space allowed";
+                }
+            }
+
+
+            if (empty($_POST["dob"])) {
+                $dobErr = "Date of Birth is required";
+            } else {
+                $dob = format_input($_POST["dob"]);
+            }
+
+
+            if (empty($_POST["tel"])) {
+                $telErr = "Phone Number is required";
+            } else {
+                $tel = format_input($_POST["tel"]);
+            }
+
+
+            if (empty($_POST["address1"])) {
+                $address1Err = "Street Address field is required";
+            } else {
+                $address1 = format_input($_POST["address1"]);
+            }
+
+            if (empty($_POST["city"])) {
+                $cityErr = "City field is required";
+            } else {
+                $city = format_input($_POST["city"]);
+            }
+
+            if (empty($_POST["state"])) {
+                $stateErr = "State field is required";
+            } else {
+                $state = format_input($_POST["state"]);
+            }
+            if (empty($_POST["zip"])) {
+                $zipErr = "Zip code is required";
+            } else {
+                $zip = format_input($_POST["zip"]);
+            }
+
+            if (empty($_POST["email"])) {
+                $emailErr = "An Email is required";
+            } else {
+                $email = format_input($_POST["email"]);
+            }
+
+            if (empty($_POST["title"])) {
+                $titleErr = "Please choose a Job Title";
+            } else {
+                $title = format_input($_POST["title"]);
+            }
+
+
+            if (empty($_POST["resume"])) {
+                $resumerErr = "Upload your Resume";
+            } else {
+                $resume = format_input($_POST["resume"]);
             }
         }
-
-
-        if (empty($_POST["title"])) {
-            $titleErr = "Please choose a Job Title";
-        } else {
-            $title = format_input($_POST["title"]);
-        }
-
-
-        if (empty($_POST["resume"])) {
-            $resumerErr = "Upload your Resume";
-        } else {
-            $resume = format_input($_POST["resume"]);
-        }
-    }
-    function format_input($data)
-    {
-        $data = trim($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-    ?>
+        function format_input($data)
+        {
+            $data = trim($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        } */
+        ?>
+    </div>
 
 
 
