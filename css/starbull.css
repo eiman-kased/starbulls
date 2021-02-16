@@ -136,8 +136,8 @@ border-radius: 6px;
 
 }
 .column-right2 {
+    display: inline-block;
     width: 50%;
-    float: right;
     padding-right: 60px;
     position: relative;
 }
@@ -151,4 +151,13 @@ border-radius: 6px;
     border-radius: 6px;
     text-align: center;
     padding: 4%;
+}
+
+.header img {
+    float: left;
+    width: 140px;
+    height: 136px;
+    position:relative;
+    left:500px;   
+    top: 3px;
 }
