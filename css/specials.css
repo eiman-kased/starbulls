@@ -19,15 +19,6 @@ body {
 }
 
 
-#end{
-    text-align: center;
-    font-size: large;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 2000px;
-}
-
 table, th, td {
     border: 3px solid black;
     font-family: cursive;
@@ -73,23 +64,36 @@ nav {
     left: auto;
     text-align: left;
     font-family:serif;
-    ;
+
 
 }
 
 h2{
-    font-size: 35px;
+    font-size: 45px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    text-align: center;
+    font-weight:lighter;
+    margin-bottom: 1em;
+    margin-top: 0.1em;
 }
 
 dt{
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.2em;
+}
 
+dd{
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
 }
 .topnav {
   overflow: hidden;
   background-color: green;
+  padding: 10px;
 }
 
 .topnav a {
@@ -106,11 +110,38 @@ dt{
   color: black;
 }
 
-.header img {
-    float: left;
-    width: 140px;
-    height: 136px;
-    position:relative;
-    left:500px;   
-    top: 3px;
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.logo img {
+   float: left;
+    position: relative;
+    width: 150px;
+    margin: 6px;
+}
+
+
+hr{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#end{
+    text-align: center;
+    font-size: large;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+h3{
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 1em;
+    margin-top: 0.1em;
+    font-weight:lighter;
 }
