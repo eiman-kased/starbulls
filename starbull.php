@@ -8,17 +8,23 @@
 </head>
 
 <body>
-
-
-    <h1>STARBULLS
-        <div class="topnav">
-            <a class="active" href="mainPage.html">Home</a>
-            <a href="specialsOTW.html">Specials Of The Week</a>
-            <a href="us.html">About Us</a>
-            <a href="starbull.php">Apply Now</a>
+    <div class="header">
+        <div class="logo">
+            <a href="mainPage.html" class="logo">
+                <img src="images/starbullslogo.png" alt="logo" />
+            </a>
         </div>
-    </h1>
 
+        <h1>STARBULLS
+            <div class="topnav">
+                <a href="">Menu</a>
+                <a href="specialsOTW.html">Specials Of The Week</a>
+                <a href="us.html">About Us</a>
+                <a href="starbull.php">Apply Now</a>
+            </div>
+        </h1>
+    </div>
+    </div>
 
     <div id="socialMedia">
         <a href="http://www.instagram.com/" class="btn btn-default" target="_blank">
@@ -33,7 +39,7 @@
     <div class="hero">
         <div class="hero-text">
             <h2>Become a Part of the StarBulls</h2>
-            <p>Appy Today!</p>
+            <p>Apply Today!</p>
         </div>
     </div>
 
@@ -130,38 +136,44 @@
 
                         <div class="name">
 
-                            First Name:*<input type="text" name="firstName" id="firstName" <?= ($firstName ? 'value="' . $firstName . '"' : ''); ?> required />
+                            First Name:*<input type="text" name="firstName" id="firstName" <?php if (isset($_POST['error'])) {
+                                                                                                echo $_POST['error'];
+                                                                                            } ?> required /> </br></br>
 
                             Middle Initial:<input type="text" name="middleName" id="middleName" /> </br></br>
 
-                            Last Name:*<input type="text" name="lastName" id="lastName" <?= ($lastName ? 'value="' . $lastName . '"' : ''); ?> required />
-                            </br>
+                            Last Name:*<input type="text" name="lastName" id="lastName"> required /> </br></br>
+
                         </div>
                         </br>
                         <div class="dob">
                             <label for="dob">DOB*</label>
-                            <input type="date" id="dob" name="dob" <?= ($dob ? 'value="' . $dob . '"' : ''); ?> required />
+                            <input type="date" id="dob" name="dob" <?php if (isset($_POST['error'])) {
+                                                                        echo $_POST['error'];
+                                                                    } ?> required /> </br></br>
 
                         </div>
-                        </br>
+
                         <div class="phone">
                             <label for="phone">Phone Number*</label>
-                            <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" <?= ($tel ? 'value="' . $tel . '"' : ''); ?> required />
+                            <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" <?php if (isset($_POST['error'])) {
+                                                                                                                                                echo $_POST['error'];
+                                                                                                                                            } ?> required />
 
-                            <br><br>
+                            </br>
                         </div>
-                        </br>
+
                         <div class="address">
                             <p>Please Enter Your Address:</p>
-                            Street Address:* <input type="text" name="address1" id="address1" <?= ($address1 ? 'value="' . $address1 . '"' : ''); ?> required />
+                            Street Address:* <input type="text" name="address1" id="address1" ] required />
                             <br></br>
 
                             Address Line 2:<input type="text" name="address2" id="address2" /> </br></br>
 
-                            City:*<input type="text" name="city" id="city" <?= ($city ? 'value="' . $city . '"' : ''); ?> required />
+                            City:*<input type="text" name="city" id="city" required />
                             <br></br>
 
-                            State:<select id="state" name="state" <?= ($state ? 'value="' . $state . '"' : ''); ?> required>
+                            State:<select id="state" name="state" required>
                                 <option value=></option>
                                 <option value="AL">AL</option>
                                 <option value="AK">AK</option>
@@ -217,23 +229,23 @@
                             </select>
 
                             </br></br>
-                            ZIP:*<input type="number" name="zip" id="zip" maxlength="5" <?= ($zip ? 'value="' . $zip . '"' : ''); ?> required />
+                            ZIP:*<input type="number" name="zip" id="zip" maxlength="5" required />
                             </br></br>
 
-                            Country:*<input type="text" name="country" id="country" pattern="[A-Za-z]{3}" <?= ($country ? 'value="' . $country . '"' : ''); ?> required />
+                            Country:*<input type="text" name="country" id="country" pattern="[A-Za-z]{3}" required />
 
                             </br> </br>
-                        </div> </br>
+                        </div>
                         <div class="email">
                             <label for="email">Enter an Email:*</label>
-                            <input type="email" id="email" name="email" placeholder="email@example.com" <?= ($email ? 'value="' . $email . '"' : ''); ?> required />
+                            <input type="email" id="email" name="email" placeholder="email@example.com" required />
                             </br></br>
                         </div>
-                        </br>
+
                         <div class="title">
                             <label for="title">Job Title Applying For:</label>
                             </br>
-                            <select id="title" name="title" <?= ($title ? 'value="' . $title . '"' : ''); ?> required>
+                            <select id="title" name="title" required>
                                 <option value></option>
                                 <option value="retail">Retail</option>
                                 <option value="retail leadership">Retail Leadership</option>
@@ -249,7 +261,7 @@
 
                         </div>
 
-                        </br>
+                        </br></br>
                         <div class="submit">
                             <input type="submit" name="submit_btn" value="Submit Application" />
                         </div>
@@ -285,7 +297,14 @@
             </div></br>
         </div>
     </div>
+    </br>
 
+    <div id="end">
+        <b>
+            Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
+        </b>
+
+    </div>
 </body>
 
 </html>
