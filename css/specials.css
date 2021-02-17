@@ -131,7 +131,7 @@ hr{
 #end{
     text-align: center;
     font-size: large;
-    position: relative;
+    position: fixed;
     bottom: 0;
     right: 0;
     width: 100%;
