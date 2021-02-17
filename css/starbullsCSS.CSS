@@ -8,7 +8,7 @@ h1 {
 }
 body {
     background-color: darkseagreen;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 #socialMedia{
@@ -109,4 +109,22 @@ dt{
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
+}
+
+#ingredients {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/3dletUn");
+   height: 400px;
+   background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.header img {
+    float: left;
+    width: 140px;
+    height: 136px;
+    position:relative;
+    left:500px;   
+    top: 3px;
 }
