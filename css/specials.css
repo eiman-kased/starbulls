@@ -136,3 +136,12 @@ hr{
     right: 0;
     width: 100%;
 }
+
+h3{
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 1em;
+    margin-top: 0.1em;
+    font-weight:lighter;
+}
