@@ -18,15 +18,6 @@ body {
     bottom: 0;
 }
 
-#end{
-    text-align: center;
-    font-size: large;
-    position: relative;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-}
-
 
 table, th, td {
     border: 3px solid black;
@@ -135,4 +126,13 @@ dd{
 hr{
     margin-top: 3em;
     margin-bottom: 3em;
+}
+
+#end{
+    text-align: center;
+    font-size: large;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
 }
