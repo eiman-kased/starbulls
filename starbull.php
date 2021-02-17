@@ -68,66 +68,66 @@
                         if (!empty(trim($_POST['firstName']))) {
                             $firstName = trim($_POST['firstName']);
                         } else {
-                            echo '<span class="error">First Name Required</span> </br>';
+                            echo '<span class="error">*First Name is Required</span> </br>';
                         }
 
                         if (!empty(trim($_POST['lastName']))) {
                             $lastName = trim($_POST['lastName']);
                         } else {
-                            echo '<span class="error">Last Name Required</span> </br>';
+                            echo '<span class="error">*Last Name is Required</span> </br>';
                         }
 
                         if (!empty(trim($_POST['dob']))) {
                             $dob = trim($_POST['dob']);
                         } else {
-                            echo '<span class="error">Date of Birth Required</span> </br>';
+                            echo '<span class="error">*Date of Birth Required</span> </br>';
                         }
 
                         if (!empty(trim($_POST['tel']))) {
                             $tel = trim($_POST['tel']);
                         } else {
-                            echo '<span class="error">Phone Number is Required</span> </br>';
+                            echo '<span class="error">*Phone Number is Required</span> </br>';
                         }
 
                         if (!empty(trim($_POST['address1']))) {
                             $address1 = trim($_POST['addresss1']);
                         } else {
-                            echo '<span class="error">Street Address is Required</span> </br>';
+                            echo '<span class="error">*Street Address is Required</span> </br>';
                         }
 
                         if (!empty(trim($_POST['city']))) {
                             $city = trim($_POST['city']);
                         } else {
-                            echo '<span class="error">City field is Required</span> </br>';
+                            echo '<span class="error">*City field is Required</span> </br>';
                         }
 
                         if (!empty(trim($_POST['state']))) {
                             $state = trim($_POST['state']);
                         } else {
-                            echo '<span class="error">Please Select a State</span> </br>';
+                            echo '<span class="error">*Please Select a State</span> </br>';
                         }
 
                         if (!empty(trim($_POST['zip']))) {
                             $zip = trim($_POST['zip']);
                         } else {
-                            echo '<span class="error">Zip Code is Required</span> </br>';
+                            echo '<span class="error">*Zip Code is Required</span> </br>';
                         }
                         if (!empty(trim($_POST['country']))) {
                             $zip = trim($_POST['country']);
                         } else {
-                            echo '<span class="error">Country is Required</span> </br>';
+                            echo '<span class="error">*Country is Required</span> </br>';
                         }
 
                         if (!empty(trim($_POST['email']))) {
                             $email = trim($_POST['email']);
                         } else {
-                            echo '<span class="error">An Email is Required</span> </br>';
+                            echo '<span class="error">*An Email is Required</span> </br>';
                         }
 
                         if (!empty(trim($_POST['title']))) {
                             $title = trim($_POST['title']);
                         } else {
-                            echo '<span class="error">Please Select One</span> </br>';
+                            echo '<span class="error">*Please Select Job Title</span> </br>';
                         }
                     }
                     ?>
@@ -170,7 +170,9 @@
 
                             Address Line 2:<input type="text" name="address2" id="address2" /> </br></br>
 
-                            City:*<input type="text" name="city" id="city" required />
+                            City:*<input type="text" name="city" id="city" <?php if (isset($_POST['error'])) {
+                                                                                echo $_POST['error'];
+                                                                            } ?> required />
                             <br></br>
 
                             State:<select id="state" name="state" required>
@@ -229,7 +231,9 @@
                             </select>
 
                             </br></br>
-                            ZIP:*<input type="number" name="zip" id="zip" maxlength="5" required />
+                            ZIP:*<input type="number" name="zip" id="zip" maxlength="5" <?php if (isset($_POST['error'])) {
+                                                                                            echo $_POST['error'];
+                                                                                        } ?> required />
                             </br></br>
 
                             Country:*<input type="text" name="country" id="country" pattern="[A-Za-z]{3}" required />
