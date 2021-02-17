@@ -32,8 +32,6 @@ nav {
     width: 50%;
 }
 
-
-
 #Specials {
     position: absolute;
     left: auto;
@@ -42,8 +40,6 @@ nav {
     ;
 
 }
-
-
 
 #socialMedia{
     text-align: center;
@@ -93,12 +89,6 @@ nav {
     width: 100%;
 }
 
-
-
-/*h1 {
-    font-family: merriweather;
-    font-size: 40px;
-}*/
 .form-container {
     display: inline-block;
     box-sizing: border-box;
