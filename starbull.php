@@ -17,7 +17,7 @@
 
         <h1>STARBULLS
             <div class="topnav">
-                <a href="">Menu</a>
+                <a href="menu.html">Menu</a>
                 <a href="specialsOTW.html">Specials Of The Week</a>
                 <a href="us.html">About Us</a>
                 <a href="starbull.php">Apply Now</a>
