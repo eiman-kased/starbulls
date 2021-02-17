@@ -3,7 +3,7 @@
 
 <head>
     <title>Starbulls</title>
-    <link rel="stylesheet" type="text/css" href="css\willStarbull.CSS">
+    <link rel="stylesheet" type="text/css" href="css\main.css">
 </head>
 
 <body>
