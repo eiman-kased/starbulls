@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/willStarbull.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
     <title>About Us</title>
 </head>
@@ -20,18 +20,17 @@
     </div>
     <div class="header">
         <div class="logo">
-            <a href="mainPage.html" class="logo">
+            <a href="home.php" class="logo">
                 <img src="images/starbullslogo.png" alt="logo" />
             </a>
         </div>
 
         <h1>STARBULLS
             <div class="topnav">
-                <a href="menu.html">Menu</a>
-                <a href="specialsOTW.html">Specials Of The Week</a>
-                <a href="us.html">About Us</a>
-                <a href="starbull.php">Apply Now</a>
-
+                <a href="menu.php">Menu</a>
+                <a href="specialMenu.php">Specials Of The Week</a>
+                <a href="about.php">About Us</a>
+                <a href="apply.php">Apply Now</a>
             </div>
         </h1>
     </div>
@@ -50,19 +49,19 @@
         <h3>Our Heritage</h3>
         <p>We are humbled by the success of our company thus far. The name Starbulls was created by one of the founders:
             Will. He came up with this insane concept of a restaurant that serves wings and coffee.
-        <p>
-        <p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
-            look at our site! A beauty to say the least.</p>
-        <p>Just a week ago, StarBulls did not exist. It has taken hours of dedication to get this
-            company up
-            on the server. Hours of frustration, trying to figure out why the code looks different on
-            our
-            screens. Hours of trial and error as we figured out where we went wrong. One thing the
-            founders
-            of StarBulls has known from the beginning is: Quitters Never Win. And Winners Never Quit. At
-            StarBulls we are
-            Winners.
-        </p>
+            <p>
+                <p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
+                    look at our site! A beauty to say the least.</p>
+                <p>Just a week ago, StarBulls did not exist. It has taken hours of dedication to get this
+                    company up
+                    on the server. Hours of frustration, trying to figure out why the code looks different on
+                    our
+                    screens. Hours of trial and error as we figured out where we went wrong. One thing the
+                    founders
+                    of StarBulls has known from the beginning is: Quitters Never Win. And Winners Never Quit. At
+                    StarBulls we are
+                    Winners.
+                </p>
 
     </div>
 
@@ -105,7 +104,7 @@
             00001010 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
         </b>
     </div>
-</footer>
+    </footer>
 
 </body>
 

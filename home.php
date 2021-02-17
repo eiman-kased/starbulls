@@ -3,7 +3,7 @@
 
 <head>
     <title>Starbulls</title>
-    <link rel="stylesheet" type="text/css" href="css\willStarbull.CSS">
+    <link rel="stylesheet" type="text/css" href="css\main.css">
 </head>
 
 <body>
@@ -14,10 +14,10 @@
 
         <h1>STARBULLS
             <div class="topnav">
-                <a href="menu.html">Menu</a>
-                <a href="specialsOTW.html">Specials Of The Week</a>
-                <a href="us.html">About Us</a>
-                <a href="starbull.php">Apply Now</a>
+                <a href="menu.php">Menu</a>
+                <a href="specialMenu.php">Specials Of The Week</a>
+                <a href="about.php">About Us</a>
+                <a href="apply.php">Apply Now</a>
             </div>
         </h1>
     </div>
@@ -116,7 +116,7 @@
             Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
         </b>
     </div>
-</footer>
+    </footer>
 
 </body>
 
