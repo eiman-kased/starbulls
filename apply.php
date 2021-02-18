@@ -141,7 +141,7 @@
 
                             Middle Initial:<input type="text" name="middleName" id="middleName" /> </br></br>
 
-                            Last Name:*<input type="text" name="lastName" id="lastName"> required /> </br></br>
+                            Last Name:*<input type="text" name="lastName" id="lastName" required /> </br></br>
 
                         </div>
                         </br>
