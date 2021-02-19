@@ -154,10 +154,10 @@
 						</div>
 
 						<div class="phone">
-							<label for="phone">Phone Number*</label>
-							<input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" <?php if (isset($_POST['error'])) {
-																																				echo $_POST['error'];
-																																			} ?> required />
+							<label for="phone">Phone Number*</br>Format:123-456-7890</label>
+							<input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" <?php if (isset($_POST['error'])) {
+																											echo $_POST['error'];
+																										} ?> required />
 							</br>
 						</div>
 
