@@ -24,7 +24,7 @@
 			</div>
 		</h1>
 	</div>
-	</div>
+
 
 	<div id="socialMedia">
 		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
@@ -129,51 +129,48 @@
 							echo '<span class="error">*Please Select Job Title</span> </br>';
 						}
 					}
+
+					echo '<pre>';
+					var_dump($_POST);
+					echo '</pre>';
 					?>
 
 					<form action="apply.php" method="post" enctype="multipart/form-data">
 
 						<div class="name">
 
-							First Name:*<input type="text" name="firstName" id="firstName" <?php if (isset($_POST['error'])) {
-																								echo $_POST['error'];
-																							} ?> required /> </br></br>
+							First Name:*<input type="text" name="firstName" id="firstName" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> required />
+							</br></br>
 
-							Middle Initial:<input type="text" name="middleName" id="middleName" /> </br></br>
+							Middle Initial:<input type="text" name="middleName" id="middleName" <?= (isset($_POST['middleName']) ? 'value="' . $_POST['middleName'] . '"' : '') ?> /> </br></br>
 
-							Last Name:*<input type="text" name="lastName" id="lastName" required /> </br></br>
+							Last Name:*<input type="text" name="lastName" id="lastName" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> required /> </br></br>
 
 						</div>
 						</br>
 						<div class="dob">
 							<label for="dob">DOB*</label>
-							<input type="date" id="dob" name="dob" <?php if (isset($_POST['error'])) {
-																		echo $_POST['error'];
-																	} ?> required /> </br></br>
+							<input type="date" id="dob" name="dob" <?= (isset($_POST['dob']) ? 'value="' . $_POST['dob'] . '"' : '') ?> required /> </br></br>
 
 						</div>
 
 						<div class="phone">
 							<label for="phone">Phone Number*</br>Format:123-456-7890</label>
-							<input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" <?php if (isset($_POST['error'])) {
-																											echo $_POST['error'];
-																										} ?> required />
+							<input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> required />
 							</br>
 						</div>
 
 						<div class="address">
 							<p>Please Enter Your Address:</p>
-							Street Address:* <input type="text" name="address1" id="address1" required />
+							Street Address:* <input type="text" name="address1" id="address1" <?= (isset($_POST['address1']) ? 'value="' . $_POST['address1'] . '"' : '') ?> required />
 							<br></br>
 
-							Address Line 2:<input type="text" name="address2" id="address2" /> </br></br>
+							Address Line 2:<input type="text" name="address2" id="address2" <?= (isset($_POST['address2']) ? 'value="' . $_POST['address2'] . '"' : '') ?> /> </br></br>
 
-							City:*<input type="text" name="city" id="city" <?php if (isset($_POST['error'])) {
-																				echo $_POST['error'];
-																			} ?> required />
+							City:*<input type="text" name="city" id="city" <?= (isset($_POST['city']) ? 'value="' . $_POST['city'] . '"' : '') ?> required />
 							<br></br>
 
-							State:<select id="state" name="state" required>
+							State:<select id="state" name="state" <?= (isset($_POST['state']) ? 'value="' . $_POST['state'] . '"' : '') ?> required>
 								<option value=></option>
 								<option value="AL">AL</option>
 								<option value="AK">AK</option>
@@ -229,18 +226,16 @@
 							</select>
 
 							</br></br>
-							ZIP:*<input type="number" name="zip" id="zip" maxlength="5" <?php if (isset($_POST['error'])) {
-																							echo $_POST['error'];
-																						} ?> required />
+							ZIP:*<input type="number" name="zip" id="zip" maxlength="5" <?= (isset($_POST['zip']) ? 'value="' . $_POST['zip'] . '"' : '') ?> required />
 							</br></br>
 
-							Country:*<input type="text" name="country" id="country" pattern="[A-Za-z]{3}" required />
+							Country:*<input type="text" name="country" id="country" pattern="[A-Za-z]{3}" <?= (isset($_POST['country']) ? 'value="' . $_POST['countru'] . '"' : '') ?> required />
 
 							</br> </br>
 						</div>
 						<div class="email">
 							<label for="email">Enter an Email:*</label>
-							<input type="email" id="email" name="email" placeholder="email@example.com" required />
+							<input type="email" id="email" name="email" placeholder="email@example.com" <?= (isset($_POST['email']) ? 'value="' . $_POST['email'] . '"' : '') ?> required />
 							</br></br>
 						</div>
 
