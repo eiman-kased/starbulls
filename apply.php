@@ -130,9 +130,6 @@
 						}
 					}
 
-					echo '<pre>';
-					var_dump($_POST);
-					echo '</pre>';
 					?>
 
 					<form action="apply.php" method="post" enctype="multipart/form-data">
@@ -142,15 +139,18 @@
 							First Name:*<input type="text" name="firstName" id="firstName" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> required />
 							</br></br>
 
-							Middle Initial:<input type="text" name="middleName" id="middleName" <?= (isset($_POST['middleName']) ? 'value="' . $_POST['middleName'] . '"' : '') ?> /> </br></br>
+							Middle Initial:<input type="text" name="middleName" id="middleName" <?= (isset($_POST['middleName']) ? 'value="' . $_POST['middleName'] . '"' : '') ?> />
+							</br></br>
 
-							Last Name:*<input type="text" name="lastName" id="lastName" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> required /> </br></br>
+							Last Name:*<input type="text" name="lastName" id="lastName" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> required />
+							</br></br>
 
 						</div>
 						</br>
 						<div class="dob">
 							<label for="dob">DOB*</label>
-							<input type="date" id="dob" name="dob" <?= (isset($_POST['dob']) ? 'value="' . $_POST['dob'] . '"' : '') ?> required /> </br></br>
+							<input type="date" id="dob" name="dob" <?= (isset($_POST['dob']) ? 'value="' . $_POST['dob'] . '"' : '') ?> required />
+							</br></br>
 
 						</div>
 
@@ -165,90 +165,83 @@
 							Street Address:* <input type="text" name="address1" id="address1" <?= (isset($_POST['address1']) ? 'value="' . $_POST['address1'] . '"' : '') ?> required />
 							<br></br>
 
-							Address Line 2:<input type="text" name="address2" id="address2" <?= (isset($_POST['address2']) ? 'value="' . $_POST['address2'] . '"' : '') ?> /> </br></br>
+							Address Line 2:<input type="text" name="address2" id="address2" <?= (isset($_POST['address2']) ? 'value="' . $_POST['address2'] . '"' : '') ?> />
+							</br></br>
 
 							City:*<input type="text" name="city" id="city" <?= (isset($_POST['city']) ? 'value="' . $_POST['city'] . '"' : '') ?> required />
 							<br></br>
 
-							State:<select id="state" name="state" <?= (isset($_POST['state']) ? 'value="' . $_POST['state'] . '"' : '') ?> required>
+							State:<select id="state" name="state" required>
 								<option value=></option>
-								<option value="AL">AL</option>
-								<option value="AK">AK</option>
-								<option value="AZ">AZ</option>
-								<option value="AR">AR</option>
-								<option value="CA">CA</option>
-								<option value="CO">CO</option>
-								<option value=“CT”>CT</option>
-								<option value=“DE”>DE</option>
-								<option value=“DC”>DC</option>
-								<option value=“FL”>FL</option>
-								<option value=“GA”>GA</option>
-								<option value=“HI”>HI</option>
-								<option value=“ID”>ID</option>
-								<option value=“IL”>IL</option>
-								<option value=“IN”>IN</option>
-								<option value=“IA”>IA</option>
-								<option value=“KS”>KS</option>
-								<option value=“KY”>KY</option>
-								<option value=“LA”>LA</option>
-								<option value=“ME”>ME</option>
-								<option value=“MD”>MD</option>
-								<option value=“MA”>MA</option>
-								<option value=“MI”>MI</option>
-								<option value=“MN”>MN</option>
-								<option value=“MS”>MS</option>
-								<option value=“MO”>MO</option>
-								<option value=“MT”>MT</option>
-								<option value=“NE”>NE</option>
-								<option value=“NV”>NV</option>
-								<option value=“NH”>NH</option>
-								<option value=“NJ”>NJ</option>
-								<option value=“NM”>NM</option>
-								<option value=“NY”>NY</option>
-								<option value=“NC”>NC</option>
-								<option value=“ND”>ND</option>
-								<option value=“OH”>OH</option>
-								<option value=“OK”>OK</option>
-								<option value=“OR”>OR</option>
-								<option value=“PA”>PA</option>
-								<option value=“RI”>RI</option>
-								<option value=“SC”>SC</option>
-								<option value=“SD”>SD</option>
-								<option value=“TN”>TN</option>
-								<option value=“TX”>TX</option>
-								<option value=“UT”>UT</option>
-								<option value=“VT”>VT</option>
-								<option value=“VA”>VA</option>
-								<option value=“WA”>WA</option>
-								<option value=“WV”>WV</option>
-								<option value=“WI”>WI</option>
-								<option value=“WY”>WY</option>
+								<option value="AL" <?= (isset($_POST['state']) && $_POST['state'] === 'AL') ? 'selected' : ''; ?>>AL</option>
+								<option value="AK" <?= (isset($_POST['state']) && $_POST['state'] === 'AK') ? 'selected' : ''; ?>>AK</option>
+								<option value="AZ" <?= (isset($_POST['state']) && $_POST['state'] === 'AZ') ? 'selected' : ''; ?>>AZ</option>
+								<option value="AR" <?= (isset($_POST['state']) && $_POST['state'] === 'AR') ? 'selected' : ''; ?>>AR</option>
+								<option value="CA" <?= (isset($_POST['state']) && $_POST['state'] === 'CA') ? 'selected' : ''; ?>>CA</option>
+								<option value="CO" <?= (isset($_POST['state']) && $_POST['state'] === 'CO') ? 'selected' : ''; ?>>CO</option>
+								<option value=“CT” <?= (isset($_POST['state']) && $_POST['state'] === 'CT') ? 'selected' : ''; ?>>CT</option>
+								<option value=“DE” <?= (isset($_POST['state']) && $_POST['state'] === 'DE') ? 'selected' : ''; ?>>DE</option>
+								<option value=“DC” <?= (isset($_POST['state']) && $_POST['state'] === 'DC') ? 'selected' : ''; ?>>DC</option>
+								<option value=“FL” <?= (isset($_POST['state']) && $_POST['state'] === 'FL') ? 'selected' : ''; ?>>FL</option>
+								<option value=“GA” <?= (isset($_POST['state']) && $_POST['state'] === 'GA') ? 'selected' : ''; ?>>GA</option>
+								<option value=“HI” <?= (isset($_POST['state']) && $_POST['state'] === 'HI') ? 'selected' : ''; ?>>HI</option>
+								<option value=“ID” <?= (isset($_POST['state']) && $_POST['state'] === 'ID') ? 'selected' : ''; ?>>ID</option>
+								<option value=“IL” <?= (isset($_POST['state']) && $_POST['state'] === 'IL') ? 'selected' : ''; ?>>IL</option>
+								<option value=“IN” <?= (isset($_POST['state']) && $_POST['state'] === 'IN') ? 'selected' : ''; ?>>IN</option>
+								<option value=“IA” <?= (isset($_POST['state']) && $_POST['state'] === 'IA') ? 'selected' : ''; ?>>IA</option>
+								<option value=“KS” <?= (isset($_POST['state']) && $_POST['state'] === 'KS') ? 'selected' : ''; ?>>KS</option>
+								<option value=“KY” <?= (isset($_POST['state']) && $_POST['state'] === 'KY') ? 'selected' : ''; ?>>KY</option>
+								<option value=“LA” <?= (isset($_POST['state']) && $_POST['state'] === 'LA') ? 'selected' : ''; ?>>LA</option>
+								<option value=“ME” <?= (isset($_POST['state']) && $_POST['state'] === 'ME') ? 'selected' : ''; ?>>ME</option>
+								<option value=“MD” <?= (isset($_POST['state']) && $_POST['state'] === 'MD') ? 'selected' : ''; ?>>MD</option>
+								<option value=“MA” <?= (isset($_POST['state']) && $_POST['state'] === 'MA') ? 'selected' : ''; ?>>MA</option>
+								<option value=“MI” <?= (isset($_POST['state']) && $_POST['state'] === 'MI') ? 'selected' : ''; ?>>MI</option>
+								<option value=“MN” <?= (isset($_POST['state']) && $_POST['state'] === 'MN') ? 'selected' : ''; ?>>MN</option>
+								<option value=“MS” <?= (isset($_POST['state']) && $_POST['state'] === 'MS') ? 'selected' : ''; ?>>MS</option>
+								<option value=“MO” <?= (isset($_POST['state']) && $_POST['state'] === 'MO') ? 'selected' : ''; ?>>MO</option>
+								<option value=“MT” <?= (isset($_POST['state']) && $_POST['state'] === 'MT') ? 'selected' : ''; ?>>MT</option>
+								<option value=“NE” <?= (isset($_POST['state']) && $_POST['state'] === 'NE') ? 'selected' : ''; ?>>NE</option>
+								<option value=“NV” <?= (isset($_POST['state']) && $_POST['state'] === 'NV') ? 'selected' : ''; ?>>NV</option>
+								<option value=“NH” <?= (isset($_POST['state']) && $_POST['state'] === 'NH') ? 'selected' : ''; ?>>NH</option>
+								<option value=“NJ” <?= (isset($_POST['state']) && $_POST['state'] === 'NJ') ? 'selected' : ''; ?>>NJ</option>
+								<option value=“NM” <?= (isset($_POST['state']) && $_POST['state'] === 'NM') ? 'selected' : ''; ?>>NM</option>
+								<option value=“NY” <?= (isset($_POST['state']) && $_POST['state'] === 'NY') ? 'selected' : ''; ?>>NY</option>
+								<option value=“NC” <?= (isset($_POST['state']) && $_POST['state'] === 'NC') ? 'selected' : ''; ?>>NC</option>
+								<option value=“ND” <?= (isset($_POST['state']) && $_POST['state'] === 'ND') ? 'selected' : ''; ?>>ND</option>
+								<option value=“OH” <?= (isset($_POST['state']) && $_POST['state'] === 'OH') ? 'selected' : ''; ?>>OH</option>
+								<option value=“OK” <?= (isset($_POST['state']) && $_POST['state'] === 'OK') ? 'selected' : ''; ?>>OK</option>
+								<option value=“OR” <?= (isset($_POST['state']) && $_POST['state'] === 'OR') ? 'selected' : ''; ?>>OR</option>
+								<option value=“PA” <?= (isset($_POST['state']) && $_POST['state'] === 'PA') ? 'selected' : ''; ?>>PA</option>
+								<option value=“RI” <?= (isset($_POST['state']) && $_POST['state'] === 'RI') ? 'selected' : ''; ?>>RI</option>
+								<option value=“SC” <?= (isset($_POST['state']) && $_POST['state'] === 'SC') ? 'selected' : ''; ?>>SC</option>
+								<option value=“SD” <?= (isset($_POST['state']) && $_POST['state'] === 'SD') ? 'selected' : ''; ?>>SD</option>
+								<option value=“TN” <?= (isset($_POST['state']) && $_POST['state'] === 'TN') ? 'selected' : ''; ?>>TN</option>
+								<option value=“TX” <?= (isset($_POST['state']) && $_POST['state'] === 'TX') ? 'selected' : ''; ?>>TX</option>
+								<option value=“UT” <?= (isset($_POST['state']) && $_POST['state'] === 'UT') ? 'selected' : ''; ?>>UT</option>
+								<option value=“VT” <?= (isset($_POST['state']) && $_POST['state'] === 'VT') ? 'selected' : ''; ?>>VT</option>
+								<option value=“VA” <?= (isset($_POST['state']) && $_POST['state'] === 'VA') ? 'selected' : ''; ?>>VA</option>
+								<option value=“WA” <?= (isset($_POST['state']) && $_POST['state'] === 'WA') ? 'selected' : ''; ?>>WA</option>
+								<option value=“WV” <?= (isset($_POST['state']) && $_POST['state'] === 'WV') ? 'selected' : ''; ?>>WV</option>
+								<option value=“WI” <?= (isset($_POST['state']) && $_POST['state'] === 'WI') ? 'selected' : ''; ?>>WI</option>
+								<option value=“WY” <?= (isset($_POST['state']) && $_POST['state'] === 'WY') ? 'selected' : ''; ?>>WY</option>
 							</select>
 
 							</br></br>
 							ZIP:*<input type="number" name="zip" id="zip" maxlength="5" <?= (isset($_POST['zip']) ? 'value="' . $_POST['zip'] . '"' : '') ?> required />
 							</br></br>
 
-							Country:*<input type="text" name="country" id="country" pattern="[A-Za-z]{3}" <?= (isset($_POST['country']) ? 'value="' . $_POST['countru'] . '"' : '') ?> required />
+							Country:*<input type="text" name="country" id="country" <?= (isset($_POST['country']) ? 'value="' . $_POST['country'] . '"' : '') ?> required />
 
 							</br> </br>
 						</div>
 						<div class="email">
-							<label for="email">Enter an Email:*</label>
-							<input type="email" id="email" name="email" placeholder="email@example.com" <?= (isset($_POST['email']) ? 'value="' . $_POST['email'] . '"' : '') ?> required />
+							Enter an Email<input type="email" id="email" name="email" placeholder="email@example.com" <?= (isset($_POST['email']) ? 'value="' . $_POST['email'] . '"' : '') ?> required />
 							</br></br>
 						</div>
 
 						<div class="title">
 							<label for="title">Job Title Applying For:</label>
 							</br>
-							<select id="title" name="title" required>
-								<option value></option>
-								<option value="retail">Retail</option>
-								<option value="retail leadership">Retail Leadership</option>
-								<option value="corporate">Corporate</option>
-								<option value="dist">Manufacturing and Distribution</option>
-							</select>
 						</div>
 						</br>
 						</br>
