@@ -8,21 +8,28 @@
 </head>
 
 <body>
-    <header class="header">
+    <div class="header">
         <div class="logo">
-            <a href="home.php">
-                <img src="images/starbullslogo.png" alt="logo" /></a>
+            <img src="images/starbullslogo.png" alt="logo" />
         </div>
+
         <h1>STARBULLS
             <div class="topnav">
                 <a href="menu.php">Menu</a>
                 <a href="specialMenu.php">Specials Of The Week</a>
                 <a href="about.php">About Us</a>
                 <a href="apply.php">Apply Now</a>
+            </div>
+            <nav>
+            <a href="#breakfastSingles">Breakfast Singles</a>
+            <a href="#breakfastCombo">Breakfast Combos</a>
+            <a href="#tradWings">Our Wings</a>
+            <a href="#dinner">Dinner</a>
+            <a href="#sides">Sides</a>
             </nav>
         </h1>
-    </header>
-    </h1>
+    </div>
+
     <article>
         <div id="Specials">
             <h2>MENU</h2>
@@ -58,7 +65,9 @@
             <hr>
             <dt>Flavored Coffee - $2.50</dt>
             <hr>
+            <div id="breakfastSingles">
             <h3>BreakFast Singles</h3>
+            </div>
             <hr>
             <dt>Bagel - $4.99</dt>
             <hr>
@@ -66,7 +75,9 @@
             <hr>
             <dt>Quick Scramble - $6.99</dt>
             <hr>
+            <div id="breakfastCombo">
             <h3>BreakFast Combos</h3>
+            </div>
             <hr>
             <dt>Bake N Eggs - $11.99</dt>
             <hr>
@@ -82,7 +93,9 @@
             <hr>
             <dt>Breakfast Feast (Sample of all breakfast entrees and sides + Open Bar) - $300</dt>
             <hr>
+            <div id="tradWings">
             <h3>Traditional Wings - $13.99/10p | $21.99/21p</h3>
+            </div> 
             <hr>
             <dt>BBQ</dt>
             <dt>Honey Mustard</dt>
@@ -116,7 +129,9 @@
             <hr>
             <dt>Pumpkin Spice Wings</dt>
             <hr>
+            <div id="dinner">
             <h3>Bulls Dinner</h3>
+            </div>
             <dt>Burgers and Fries</dt>
             <hr>
             <dt>Fingers and Fries</dt>
@@ -125,7 +140,9 @@
 
 
             <hr>
+            <div id="sides">
             <h3>Sides</h3>
+</div>
             <hr>
             <dt>Eggs :Scrambled,Over Easy,Sunny Side,Boiled</dt>
             <dt>Great Grandads Grits</dt>
