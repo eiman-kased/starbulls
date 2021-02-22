@@ -10,7 +10,9 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="images/starbullslogo.png" alt="logo" />
+        <a href="home.php" class="logo">
+				<img src="images/starbullslogo.png" alt="logo" />
+			</a>
         </div>
 
         <h1>STARBULLS
