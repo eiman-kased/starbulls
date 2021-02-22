@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <div class="logo">
             <a href="home.php">
                 <img src="images/starbullslogo.png" alt="logo" /></a>
@@ -19,10 +19,10 @@
                 <a href="specialMenu.php">Specials Of The Week</a>
                 <a href="about.php">About Us</a>
                 <a href="apply.php">Apply Now</a>
-            </div>
+            </nav>
         </h1>
-    </div>
-
+    </header>
+    </h1>
     <article>
         <div id="Specials">
             <h2>MENU</h2>
