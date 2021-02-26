@@ -51,131 +51,131 @@
 
 
 	<article>
-			<h2>MENU</h2>
-			<div id="cafe">
-				<h3>Cafe</h3>
-			</div>
-			<hr>
-			<dt>Regular Cup'o Joe - $2.00</dt>
-			<hr>
-			<dt>Decaf - $2.00</dt>
-			<hr>
-			<dt>Hot - Chocolate - $2.00</dt>
-			<hr>
-			<dt>Cafe Mocha - $2.00</dt>
-			<hr>
-			<dt>Expresso - $3.50</dt>
-			<hr>
-			<dt>Expresso Mugallo - $3.50</dt>
-			<hr>
-			<dt>Italian Roast - $3.00</dt>
-			<hr>
-			<dt>Hippie Dark Roast - $3.00</dt>
-			<hr>
-			<dt>Seattle Blend - $2.00</dt>
-			<hr>
-			<dt>Buffalo Wing Blend - $4.00</dt>
-			<hr>
-			<dt>BBQ Mocha - $4.00</dt>
-			<hr>
-			<dt>Jerked-Wing crazy blend - $4.00</dt>
-			<hr>
-			<dt>Hot Franks Coffee - $4.50</dt>
-			<hr>
-			<dt>Designer Pour Over Deluxe - $5.00</dt>
-			<hr>
-			<dt>Flavored Coffee - $2.50</dt>
-			<hr>
-			<div id="breakfastSingles">
-				<h3>BreakFast Singles</h3>
-			</div>
-			<hr>
-			<dt>Bagel - $4.99</dt>
-			<hr>
-			<dt>Quick Breakfast Wrap - $7.99</dt>
-			<hr>
-			<dt>Quick Scramble - $6.99</dt>
-			<hr>
-			<div id="breakfastCombo">
-				<h3>BreakFast Combos</h3>
-			</div>
-			<hr>
-			<dt>Bake N Eggs - $11.99</dt>
-			<hr>
-			<dt>Steak N Eggs - $11.99</dt>
-			<hr>
-			<dt>Green Shake Eggs & Ham $13.99</dt>
-			<hr>
-			<dt>Breakfast Sam (Your Choice Breakfast Sandwich) - $15.99</dt>
-			<hr>
-			<dt>Pancake Thangs (Combo Meal/Two Sides) - $14.50</dt>
-			<hr>
-			<dt>Grandads French Toast & Thangs (Combo Meal/Two Sides)- $14.50</dt>
-			<hr>
-			<dt>Breakfast Feast (Sample of all breakfast entrees and sides + Open Bar) - $300</dt>
-			<hr>
-			<div id="tradWings">
-				<h3>Traditional Wings - $13.99/10p | $21.99/21p</h3>
-			</div>
-			<hr>
-			<dt>BBQ</dt>
-			<dt>Honey Mustard</dt>
-			<dt>Mild</dt>
-			<dt>Medium</dt>
-			<dt>Hot</dt>
-			<dt>Honey BBQ</dt>
-			<dt>Lemon Pepper</dt>
-			<dt>Cajun</dt>
-			<dt>Starbulls Saturday Special Sauce*</dt>
-			<hr>
-			<h3>StarBulls Specialty Wings</h3>
-			<hr>
-			<dt>Mocchiato Wings</dt>
-			<hr>
-			<dt>Caramel Wings</dt>
-			<hr>
-			<dt>Vanilla Wings</dt>
-			<hr>
-			<dt>Mocha Wings</dt>
-			<hr>
-			<dt>Salted Caramel Wings</dt>
-			<hr>
-			<dt>Sugar Cookie Wings</dt>
-			<hr>
-			<dt>Jamaican Me Crazy Jerked Wings</dt>
-			<hr>
-			<dt>HazelNut Wings</dt>
-			<hr>
-			<dt>French Vanilla Ranch Dip Wings</dt>
-			<hr>
-			<dt>Pumpkin Spice Wings</dt>
-			<hr>
-			<div id="dinner">
-				<h3>Bulls Dinner</h3>
-			</div>
-			<dt>Burgers and Fries</dt>
-			<hr>
-			<dt>Fingers and Fries</dt>
-			<hr>
-			<dt>Fish and Fries</dt>
+		<h2>MENU</h2>
+		<div id="cafe">
+			<h3>Cafe</h3>
+		</div>
+		<hr>
+		<dt>Regular Cup'o Joe - $2.00</dt>
+		<hr>
+		<dt>Decaf - $2.00</dt>
+		<hr>
+		<dt>Hot - Chocolate - $2.00</dt>
+		<hr>
+		<dt>Cafe Mocha - $2.00</dt>
+		<hr>
+		<dt>Expresso - $3.50</dt>
+		<hr>
+		<dt>Expresso Mugallo - $3.50</dt>
+		<hr>
+		<dt>Italian Roast - $3.00</dt>
+		<hr>
+		<dt>Hippie Dark Roast - $3.00</dt>
+		<hr>
+		<dt>Seattle Blend - $2.00</dt>
+		<hr>
+		<dt>Buffalo Wing Blend - $4.00</dt>
+		<hr>
+		<dt>BBQ Mocha - $4.00</dt>
+		<hr>
+		<dt>Jerked-Wing crazy blend - $4.00</dt>
+		<hr>
+		<dt>Hot Franks Coffee - $4.50</dt>
+		<hr>
+		<dt>Designer Pour Over Deluxe - $5.00</dt>
+		<hr>
+		<dt>Flavored Coffee - $2.50</dt>
+		<hr>
+		<div id="breakfastSingles">
+			<h3>BreakFast Singles</h3>
+		</div>
+		<hr>
+		<dt>Bagel - $4.99</dt>
+		<hr>
+		<dt>Quick Breakfast Wrap - $7.99</dt>
+		<hr>
+		<dt>Quick Scramble - $6.99</dt>
+		<hr>
+		<div id="breakfastCombo">
+			<h3>BreakFast Combos</h3>
+		</div>
+		<hr>
+		<dt>Bake N Eggs - $11.99</dt>
+		<hr>
+		<dt>Steak N Eggs - $11.99</dt>
+		<hr>
+		<dt>Green Shake Eggs & Ham $13.99</dt>
+		<hr>
+		<dt>Breakfast Sam (Your Choice Breakfast Sandwich) - $15.99</dt>
+		<hr>
+		<dt>Pancake Thangs (Combo Meal/Two Sides) - $14.50</dt>
+		<hr>
+		<dt>Grandads French Toast & Thangs (Combo Meal/Two Sides)- $14.50</dt>
+		<hr>
+		<dt>Breakfast Feast (Sample of all breakfast entrees and sides + Open Bar) - $300</dt>
+		<hr>
+		<div id="tradWings">
+			<h3>Traditional Wings - $13.99/10p | $21.99/21p</h3>
+		</div>
+		<hr>
+		<dt>BBQ</dt>
+		<dt>Honey Mustard</dt>
+		<dt>Mild</dt>
+		<dt>Medium</dt>
+		<dt>Hot</dt>
+		<dt>Honey BBQ</dt>
+		<dt>Lemon Pepper</dt>
+		<dt>Cajun</dt>
+		<dt>Starbulls Saturday Special Sauce*</dt>
+		<hr>
+		<h3>StarBulls Specialty Wings</h3>
+		<hr>
+		<dt>Mocchiato Wings</dt>
+		<hr>
+		<dt>Caramel Wings</dt>
+		<hr>
+		<dt>Vanilla Wings</dt>
+		<hr>
+		<dt>Mocha Wings</dt>
+		<hr>
+		<dt>Salted Caramel Wings</dt>
+		<hr>
+		<dt>Sugar Cookie Wings</dt>
+		<hr>
+		<dt>Jamaican Me Crazy Jerked Wings</dt>
+		<hr>
+		<dt>HazelNut Wings</dt>
+		<hr>
+		<dt>French Vanilla Ranch Dip Wings</dt>
+		<hr>
+		<dt>Pumpkin Spice Wings</dt>
+		<hr>
+		<div id="dinner">
+			<h3>Bulls Dinner</h3>
+		</div>
+		<dt>Burgers and Fries</dt>
+		<hr>
+		<dt>Fingers and Fries</dt>
+		<hr>
+		<dt>Fish and Fries</dt>
 
 
-			<hr>
-			<div id="sides">
-				<h3>Sides</h3>
-			</div>
-			<hr>
-			<dt>Eggs: Scrambled ~ Over Easy ~ Sunny Side ~ Boiled</dt>
-			<dt>Great Grandads Grits</dt>
-			<dt>Sausage</dt>
-			<dt>Cream of Wheat</dt>
-			<dt>Oatmeal</dt>
-			<dt>Fruit Cup</dt>
-			<dt>Yogurt</dt>
-			<dt>Butterfly Milk</dt>
-			<dt>Overnight Oats</dt>
-			<dt>Granny Nolas Granola</dt>
-			<hr>
+		<hr>
+		<div id="sides">
+			<h3>Sides</h3>
+		</div>
+		<hr>
+		<dt>Eggs: Scrambled ~ Over Easy ~ Sunny Side ~ Boiled</dt>
+		<dt>Great Grandads Grits</dt>
+		<dt>Sausage</dt>
+		<dt>Cream of Wheat</dt>
+		<dt>Oatmeal</dt>
+		<dt>Fruit Cup</dt>
+		<dt>Yogurt</dt>
+		<dt>Butterfly Milk</dt>
+		<dt>Overnight Oats</dt>
+		<dt>Granny Nolas Granola</dt>
+		<hr>
 
 	</article>
 

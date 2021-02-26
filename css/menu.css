@@ -62,8 +62,6 @@ p {
   display: flex;
 }
 
-
-
 h2 {
   font-size: 45px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -91,7 +89,6 @@ nav {
   border: 3px solid white;
   font-size: large;
   font-family: 'Times New Roman', Times, serif;
-
 }
 
 .topnav {
@@ -140,11 +137,10 @@ h3 {
   font-weight: lighter;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   background-color: darkseagreen;
 }
 
 .nav-item {
   color: white;
 }
-
