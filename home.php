@@ -9,7 +9,15 @@
 </head>
 
 <body>
-    <div class="header">
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/starbullslogo.png" alt="logo" width="70" height="70" />
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id=
+    </nav>
+    <div class=" header">
         <div class="logo">
             <img src="images/starbullslogo.png" alt="logo" />
         </div>
