@@ -29,7 +29,7 @@
 						<a class="nav-link" href="about.php">ABOUT US</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link active dropdown-toggle" aria-current="page" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							MENU
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
