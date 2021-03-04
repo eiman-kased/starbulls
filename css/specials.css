@@ -90,30 +90,6 @@ dd{
     font-size: 20px;
     font-family: 'Courier New', monospace;
 }
-.topnav {
-  overflow: hidden;
-  background-color: green;
-  padding: 10px;
-}
-
-.topnav a {
-  float: center;
-  color: white;
-  text-align: center;
-  padding: 7px 10px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
 
 .logo img {
    float: left;
