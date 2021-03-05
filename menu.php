@@ -9,29 +9,51 @@
 </head>
 
 <body>
-	<div class="header">
-		<div class="logo">
-			<a href="home.php">
-				<img src="images/starbullslogo.png" alt="logo" /></a>
-		</div>
-		<h1>STARBULLS
-			<div class="topnav">
-				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
-				<a href="about.php">About Us</a>
-				<a href="apply.php">Apply Now</a>
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: green">
+		<div class="container-fluid">
+			<div class="logo">
+				<a href="home.php" class="logo">
+					<img src="images/starbullslogo.png" alt="logo" />
+				</a>
 			</div>
-		</h1>
-	</div>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="about.php">ABOUT US</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							MENU
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<li><a class="dropdown-item" href="#cafe">Cafe</a></li>
+							<li><a class="dropdown-item" href="#breakfastSingles">Breakfast</a></li>
+							<li><a class="dropdown-item" href="#tradWings">Wings</a></li>
+							<li><a class="dropdown-item" href="#dinner">Dinner+Sides</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="specialMenu.php">WEEKLY SPECIALS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="apply.php">APPLY NOW</a>
+					</li>
+				</ul>
+			</div>
+	</nav>
 
-	<div class="accordion" id="accordianMenu">
+	<br /><br /> <br /> <br /><br /> <br /><br /> <br />
+	<div class="accordion accordion-flush" id="accordianMenu">
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="cafe">
+			<h2 class="accordion-header" id="coffee">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 					Cafe
 				</button>
 			</h2>
-			<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="cafe" data-bs-parent="#accordianMenu">
+			<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="coffee" data-bs-parent="#accordianMenu">
 				<div class="accordion-body collapse-in">
 					<div id="collapseOne" class="accordion-inner">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
