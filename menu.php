@@ -2,165 +2,218 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Starbulls</title>
-    <link rel="stylesheet" type="text/css" href="css\menu.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Starbulls</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css\menu.css">
 </head>
 
 <body>
-    <div class="header">
-        <div class="logo">
-            <a href="home.php">
-                <img src="images/starbullslogo.png" alt="logo" /></a>
-        </div>
-        <h1>STARBULLS
-            <div class="topnav">
-                <a href="menu.php">Menu</a>
-                <a href="specialMenu.php">Specials Of The Week</a>
-                <a href="about.php">About Us</a>
-                <a href="apply.php">Apply Now</a>
-            </div>
-        </h1>
-    </div>
+	<div class="header">
+		<div class="logo">
+			<a href="home.php">
+				<img src="images/starbullslogo.png" alt="logo" /></a>
+		</div>
+		<h1>STARBULLS
+			<div class="topnav">
+				<a href="menu.php">Menu</a>
+				<a href="specialMenu.php">Specials Of The Week</a>
+				<a href="about.php">About Us</a>
+				<a href="apply.php">Apply Now</a>
+			</div>
+		</h1>
+	</div>
 
-    <article>
-        <div id="Specials">
-            <h2>MENU</h2>
-            <h3>Cafe</h3>
-            <hr>
-            <dt>Regular Cup'o Joe - $2.00</dt>
-            <hr>
-            <dt>Decaf - $2.00</dt>
-            <hr>
-            <dt>Hot - Chocolate - $2.00</dt>
-            <hr>
-            <dt>Cafe Mocha - $2.00</dt>
-            <hr>
-            <dt>Expresso - $3.50</dt>
-            <hr>
-            <dt>Expresso Mugallo - $3.50</dt>
-            <hr>
-            <dt>Italian Roast - $3.00</dt>
-            <hr>
-            <dt>Hippie Dark Roast - $3.00</dt>
-            <hr>
-            <dt>Seattle Blend - $2.00</dt>
-            <hr>
-            <dt>Buffalo Wing Blend - $4.00</dt>
-            <hr>
-            <dt>BBQ Mocha - $4.00</dt>
-            <hr>
-            <dt>Jerked-Wing crazy blend - $4.00</dt>
-            <hr>
-            <dt>Hot Franks Coffee - $4.50</dt>
-            <hr>
-            <dt>Designer Pour Over Deluxe - $5.00</dt>
-            <hr>
-            <dt>Flavored Coffee - $2.50</dt>
-            <hr>
-            <h3>BreakFast Singles</h3>
-            <hr>
-            <dt>Bagel - $4.99</dt>
-            <hr>
-            <dt>Quick Breakfast Wrap - $7.99</dt>
-            <hr>
-            <dt>Quick Scramble - $6.99</dt>
-            <hr>
-            <h3>BreakFast Combos</h3>
-            <hr>
-            <dt>Bake N Eggs - $11.99</dt>
-            <hr>
-            <dt>Steak N Eggs - $11.99</dt>
-            <hr>
-            <dt>Green Shake Eggs & Ham $13.99</dt>
-            <hr>
-            <dt>Breakfast Sam (Your Choice Breakfast Sandwich) - $15.99</dt>
-            <hr>
-            <dt>Pancake Thangs (Combo Meal/Two Sides) - $14.50</dt>
-            <hr>
-            <dt>Grandads French Toast & Thangs (Combo Meal/Two Sides)- $14.50</dt>
-            <hr>
-            <dt>Breakfast Feast (Sample of all breakfast entrees and sides + Open Bar) - $300</dt>
-            <hr>
-            <h3>Traditional Wings - $13.99/10p | $21.99/21p</h3>
-            <hr>
-            <dt>BBQ</dt>
-            <dt>Honey Mustard</dt>
-            <dt>Mild</dt>
-            <dt>Medium</dt>
-            <dt>Hot</dt>
-            <dt>Honey BBQ</dt>
-            <dt>Lemon Pepper</dt>
-            <dt>Cajun</dt>
-            <dt>Starbulls Saturday Special Sauce*</dt>
-            <hr>
-            <h3>StarBulls Specialty Wings</h3>
-            <hr>
-            <dt>Mocchiato Wings</dt>
-            <hr>
-            <dt>Caramel Wings</dt>
-            <hr>
-            <dt>Vanilla Wings</dt>
-            <hr>
-            <dt>Mocha Wings</dt>
-            <hr>
-            <dt>Salted Caramel Wings</dt>
-            <hr>
-            <dt>Sugar Cookie Wings</dt>
-            <hr>
-            <dt>Jamaican Me Crazy Jerked Wings</dt>
-            <hr>
-            <dt>HazelNut Wings</dt>
-            <hr>
-            <dt>French Vanilla Ranch Dip Wings</dt>
-            <hr>
-            <dt>Pumpkin Spice Wings</dt>
-            <hr>
-            <h3>Bulls Dinner</h3>
-            <dt>Burgers and Fries</dt>
-            <hr>
-            <dt>Fingers and Fries</dt>
-            <hr>
-            <dt>Fish and Fries</dt>
+	<div class="accordion" id="accordianMenu">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="cafe">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					Cafe
+				</button>
+			</h2>
+			<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="cafe" data-bs-parent="#accordianMenu">
+				<div class="accordion-body collapse-in">
+					<div id="collapseOne" class="accordion-inner">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+							Specialty Coffee
+						</button>
+						<ul class="list-group">
+							<li class="list-group-item">Hippie Dark Roast - $3.00</li><br />
+							<li class="list-group-item">Seattle Blend - $2.00</li><br />
+							<li class="list-group-item">Buffalo Wing Blend - $4.00</li><br />
+							<li class="list-group-item">BBQ Mocha - $4.00</li><br />
+							<li class="list-group-item">Jerked-Wing Crazy Blend - $4.00</li><br />
+							<li class="list-group-item">Hot Franks Coffee - $4.50</li><br />
+							<li class="list-group-item">Designer Pour Over Deluxe - $5.00</li><br />
+							<li class="list-group-item">Flavored Coffee - $2.50</li><br />
+						</ul>
+					</div>
+					<div id="collapseOne" class="accordion-inner">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+							Regular Cafe
+						</button>
+						<ul class="list-group">
+							<li class="list-group-item">Regular Cup'o Joe</li><br />
+							<li class="list-group-item">Decaf - $2.00</li><br />
+							<li class="list-group-item">Hot Chocolate - $2.00</li><br />
+							<li class="list-group-item">Cafe Mocha - $2.00</li><br />
+							<li class="list-group-item">Espresso - $3.50</li><br />
+							<li class="list-group-item">Espresso Mugallo - $3.50</li><br />
+							<li class="list-group-item">Italian Roast - $3.00</li><br />
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="breakfastSingles">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						Breakfast Singles
+					</button>
+				</h2>
+				<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="breakfastSingles" data-bs-parent="#accordianMenu">
+					<div class="accordion-body">
+						<ul class="list-group">
+							<li class="list-group-item">Bagel - $4.99</li><br />
+							<li class="list-group-item">Quick Breakfast Wrap - $7.99</li><br />
+							<li class="list-group-item">Bake N Eggs - $11.99</li><br />
+							<li class="list-group-item">Steak N Eggs - $11.99</li><br />
+							<li class="list-group-item">Quick Scramble - $6.99</li><br />
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="breakfastCombos">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						Breakfast Combos
+					</button>
+				</h2>
+				<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="breakfastCombos" data-bs-parent="#accordianMenu">
+					<div class="accordion-body">
+						<ul class="list-group">
+							<li class="list-group-item">Green Shake Eggs & Ham $13.99</li><br />
+							<li class="list-group-item">Breakfast Sam (Your Choice Breakfast Sandwich) - $15.99</li><br />
+							<li class="list-group-item">Pancake Thangs (Combo Meal/Two Sides) - $14.50</li><br />
+							<li class="list-group-item">Grandads French Toast & Thangs (Combo Meal/Two Sides)- $14.50</li><br />
+							<li class="list-group-item">Breakfast Feast (Sample of all breakfast entrees and sides + Open Bar) - $300</li><br />
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="traditionalWings">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						Traditional Wings - $13.99/10p | $21.99/21p
+					</button>
+				</h2>
+				<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="traditionalWings" data-bs-parent="#accordianMenu">
+					<div class="accordion-body">
+						<ul class="list-group">
+							<li class="list-group-item">BBQ</li><br />
+							<li class="list-group-item">Honey Mustard</li><br />
+							<li class="list-group-item">Mild</li><br />
+							<li class="list-group-item">Medium</li><br />
+							<li class="list-group-item">Hot</li><br />
+							<li class="list-group-item">Honey BBQ</li><br />
+							<li class="list-group-item">Lemon Pepper</li><br />
+							<li class="list-group-item">Cajun</li><br />
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="specialityWings">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+						StarBulls Specialty Wings
+					</button>
+				</h2>
+				<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="specialityWings" data-bs-parent="#accordianMenu">
+					<div class="accordion-body">
+						<ul class="list-group">
+							<li class="list-group-item">Macchiato Wings</li><br />
+							<li class="list-group-item">Caramel Wings</li><br />
+							<li class="list-group-item">Vanilla Wings</li><br />
+							<li class="list-group-item">Mocha Wings</li><br />
+							<li class="list-group-item">Salted Caramel Wings</li><br />
+							<li class="list-group-item">Sugar Cookie Wings</li><br />
+							<li class="list-group-item">Jamaican Me Crazy Jerked Wings</li><br />
+							<li class="list-group-item">HazelNut Wings</li><br />
+							<li class="list-group-item">French Vanilla Ranch Dip Wings</li><br />
+							<li class="list-group-item">Pumpkin Spice Wings</li><br />
+							<li class="list-group-item">Starbulls Saturday Special Sauce*</li><br />
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="bullsDinner">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+						Bulls Dinner
+					</button>
+				</h2>
+				<div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="bullsDinner" data-bs-parent="#accordianMenu">
+					<div class="accordion-body">
+						<ul class="list-group">
+							<li class="list-group-item">Burgers and Fries</li><br />
+							<li class="list-group-item">Chicken Fingers and Fries</li><br />
+							<li class="list-group-item">Fish and Fries</li><br />
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="sides">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+						Sides
+					</button>
+				</h2>
+				<div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="sides" data-bs-parent="#accordianMenu">
+					<div class="accordion-body">
+						<ul class="list-group">
+							<li class="list-group-item">Eggs :Scrambled,Over Easy,Sunny Side,Boiled</li><br />
+							<li class="list-group-item">Great Grandads Grits</li><br />
+							<li class="list-group-item">Sausage</li><br />
+							<li class="list-group-item">Cream of Wheat</li><br />
+							<li class="list-group-item">Oatmeal</li><br />
+							<li class="list-group-item">Fruit</li><br />
+							<li class="list-group-item">Yogurt</li><br />
+							<li class="list-group-item">Butterfly Milk</li><br />
+							<li class="list-group-item">Overnight Oats</li><br />
+							<li class="list-group-item">Granny Nolas Granola</li><br />
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 
-            <hr>
-            <h3>Sides</h3>
-            <hr>
-            <dt>Eggs :Scrambled,Over Easy,Sunny Side,Boiled</dt>
-            <dt>Great Grandads Grits</dt>
-            <dt>Sausage</dt>
-            <dt>Cream of Wheat</dt>
-            <dt>Oatmeal</dt>
-            <dt>Fruit Cup</dt>
-            <dt>Yogurt</dt>
-            <dt>Butterfly Milk</dt>
-            <dt>Overnight Oats</dt>
-            <dt>Granny Nolas Granola</dt>
-            <hr>
+	<div class="bar" style="width:100%;overflow:hidden;height:44px">
+	</div>
 
-    </article>
-    </div>
+	<div id="socialMedia">
+		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
+			<img src="images\instagram.png" alt="Instagram"></a>
+		<a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
+			<img src="images\fb.png" alt="facebook"></a>
+		<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
+			<img src="images\_twitter.png" alt="twitter"></a>
+	</div>
+	<div id="end">
+		<b>
+			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100
+			Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
+		</b>
 
-    <div class="bar" style="width:100%;overflow:hidden;height:44px">
-    </div>
-
-    <div id="socialMedia">
-        <a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
-            <img src="images\instagram.png" alt="Instagram"></a>
-        <a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
-            <img src="images\fb.png" alt="facebook"></a>
-        <a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
-            <img src="images\_twitter.png" alt="twitter"></a>
-    </div>
-    <div id="end">
-        <b>
-            Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100
-            Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
-        </b>
-
-    </div>
-
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
 </body>
 
