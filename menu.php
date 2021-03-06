@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Starbulls</title>
+	<title>Menu</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css\menu.css">
 </head>
+
 
 <body>
 	<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: green">
@@ -215,10 +217,6 @@
 		</div>
 	</div>
 
-
-	<div class="bar" style="width:100%;overflow:hidden;height:44px">
-	</div>
-
 	<div id="socialMedia">
 		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
 			<img src="images\instagram.png" alt="Instagram"></a>
@@ -235,7 +233,6 @@
 
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
 </body>
 
 </html>

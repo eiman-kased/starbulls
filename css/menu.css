@@ -8,8 +8,9 @@ h1 {
 }
 
 body {
-  background-color: white;
+  background-color: darkseagreen;
   text-align: center;
+  padding-top: 180px;
 }
 
 #socialMedia {
@@ -61,13 +62,6 @@ p {
   display: flex;
 }
 
-#Specials {
-  position: absolute;
-  left: auto;
-  text-align: left;
-  font-family: serif;
-}
-
 h2 {
   font-size: 45px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -76,6 +70,25 @@ h2 {
   font-weight: lighter;
   margin-bottom: 1em;
   margin-top: 0.1em;
+}
+
+dt {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 0.2em;
+}
+
+dd {
+  font-size: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+nav {
+  border: 3px solid white;
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 dt {
@@ -117,4 +130,12 @@ h3 {
   margin-bottom: 1em;
   margin-top: 0.1em;
   font-weight: lighter;
+}
+
+.dropdown-menu {
+  background-color: darkseagreen;
+}
+
+.nav-item {
+  color: white;
 }
