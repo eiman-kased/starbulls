@@ -44,8 +44,7 @@
 				</ul>
 			</div>
 	</nav>
-
-	<br /><br /> <br /> <br /><br /> <br /><br /> <br />
+	
 	<div class="accordion accordion-flush" id="accordianMenu">
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="coffee">
