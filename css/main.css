@@ -1,4 +1,8 @@
 /*css accross all pages*/
+.navbar-custom{
+    background-color: green;
+}
+
 h1 {
     background-color: green;
     border-style: double;
@@ -6,7 +10,7 @@ h1 {
     text-align: center;
     color:white;
     font-size: 60px;
-    padding-top: 4px;
+   padding-top: 4px;
 }
 
 h2{
@@ -31,7 +35,6 @@ h2{
 
 body {
     background-color: white;
-    /*text-align: center;*/
 }
 
 /* css for the navigation bar across all pages*/
@@ -40,7 +43,6 @@ nav {
     font-size: large;
     font-family: 'Times New Roman', Times, serif;
 }
-
 
 .logo img {
    float: left;
@@ -77,15 +79,10 @@ table, th, td {
    width: 100%;
 }
 
-/*table {
-    width: 10%;
-}*/
-
 dt{
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline;
-
 }
 
 #Specials {
@@ -180,12 +177,6 @@ padding: 20px;
     width: 100%;
     background-size: 100%;
 }
-
-/*.container {
-    display: inline-block;
-    width: 100%;
-}*/
-
 
 /*css for us.html*/
 
