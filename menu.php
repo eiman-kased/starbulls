@@ -13,7 +13,7 @@
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
 		<div class="container-fluid">
 			<div class="logo">
-				<a href="home.php" class="logo">
+				<a href="index.php" class="logo">
 					<img src="images/starbullslogo.png" alt="logo" />
 				</a>
 			</div>
