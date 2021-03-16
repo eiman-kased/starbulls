@@ -20,7 +20,7 @@
     </div>
     <div class="header">
         <div class="logo">
-            <a href="home.php" class="logo">
+            <a href="index.php" class="logo">
                 <img src="images/starbullslogo.png" alt="logo" />
             </a>
         </div>
