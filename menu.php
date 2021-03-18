@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg sticky-top-top navbar-light navbar-custom">
+	<nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
 		<div class="container-fluid">
 			<div class="logo">
 				<a href="home.php" class="logo">
