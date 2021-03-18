@@ -73,7 +73,7 @@
         <div class="row">
             <div class="column">
                 <div id="connect">
-                    <img src="images/connect.jpg" />
+                    <img src="images/socialMedia.jpeg" />
                 </div>
             </div>
             <div class="column">
