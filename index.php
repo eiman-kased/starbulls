@@ -102,8 +102,7 @@
         </div> </br></br>
 
 
-        <div id="wingplatter">
-        </div>
+
     </div>
     </div> </br>
 
