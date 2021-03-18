@@ -191,3 +191,9 @@ h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/*accordion for menu page */
+
+.accordion-collapse ul {  
+    max-height: 250px;
+    overflow-y: scroll;
+}
