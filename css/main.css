@@ -113,7 +113,7 @@ dt {
   color: white;
 }
 
-#wingplatter {
+/*#wingplatter {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../images/wingplatter.jpg");
   height: 400px;
@@ -122,7 +122,7 @@ dt {
   position: relative;
   width: 100%;
   background-size: 100%;
-}
+}*/
 
 .table {
   margin-right: auto;
@@ -153,8 +153,9 @@ dt {
 }
 
 .column {
-  float: left;
+  float: right;
   width: 50%;
+  margin-bottom: 15px;
 }
 
 .column img {
