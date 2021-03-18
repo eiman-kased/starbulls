@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div class="column">
-                <img src="images/wingassortment.jpg" />
+                <img src="/images/foodPizza.jpeg" />
 
             </div>
         </div> </br></br>
