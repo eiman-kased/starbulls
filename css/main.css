@@ -209,7 +209,6 @@ h3 {
 .navbar.sticky-top{
     z-index: 1100;
 }
-
 .accordion-header.sticky-top {
-    top: 185px;
+    top: 180px;
 } 
