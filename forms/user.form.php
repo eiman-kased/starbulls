@@ -1,4 +1,7 @@
 <?php
+
+require_once 'src/User.php';
+
 $firstName = '';
 $lastName = '';
 $tel = '';
@@ -36,6 +39,14 @@ if (isset($_POST["submit_btn"])) {
 		$password = trim($_POST['password']);
 	} else {
 		$error['password'] = 'Enter your Password';
+	}
+
+	$user = new User($firstName,$lastName,$email,$password,$tel,false);
+	$userSaved = $user->saveToDB();
+	if ($userSaved){
+		echo '<h1>User Saved</h1>';
+		echo 'confirmation email sent to '.$user->getEmail();
+		var_dump($user);
 	}
 }
 ?>
