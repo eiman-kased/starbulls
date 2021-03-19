@@ -37,9 +37,8 @@ body {
     background-color: white;
 }
 
-.nav-pills > li > a.active {
+.nav-pills>li>a.active {
     background-color: white!important;
-
 }
 
 /* css for the navigation bar across all pages*/
@@ -216,4 +215,3 @@ h3 {
 .accordion-header.sticky-top {
     top: 180px;
 }
-
