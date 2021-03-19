@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
+<nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
 		<div class="container-fluid">
 			<div class="logo">
 				<a href="index.php" class="logo">
@@ -25,19 +25,17 @@
 					<li class="nav-item">
 						<a class="nav-link" href="about.php">ABOUT US</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="specialMenu.php">WEEKLY SPECIALS</a>
+					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							MENU
-						</a>
+						<a class="nav-link dropdown-toggle" href="menu.php">MENU</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item" href="#cafe">Cafe</a></li>
 							<li><a class="dropdown-item" href="#breakfastSingles">Breakfast</a></li>
 							<li><a class="dropdown-item" href="#tradWings">Wings</a></li>
 							<li><a class="dropdown-item" href="#dinner">Dinner+Sides</a></li>
 						</ul>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="specialMenu.php">WEEKLY SPECIALS</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="apply.php">APPLY NOW</a>
