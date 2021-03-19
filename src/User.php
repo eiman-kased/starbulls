@@ -51,17 +51,19 @@ class User
 		return $this;
 	}
 
-	public static function findUserByEmail($email): User
+	public static function findUserByEmail($email)
 	{
 		self::$db = self::$db ?? dbConn();
 		$sql = "SELECT * FROM `user` WHERE email='$email'";
 		// echo $sql;
 		$result = self::$db->query($sql);
-		if (!$result) {
+		if ($result->num_rows < 1) {
 			return false;
 		}
 
+		var_dump($result);
 		$tmp = $result->fetch_object();
+		var_dump($tmp);
 		self::$db->close();
 		return new User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred);
 	}
