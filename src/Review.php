@@ -8,7 +8,15 @@ class review {
     private $score;
     private string $comment;
     private int $createdAt;
+
+    private static mysqli $db;
+    
+    //Initializes objects properties (variables) - two underscores
+    public function__construct($score, $comment, $createdAt);
+        
+
 }
+
 
 
 ?>
