@@ -48,7 +48,7 @@
 
 	<div class="accordion accordion-flush" id="accordianMenu">
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="coffee">
+			<h2 class="accordion-header sticky-top" id="coffee">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 					Specialty Coffee
 				</button>
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="regularCoffee">
+			<h2 class="accordion-header sticky-top" id="regularCoffee">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
 					Regular Coffee
 				</button>
@@ -90,7 +90,7 @@
 		</div>
 
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="breakfastSingles">
+			<h2 class="accordion-header sticky-top" id="breakfastSingles">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 					Breakfast Singles
 				</button>
@@ -109,7 +109,7 @@
 			</div>
 		</div>
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="breakfastCombos">
+			<h2 class="accordion-header sticky-top" id="breakfastCombos">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 					Breakfast Combos
 				</button>
@@ -127,7 +127,7 @@
 			</div>
 		</div>
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="traditionalWings">
+			<h2 class="accordion-header sticky-top" id="traditionalWings">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 					Traditional Wings - $13.99/10p | $21.99/21p
 				</button>
@@ -150,7 +150,7 @@
 		</div>
 
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="specialityWings">
+			<h2 class="accordion-header sticky-top" id="specialityWings">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
 					StarBulls Specialty Wings
 				</button>
@@ -175,7 +175,7 @@
 		</div>
 
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="bullsDinner">
+			<h2 class="accordion-header sticky-top" id="bullsDinner">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
 					Bulls Dinner
 				</button>
@@ -192,7 +192,7 @@
 		</div>
 
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="sides">
+			<h2 class="accordion-header sticky-top" id="sides">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
 					Sides
 				</button>
