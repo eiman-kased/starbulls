@@ -21,18 +21,18 @@
 	<div class="header">
 		<div class="logo">
 			<a href="index.php" class="logo">
-				<img src="images/starbullslogo.png" alt="logo" />
+				<img src="images/starbulls_logo.png" alt="logo" />
 			</a>
 		</div>
 
-		<h1>STARBULLS
+		<h1>STARBULLS</h1>
 			<div class="topnav">
 				<a href="menu.php">Menu</a>
 				<a href="specialMenu.php">Specials Of The Week</a>
 				<a href="about.php">About Us</a>
 				<a href="apply.php">Apply Now</a>
 			</div>
-		</h1>
+		
 	</div>
 	</div>
 	<h2 class="us">About Us</h2>
@@ -104,7 +104,6 @@
 			00001010 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
 		</b>
 	</div>
-	</footer>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 

@@ -4,9 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Menu</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>STARBULLS Menu</title>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
 		<div class="container-fluid">
 			<div class="logo">
 				<a href="index.php" class="logo">
-					<img src="images/starbullslogo.png" alt="logo" />
+					<img src="images/starbulls_logo.png" alt="logo" />
 				</a>
 			</div>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +45,7 @@
 					</li>
 				</ul>
 			</div>
+		</div>
 	</nav>
 
 	<div class="accordion accordion-flush" id="accordianMenu">
