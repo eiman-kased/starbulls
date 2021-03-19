@@ -46,15 +46,16 @@ class Review
 		//Establish connection to DB
 		self::$db = self::$db ?? dbConn();
 		//Write query to get review based on score
-		$sql = "SELECT * FROM review";
+		$sql = "SELECT * FROM review where score=$score";
 		//DB run query 
-		$insertSuccess = self::$db->query($sql);
-		//Does it work succesfully
-		if (!$insertSuccess) {
-			echo self::$db->error;
-			return false;
+		$results = self::$db->query($sql);
+		//Create array to return results
+		$reviews = array();
+		//Loop through results
+		while ($row = mysqli_fetch_assoc($results)) {
+			$review = new Review($row['score'],$row['comment'],$row['user_id']);
+			$reviews[] = $review;
 		}
-		//Return true
-		return true;
+		return $reviews;
 	}
 }
