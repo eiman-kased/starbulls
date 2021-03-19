@@ -36,6 +36,7 @@ class User
 		$preferred = $this->isPreferred ? 1 : 0;
 		$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred)
 		VALUES ('$this->firstName', '$this->lastName', '$this->email', '$this->password', '$this->phoneNumber', '$preferred')";
+		echo $sql;
 		$insertSuccess = self::$db->query($sql);
 		// Check for errors in the insert process
 		if (!$insertSuccess) {
@@ -61,11 +62,26 @@ class User
 			return false;
 		}
 
-		var_dump($result);
+
+		// echo '<pre>';
+		// var_dump($result);
+		// echo '</pre>';
 		$tmp = $result->fetch_object();
-		var_dump($tmp);
+
+		// echo '<pre>';
+		// var_dump($tmp);
+		// echo '</pre>';
 		self::$db->close();
-		return new User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred);
+		$retUser =  new User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred);
+		$retUser->setId($tmp->id);
+		return $retUser;
+	}
+
+	/**
+	 * Set the id, only used internally
+	 */
+	private function setId(int $id){
+		$this->id = intval($id);
 	}
 
 	/**
