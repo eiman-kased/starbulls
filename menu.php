@@ -77,7 +77,7 @@
 			<div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="regularCoffee" data-bs-parent="#accordianMenu">
 				<div class="accordion-body">
 					<ul class="list-group">
-						<li class="list-group-item">Regular Cup'o Joe</li><br />
+						<li class="list-group-item">Regular Cup of Joe</li><br />
 						<li class="list-group-item">Decaf - $2.00</li><br />
 						<li class="list-group-item">Hot Chocolate - $2.00</li><br />
 						<li class="list-group-item">Cafe Mocha - $2.00</li><br />
@@ -120,7 +120,7 @@
 						<li class="list-group-item">Green Shake Eggs & Ham $13.99</li><br />
 						<li class="list-group-item">Breakfast Sam (Your Choice Breakfast Sandwich) - $15.99</li><br />
 						<li class="list-group-item">Pancake Thangs (Combo Meal/Two Sides) - $14.50</li><br />
-						<li class="list-group-item">Grandads French Toast & Thangs (Combo Meal/Two Sides)- $14.50</li><br />
+						<li class="list-group-item">Grandad's French Toast & Thangs (Combo Meal/Two Sides)- $14.50</li><br />
 						<li class="list-group-item">Breakfast Feast (Sample of all breakfast entrees and sides + Open Bar) - $300</li><br />
 					</ul>
 				</div>
@@ -200,8 +200,8 @@
 			<div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="sides" data-bs-parent="#accordianMenu">
 				<div class="accordion-body">
 					<ul class="list-group">
-						<li class="list-group-item">Eggs :Scrambled,Over Easy,Sunny Side,Boiled</li><br />
-						<li class="list-group-item">Great Grandads Grits</li><br />
+						<li class="list-group-item">Eggs: Scrambled, Over Easy, Sunny Side, Boiled</li><br />
+						<li class="list-group-item">Great Grandad's Grits</li><br />
 						<li class="list-group-item">Sausage</li><br />
 						<li class="list-group-item">Cream of Wheat</li><br />
 						<li class="list-group-item">Oatmeal</li><br />
@@ -209,7 +209,7 @@
 						<li class="list-group-item">Yogurt</li><br />
 						<li class="list-group-item">Butterfly Milk</li><br />
 						<li class="list-group-item">Overnight Oats</li><br />
-						<li class="list-group-item">Granny Nolas Granola</li><br />
+						<li class="list-group-item">Granny Nola's Granola</li><br />
 					</ul>
 				</div>
 			</div>
@@ -225,7 +225,7 @@
 		</div>
 		<div id="end">
 			<b>
-				Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100
+				StarBulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100
 				Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
 			</b>
 
