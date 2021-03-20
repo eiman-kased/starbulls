@@ -1,3 +1,10 @@
+<?php
+ini_set('display_errors', 1);
+// call session_start so we can utilize the $_SESSION super global
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

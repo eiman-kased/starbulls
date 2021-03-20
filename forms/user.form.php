@@ -3,6 +3,10 @@
 // display errors so we know if there is a problem
 ini_set('display_errors', 1);
 
+// call session_start so we can utilize the $_SESSION super global
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
 // we need the User and Review classes
 require_once 'src/User.php';
 require_once 'src/Review.php';
