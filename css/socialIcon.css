@@ -1,0 +1,13 @@
+
+#socialMedia {
+    position: fixed;
+    bottom: 15px;
+}
+
+#socialMedia img {
+    text-align: center;
+    max-width: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px 3px #222222;
+    z-index: 1100px;
+}
