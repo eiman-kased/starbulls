@@ -93,7 +93,6 @@ if (session_status() === PHP_SESSION_NONE) {
 		</div>
 	</div>
 	</br>
-	<?php include 'forms/user.form.php';?>
 	<div id="end">
 		<b>
 			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
