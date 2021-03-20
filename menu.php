@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<?php include 'navBar.php'; ?>
+	<?php include 'navbar.php'; ?>
 	<div class="accordion accordion-flush" id="accordianMenu">
 		<div class="accordion-item">
 			<h2 class="accordion-header sticky-top" id="coffee">

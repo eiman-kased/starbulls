@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<?php include 'navBar.php'; ?>
+	<?php include 'navbar.php'; ?>
 	<div id="socialMedia">
 		<a href="http://www.instagram.com/" class="btn btn-default" target="_blank">
 			<img src="images\instagram.png" alt="Instagram"></a>

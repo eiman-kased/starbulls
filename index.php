@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<?php include 'navBar.php'; ?>
+	<?php include 'navbar.php'; ?>
 	<div name="ingredients" class="ingredients" id="ingredients">
 		<div class="ingredients-text">
 			<h2>Only the best of the best here at StarBulls</h2>
