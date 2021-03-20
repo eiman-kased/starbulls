@@ -80,7 +80,7 @@ dt {
 }
 
 #Specials {
-    position: relative;
+    position: absolute;
     left: auto;
     text-align: left;
     font-family: serif;
