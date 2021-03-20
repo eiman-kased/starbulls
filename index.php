@@ -30,9 +30,8 @@
 
 	<div name="ingredients" class="ingredients" id="ingredients">
 		<div class="ingredients-text">
-			<h2>Only the best of the best here at StarBulls</h2>
-			<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
-				only purchase high-quality ingredients that are ethically sourced.</p>
+			<h2>Only the Best</h2>
+			<p>At StarBulls we strive to provide our customers with the freshest ingredients that are locally and/or ethically sourced.</p>
 		</div>
 	</div>
 
@@ -90,7 +89,7 @@
 				<div id="connect">
 					<div class="connectTexts">
 						<h2>Enjoy a Variety of Food!</h2>
-						<p>We offer a variety of food and drinks to satisfy any and all cravings!</p> </br>
+						<p>We offer a diverse selection of food and drink options to satisfy any craving!</p> </br>
 						<p>Head over to our menu page!</p>
 					</div>
 				</div>
@@ -117,7 +116,7 @@
 	</div> </br>
 	<div id="end">
 		<b>
-			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
+			StarBulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
 			Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
 		</b>
 	</div>
