@@ -29,17 +29,17 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="monday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-					Milk Chocolate Mondays
+					Milk Chocolate Monday
 				</button>
 			</h2>
 			<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="monday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
 					<p>Come and enjoy hot milk chocolate for a party of 4 for only the price of 3.
-						We'll serve a giant bowl of chocolate and only two spoons so sharing is caring!
+						The Milk Chocolate Monday package comes with a giant mug of decadent hot chocolate and only two spoons so sharing is caring!
 						Milk Chocolate Mondays are a good way to get closer with family and friends. <br />Don't
-						have friends?? Have no fear, matchmaking is here. Come to the counter and ask to
+						have friends? Have no fear, our StarBulls matchmaker is here. Come to the counter and ask to
 						sign up for a matchmaking table where we set you up with people also looking
-						for new friends or family.... ($50/per table of 4)</p>
+						for new friends...or family. ($50/per table of 4)</p>
 				</div>
 			</div>
 		</div>
@@ -81,19 +81,19 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="thursday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-					Tasty Thursdays
+					Thirsty Thursdays
 				</button>
 			</h2>
 			<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="thursday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
-					<p>On Thursdays, we completely shut down our kitchen and open up our giant drinks bar. There will be
+					<p>On Thursdays, we shut down our kitchen and open up our giant drinks bar. There will be
 						discounted
-						beverages all day long. Even though there aren't going to be any of our food, come and sit down with
+						beverages all day long. Although our full menu will not be available, come and sit down with
 						your friends
 						and meet new people as well.<br /> Use this day as a day to recharge yourself with a nice shot of
 						siracha. Spicy not your
-						style? Try our buy one get one of our BBQ beer pints. Live life by the edge and come to StarBulls on
-						Tasty Thursdays.
+						style? Try our buy one get one of our BBQ beer pints. Live life on the edge and come to StarBulls on
+						Thirsty Thursdays.
 						($8.25)</p>
 				</div>
 			</div>
@@ -166,7 +166,7 @@
 	</div>
 	<div id="end">
 		<b>
-			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100
+			StarBulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100
 			Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
 		</b>
 	</div>
