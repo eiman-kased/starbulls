@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-12 col-lg-4">
             <a href="#" target="_blank">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error enim harum natus labore tenetur, earum eveniet, perspiciatis itaque necessitatibus, at optio laboriosam culpa dolor similique soluta? Mollitia blanditiis nesciunt labore!
+                <p>#
                 </p>
             </a>
         </div>

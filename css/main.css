@@ -55,6 +55,7 @@ nav {
 /* Footer start*/
 
 .footer.row {
+    min-height: 100px;
     position: relative;
     background-color: green;
     color: green;
@@ -72,7 +73,8 @@ nav {
 }
 
 .container-fluid {
-    padding: 0px;
+    height: fit-content;
+    background-color: green;
 }
 
 .footer a {
