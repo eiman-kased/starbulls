@@ -3,6 +3,7 @@
 #socialMedia {
     position: fixed;
     bottom: 15px;
+    z-index: 1200;
 }
 
 #socialMedia img {
@@ -10,5 +11,5 @@
     max-width: 40px;
     border-radius: 5px;
     box-shadow: 5px 5px 3px 3px #222222;
-    z-index: 1200px;
+    z-index: 1300px;
 }
