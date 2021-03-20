@@ -9,3 +9,8 @@ It's a 5 page site
 - Specials of the Week
 - About us
 - Apply Page
+
+
+Be sure you're always using the latest db set up.
+
+**Note:** run the contents of starbulls.down.sql then starbulls.up.sql to get the latest schema
