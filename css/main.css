@@ -191,3 +191,24 @@ h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* Sticky elements for Menu page */
+
+/* ?? wondering if this media query is part of the answer for adjusting accordion header sticky height after hamburger menu is toggled ?? 
+
+@media only screen and (max-width: 980px){
+ .navbar-collapse .collapse .show {
+ 
+    then adjust .accordion-header.sticky-top{ 
+        top: 250px;
+
+    }  ??
+ }
+}
+*/
+
+.navbar.sticky-top{
+    z-index: 1100;
+}
+.accordion-header.sticky-top {
+    top: 180px;
+} 

@@ -1,9 +1,11 @@
-# starbulls
-<h2>Creating a concept company called Starbulls where you can get both: your wings and coffee fix.</h2> </br>
-It's a 5 page site</br>
-<ul>
-<li>Home</li>
-<li>Menu</li>
-<li>Specials of the Week</li>
-<li>About us</li>
-<li>Apply Page</li>
+# StarBulls
+
+## Creating a concept company called StarBulls where you can get both your wings and coffee fix
+
+It's a 5 page site
+
+- Home
+- Menu
+- Specials of the Week
+- About us
+- Apply Page
