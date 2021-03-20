@@ -15,11 +15,14 @@ $error = array();
 
 $review;
 
-echo '$_POST<pre>';
-var_dump($_POST);
-echo '</pre>';
+// echo '$_POST<pre>';
+// var_dump($_POST);
+// echo '</pre>';
 
 if (isset($_SESSION['review_post'])) {
+	echo '<script language="javascript">';
+	echo 'alert("Please complete signup to save your review!")';
+	echo '</script>';
 	$_POST['review'] = json_decode($_SESSION['review_post'], true);
 	// echo '$_POST<pre>';
 	// var_dump($_POST);
