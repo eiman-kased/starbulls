@@ -24,6 +24,7 @@ if (isset($_SESSION['review_post'])) {
 	echo 'alert("Please complete signup to save your review!")';
 	echo '</script>';
 	$_POST['review'] = json_decode($_SESSION['review_post'], true);
+	$_POST['userEmail'] = $_POST['review']['userEmail'] ?? '';
 	// echo '$_POST<pre>';
 	// var_dump($_POST);
 	// echo '</pre>';
