@@ -10,21 +10,7 @@
 </head>
 
 <body>
-	<div class="header">
-		<div class="logo">
-			<a href="index.php">
-				<img src="images/starbullslogo.png" alt="logo" /></a>
-		</div>
-		<h1>STARBULLS
-			<div class="topnav">
-				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
-				<a href="about.php">About Us</a>
-				<a href="apply.php">Apply Now</a>
-			</div>
-		</h1>
-	</div>
-
+	<?php include 'navbar.php'; ?>
 	<div class="accordion accordion-flush" id="accordionSpecials">
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="monday">
