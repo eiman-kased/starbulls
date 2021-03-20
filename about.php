@@ -62,7 +62,6 @@
 			StarBulls we are
 			Winners.
 		</p>
-
 	</div>
 
 	<div class="tools">
@@ -84,24 +83,10 @@
 		</ol>
 	</div>
 
-	<div class="cwing">
-
-	</div>
-
 	<div id="end">
 		<b>
 			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
 			Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
-		</b>
-
-	</div>
-
-	<div id="end">
-		<b>
-			Starbulls Wings and Coffee&nbsp; |&nbsp; 01010110
-			01100101 01101110 01101101 01101111 00100000 00110101 00100000
-			01100010 01110101 01100011 01101011 01110011
-			00001010 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
 		</b>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
