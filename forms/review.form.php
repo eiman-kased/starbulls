@@ -35,7 +35,8 @@ if (isset($_POST['reviewSubmit'])) {
 	if (is_numeric($_POST['score'])) {
 		// set score to accept float value of user input 
 		$score = floatval($_POST['score']);
-	} else {/n		// if score is not set, add error message to array to be displayed later
+	} else {
+		// if score is not set, add error message to array to be displayed later
 		$error['score'] = 'Leave a Rating';
 	}
 
@@ -43,7 +44,8 @@ if (isset($_POST['reviewSubmit'])) {
 	if (!empty(trim($_POST['userEmail']))) {
 		// set userEmail to the user email sans whitespace
 		$userEmail = trim($_POST['userEmail']);
-	} else {/n		// if userEmail is empty, add error message to array to be displayed later
+	} else {
+		// if userEmail is empty, add error message to array to be displayed later
 		$error['userEmail'] = 'Please Enter you Email';
 	}
 
@@ -54,7 +56,8 @@ if (isset($_POST['reviewSubmit'])) {
 	$user = \User::findUserByEmail($userEmail);
 
 	// check to see if the user exists
-	if (!$user) {/n		//if the user doesn't exist, we need to try to create a user 
+	if (!$user) {
+		//if the user doesn't exist, we need to try to create a user 
 		// call session_start so we can utilize the $_SESSION super global to pass data to the user form 
 		if (session_status() === PHP_SESSION_NONE) {
 			session_start();
