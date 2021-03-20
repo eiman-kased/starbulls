@@ -26,17 +26,6 @@
 			</div>
 		</h1>
 	</div>
-
-
-	<div id="socialMedia">
-		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
-			<img src="images\instagram.png" alt="Instagram"></a>
-		<a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
-			<img src="images\fb.png" alt="facebook"></a>
-		<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
-			<img src="images\_twitter.png" alt="twitter"></a>
-	</div>
-
 	<div class="hero">
 		<div class="hero-text">
 			<h2>Become a Part of the StarBulls</h2>
