@@ -3,13 +3,6 @@
 // display errors so we know if there is a problem
 ini_set('display_errors', 1);
 
-// call session_start so we can utilize the $_SESSION super global to passed from the review form if it exists 
-if (session_status() === PHP_SESSION_NONE) {
-	session_start();
-} else if (session_status() === PHP_SESSION_DISABLED) {
-	echo 'sessions disabled, fix php';
-}
-
 // we need the User and Review classes
 require_once 'src/User.php';
 require_once 'src/Review.php';
@@ -28,9 +21,9 @@ $error = array();
 // var_dump($_POST);
 // echo '</pre>';
 
-echo '$_SESSION<pre>';
-var_dump($_SESSION);
-echo '</pre>';
+// echo '$_SESSION<pre>';
+// var_dump($_SESSION);
+// echo '</pre>';
 
 if (isset($_SESSION['review_post']) && !(isset($_POST['userSubmit']))) {
 	// if redirected an alert message will prompt user to signup
@@ -46,9 +39,9 @@ if (isset($_SESSION['review_post'])) {
 
 	// presets the userEmail from the review form
 	$_POST['userEmail'] = $_POST['review']['userEmail'] ?? '';
-	echo '$_POST<pre>';
-	var_dump($_POST);
-	echo '</pre>';
+	// echo '$_POST<pre>';
+	// var_dump($_POST);
+	// echo '</pre>';
 }
 
 // check to see if the submit button was clicked on the user form
@@ -107,7 +100,7 @@ if (isset($_POST['userSubmit'])) {
 
 	// save user to the database which will return false if unsuccessful
 	$userSaved = $user->saveToDB();
-	var_dump($userSaved);
+	// var_dump($userSaved);
 
 	// checks if $userSaved is successful
 	if ($userSaved) {
