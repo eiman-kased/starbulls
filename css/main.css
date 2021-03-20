@@ -33,9 +33,9 @@ h2 {
     margin-top: 0.1em;
 }
 
-/* body {
+body {
     background-color: white;
-} */
+}
 
 /* css for the navigation bar across all pages*/
 
@@ -152,8 +152,8 @@ dt {
 }
 
 .column img {
-    /*width: 400px;
-float: right;*/
+    width: 400px;
+    float: right;
     padding: 20px;
     width: 600px;
     object-fit: contain;
