@@ -47,8 +47,8 @@
 
 	<div class="heritage">
 		<h3>Our Heritage</h3>
-		<p>We are humbled by the success of our company thus far. The name Starbulls was created by one of the founders:
-			Will. He came up with this insane concept of a restaurant that serves wings and coffee.
+		<p>We are humbled by the success of our company thus far. The name StarBulls was created by one of the founders,
+			Will. Fueled by a continual flow caffiene and blue cheese, Will opened StarBulls in Febuary of 2021</p> 
 		<p>
 		<p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
 			look at our site! A beauty to say the least.</p>
@@ -68,7 +68,7 @@
 		<h3>Tools We Used</h3>
 		<p>Like any other company, the founders of StarBulls relied on various resources and tools that helped
 			them
-			get the site up and running! We would like to share these resources/tools with the
+			get the site up and running! We want to share these resources and tools with the
 			world.
 		</p>
 		<h3>They are:</h3>
@@ -85,7 +85,7 @@
 
 	<div id="end">
 		<b>
-			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
+			StarBulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
 			Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
 		</b>
 	</div>

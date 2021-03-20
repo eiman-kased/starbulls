@@ -23,7 +23,7 @@ ini_set('display_errors', 1);
 		<h1>STARBULLS
 			<div class="topnav">
 				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
+				<a href="specialMenu.php">Specials of the Week</a>
 				<a href="about.php">About Us</a>
 				<a href="apply.php">Apply Now</a>
 			</div>
@@ -42,7 +42,7 @@ ini_set('display_errors', 1);
 
 	<div class="hero">
 		<div class="hero-text">
-			<h2>Become a Part of the StarBulls</h2>
+			<h2>Become a Part of the StarBull's Team</h2>
 			<p>Apply Today!</p>
 		</div>
 	</div>
