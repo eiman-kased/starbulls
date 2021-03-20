@@ -2,7 +2,7 @@
 
 require_once('src/DB/db_connect.php');
 
-class Review
+class Review implements JsonSerializable
 {
 	private int $id;
 	private float $score;
@@ -13,12 +13,14 @@ class Review
 	private static mysqli $db;
 
 	//Initializes objects properties (variables) - two underscores
-	public function __construct($score, $comment, $userId)
+	public function __construct($score, $comment, $userId = null)
 	{
 		$this->score = $score;
 		$this->comment = $comment;
 		$this->createdAt = new \DateTime();
-		$this->user_id = $userId;
+		if ($userId !== null) {
+			$this->user_id = $userId;
+		}
 	}
 
 	//Function to save to database
@@ -28,8 +30,8 @@ class Review
 		self::$db = self::$db ?? dbConn();
 		//Write query to save info 
 		$sql = "INSERT INTO review (score, comment, user_id, created_at)
-		VALUES ($this->score, '$this->comment', $this->user_id, '".$this->createdAt->format('Y-m-d H:i:s')."')";
-		echo $sql;
+		VALUES ($this->score, '$this->comment', $this->user_id, '" . $this->createdAt->format('Y-m-d H:i:s') . "')";
+		// echo $sql;
 		//DB run query 
 		$insertSuccess = self::$db->query($sql);
 		//Does it work succesfully
@@ -40,7 +42,7 @@ class Review
 		//Return true
 		return true;
 	}
-	
+
 	//Chunk of comments based on some specific piece of data
 	public function getReviewsByScore($score)
 	{
@@ -54,9 +56,110 @@ class Review
 		$reviews = array();
 		//Loop through results
 		while ($row = mysqli_fetch_assoc($results)) {
-			$review = new Review($row['score'],$row['comment'],$row['user_id']);
+			$review = new Review($row['score'], $row['comment'], $row['user_id']);
 			$reviews[] = $review;
 		}
 		return $reviews;
+	}
+
+	/**
+	 * Get the value of user_id
+	 */
+	public function getUserID()
+	{
+		return $this->user_id ?? null;
+	}
+
+	/**
+	 * Set the value of user_id
+	 *
+	 * @return  self
+	 */
+	public function setUserID($user_id)
+	{
+		$this->user_id = $user_id;
+
+		return $this;
+	}
+
+	// We need this to convert private vars to json correctly
+	public function jsonSerialize()
+	{
+		return
+			[
+				'id'   => $this->getId(),
+				'score' => $this->getScore(),
+				'comment' => $this->getComment(),
+				'userId' => $this->getUserID(),
+				'createdAt' => $this->getCreatedAt()->getTimestamp(),
+			];
+	}
+
+	/**
+	 * Get the value of score
+	 */
+	public function getScore()
+	{
+		return $this->score;
+	}
+
+	/**
+	 * Set the value of score
+	 *
+	 * @return  self
+	 */
+	public function setScore($score)
+	{
+		$this->score = $score;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of id
+	 */
+	public function getId()
+	{
+		return $this->id ?? null;
+	}
+
+	/**
+	 * Get the value of comment
+	 */
+	public function getComment()
+	{
+		return $this->comment;
+	}
+
+	/**
+	 * Set the value of comment
+	 *
+	 * @return  self
+	 */
+	public function setComment($comment)
+	{
+		$this->comment = $comment;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of createdAt
+	 */
+	public function getCreatedAt()
+	{
+		return $this->createdAt;
+	}
+
+	/**
+	 * Set the value of createdAt
+	 *
+	 * @return  self
+	 */
+	public function setCreatedAt($createdAt)
+	{
+		$this->createdAt = $createdAt;
+
+		return $this;
 	}
 }

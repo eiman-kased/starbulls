@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 
 require_once 'src/User.php';
 require_once 'src/Review.php';
@@ -11,7 +12,10 @@ $userId = 0;
 $error = array();
 
 if (isset($_POST['reviewSubmit'])) {
-	var_dump($_POST);
+	// debugging, leave in for now
+	// echo '<pre>';
+	// var_dump($_POST);
+	// echo '</pre>';
 	if (!empty($_POST['comment'])) {
 		$comment = trim($_POST['comment']);
 	} else {
@@ -32,14 +36,25 @@ if (isset($_POST['reviewSubmit'])) {
 
 
 	$user = \User::findUserByEmail($userEmail);
+	$review;
+
+	$review = new Review($score, $comment);
 
 	if (!$user) {
-		echo 'Please create an Account';
-		include 'forms/user.form.php';
+		session_start();
+		$_SESSION['review_submit'] = json_encode($review);
+		$_SESSION['review_post'] = json_encode($_POST);
+		// var_dump($review);
+		header('Location:signup.php');
+	} else {
+		$review->setUserId($user->getId());
+		// echo '<pre>';
+		// var_dump($review);
+		// var_dump($user);
+		// echo '</pre>';
+
+		$review->saveToDB();
 	}
-	$review = new Review($score, $comment, 0);
-	//var_dump($review);
-	//var_dump($user);
 }
 
 ?>

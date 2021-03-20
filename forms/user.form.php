@@ -1,6 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+session_start();
 
 require_once 'src/User.php';
+require_once 'src/Review.php';
 
 $firstName = '';
 $lastName = '';
@@ -10,7 +13,23 @@ $password = '';
 
 $error = array();
 
+$review;
+
+echo '$_POST<pre>';
+var_dump($_POST);
+echo '</pre>';
+
+if (isset($_SESSION['review_post'])) {
+	$_POST['review'] = json_decode($_SESSION['review_post'], true);
+	// echo '$_POST<pre>';
+	// var_dump($_POST);
+	// echo '</pre>';
+}
+
 if (isset($_POST['userSubmit'])) {
+	// echo '$_POST<pre>';
+	// var_dump($_POST);
+	// echo '</pre>';
 	if (!empty(trim($_POST['firstName']))) {
 		$firstName = trim($_POST['firstName']);
 	} else {
@@ -29,8 +48,8 @@ if (isset($_POST['userSubmit'])) {
 		$error['tel'] = 'Phone Number is Required';
 	}
 
-	if (!empty(trim($_POST['email']))) {
-		$email = trim($_POST['email']);
+	if (!empty(trim($_POST['userEmail']))) {
+		$email = trim($_POST['userEmail']);
 	} else {
 		$error['email'] = 'An Email Address is Required';
 	}
@@ -44,9 +63,20 @@ if (isset($_POST['userSubmit'])) {
 	$user = new User($firstName, $lastName, $email, $password, $tel, false);
 	$userSaved = $user->saveToDB();
 	if ($userSaved) {
-		echo '<h1>User Saved</h1>';
-		echo 'confirmation email sent to ' . $user->getEmail();
-		var_dump($user);
+		// echo '<h1>User Saved</h1>';
+		// echo 'confirmation email sent to ' . $user->getEmail();
+		// var_dump($user);
+	} else {
+		echo 'Error saving user!';
+	}
+
+	if (isset($_SESSION['review_submit'])) {
+		$reviewJSON = json_decode($_SESSION['review_submit'], true);
+		// var_dump($reviewJSON);
+		$review = new Review($reviewJSON['score'], $reviewJSON['comment'], $user->getId());
+		if ($review->saveToDB()) {
+			echo 'Review and user saved';
+		};
 	}
 }
 ?>

@@ -89,7 +89,7 @@ class User
 	 */
 	public function getId()
 	{
-		return $this->id;
+		return $this->id ?? 0;
 	}
 
 	/**
