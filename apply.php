@@ -42,7 +42,7 @@ ini_set('display_errors', 1);
 
 	<div class="hero">
 		<div class="hero-text">
-			<h2>Become a Part of the StarBull's Team</h2>
+			<h2>Join the StarBull's Team</h2>
 			<p>Apply Today!</p>
 		</div>
 	</div>
@@ -90,7 +90,7 @@ ini_set('display_errors', 1);
 	<?php include 'forms/user.form.php';?>
 	<div id="end">
 		<b>
-			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
+			StarBulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
 		</b>
 
 	</div>
