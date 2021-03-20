@@ -18,40 +18,32 @@ $error = array();
 // check to see if the submit button was clicked on review form
 if (isset($_POST['reviewSubmit'])) {
 	// debugging, leave in for now
-	echo '<pre>';
-	var_dump($_POST);
-	echo '</pre>';
+	// echo '<pre>';
+	// var_dump($_POST);
+	// echo '</pre>';
 
 	// make sure comment isn't empty
 	if (!empty($_POST['comment'])) {
-
 		// set comment to user comment sans whitespace
 		$comment = trim($_POST['comment']);
 	} else {
-
 		// if comment is not set, add error message to array to be displayed later
 		$error['comment'] = 'Please leave a message.';
 	}
 
 	// check score is set to a numeric value
 	if (is_numeric($_POST['score'])) {
-
 		// set score to accept float value of user input 
 		$score = floatval($_POST['score']);
-	} else {
-
-		// if score is not set, add error message to array to be displayed later
+	} else {/n		// if score is not set, add error message to array to be displayed later
 		$error['score'] = 'Leave a Rating';
 	}
 
 	// check to see that the trimmed version of userEmail is not empty
 	if (!empty(trim($_POST['userEmail']))) {
-
 		// set userEmail to the user email sans whitespace
 		$userEmail = trim($_POST['userEmail']);
-	} else {
-
-		// if userEmail is empty, add error message to array to be displayed later
+	} else {/n		// if userEmail is empty, add error message to array to be displayed later
 		$error['userEmail'] = 'Please Enter you Email';
 	}
 
@@ -62,9 +54,7 @@ if (isset($_POST['reviewSubmit'])) {
 	$user = \User::findUserByEmail($userEmail);
 
 	// check to see if the user exists
-	if (!$user) {
-
-		//if the user doesn't exist, we need to try to create a user 
+	if (!$user) {/n		//if the user doesn't exist, we need to try to create a user 
 		// call session_start so we can utilize the $_SESSION super global to pass data to the user form 
 		if (session_status() === PHP_SESSION_NONE) {
 			session_start();
