@@ -66,7 +66,11 @@ if (isset($_POST['reviewSubmit'])) {
 
 		//if the user doesn't exist, we need to try to create a user 
 		// call session_start so we can utilize the $_SESSION super global to pass data to the user form 
-		session_start();
+		if (session_status() === PHP_SESSION_NONE) {
+			session_start();
+		} else if (session_status() === PHP_SESSION_DISABLED) {
+			echo 'sessions disabled, fix php';
+		}
 
 		// set review_submit element to the JSON value of review object
 		$_SESSION['review_submit'] = json_encode($review);

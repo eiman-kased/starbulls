@@ -4,13 +4,17 @@
 ini_set('display_errors', 1);
 
 // call session_start so we can utilize the $_SESSION super global to passed from the review form if it exists 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+} else if (session_status() === PHP_SESSION_DISABLED) {
+	echo 'sessions disabled, fix php';
+}
 
 // we need the User and Review classes
 require_once 'src/User.php';
 require_once 'src/Review.php';
 
-// initiliaze empty variables
+// initialize empty variables
 $firstName = '';
 $lastName = '';
 $tel = '';
