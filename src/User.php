@@ -36,7 +36,7 @@ class User
 		$preferred = $this->isPreferred ? 1 : 0;
 		$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred)
 		VALUES ('$this->firstName', '$this->lastName', '$this->email', '$this->password', '$this->phoneNumber', '$preferred')";
-		echo $sql;
+		//echo $sql;
 		$insertSuccess = self::$db->query($sql);
 		// Check for errors in the insert process
 		if (!$insertSuccess) {
@@ -80,7 +80,8 @@ class User
 	/**
 	 * Set the id, only used internally
 	 */
-	private function setId(int $id){
+	private function setId(int $id)
+	{
 		$this->id = intval($id);
 	}
 
