@@ -52,38 +52,10 @@ nav {
     margin: 6px;
 }
 
-/* Footer start*/
-
-.footer.row {
-    min-height: 100px;
-    position: relative;
-    background-color: green;
-    color: green;
-    text-align: center;
-}
-
-.footer h2 {
-    padding-top: 1%;
-    text-transform: uppercase;
-    color: white;
-}
-
-.footer p {
-    color: white;
-}
-
-.container-fluid {
-    height: fit-content;
-    background-color: green;
-}
-
-.footer a {
-    color: green;
-    text-decoration: none;
-}
+/* social media icons start*/
 
 #socialMedia {
-    position: absolute;
+    position: fixed;
     bottom: 15px;
 }
 
@@ -95,7 +67,7 @@ nav {
     z-index: 1100px;
 }
 
-/* footer end */
+/* social media icons end */
 
 #end {
     text-align: center;
