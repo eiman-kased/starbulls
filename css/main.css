@@ -1,5 +1,6 @@
 /*css accross all pages*/
-.navbar-custom{
+
+.navbar-custom {
     background-color: green;
 }
 
@@ -8,36 +9,36 @@ h1 {
     border-style: double;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-    color:white;
+    color: white;
     font-size: 60px;
-   padding-top: 4px;
+    padding-top: 4px;
 }
 
-h2{
-   font-size: 45px;
+h2 {
+    font-size: 45px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-    font-weight:lighter;
+    font-weight: lighter;
     margin-bottom: -0.3em;
     margin-top: 0.1em;
-  
 }
 
-.us{
+.us {
     font-size: 45px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: underline;
     text-align: center;
-    font-weight:lighter;
+    font-weight: lighter;
     margin-bottom: -0.3em;
     margin-top: 0.1em;
 }
 
-body {
+/* body {
     background-color: white;
-}
+} */
 
 /* css for the navigation bar across all pages*/
+
 nav {
     border: 3px solid black;
     font-size: large;
@@ -45,20 +46,56 @@ nav {
 }
 
 .logo img {
-   float: left;
+    float: left;
     position: relative;
     width: 150px;
     margin: 6px;
 }
 
-#socialMedia{
-    text-align: left;
-    position:fixed;
-    width: 30px;
-    bottom: 0;
+/* Footer start*/
+
+.footer.row {
+    position: relative;
+    background-color: green;
+    color: green;
+    text-align: center;
 }
 
-#end{
+.footer h2 {
+    padding-top: 1%;
+    text-transform: uppercase;
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.footer a {
+    color: green;
+    text-decoration: none;
+}
+
+#socialMedia {
+    position: absolute;
+    bottom: 15px;
+}
+
+#socialMedia img {
+    text-align: center;
+    max-width: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px 3px #222222;
+    z-index: 1100px;
+}
+
+/* footer end */
+
+#end {
     text-align: center;
     font-size: large;
     position: relative;
@@ -66,7 +103,6 @@ nav {
     right: 0;
     width: 100%;
 }
-
 
 /* css for the table in specialsOTW.html*/
 
@@ -76,10 +112,10 @@ table, th, td {
     text-align: center;
     border-color: black;
     margin-top: 2em;
-   width: 100%;
+    width: 100%;
 }
 
-dt{
+dt {
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline;
@@ -89,18 +125,16 @@ dt{
     position: relative;
     left: auto;
     text-align: left;
-    font-family:serif;
+    font-family: serif;
     ;
-
 }
-
 
 /*css for mainPage.html*/
 
 #ingredients {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/3dletUn");
-   height: 400px;
-   background-position: center;
+    height: 400px;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -116,11 +150,11 @@ dt{
 }
 
 #wingplatter {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/wingplatter.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/wingplatter.jpg");
     height: 400px;
-   background-position: left;
+    background-position: left;
     background-repeat: repeat;
-    position: relative; 
+    position: relative;
     width: 100%;
     background-size: 100%;
 }
@@ -137,6 +171,7 @@ dt{
 }
 
 /*for mainpage.html wingassortment text*/
+
 .connectTexts {
     text-align: left;
     padding: 40px;
@@ -149,8 +184,8 @@ dt{
 
 #connect img {
     padding: 20px;
-  object-fit: contain;
-  width: 500px;
+    object-fit: contain;
+    width: 500px;
 }
 
 .column {
@@ -161,25 +196,24 @@ dt{
 .column img {
     /*width: 400px;
 float: right;*/
-padding: 20px;
-  width: 600px;
-  object-fit: contain;
+    padding: 20px;
+    width: 600px;
+    object-fit: contain;
 }
 
-
 /* css for starbull.php*/
+
 .cwing {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/cwing.jpg");
     height: 400px;
-   background-position: left;
+    background-position: left;
     background-repeat: repeat;
-    position: relative; 
+    position: relative;
     width: 100%;
     background-size: 100%;
 }
 
 /*css for us.html*/
-
 
 p {
     font-size: 25px;
@@ -206,9 +240,10 @@ h3 {
 }
 */
 
-.navbar.sticky-top{
+.navbar.sticky-top {
     z-index: 1100;
 }
+
 .accordion-header.sticky-top {
     top: 180px;
-} 
+}

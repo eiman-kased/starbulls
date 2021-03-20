@@ -10,14 +10,6 @@
 </head>
 
 <body>
-	<div id="socialMedia">
-		<a href="http://www.instagram.com/" class="btn btn-default" target="_blank">
-			<img src="images\instagram.png" alt="Instagram"></a>
-		<a href="http://www.facebook.com/" class="btn btn-default" target="_blank">
-			<img src="images\fb.png" alt="facebook"></a>
-		<a href="http://www.twitter.com/" class="btn btn-default" target="_blank">
-			<img src="images\_twitter.png" alt="twitter"></a>
-	</div>
 	<div class="header">
 		<div class="logo">
 			<a href="index.php" class="logo">
@@ -104,7 +96,7 @@
 			00001010 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
 		</b>
 	</div>
-	</footer>
+	<?php include 'footer.php';?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
