@@ -9,9 +9,6 @@ body {
 }
 
 h1 {
-	/* background-color: green;
-	border-style: double;
-	font-family: Georgia, 'Times New Roman', Times, serif; */
 	text-align: center;
 	color: white;
 	font-size: 60px;
@@ -33,7 +30,6 @@ body {
 
 table, th, td {
 	border: 3px solid black;
-	/* font-family: cursive; */
 	text-align: center;
 	border-color: white;
 }
@@ -48,7 +44,6 @@ p {
 
 #hours {
 	text-align: left;
-	/* font-family: 'Times New Roman', Times, serif; */
 }
 
 * {
@@ -67,7 +62,6 @@ p {
 nav {
 	border: 3px solid black;
 	font-size: large;
-	/* font-family: 'Times New Roman', Times, serif; */
 }
 
 #Specials {
@@ -79,7 +73,6 @@ nav {
 
 h2 {
 	font-size: 45px;
-	/* font-family: Georgia, 'Times New Roman', Times, serif; */
 	text-decoration: underline;
 	text-align: center;
 	font-weight: bold;
@@ -97,7 +90,6 @@ dt {
 
 dd {
 	font-size: 20px;
-	/* font-family: 'Courier New', monospace; */
 }
 
 .logo img {
@@ -124,7 +116,6 @@ hr {
 h3 {
 	text-align: center;
 	font-size: 45px;
-	/* font-family: 'Courier New', monospace; */
 	margin-bottom: 1em;
 	margin-top: 0.1em;
 	font-weight: lighter;
