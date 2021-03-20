@@ -1,22 +1,8 @@
-h1 {
-    background-color: green;
-    border-style: double;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    color:white;
-    font-size: 60px;
-}
-
 h2{
     font-size: 35px;
-   font-family: 'Montserrat', sans-serif;
-  
+   font-family: 'Montserrat', sans-serif;  
 }
 
-body {
-    background-color: white;
-    /*text-align: center;*/
-}
 .row {
     display: flex;
 }
