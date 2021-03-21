@@ -27,7 +27,6 @@ body {
 nav {
 	background-color: #048004;
 	font-size: large;
-	font-family: 'Times New Roman', Times, serif;
 }
 
 .logo img {
@@ -39,11 +38,6 @@ nav {
 
 .row {
 	display: flex;
-}
-
-nav {
-	border: 3px solid black;
-	font-size: large;
 }
 
 .column {

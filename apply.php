@@ -9,27 +9,11 @@ ini_set('display_errors', 1);
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/starbull.css">
-	<title>STARBULLS Apply</title>
+	<title>Apply</title>
 </head>
 
 <body>
-	<div class="header">
-		<div class="logo">
-			<a href="index.php" class="logo">
-				<img src="images/starbulls_logo.png" alt="logo" />
-			</a>
-		</div>
-
-		<h1>STARBULLS</h1>
-			<div class="topnav">
-				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
-				<a href="about.php">About Us</a>
-				<a href="apply.php">Apply Now</a>
-			</div>
-	</div>
-
-
+	<?php include 'navbar.php'; ?>
 	<div id="socialMedia">
 		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
 			<img src="images\instagram.png" alt="Instagram"></a>
@@ -84,15 +68,8 @@ ini_set('display_errors', 1);
 				<p>John L: "StarBulls offers a great astmosphere; everyone is very relaxed!"</p>
 			</div></br>
 		</div>
-	</div>
-	</br>
-	<?php include 'forms/user.form.php';?>
-	<div id="end">
-		<b>
-			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
-		</b>
-
-	</div>
+	</div></br>
+	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 

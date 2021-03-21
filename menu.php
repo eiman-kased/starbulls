@@ -7,47 +7,11 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<title>STARBULLS Menu</title>
+	<title>Menu</title>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
-		<div class="container-fluid">
-			<div class="logo">
-				<a href="index.php" class="logo">
-					<img src="images/starbulls_logo.png" alt="logo" />
-				</a>
-			</div>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="about.php">ABOUT US</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							MENU
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="#cafe">Cafe</a></li>
-							<li><a class="dropdown-item" href="#breakfastSingles">Breakfast</a></li>
-							<li><a class="dropdown-item" href="#tradWings">Wings</a></li>
-							<li><a class="dropdown-item" href="#dinner">Dinner+Sides</a></li>
-						</ul>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="specialMenu.php">WEEKLY SPECIALS</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="apply.php">APPLY NOW</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+	<?php include 'navbar.php'; ?>
 	<div class="accordion accordion-flush" id="accordianMenu">
 		<div class="accordion-item">
 			<h2 class="accordion-header sticky-top" id="coffee">
@@ -216,22 +180,7 @@
 				</div>
 			</div>
 		</div>
-
-		<div id="socialMedia">
-			<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
-				<img src="images\instagram.png" alt="Instagram"></a>
-			<a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
-				<img src="images\fb.png" alt="facebook"></a>
-			<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
-				<img src="images\_twitter.png" alt="twitter"></a>
-		</div>
-		<div id="end">
-			<b>
-				Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100
-				Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
-			</b>
-
-		</div>
+		<?php include 'footer.php'; ?>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
