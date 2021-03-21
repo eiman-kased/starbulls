@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" />
-	<title>About Us</title>
+	<title>STARBULLS About Us</title>
 </head>
 
 <body>
@@ -26,14 +26,12 @@
 		</div>
 
 		<h1>STARBULLS</h1>
-			<div class="topnav">
-				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
-				<a href="about.php">About Us</a>
-				<a href="apply.php">Apply Now</a>
-			</div>
-		
-	</div>
+		<div class="topnav">
+			<a href="menu.php">Menu</a>
+			<a href="specialMenu.php">Specials Of The Week</a>
+			<a href="about.php">About Us</a>
+			<a href="apply.php">Apply Now</a>
+		</div>
 	</div>
 	<h2 class="us">About Us</h2>
 
