@@ -88,7 +88,7 @@ if (isset($_POST['reviewSubmit'])) {
 
 <form method="post" action="">
 	Enter an Email<input type="email" id="userEmail" name="userEmail" placeholder="email@example.com" required <?= (!empty($userEmail) ? 'value="' . $userEmail . '"' : '') ?> <?= (isset($error['userEmail']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['userEmail'] ?? '' ?>
-	Score Rating:<input type="number" step="0.5" name="score" min="0" max="5" value=' <?= (is_numeric($score) ? $score : '') ?>' <?= (isset($error['score']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['score'] ?? '' ?>
+	Score Rating:<input type="number" step="0.5" name="score" min="0" max="5" <?= (is_numeric($score) ? "value='$score'" : '') ?>' <?= (isset($error['score']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['score'] ?? '' ?>
 	Please Leave a Message Here:<textarea id="comment" name="comment" rows="5" cols="50" <?= (isset($error['comment']) ? 'class="is-invalid"' : '') ?> required><?= (!empty($comment) ? $comment : '') ?> </textarea> <?= $error['comment'] ?? '' ?>
 
 	<input type="submit" name="reviewSubmit" value="Submit" />
