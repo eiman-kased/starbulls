@@ -14,35 +14,7 @@ ini_set('display_errors', 1);
 </head>
 
 <body>
-<<<<<<< HEAD
-	<div class="header">
-		<div class="logo">
-			<a href="index.php" class="logo">
-				<img src="images/starbullslogo.png" alt="logo" />
-			</a>
-		</div>
-
-		<h1>STARBULLS
-			<div class="topnav">
-				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
-				<a href="about.php">About Us</a>
-				<a href="apply.php">Apply Now</a>
-			</div>
-		</h1>
-	</div>
-=======
 	<?php include 'navbar.php'; ?>
-	<div id="socialMedia">
-		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
-			<img src="images\instagram.png" alt="Instagram"></a>
-		<a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
-			<img src="images\fb.png" alt="facebook"></a>
-		<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
-			<img src="images\_twitter.png" alt="twitter"></a>
-	</div>
-
->>>>>>> master
 	<div class="hero">
 		<div class="hero-text">
 			<h2>Become a Part of the StarBulls</h2>

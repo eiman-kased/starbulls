@@ -7,42 +7,10 @@
 	<title>About Us</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" />
-<<<<<<< HEAD
 	<link rel="stylesheet" href="css/socialIcon.css" />
-	<title>About Us</title>
 </head>
-
-<body>
-	<div class="header">
-		<div class="logo">
-			<a href="index.php" class="logo">
-				<img src="images/starbullslogo.png" alt="logo" />
-			</a>
-		</div>
-
-		<h1>STARBULLS
-			<div class="topnav">
-				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
-				<a href="about.php">About Us</a>
-				<a href="apply.php">Apply Now</a>
-			</div>
-		</h1>
-	</div>
-=======
-</head>
-
 <body>
 	<?php include 'navbar.php'; ?>
-	<div id="socialMedia">
-		<a href="http://www.instagram.com/" class="btn btn-default" target="_blank">
-			<img src="images\instagram.png" alt="Instagram"></a>
-		<a href="http://www.facebook.com/" class="btn btn-default" target="_blank">
-			<img src="images\fb.png" alt="facebook"></a>
-		<a href="http://www.twitter.com/" class="btn btn-default" target="_blank">
-			<img src="images\_twitter.png" alt="twitter"></a>
->>>>>>> master
-	</div>
 	<h2 class="us">About Us</h2>
 	<div class="company">
 		<h3>Company Information</h3>
