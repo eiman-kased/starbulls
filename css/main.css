@@ -67,9 +67,7 @@ nav {
     width: 100%;
 }
 
-
 /* css for the table in specialsOTW.html*/
-
 table, th, td {
     border: 1.2px solid black;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -94,9 +92,7 @@ dt{
 
 }
 
-
 /*css for mainPage.html*/
-
 #ingredients {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/3dletUn");
    height: 400px;
@@ -159,8 +155,6 @@ dt{
 }
 
 .column img {
-    /*width: 400px;
-float: right;*/
 padding: 20px;
   width: 600px;
   object-fit: contain;
@@ -179,8 +173,6 @@ padding: 20px;
 }
 
 /*css for us.html*/
-
-
 p {
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -191,21 +183,6 @@ h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Sticky elements for Menu page */
-
-/* ?? wondering if this media query is part of the answer for adjusting accordion header sticky height after hamburger menu is toggled ?? 
-
-@media only screen and (max-width: 980px){
- .navbar-collapse .collapse .show {
- 
-    then adjust .accordion-header.sticky-top{ 
-        top: 250px;
-
-    }  ??
- }
-}
-*/
-
 .navbar.sticky-top{
     z-index: 1100;
 }
@@ -214,18 +191,6 @@ h3 {
 } 
 
 /* beginning of CSS for specials */
-
-
-.row {
-    display: flex;
-}
-
-nav {
-    border: 3px solid black;
-    font-size: large;
-    font-family: 'Times New Roman', Times, serif;
-}
-
 .column {
     float: left;
     width: 50%;
@@ -236,8 +201,6 @@ nav {
     left: auto;
     text-align: left;
     font-family:serif;
-    ;
-
 }
 
 #socialMedia{
@@ -245,7 +208,6 @@ nav {
     position:fixed;
     width: 30px;
     bottom: 0;
-
 }
 
 #end{
@@ -283,6 +245,7 @@ input {
 padding: 2% 2%;
 border-radius: 6px;
 }
+
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/2N5kvOq");
     height: 400px;
@@ -307,7 +270,6 @@ border-radius: 6px;
    padding-top: 20px;
 }
 
- 
 .column-left {
     width: 50%;
     margin-left: 20%;
@@ -317,6 +279,7 @@ border-radius: 6px;
     width: 80%;
     padding-top: 1px;
 }
+
 .review1 {
     background-color: rgba(122, 242, 132, 0.461);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -324,6 +287,7 @@ border-radius: 6px;
     text-align: center;
     padding: 6%;
 }
+
 .review2 {
     background-color: rgba(116, 108, 108, 0.742);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -338,15 +302,14 @@ border-radius: 6px;
     border: 1px solid black;
 }
 
-
 .container {
     display: inline-block;
     width: 100%;
 }
+
 .company, .heritage, .tools {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 6px;
     text-align: center;
     padding: 4%;
 }
-/*
