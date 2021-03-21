@@ -11,30 +11,13 @@ if (session_status() === PHP_SESSION_NONE) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>
+	<title>STARBULLS</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css\main.css">
 </head>
 
 <body>
-	<div class="header">
-		<div class="logo">
-			<a href="index.php" class="logo">
-				<img src="images/starbullslogo.png" alt="logo" />
-			</a>
-		</div>
-
-		<h1>STARBULLS
-			<div class="topnav">
-				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
-				<a href="about.php">About Us</a>
-				<a href="apply.php">Apply Now</a>
-			</div>
-		</h1>
-	</div>
-	</div>
-
+	<?php include 'navbar.php'; ?>
 	<div name="ingredients" class="ingredients" id="ingredients">
 		<div class="ingredients-text">
 			<h2>Only the best of the best here at StarBulls</h2>
@@ -42,7 +25,6 @@ if (session_status() === PHP_SESSION_NONE) {
 				only purchase high-quality ingredients that are ethically sourced.</p>
 		</div>
 	</div>
-
 	<div id="hours">
 		<h2>Hours of Operation</h2>
 		<table class="table">
@@ -107,30 +89,11 @@ if (session_status() === PHP_SESSION_NONE) {
 
 			</div>
 		</div> </br></br>
-
-
 		<div id="wingplatter">
 		</div>
 	</div>
 	</div> </br>
-
-	<div id="socialMedia">
-		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
-			<img src="images\instagram.png" alt="Instagram"></a>
-		<a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
-			<img src="images\fb.png" alt="facebook"></a>
-		<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
-			<img src="images\_twitter.png" alt="twitter"></a>
-	</div> </br>
-	<?php include 'forms/review.form.php' ?>
-	<footer>
-		<div id="end">
-			<b>
-				Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
-				Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
-			</b>
-		</div>
-	</footer>
+	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
