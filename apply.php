@@ -14,6 +14,7 @@ ini_set('display_errors', 1);
 </head>
 
 <body>
+<<<<<<< HEAD
 	<div class="header">
 		<div class="logo">
 			<a href="index.php" class="logo">
@@ -30,6 +31,18 @@ ini_set('display_errors', 1);
 			</div>
 		</h1>
 	</div>
+=======
+	<?php include 'navbar.php'; ?>
+	<div id="socialMedia">
+		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
+			<img src="images\instagram.png" alt="Instagram"></a>
+		<a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
+			<img src="images\fb.png" alt="facebook"></a>
+		<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
+			<img src="images\_twitter.png" alt="twitter"></a>
+	</div>
+
+>>>>>>> master
 	<div class="hero">
 		<div class="hero-text">
 			<h2>Become a Part of the StarBulls</h2>
@@ -75,26 +88,8 @@ ini_set('display_errors', 1);
 				<p>John L: "StarBulls offers a great astmosphere; everyone is very relaxed!"</p>
 			</div></br>
 		</div>
-	</div>
-	</br>
-	<?php include 'forms/user.form.php';?>
-	<div id="end">
-		<b>
-			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
-		</b>
-
-	</div>
-	<div id="socialMedia">
-		<a href="http://www.instagram.com/" class="btn btn-default" target="_blank">
-			<img src="images\instaIcon.jpg" alt="Instagram">
-		</a>
-		<a href="http://www.facebook.com/" class="btn btn-default" target="_blank">
-			<img src="images\faceIcon.jpg" alt="facebook">
-		</a>
-		<a href="http://www.twitter.com/" class="btn btn-default" target="_blank">
-			<img src="images\twitterIcon.jpg" alt="twitter">
-		</a>
-	</div>
+	</div></br>
+	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 

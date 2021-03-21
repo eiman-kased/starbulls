@@ -4,31 +4,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>
+	<title>STARBULLS</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css\main.css">
 	<link rel="stylesheet" href="css/socialIcon.css" />
 </head>
 
 <body>
-	<div class="header">
-		<div class="logo">
-			<a href="index.php" class="logo">
-				<img src="images/starbullslogo.png" alt="logo" />
-			</a>
-		</div>
-
-		<h1>STARBULLS
-			<div class="topnav">
-				<a href="menu.php">Menu</a>
-				<a href="specialMenu.php">Specials Of The Week</a>
-				<a href="about.php">About Us</a>
-				<a href="apply.php">Apply Now</a>
-			</div>
-		</h1>
-	</div>
-	</div>
-
+	<?php include 'navbar.php'; ?>
 	<div name="ingredients" class="ingredients" id="ingredients">
 		<div class="ingredients-text">
 			<h2>Only the best of the best here at StarBulls</h2>
@@ -36,7 +19,6 @@
 				only purchase high-quality ingredients that are ethically sourced.</p>
 		</div>
 	</div>
-
 	<div id="hours">
 		<h2>Hours of Operation</h2>
 		<table class="table">
@@ -101,28 +83,11 @@
 
 			</div>
 		</div> </br></br>
-
-
 		<div id="wingplatter">
 		</div>
 	</div>
 	</div> </br>
-	<b>
-		Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
-		Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
-	</b>
-	</div>
-	<div id="socialMedia">
-		<a href="http://www.instagram.com/" class="btn btn-default" target="_blank">
-			<img src="images\instaIcon.jpg" alt="Instagram">
-		</a>
-		<a href="http://www.facebook.com/" class="btn btn-default" target="_blank">
-			<img src="images\faceIcon.jpg" alt="facebook">
-		</a>
-		<a href="http://www.twitter.com/" class="btn btn-default" target="_blank">
-			<img src="images\twitterIcon.jpg" alt="twitter">
-		</a>
-	</div>
+	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
