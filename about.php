@@ -29,8 +29,9 @@
 	</div>
 	<div class="heritage">
 		<h3>Our Heritage</h3>
-		<p>We are humbled by the success of our company thus far. The name StarBulls was created by Will, one of our founders. Fueled by a continual flow of caffiene and blue cheese, Will opened StarBulls in Febuary of 2021.</p>
-		<p>
+		<p>We are humbled by the success of our company thus far. The name StarBulls was created by Will, 
+			one of our founders. Fueled by a continual flow of caffeine and blue cheese, Will opened StarBulls in Febuary of 2021.
+		</p>
 		<p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
 			look at our site! A beauty to say the least.
 		</p>
@@ -43,8 +44,8 @@
 	</div>
 	<div class="tools">
 		<h3>Tools We Used</h3>
-		<p>Like any other company, the founders of StarBulls relied on various resources and tools that helped
-			them get the site up and running! We want to share these resources and tools with the world.
+		<p>Like any other company, the founders of StarBulls rely on various resources and tools to help
+			create this site. We want to share our tools and resources with the world!
 		</p>
 		<h3>They are:</h3>
 		<ol>

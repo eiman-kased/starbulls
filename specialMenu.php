@@ -23,9 +23,9 @@
 					<p>Come and enjoy hot milk chocolate for a party of 4 for only the price of 3.
 						The Milk Chocolate Monday package comes with a giant mug of decadent hot chocolate and only two spoons so sharing is caring!
 						Milk Chocolate Mondays are a good way to get closer with family and friends. <br />Don't
-						have friends? Have no fear, our StarBulls matchmaker is here. Come to the counter and ask to
+						have friends? Have no fear, our StarBulls Matchmaker&trade; is here. Come to the counter and ask to
 						sign up for a matchmaking table where we set you up with people also looking
-						for new friends...or family. ($50/per table of 4)</p>
+						for new friends...or...family... ($50/per table of 4)</p>
 				</div>
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 			</h2>
 			<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="thursday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
-					<p>On Thursdays, we shut down our kitchen and open up our giant drinks bar. There will be
+					<p>On Thursdays, we completely shut down our kitchen and open up our giant drinks bar. There will be
 						discounted
 						beverages all day long. Although our full menu will not be available, come and sit down with
 						your friends

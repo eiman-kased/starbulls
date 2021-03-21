@@ -25,7 +25,7 @@ ini_set('display_errors', 1);
 
 	<div class="hero">
 		<div class="hero-text">
-			<h2>Join the StarBull's Team</h2>
+			<h2>Join the StarBulls' Team</h2>
 			<p>Apply Today!</p>
 		</div>
 	</div>

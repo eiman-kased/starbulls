@@ -14,7 +14,7 @@
 	<div name="ingredients" class="ingredients" id="ingredients">
 		<div class="ingredients-text">
 			<h2>Only the Best</h2>
-			<p>At StarBulls we strive to provide our customers with the freshest ingredients that are locally and/or ethically sourced.</p>
+			<p>At StarBulls we strive to provide our customers with the freshest ingredients. All locally and/or ethically sourced.</p>
 		</div>
 	</div>
 	<div id="hours">
@@ -71,7 +71,7 @@
 				<div id="connect">
 					<div class="connectTexts">
 						<h2>Enjoy a Variety of Food!</h2>
-						<p>We offer a diverse selection of food and drink options to satisfy any craving!</p> </br>
+						<p>We offer a variety of food and drinks to satisfy any and all cravings!</p> </br>
 						<p>Head over to our menu page!</p>
 					</div>
 				</div>

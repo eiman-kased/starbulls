@@ -42,7 +42,7 @@
 			<div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="regularCoffee" data-bs-parent="#accordianMenu">
 				<div class="accordion-body">
 					<ul class="list-group">
-						<li class="list-group-item">Regular Cup of Joe</li><br />
+						<li class="list-group-item">Regular Cup O' Joe</li><br />
 						<li class="list-group-item">Decaf - $2.00</li><br />
 						<li class="list-group-item">Hot Chocolate - $2.00</li><br />
 						<li class="list-group-item">Cafe Mocha - $2.00</li><br />
@@ -165,7 +165,7 @@
 			<div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="sides" data-bs-parent="#accordianMenu">
 				<div class="accordion-body">
 					<ul class="list-group">
-						<li class="list-group-item">Eggs: Scrambled, Over Easy, Sunny Side, Boiled</li><br />
+						<li class="list-group-item">Eggs: Scrambled, Over Easy, Sunny Side Up, Boiled</li><br />
 						<li class="list-group-item">Great Grandad's Grits</li><br />
 						<li class="list-group-item">Sausage</li><br />
 						<li class="list-group-item">Cream of Wheat</li><br />
