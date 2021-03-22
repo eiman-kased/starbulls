@@ -86,7 +86,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 			<div class="column">
 				<img src="images/wingassortment.jpg" />
-
 			</div>
 		</div> </br></br>
 		<div id="wingplatter">
