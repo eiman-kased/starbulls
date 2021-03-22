@@ -87,12 +87,22 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="friday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-					Flying Friday
+					Forgeddabuhdit Fridays
 				</button>
 			</h2>
 			<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="friday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
-					<p>If you come to StarBulls on a Friday, prepare to be taken on a ride. We completely transform the
+					<p>Did this week suck the life out of you? We get it. On Friday's we bust out 
+						some of our more experimental beverages with a bit more...spirit. Sometimes you need something a 
+						bit stronger than coffee. Our top barista's take the floor to share their latest craft microbrews, vodkas, and burbon 
+						inspired by StarBulls most popular drinks and plates. Forget the nonsense 
+
+
+						Spirit
+						
+					Trying to keep up with the daily f 
+						
+					If you come to StarBulls on a Friday, prepare to be taken on a ride. We completely transform the
 						restaurant
 						to make it simulate you're in the clouds. With a little imagination, you will be flying to your
 						dream location.
