@@ -87,14 +87,6 @@ dt {
 
 /*css for mainPage.html*/
 
-#ingredients {
-	height: 200px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-
 .ingredients-text {
 	text-align: center;
 	position: relative;
