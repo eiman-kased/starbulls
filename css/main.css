@@ -135,7 +135,7 @@ dt {
     padding: 40px;
 }
 
-.row {
+.row.row-index {
     display: flex;
     background-color: lightgray;
 }
@@ -204,4 +204,14 @@ h3 {
 
 .accordion-header.sticky-top {
     top: 180px;
+
+}
+
+#reviewForm {
+    background-color: rgb(83, 184, 69);
+    width: 85%;
+    margin: auto;
+    border-radius: 10px;
+}
+#reviewForm .form-control {
 }

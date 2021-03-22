@@ -60,7 +60,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		</table>
 		</br></br>
 
-		<div class="row">
+		<div class="row row-index">
 			<div class="column">
 				<div id="connect">
 					<img src="images/connect.jpg" />
@@ -75,7 +75,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row row-index">
 			<div class="column">
 				<div id="connect">
 					<div class="connectTexts">
