@@ -11,20 +11,11 @@ body {
   text-align: center;
 }
 
-#socialMedia {
-  text-align: left;
-  position: fixed;
-  width: 30px;
-  bottom: 0;
-}
-
-table,
-th,
-td {
-  border: 3px solid black;
-  font-family: cursive;
-  text-align: center;
-  border-color: white;
+table, th, td {
+    border: 3px solid black;
+    font-family: cursive;
+    text-align: center;
+    border-color: white;
 }
 
 table {

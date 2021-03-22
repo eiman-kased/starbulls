@@ -7,9 +7,11 @@
 	<title>Menu</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="css/socialIcon.css" />
 </head>
 
 <body>
+<<<<<<< HEAD
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
 		<div class="container-fluid">
 			<div class="logo">
@@ -46,9 +48,12 @@
 			</div>
 	</nav>
 
+=======
+	<?php include 'navbar.php'; ?>
+>>>>>>> master
 	<div class="accordion accordion-flush" id="accordianMenu">
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="coffee">
+			<h2 class="accordion-header sticky-top" id="coffee">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 					Specialty Coffee
 				</button>
@@ -69,7 +74,7 @@
 			</div>
 		</div>
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="regularCoffee">
+			<h2 class="accordion-header sticky-top" id="regularCoffee">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
 					Regular Coffee
 				</button>
@@ -90,7 +95,7 @@
 		</div>
 
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="breakfastSingles">
+			<h2 class="accordion-header sticky-top" id="breakfastSingles">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 					Breakfast Singles
 				</button>
@@ -109,7 +114,7 @@
 			</div>
 		</div>
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="breakfastCombos">
+			<h2 class="accordion-header sticky-top" id="breakfastCombos">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 					Breakfast Combos
 				</button>
@@ -127,7 +132,7 @@
 			</div>
 		</div>
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="traditionalWings">
+			<h2 class="accordion-header sticky-top" id="traditionalWings">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 					Traditional Wings - $13.99/10p | $21.99/21p
 				</button>
@@ -150,7 +155,7 @@
 		</div>
 
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="specialityWings">
+			<h2 class="accordion-header sticky-top" id="specialityWings">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
 					StarBulls Specialty Wings
 				</button>
@@ -175,7 +180,7 @@
 		</div>
 
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="bullsDinner">
+			<h2 class="accordion-header sticky-top" id="bullsDinner">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
 					Bulls Dinner
 				</button>
@@ -192,7 +197,7 @@
 		</div>
 
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="sides">
+			<h2 class="accordion-header sticky-top" id="sides">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
 					Sides
 				</button>
@@ -214,6 +219,7 @@
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 
 		<div id="socialMedia">
 			<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
@@ -230,6 +236,9 @@
 			</b>
 
 		</div>
+=======
+		<?php include 'footer.php'; ?>
+>>>>>>> master
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 

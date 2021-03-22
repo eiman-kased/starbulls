@@ -38,20 +38,14 @@ nav {
   font-family: serif;
 }
 
-#socialMedia {
-  text-align: center;
-  position: fixed;
-  width: 30px;
-  bottom: 0;
-}
 
-#end {
-  text-align: center;
-  font-size: large;
-  position: relative;
-  bottom: 0;
-  right: 0;
-  width: 100%;
+#end{
+    text-align: center;
+    font-size: large;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
 }
 
 .form-container {
