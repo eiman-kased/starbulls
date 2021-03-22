@@ -14,7 +14,7 @@
 		<div class="container-fluid">
 			<div class="logo">
 				<a href="index.php" class="logo">
-					<img src="images/starbullslogo.png" alt="logo" />
+					<img src="/imgs/starbullslogo.png" alt="logo" />
 				</a>
 			</div>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -217,11 +217,11 @@
 
 		<div id="socialMedia">
 			<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
-				<img src="images\instagram.png" alt="Instagram"></a>
+				<img src="imgs\instagram.png" alt="Instagram"></a>
 			<a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
-				<img src="images\fb.png" alt="facebook"></a>
+				<img src="imgs\fb.png" alt="facebook"></a>
 			<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
-				<img src="images\_twitter.png" alt="twitter"></a>
+				<img src="imgs\_twitter.png" alt="twitter"></a>
 		</div>
 		<div id="end">
 			<b>

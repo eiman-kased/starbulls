@@ -13,7 +13,7 @@
     <div class="header">
         <div class="logo">
             <a href="index.php" class="logo">
-                <img src="imgs/starbullslogo.png" alt="logo" />
+                <img src="/imgs/starbullslogo.png" alt="logo" />
             </a>
         </div>
 
@@ -73,7 +73,7 @@
         <div class="row">
             <div class="column">
                 <div id="connect">
-                    <img src="/imgs/pexels-photo-1542252.jpeg" />
+                    <img src="imgs/contactUs.jpeg" />
                 </div>
             </div>
             <div class="column">
