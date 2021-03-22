@@ -138,19 +138,42 @@ if (isset($_POST['userSubmit'])) {
 				// if review is associated with a user, display this message thanking them for their review
 				echo '<script language="javascript">';
 				echo 'alert("Thank you for the review ' . $userSaved->getFirstName() . '")';
+				// echo 'header.location.href = "index.php";';
+				// header ('location: index.php');
 				echo '</script>';
+				
 			}
 		};
 	}
 }
 ?>
-
-<form action='' method="post">
-	First Name:<input type="text" name="firstName" id="firstName" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> <?= (isset($error['firstName']) ? 'class="is-invalid" ' : '') ?> required /> <?= $error['firstName'] ?? '' ?>
-	Last Name:<input type="text" name="lastName" id="lastName" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> <?= (isset($error['lastName']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['lastName'] ?? '' ?>
-	Phone Number:<input type="tel" name="tel" id="tel" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> />
-	Enter an Email<input type="email" id="email" name="userEmail" placeholder="email@example.com" <?= (isset($_POST['userEmail']) ? 'value="' . $_POST['userEmail'] . '"' : '') ?> <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?>
-	Enter your Password (8 characters minimum):<input type="password" id="password" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required> <?= $error['password'] ?? '' ?>
-
-	<input type="submit" name="userSubmit" value="Submit" />
-</form>
+<div id="userAccount" class="container">
+		<form id="userForm" class="mb-0" action='' method="post">
+			<div class="row my-3">
+				<div class="col-12">
+					<h3>Sign up for a Starbulls Account</h3>
+				</div>
+				<div class="col-lg-5 col-sm-12">
+					<label class="form-label">First Name</label><input type="text" name="firstName" id="firstName" class="form-control" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> <?= (isset($error['firstName']) ? 'class="is-invalid" ' : '') ?> required /> <?= $error['firstName'] ?? '' ?>
+				</div>
+				<div class="col-lg-5 col-sm-12">
+					<label class="form-label">Last Name:</label><input type="text" name="lastName" id="lastName" class="form-control" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> <?= (isset($error['lastName']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['lastName'] ?? '' ?>
+				</div>
+				<div class="col-lg-2">
+					<label class="form-label">Phone Number:</label><input type="tel" name="tel" id="tel" class="form-control" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> />
+				</div>
+				<div class="col-lg-4 my-3">
+					<label class="form-label">Enter an Email</label><input type="email" id="email" name="userEmail" class="form-control" placeholder="email@example.com" <?= (isset($_POST['userEmail']) ? 'value="' . $_POST['userEmail'] . '"' : '') ?> <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?>
+				</div>
+				<div class="col-lg-4 my-3">
+					<label class="form-label">Enter your Password (8 characters minimum):</label><input type="password" id="password" class="form-control" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required> <?= $error['password'] ?? '' ?>
+				</div>
+				<div class="row">
+					<div class="col-lg-2 mt-2 mb-0 ">
+						<input type="submit" class="btn btn-outline-success text-dark btn-lg" name="userSubmit" value="Submit" />
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

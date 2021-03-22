@@ -92,22 +92,17 @@ if (isset($_POST['reviewSubmit'])) {
 				<div class="col-12">
 					<h3>Tell Us About Your Experience at Starbulls</h3>
 				</div>
-
 				<div class="col-lg-8 col-sm-8">
 					<label class="form-label">Enter an Email</label><input type="email" id="userEmail" class="form-control" name="userEmail" placeholder="email@example.com" required <?= (!empty($userEmail) ? 'value="' . $userEmail . '"' : '') ?> <?= (isset($error['userEmail']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['userEmail'] ?? '' ?>
 				</div>
 				<div class="col-lg-2 col-sm-4">
 					<label class="form-label">Score Rating:</label><input type="number" class="form-control" step="0.5" name="score" min="0" max="5" <?= (is_numeric($score) ? "value='$score'" : '') ?>' <?= (isset($error['score']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['score'] ?? '' ?>
 				</div>
-
-
 				<div class="col-lg-12">
 					<label class="form-label">Please Leave a Message Here:</label><textarea id="comment" class="form-control" name="comment" rows="5" cols="50" <?= (isset($error['comment']) ? 'class="is-invalid"' : '') ?> required><?= (!empty($comment) ? $comment : '') ?> </textarea> <?= $error['comment'] ?? '' ?>
 				</div>
-
-
 				<div class="col-lg-2 my-3">
-					<input type="submit" class="btn btn-outline-success" name="reviewSubmit" value="Submit" />
+					<input type="submit" class="btn btn-outline-success btn-lg" name="reviewSubmit" value="Submit" />
 				</div>
 
 		</form>
