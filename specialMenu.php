@@ -87,32 +87,14 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="friday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-					Forgeddabuhdit Fridays
+					Fugettaboudit Fridays
 				</button>
 			</h2>
 			<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="friday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
-					<p>Did this week suck the life out of you? We get it. On Friday's we bust out 
-						some of our more experimental beverages with a bit more...spirit. Sometimes you need something a 
-						bit stronger than coffee. Our top barista's take the floor to share their latest craft microbrews, vodkas, and burbon 
-						inspired by StarBulls most popular drinks and plates. Forget the nonsense 
-
-
-						Spirit
-						
-					Trying to keep up with the daily f 
-						
-					If you come to StarBulls on a Friday, prepare to be taken on a ride. We completely transform the
-						restaurant
-						to make it simulate you're in the clouds. With a little imagination, you will be flying to your
-						dream location.
-						Since the environment incorporates a flying simulation, we figured the food should give you the same
-						kind of
-						experience. So come in and order a steak which we carved into a plane. Yes, that's right, for $80
-						get a place that
-						is built by one giant ribeye along with 2 filet mignons, corn, mac&cheese, tomatoes, and a pickle.
-						For $5 more
-						add on a generous amount of ranch to create snow on the plane. ($80.00)</p>
+					<p>Did this week suck the life out of you? We get it. On Friday's we bust out some of our more experimental beverages with a bit more...spirit. Sometimes you need something a 
+                        bit stronger than coffee. Our top baristas take the floor to share their latest craft microbrews, vodkas, and bourbon inspired by StarBulls' most popular dishes and drinks. </br> 
+					</br> * Please drink responsibly *</p>
 				</div>
 			</div>
 		</div>
@@ -134,7 +116,7 @@
 						you
 						have ever eaten. <br />We are not done yet, adding onto the seasoned family, try our seasoned beer as
 						well.
-						($20.95/per 12pc combo) <br /> *Drink responsibly* </p>
+						($20.95/per 12pc combo) </p>
 				</div>
 			</div>
 		</div>
