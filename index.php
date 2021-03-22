@@ -18,9 +18,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <body>
 	<?php include 'navbar.php'; ?>
-
-
-
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<div class="item active">
@@ -37,7 +34,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 		</div>
 	</div>
-
 	<div id="hours">
 		<h2>Hours of Operation</h2>
 		<table class="table">
@@ -99,7 +95,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			<img src="imgs/chickenWings.jpg" />
 		</div>
 	</div> </br></br>
-
 	<?php include 'forms/review.form.php'; ?>
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
