@@ -38,8 +38,8 @@
 		<p>Just a week ago, StarBulls did not exist. It has taken hours of dedication to get this
 			company up on the server. Hours of frustration, trying to figure out why the code looks different on
 			our screens. Hours of trial and error as we figured out where we went wrong. One thing the
-			founders of StarBulls has known from the beginning is: Quitters Never Win. And Winners Never Quit. At
-			StarBulls we are Winners.
+			founders of StarBulls knew from the beginning is: Quitters Never Win. And Winners Never Quit. At
+			StarBulls we are Winners!
 		</p>
 	</div>
 	<div class="tools">
