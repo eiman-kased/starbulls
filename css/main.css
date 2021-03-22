@@ -184,7 +184,7 @@ h3 {
 }
 .accordion-header.sticky-top {
     top: 180px;
-} 
+}
 
 /* beginning of CSS for specials */
 .column {
@@ -308,7 +308,6 @@ border-radius: 6px;
 
 .accordion-header.sticky-top {
     top: 180px;
-
 }
 
 /* review and sign up forms */
@@ -384,4 +383,8 @@ body.signupbody {
     border-radius: 5px;
     box-shadow: 5px 5px 3px 3px #222222;
     z-index: 1300px;
+}
+
+.container.inputbox {
+    display: flex;
 }
