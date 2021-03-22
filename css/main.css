@@ -1,5 +1,6 @@
 /*css accross all pages*/
-.navbar-custom{
+
+.navbar-custom {
     background-color: green;
 }
 
@@ -8,27 +9,26 @@ h1 {
     border-style: double;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-    color:white;
+    color: white;
     font-size: 60px;
-   padding-top: 4px;
+    padding-top: 4px;
 }
 
-h2{
-   font-size: 45px;
+h2 {
+    font-size: 45px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-    font-weight:lighter;
+    font-weight: lighter;
     margin-bottom: -0.3em;
     margin-top: 0.1em;
-  
 }
 
-.us{
+.us {
     font-size: 45px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: underline;
     text-align: center;
-    font-weight:lighter;
+    font-weight: lighter;
     margin-bottom: -0.3em;
     margin-top: 0.1em;
 }
@@ -38,6 +38,7 @@ body {
 }
 
 /* css for the navigation bar across all pages*/
+
 nav {
     border: 3px solid black;
     font-size: large;
@@ -45,20 +46,14 @@ nav {
 }
 
 .logo img {
-   float: left;
+    float: left;
     position: relative;
     width: 150px;
     margin: 6px;
 }
 
-#socialMedia{
-    text-align: left;
-    position:fixed;
-    width: 30px;
-    bottom: 0;
-}
 
-#end{
+#end {
     text-align: center;
     font-size: large;
     position: relative;
@@ -67,40 +62,35 @@ nav {
     width: 100%;
 }
 
-
 /* css for the table in specialsOTW.html*/
-
 table, th, td {
     border: 1.2px solid black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     border-color: black;
     margin-top: 2em;
-   width: 100%;
+    width: 100%;
 }
 
-dt{
+dt {
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline;
 }
 
 #Specials {
-    position: relative;
+    position: absolute;
     left: auto;
     text-align: left;
-    font-family:serif;
+    font-family: serif;
     ;
-
 }
 
-
 /*css for mainPage.html*/
-
 #ingredients {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/3dletUn");
-   height: 400px;
-   background-position: center;
+    height: 400px;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -116,11 +106,11 @@ dt{
 }
 
 #wingplatter {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/wingplatter.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/wingplatter.jpg");
     height: 400px;
-   background-position: left;
+    background-position: left;
     background-repeat: repeat;
-    position: relative; 
+    position: relative;
     width: 100%;
     background-size: 100%;
 }
@@ -137,6 +127,7 @@ dt{
 }
 
 /*for mainpage.html wingassortment text*/
+
 .connectTexts {
     text-align: left;
     padding: 40px;
@@ -149,8 +140,8 @@ dt{
 
 #connect img {
     padding: 20px;
-  object-fit: contain;
-  width: 500px;
+    object-fit: contain;
+    width: 500px;
 }
 
 .column {
@@ -159,28 +150,25 @@ dt{
 }
 
 .column img {
-    /*width: 400px;
-float: right;*/
-padding: 20px;
-  width: 600px;
-  object-fit: contain;
+    width: 600px;
+    padding: 20px;
+    object-fit: contain;
+    float: right;
 }
 
-
 /* css for starbull.php*/
+
 .cwing {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/cwing.jpg");
     height: 400px;
-   background-position: left;
+    background-position: left;
     background-repeat: repeat;
-    position: relative; 
+    position: relative;
     width: 100%;
     background-size: 100%;
 }
 
 /*css for us.html*/
-
-
 p {
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -191,24 +179,148 @@ h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Sticky elements for Menu page */
-
-/* ?? wondering if this media query is part of the answer for adjusting accordion header sticky height after hamburger menu is toggled ?? 
-
-@media only screen and (max-width: 980px){
- .navbar-collapse .collapse .show {
- 
-    then adjust .accordion-header.sticky-top{ 
-        top: 250px;
-
-    }  ??
- }
-}
-*/
-
 .navbar.sticky-top{
     z-index: 1100;
 }
 .accordion-header.sticky-top {
     top: 180px;
 } 
+
+/* beginning of CSS for specials */
+.column {
+    float: left;
+    width: 50%;
+}
+
+#Specials {
+    position: absolute;
+    left: auto;
+    text-align: left;
+    font-family:serif;
+}
+
+#end{
+    text-align: center;
+    font-size: large;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.form-container {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: rgb(202, 202, 202);
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 2%;
+    }
+
+input {
+    width: 100%;
+    color: black;
+    }
+
+.name, .dob, .phone, .address, .email {
+   display: inline-block;
+    color: black;
+    border-radius: 2px;
+    padding-right: 5px;
+}
+
+.submit > input[type=submit]
+{
+padding: 2% 2%;
+border-radius: 6px;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/2N5kvOq");
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#columns {
+    column-count: 2;
+    column-width: 500px;
+   padding-top: 20px;
+}
+
+.column-left {
+    width: 50%;
+    margin-left: 20%;
+}
+
+.column-right {
+    width: 80%;
+    padding-top: 1px;
+}
+
+.review1 {
+    background-color: rgba(122, 242, 132, 0.461);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 6px;
+    text-align: center;
+    padding: 6%;
+}
+
+.review2 {
+    background-color: rgba(116, 108, 108, 0.742);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 6px;
+    text-align: center;
+    padding: 4%;
+}
+
+.review1:hover, .review2:hover {
+    background-color: rgba(255, 255, 255, .4);
+    transition: .4s;
+    border: 1px solid black;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+}
+
+.company, .heritage, .tools {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 6px;
+    text-align: center;
+    padding: 4%;
+}
+.navbar.sticky-top {
+    z-index: 1100;
+}
+
+.accordion-header.sticky-top {
+    top: 180px;
+}
+
+#socialMedia {
+    position: fixed;
+    right: 0;
+    bottom: 15px;
+    z-index: 1200;
+}
+
+#socialMedia img {
+    text-align: center;
+    max-width: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px 3px #222222;
+    z-index: 1300px;
+}

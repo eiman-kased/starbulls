@@ -3,11 +3,11 @@ CREATE DATABASE `starbulls`;
 USE `starbulls`;
 
 CREATE TABLE `starbulls`.`review` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`score` FLOAT NOT NULL DEFAULT '5.0',
-	`comment` TEXT NULL,
-	`user_id` INT NOT NULL,
-	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`id` int NOT NULL AUTO_INCREMENT,
+	`score` float NOT NULL DEFAULT '5',
+	`comment` text,
+	`user_id` int DEFAULT NULL,
+	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`)
 );
 
