@@ -229,7 +229,7 @@ input {
 }
 
 .hero {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/2N5kvOq");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgs/coffeeBanner.jpeg");
 	height: 400px;
 	background-position: center;
 	background-repeat: no-repeat;
