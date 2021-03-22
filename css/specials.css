@@ -1,0 +1,115 @@
+h1 {
+    background-color: green;
+    border-style: double;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color:white;
+    font-size: 60px;
+}
+body {
+    background-color: white;
+    text-align: center;
+}
+
+table, th, td {
+    border: 3px solid black;
+    font-family: cursive;
+    text-align: center;
+    border-color: white;
+}
+
+table {
+    width: 10%;
+}
+
+
+p {
+    text-align: center;
+}
+
+#hours {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+*{
+    box-sizing: border-box;
+}
+.column {
+
+    width: 33.33%;
+    padding: 5px;
+}
+
+.row {
+    display: flex;
+}
+
+nav {
+    border: 3px solid black;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#Specials {
+    position: absolute;
+    left: auto;
+    text-align: left;
+    font-family:serif;
+
+
+}
+
+h2{
+    font-size: 45px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    text-align: center;
+    font-weight:lighter;
+    margin-bottom: 1em;
+    margin-top: 0.1em;
+}
+
+dt{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.2em;
+}
+
+dd{
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+}
+
+.logo img {
+   float: left;
+    position: relative;
+    width: 150px;
+    margin: 6px;
+}
+
+
+hr{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#end{
+    text-align: center;
+    font-size: large;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+h3{
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 1em;
+    margin-top: 0.1em;
+    font-weight:lighter;
+}
