@@ -7,18 +7,10 @@
 	<title>About Us</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/socialIcon.css" />
 </head>
-
 <body>
 	<?php include 'navbar.php'; ?>
-	<div id="socialMedia">
-		<a href="http://www.instagram.com/" class="btn btn-default" target="_blank">
-			<img src="images\instagram.png" alt="Instagram"></a>
-		<a href="http://www.facebook.com/" class="btn btn-default" target="_blank">
-			<img src="images\fb.png" alt="facebook"></a>
-		<a href="http://www.twitter.com/" class="btn btn-default" target="_blank">
-			<img src="images\_twitter.png" alt="twitter"></a>
-	</div>
 	<h2 class="us">About Us</h2>
 	<div class="company">
 		<h3>Company Information</h3>

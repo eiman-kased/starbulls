@@ -48,15 +48,8 @@ nav {
 .logo img {
 	float: left;
 	position: relative;
-	width: 100px;
+	width: 150px;
 	margin: 6px;
-}
-
-#socialMedia {
-	text-align: left;
-	position: fixed;
-	width: 30px;
-	bottom: 0;
 }
 
 #end {
@@ -85,11 +78,10 @@ dt {
 }
 
 #Specials {
-	position: relative;
+	position: absolute;
 	left: auto;
 	text-align: left;
 	font-family: serif;
-	;
 }
 
 /*css for mainPage.html*/
@@ -156,6 +148,8 @@ dt {
 }
 
 .column img {
+	width: 400px;
+	float: right;
 	padding: 20px;
 	width: 600px;
 	object-fit: contain;
@@ -186,6 +180,10 @@ h3 {
 /* Sticky elements for Menu page */
 
 /* ?? wondering if this media query is part of the answer for adjusting accordion header sticky height after hamburger menu is toggled ?? 
+
+.navbar.sticky-top {
+	z-index: 1100;
+}
 
 .navbar.sticky-top {
 	z-index: 1100;

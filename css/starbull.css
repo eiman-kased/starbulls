@@ -40,25 +40,6 @@ nav {
 	display: flex;
 }
 
-.column {
-	float: left;
-	width: 50%;
-}
-
-#Specials {
-	position: absolute;
-	left: auto;
-	text-align: left;
-	font-family: serif;
-	;
-}
-
-#socialMedia {
-	text-align: center;
-	position: fixed;
-	width: 30px;
-	bottom: 0;
-}
 
 #end {
 	text-align: center;
