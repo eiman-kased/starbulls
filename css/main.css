@@ -150,8 +150,9 @@ dt {
 }
 
 .column img {
-padding: 20px;
-  object-fit: contain;
+    width: 600px;
+    padding: 20px;
+    object-fit: contain;
     float: right;
 }
 
