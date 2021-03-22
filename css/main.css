@@ -63,9 +63,7 @@ nav {
 
 /* css for the table in specialsOTW.html*/
 
-table,
-th,
-td {
+table, th, td {
 	border: 1.2px solid black;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	text-align: center;
@@ -90,8 +88,7 @@ dt {
 /*css for mainPage.html*/
 
 #ingredients {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-	url("/imgs/ingredients.jpeg");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgs/ingredients.jpeg");
 	height: 200px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -144,18 +141,16 @@ dt {
 }
 
 .column img {
-	/*width: 400px;
-float: right;*/
-	padding: 20px;
 	width: 600px;
+	padding: 20px;
 	object-fit: contain;
+	float: right;
 }
 
 /* css for starbull.php*/
 
 .cwing {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-	url("/imgs/coffee.jpeg");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgs/coffee.jpeg");
 	height: 350px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -176,20 +171,130 @@ h3 {
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-/* Sticky elements for Menu page */
-
-/* ?? wondering if this media query is part of the answer for adjusting accordion header sticky height after hamburger menu is toggled ?? 
-
-@media only screen and (max-width: 980px){
- .navbar-collapse .collapse .show {
- 
-	then adjust .accordion-header.sticky-top{ 
-		top: 250px;
-
-	}	??
- }
+.navbar.sticky-top {
+	z-index: 1100;
 }
-*/
+
+.accordion-header.sticky-top {
+	top: 180px;
+}
+
+/* beginning of CSS for specials */
+
+.column {
+	float: left;
+	width: 50%;
+}
+
+#Specials {
+	position: absolute;
+	left: auto;
+	text-align: left;
+	font-family: serif;
+}
+
+#end {
+	text-align: center;
+	font-size: large;
+	position: relative;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+
+.form-container {
+	display: inline-block;
+	box-sizing: border-box;
+	background-color: rgb(202, 202, 202);
+	padding: 20px;
+	padding-right: 40px;
+	border-radius: 2%;
+}
+
+input {
+	width: 100%;
+	color: black;
+}
+
+.name, .dob, .phone, .address, .email {
+	display: inline-block;
+	color: black;
+	border-radius: 2px;
+	padding-right: 5px;
+}
+
+.submit>input[type=submit] {
+	padding: 2% 2%;
+	border-radius: 6px;
+}
+
+.hero {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/2N5kvOq");
+	height: 400px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.hero-text {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
+
+#columns {
+	column-count: 2;
+	column-width: 500px;
+	padding-top: 20px;
+}
+
+.column-left {
+	width: 50%;
+	margin-left: 20%;
+}
+
+.column-right {
+	width: 80%;
+	padding-top: 1px;
+}
+
+.review1 {
+	background-color: rgba(122, 242, 132, 0.461);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 6px;
+	text-align: center;
+	padding: 6%;
+}
+
+.review2 {
+	background-color: rgba(116, 108, 108, 0.742);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 6px;
+	text-align: center;
+	padding: 4%;
+}
+
+.review1:hover, .review2:hover {
+	background-color: rgba(255, 255, 255, .4);
+	transition: .4s;
+	border: 1px solid black;
+}
+
+.container {
+	display: inline-block;
+	width: 100%;
+}
+
+.company, .heritage, .tools {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 6px;
+	text-align: center;
+	padding: 4%;
+}
 
 .navbar.sticky-top {
 	z-index: 1100;
@@ -197,4 +302,19 @@ h3 {
 
 .accordion-header.sticky-top {
 	top: 180px;
+}
+
+#socialMedia {
+	position: fixed;
+	right: 0;
+	bottom: 15px;
+	z-index: 1200;
+}
+
+#socialMedia img {
+	text-align: center;
+	max-width: 40px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 3px 3px #222222;
+	z-index: 1300px;
 }
