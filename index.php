@@ -18,13 +18,26 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <body>
 	<?php include 'navbar.php'; ?>
-	<div name="ingredients" class="ingredients" id="ingredients">
-		<div class="ingredients-text">
-			<h2>Only the best of the best here at StarBulls</h2>
-			<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
-				only purchase high-quality ingredients that are ethically sourced.</p>
+
+
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="imgs/ingredients.jpeg" alt="Los Angeles" style="width:100%;">
+				<div class="carousel-caption d-none d-md-block">
+					<div name="ingredients" class="ingredients" id="ingredients">
+						<div class="ingredients-text">
+							<h2>Only the best of the best here at StarBulls</h2>
+							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
+								only purchase high-quality ingredients that are ethically sourced.</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+
 	<div id="hours">
 		<h2>Hours of Operation</h2>
 		<table class="table">

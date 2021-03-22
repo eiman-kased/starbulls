@@ -8,6 +8,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" />
 </head>
+
 <body>
 	<?php include 'navbar.php'; ?>
 	<h2 class="us">About Us</h2>
@@ -22,19 +23,19 @@
 		<h3>Our Heritage</h3>
 		<p>We are humbled by the success of our company thus far. The name Starbulls was created by one of the founders:
 			Will. He came up with this insane concept of a restaurant that serves wings and coffee.
-		<p>
-		<p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
-			look at our site! A beauty to say the least.</p>
-		<p>Just a week ago, StarBulls did not exist. It has taken hours of dedication to get this
-			company up
-			on the server. Hours of frustration, trying to figure out why the code looks different on
-			our
-			screens. Hours of trial and error as we figured out where we went wrong. One thing the
-			founders
-			of StarBulls has known from the beginning is: Quitters Never Win. And Winners Never Quit. At
-			StarBulls we are
-			Winners.
-		</p>
+			<p>
+				<p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
+					look at our site! A beauty to say the least.</p>
+				<p>Just a week ago, StarBulls did not exist. It has taken hours of dedication to get this
+					company up
+					on the server. Hours of frustration, trying to figure out why the code looks different on
+					our
+					screens. Hours of trial and error as we figured out where we went wrong. One thing the
+					founders
+					of StarBulls has known from the beginning is: Quitters Never Win. And Winners Never Quit. At
+					StarBulls we are
+					Winners.
+				</p>
 	</div>
 	<div class="tools">
 		<h3>Tools We Used</h3>
@@ -53,6 +54,18 @@
 				classmates.
 			</li>
 		</ol>
+	</div>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="imgs/coffee.jpeg" alt=" Los Angeles" style="width:100%;">
+				<div class="carousel-caption d-none d-md-block">
+					<div class="hero-text">
+						<h2>StarBulls</h2>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
