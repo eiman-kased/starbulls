@@ -115,8 +115,9 @@ dt {
 }
 
 .row {
-	display: flex;
-	background-color: lightgray;
+    display: flex;
+    margin: auto;
+    background-color: lightgray;
 }
 
 #connect img {
