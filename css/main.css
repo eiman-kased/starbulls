@@ -34,7 +34,9 @@ h2 {
 }
 
 body {
+    position: relative;
     background-color: white;
+    margin-bottom: 100px;
 }
 
 /* css for the navigation bar across all pages*/
@@ -63,8 +65,9 @@ nav {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    bottom: -100;
+    left: 0;
     width: 100%;
 }
 
@@ -320,10 +323,10 @@ border-radius: 6px;
 
 #userForm h3 {
     font-family: 'Montserrat', Arial, sans-serif;
-    text-shadow: 3px 3px 0px rgb(145, 250, 131);
+    font-weight: bold;
 }
 
-#bg {
+.wrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -355,7 +358,6 @@ border-radius: 6px;
 
 #reviewForm h3 {
     font-family: 'Montserrat', Arial, sans-serif;
-    text-shadow: 3px 3px 0px rgb(145, 250, 131);
 }
 
 #reviewForm {
