@@ -17,7 +17,7 @@ ini_set('display_errors', 1);
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="imgs/coffeeBanner.jpeg"" alt=" Los Angeles" style="width:100%;">
+				<img src="imgs/coffeeBanner.jpeg"" alt=" Los Angeles" height="500px" width="100%">
 				<div class="carousel-caption d-none d-md-block">
 					<div class="hero-text">
 						<h2>Become a Part of the StarBulls</h2>
