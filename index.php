@@ -25,7 +25,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			<div class="item active">
 				<div class="carousel-caption d-none d-md-block">
 					<div name="ingredients" class="ingredients" id="ingredients">
-						<div class="ingredients-text">
+						<div class="hero-text">
 							<h2>Only the best of the best here at StarBulls</h2>
 							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
 								only purchase high-quality ingredients that are ethically sourced.</p>
