@@ -18,10 +18,14 @@
 							MENU
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="#cafe">Cafe</a></li>
-							<li><a class="dropdown-item" href="#breakfastSingles">Breakfast</a></li>
-							<li><a class="dropdown-item" href="#tradWings">Wings</a></li>
-							<li><a class="dropdown-item" href="#dinner">Dinner+Sides</a></li>
+							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#coffee">Specialty Coffee</a></li>
+							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#regularcoffee">Coffee</a></li>
+							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#breakfastsingles">Breakfast Singles</a></li>
+							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#breakfastcombos">Breakfast Combos</a></li>
+							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#traditionalwings">Traditional Wings</a></li>
+							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#specialitywings">Starbulls Speciality Wings</a></li>
+							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#bullsDinner">Bulls Dinner</a></li>
+							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#sides">Sides</a></li>
 						</ul>
 					</li>
 					<li class="nav-item">
