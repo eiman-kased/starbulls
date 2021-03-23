@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	<?php include 'navbar.php'; ?>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
-			<img src="imgs/ingredients.jpeg" alt="Los Angeles" width="100%">
+			<img src="imgs/cofee1.png" width="100%">
 			<div class="item active">
 				<div class="carousel-caption d-none d-md-block">
 					<div name="ingredients" class="ingredients" id="ingredients">

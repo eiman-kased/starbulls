@@ -16,8 +16,8 @@ ini_set('display_errors', 1);
 	<?php include 'navbar.php'; ?>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
+			<img src="imgs/coffee12.png" width="100%">
 			<div class="item active">
-				<img src="imgs/coffeeBanner.jpeg"" alt=" Los Angeles" height="500px" width="100%">
 				<div class="carousel-caption d-none d-md-block">
 					<div class="hero-text">
 						<h2>Become a Part of the StarBulls</h2>

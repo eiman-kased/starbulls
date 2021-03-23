@@ -58,7 +58,7 @@
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="imgs/coffee.jpeg" alt=" Los Angeles" height="500" style="width:100%;">
+				<img src="imgs/cofee3.png" width="100%">
 				<div class="carousel-caption d-none d-md-block">
 					<div class="hero-text">
 						<h2>StarBulls</h2>
