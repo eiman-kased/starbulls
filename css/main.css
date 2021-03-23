@@ -319,8 +319,8 @@ border-radius: 6px;
 
 body.signupbody {
     background-image: url("https://static01.nyt.com/images/2016/02/09/dining/09COOKING_CHICKENWINGS2/09COOKING_CHICKENWINGS2-superJumbo.jpg");
-    background-color: rgb(255,255,255,0.4);
-    background-blend-mode: lighten;
+    background-color: rgba(53, 48, 48, 0.4);
+    background-blend-mode: darken;
 }
 
 #userAccount {
@@ -328,9 +328,7 @@ body.signupbody {
     font-size: larger;
     background-color: rgb(83, 184, 69);
     width: auto;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 125px auto 0px auto;
     border: 5px;
     border-radius: 10px;
     border-style: outset;
