@@ -163,7 +163,7 @@ if (isset($_POST['userSubmit'])) {
 				<label class="form-label" for="">Enter an Email</label><input type="email" id="email" name="userEmail" class="form-control" placeholder="email@example.com" <?= (isset($_POST['userEmail']) ? 'value="' . $_POST['userEmail'] . '"' : '') ?> <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?>
 			</div>
 			<div class="col-lg-5 col-md-6 col-sm-12 my-2">
-				<label class="form-label" for="">Enter your Password (8 characters minimum):</label><input type="password" id="password" class="form-control" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required> <?= $error['password'] ?? '' ?>
+				<label class="form-label" for="">Enter your Password (8 characters minimum):</label><input type="password" id="password" class="form-control" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['password'] ?? '' ?>
 			</div>
 			<div class="row">
 				<div class="col-lg-2 col-sm-12 mt-2 mb-0 ">
