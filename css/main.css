@@ -205,7 +205,7 @@ input {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	text-shadow: 2px 2px black;
+	text-shadow: 3px 3px 6px black;
 }
 
 #columns {
