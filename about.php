@@ -57,8 +57,8 @@
 	</div>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
+			<img src="imgs/cofee3.png" width="100%">
 			<div class="item active">
-				<img src="imgs/cofee3.png" width="100%">
 				<div class="carousel-caption d-none d-md-block">
 					<div class="hero-text">
 						<h2>StarBulls</h2>
