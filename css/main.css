@@ -4,6 +4,10 @@
 	background-color: green;
 }
 
+.carousel-inner {
+	height: 400px;
+}
+
 h1 {
 	background-color: green;
 	border-style: double;
@@ -115,9 +119,9 @@ dt {
 }
 
 .row {
-    display: flex;
-    margin: auto;
-    background-color: lightgray;
+	display: flex;
+	margin: auto;
+	background-color: lightgray;
 }
 
 #connect img {
@@ -138,7 +142,6 @@ dt {
 	object-fit: contain;
 	float: right;
 }
-
 
 /*css for us.html*/
 
