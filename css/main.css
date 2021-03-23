@@ -317,13 +317,17 @@ border-radius: 6px;
     text-shadow: 3px 3px 0px rgb(145, 250, 131);
 }
 
-body.signupbody {
-    background-image: url("https://static01.nyt.com/images/2016/02/09/dining/09COOKING_CHICKENWINGS2/09COOKING_CHICKENWINGS2-superJumbo.jpg");
-    background-color: rgba(53, 48, 48, 0.4);
-    background-blend-mode: darken;
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(80%);
 }
 
 #userAccount {
+    position: relative;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: larger;
     background-color: rgb(83, 184, 69);
