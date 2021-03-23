@@ -378,6 +378,12 @@ input {
     padding-bottom: 15px;
 }
 
+.container.inputbox {
+    display: flex;
+}
+
+/* social Media icons */
+
 #socialMedia {
 	position: fixed;
 	right: 0;
@@ -391,8 +397,4 @@ input {
     border-radius: 5px;
     box-shadow: 5px 5px 3px 3px #222222;
     z-index: 1300px;
-}
-
-.container.inputbox {
-    display: flex;
 }
