@@ -148,7 +148,7 @@ if (isset($_POST['userSubmit'])) {
 	<form id="userForm" class="mb-0" action='' method="post">
 		<div class="row my-3">
 			<div class="col-12">
-				<h3>Sign up for a Starbulls Account</h3>
+				<h3 class="fw-bold">Sign up for a Starbulls Account</h3>
 			</div>
 			<div class="col-lg-5 col-md-6 col-sm-12">
 				<label class="form-label" for="">First Name</label><input type="text" name="firstName" id="firstName" class="form-control" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> <?= (isset($error['firstName']) ? 'class="is-invalid" ' : '') ?> required /> <?= $error['firstName'] ?? '' ?>

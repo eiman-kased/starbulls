@@ -90,7 +90,7 @@ if (isset($_POST['reviewSubmit'])) {
 		<form method="post" action="">
 			<div class="row my-3 ">
 				<div class="colform col-12">
-					<h3>Tell Us About Your Experience at Starbulls</h3>
+					<h3 class="fw-bold">Tell Us About Your Experience at Starbulls</h3>
 				</div>
 				<div class="colform col-lg-8 col-sm-8">
 					<label class="form-label" for="">Enter an Email</label><input type="email" id="userEmail" class="form-control" name="userEmail" placeholder="email@example.com" required <?= (!empty($userEmail) ? 'value="' . $userEmail . '"' : '') ?> <?= (isset($error['userEmail']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['userEmail'] ?? '' ?>
