@@ -1,7 +1,13 @@
+/* Google font assignment */
+
+body {
+	font-family: 'Montserrat', Arial, sans-serif;
+}
+
 /*css accross all pages*/
 
-.navbar-custom {
-	background-color: green;
+.header {
+	background-color: #048004;
 }
 
 .carousel-inner {
@@ -9,27 +15,22 @@
 }
 
 h1 {
-	background-color: green;
-	border-style: double;
-	font-family: Georgia, "Times New Roman", Times, serif;
 	text-align: center;
 	color: white;
 	font-size: 60px;
+	font-weight: 900;
 	padding-top: 4px;
 }
 
 h2 {
 	font-size: 45px;
-	font-family: Georgia, "Times New Roman", Times, serif;
 	text-align: center;
-	font-weight: lighter;
-	margin-bottom: -0.3em;
+	font-weight: bold;
 	margin-top: 0.1em;
 }
 
 .us {
 	font-size: 45px;
-	font-family: Georgia, "Times New Roman", Times, serif;
 	text-decoration: underline;
 	text-align: center;
 	font-weight: lighter;
@@ -44,9 +45,8 @@ body {
 /* css for the navigation bar across all pages*/
 
 nav {
-	border: 3px solid black;
+	background-color: #048004;
 	font-size: large;
-	font-family: "Times New Roman", Times, serif;
 }
 
 .logo img {
@@ -69,7 +69,6 @@ nav {
 
 table, th, td {
 	border: 1.2px solid black;
-	font-family: Georgia, "Times New Roman", Times, serif;
 	text-align: center;
 	border-color: black;
 	margin-top: 2em;
@@ -108,7 +107,6 @@ dt {
 
 #hours {
 	text-align: center;
-	font-family: "Times New Roman", Times, serif;
 }
 
 /*for mainpage.html wingassortment text*/
@@ -131,9 +129,8 @@ dt {
 }
 
 .column {
-	float: right;
+	float: left;
 	width: 50%;
-	margin-bottom: 15px;
 }
 
 .column img {
@@ -147,12 +144,10 @@ dt {
 
 p {
 	font-size: 25px;
-	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 h3 {
 	font-size: 35px;
-	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .navbar.sticky-top {
