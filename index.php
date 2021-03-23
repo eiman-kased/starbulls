@@ -21,7 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="imgs/ingredients.jpeg" alt="Los Angeles" width="100%">
+				<img src="imgs/ingredients2.png" alt="Los Angeles" width="100%">
 				<div class="carousel-caption d-none d-md-block">
 					<div name="ingredients" class="ingredients" id="ingredients">
 						<div class="ingredients-text">
