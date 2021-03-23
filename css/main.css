@@ -62,6 +62,12 @@ nav {
     width: 100%;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 /* css for the table in specialsOTW.html*/
 table, th, td {
     border: 1.2px solid black;
