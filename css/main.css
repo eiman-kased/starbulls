@@ -133,6 +133,7 @@ dt {
 
 .row {
 	display: flex;
+	margin: auto;
 	background-color: lightgray;
 }
 
