@@ -122,7 +122,7 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="sunday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-					Sleepless Sunday
+					Sleepy Sunday
 				</button>
 			</h2>
 			<div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="sunday" data-bs-parent="#accordionSpecials">
