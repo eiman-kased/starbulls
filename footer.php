@@ -1,11 +1,11 @@
 <footer>
 	<div id="socialMedia">
 		<a href="https://www.instagram.com/starbulls716/" class="btn btn-default" target="_blank">
-			<img src="images\instagram.png" alt="Instagram"></a>
+			<img src="imgs/instaIcon.jpg" alt="Instagram"></a>
 		<a href="https://www.facebook.com/starbulls.buffalo/" class="btn btn-default" target="_blank">
-			<img src="images\fb.png" alt="facebook"></a>
+			<img src="imgs/faceIcon.jpg" alt="facebook"></a>
 		<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
-			<img src="images\_twitter.png" alt="twitter"></a>
+			<img src="imgs/twitterIcon.jpg" alt="twitter"></a>
 	</div> </br>
 	<div id="end">
 		<b>
