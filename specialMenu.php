@@ -55,7 +55,7 @@
 			<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="wednesday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
 					<p>Tis' the middle of an hardworking week, come to StarBulls and let us get you a great discount
-						on wings. For $100 get yourself an all you can wing buffet for five people!<br /> We're talking about
+						on wings. For $100 get yourself an all you can eat buffet for up to five people!<br /> We're talking about
 						any flavor
 						you can ask for: Buffalo, BBQ, Honey Mustard, Garlic, Original, Blueberry, Watermelon, and many
 						more.
