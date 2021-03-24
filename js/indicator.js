@@ -1,8 +1,6 @@
 function indicate() {
-	console.log("indicate function");
 	$(document).ready(function () {
 		var currentPage = window.location.pathname;
-		console.log(currentPage);
 
 		switch (currentPage) {
 			case "/index.php":
@@ -31,7 +29,7 @@ function indicate() {
 				$('a[href="apply.php"').parent().addClass("nav-active");
 				break;
 			default:
-				console.log($(this));
+				console.log($("No matching element found."));
 				break;
 		}
 	});
