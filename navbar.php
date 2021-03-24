@@ -10,7 +10,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav nav-tabs">
+			<ul class="navbar-nav nav-pills">
 				<li class="nav-item">
 					<a class="nav-link" href="about.php" id="aboutPage">ABOUT US</a>
 				</li>
