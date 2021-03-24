@@ -40,7 +40,7 @@
 				<div class="accordion-body">
 					<p>Already burnt out, and your regular cup of java just won't cut it? Well, come to StarBulls every Tuesday for our
 						Buffalo coffee and wing combo. The combination of heat from our secret sauces, paired with our strongest espresso, will awaken even the sleepiest developer.
-						<br /> <br />Bring your computer and pitch ideas to us, if we like it,
+						<br /> Bring your computer and pitch ideas to us, if we like it,
 						we may cover the cost of your wings. If we really like the idea, we may even throw you a bone. ($20/combo)
 					</p>
 				</div>
