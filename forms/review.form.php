@@ -75,12 +75,17 @@ if (isset($_POST['reviewSubmit'])) {
 		// if user does exist, set the found user's ID as userID property of $review.
 		$review->setUserId($user->getId());
 		echo '<pre>';
-		var_dump($review);
-		var_dump($user);
+		// var_dump($review);
+		// var_dump($user);
 		echo '</pre>';
 
 		//save $review object to database
 		$review->saveToDB();
+		if ($review->getUserID()) {
+			echo '<script language="javascript">';
+			echo 'alert("Thank you for your review!")';
+			echo '</script>';
+		}
 	}
 }
 
@@ -99,7 +104,7 @@ if (isset($_POST['reviewSubmit'])) {
 					<label class="form-label" for="">Score Rating:</label><input type="number" class="form-control" step="0.5" name="score" min="0" max="5" <?= (is_numeric($score) ? "value='$score'" : '') ?>' <?= (isset($error['score']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['score'] ?? '' ?>
 				</div>
 				<div class="colform col-lg-12">
-					<label class="form-label" for="">Please Leave a Message Here:</label><textarea id="comment" class="form-control" name="comment" rows="5" cols="50" <?= (isset($error['comment']) ? 'class="is-invalid"' : '') ?> required ><?= (!empty($comment) ? $comment : '') ?> </textarea> <?= $error['comment'] ?? '' ?>
+					<label class="form-label" for="">Please Leave a Message Here:</label><textarea id="comment" class="form-control" name="comment" rows="5" cols="50" <?= (isset($error['comment']) ? 'class="is-invalid"' : '') ?> required><?= (!empty($comment) ? $comment : '') ?> </textarea> <?= $error['comment'] ?? '' ?>
 				</div>
 				<div class="colform col-lg-2 my-3">
 					<input type="submit" class="btn btn-outline-success btn-lg" name="reviewSubmit" value="Submit" />

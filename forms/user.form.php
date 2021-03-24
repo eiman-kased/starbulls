@@ -1,7 +1,7 @@
 <?php
 
 // display errors so we know if there is a problem
-ini_set('display_errors', 1);
+// ini_set('display_errors', 1);
 
 // call session_start so we can utilize the $_SESSION super global
 if (session_status() === PHP_SESSION_NONE) {
