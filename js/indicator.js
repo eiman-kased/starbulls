@@ -1,7 +1,6 @@
 function indicate() {
 	$(document).ready(function () {
 		var currentPage = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
-		//var thePage = currentPage.substring(currentPage.lastIndexOf('/') + 1);
 		switch (currentPage) {
 				case "index.php":
 				console.log("click action");
