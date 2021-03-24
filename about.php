@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>About Us</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<link rel="stylesheet" href="css/main.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="indicator.js"></script>
@@ -25,7 +26,7 @@
 		<h3>Our Heritage</h3>
 		<p>We are humbled by the success of our company thus far. The name Starbulls was created by one of the founders:
 			Will. He came up with this insane concept of a restaurant that serves wings and coffee.
-		<p>
+		</p>
 		<p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
 			look at our site! A beauty to say the least.</p>
 		<p>Just a week ago, StarBulls did not exist. It has taken hours of dedication to get this
@@ -56,6 +57,18 @@
 				classmates.
 			</li>
 		</ol>
+	</div>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<img src="imgs/cofee3.png" width="100%">
+			<div class="item active">
+				<div class="carousel-caption d-none d-md-block">
+					<div class="hero-text">
+						<h2>StarBulls</h2>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>

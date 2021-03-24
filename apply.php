@@ -7,8 +7,8 @@ ini_set('display_errors', 1);
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Apply</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="indicator.js"></script>
@@ -16,13 +16,19 @@ ini_set('display_errors', 1);
 
 <body>
 	<?php include 'navbar.php'; ?>
-	<div class="hero">
-		<div class="hero-text">
-			<h2>Become a Part of the StarBulls</h2>
-			<p>Apply Today!</p>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<img src="imgs/coffee12.png" width="100%">
+			<div class="item active">
+				<div class="carousel-caption d-none d-md-block">
+					<div class="hero-text">
+						<h2>Become a Part of the StarBulls</h2>
+						<p>Apply Today!</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-
 	<div id="columns">
 		<div class="column-wrap">
 			<div class="column-left">

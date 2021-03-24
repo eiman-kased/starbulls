@@ -13,6 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>STARBULLS</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="indicator.js"></script>
@@ -20,11 +21,20 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <body>
 	<?php include 'navbar.php'; ?>
-	<div name="ingredients" class="ingredients" id="ingredients">
-		<div class="ingredients-text">
-			<h2>Only the best of the best here at StarBulls</h2>
-			<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
-				only purchase high-quality ingredients that are ethically sourced.</p>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<img src="imgs/cofee1.png" width="100%">
+			<div class="item active">
+				<div class="carousel-caption d-none d-md-block">
+					<div name="ingredients" class="ingredients" id="ingredients">
+						<div class="hero-text">
+							<h2>Only the best of the best here at StarBulls</h2>
+							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
+								only purchase high-quality ingredients that are ethically sourced.</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="hours">
@@ -59,42 +69,35 @@ if (session_status() === PHP_SESSION_NONE) {
 				<td>9AM-9PM</td>
 			</tr>
 		</table>
-		</br></br>
-
-		<div class="row">
-			<div class="column">
-				<div id="connect">
-					<img src="images/connect.jpg" />
-				</div>
-			</div>
-			<div class="column">
-				<div class="connectText">
-					<h2>Connect with us on Social Media!</h2>
-					<p>We'd love to hear from YOU!</p> </br>
-					<p>Follow us to find out the latest buzz!</p>
-				</div>
+	</div></br></br>
+	<div class="row">
+		<div class="column">
+			<div id="connect">
+				<img src="imgs/contactUs.jpeg" />
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="column">
-				<div id="connect">
-					<div class="connectTexts">
-						<h2>Enjoy a Variety of Food!</h2>
-						<p>We offer a variety of food and drinks to satisfy any and all cravings!</p> </br>
-						<p>Head over to our menu page!</p>
-					</div>
-				</div>
+		<div class="column">
+			<div class="connectText">
+				<h2>Connect with us on Social Media!</h2>
+				<p>We'd love to hear from YOU!</p> </br>
+				<p>Follow us to find out the latest buzz!</p>
 			</div>
-			<div class="column">
-				<img src="images/wingassortment.jpg" />
-
-			</div>
-		</div> </br></br>
-		<div id="wingplatter">
 		</div>
 	</div>
-	</div> </br>
+	<div class="row">
+		<div class="column">
+			<div id="connect">
+				<div class="connectTexts">
+					<h2>Enjoy a Variety of Food!</h2>
+					<p>We offer a variety of food and drinks to satisfy any and all cravings!</p> </br>
+					<p>Head over to our menu page!</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<img src="imgs/chickenWings.jpg" />
+		</div>
+	</div> </br></br>
 	<?php include 'forms/review.form.php'; ?>
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
