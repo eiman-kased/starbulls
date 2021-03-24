@@ -1,226 +1,282 @@
+/* Google font assignment */
+
+body {
+	font-family: 'Montserrat', Arial, sans-serif;
+}
+
 /*css accross all pages*/
+
+.header {
+	background-color: #048004;
+}
+
+.carousel-inner {
+	height: 400px;
+}
+
 h1 {
-    background-color: green;
-    border-style: double;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    color:white;
-    font-size: 60px;
-    padding-top: 4px;
+	text-align: center;
+	color: white;
+	font-size: 60px;
+	font-weight: 900;
+	padding-top: 4px;
 }
 
-h2{
-   font-size: 45px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    font-weight:lighter;
-    margin-bottom: -0.3em;
-    margin-top: 0.1em;
-  
+h2 {
+	font-size: 45px;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0.1em;
 }
 
-.us{
-    font-size: 45px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-decoration: underline;
-    text-align: center;
-    font-weight:lighter;
-    margin-bottom: -0.3em;
-    margin-top: 0.1em;
+.us {
+	font-size: 45px;
+	text-decoration: underline;
+	text-align: center;
+	font-weight: lighter;
+	margin-bottom: -0.3em;
+	margin-top: 0.1em;
 }
 
 body {
-    background-color: darkseagreen;
-    /*text-align: center;*/
+	background-color: white;
 }
 
 /* css for the navigation bar across all pages*/
+
 nav {
-    border: 3px solid black;
-    font-size: large;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: green;
-  padding: 10px;
-}
-
-.topnav a {
-  float: center;
-  color: white;
-  text-align: center;
-  padding: 7px 10px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
+	background-color: #048004;
+	font-size: large;
 }
 
 .logo img {
-   float: left;
-    position: relative;
-    width: 150px;
-    margin: 6px;
+	float: left;
+	position: relative;
+	width: 150px;
+	margin: 6px;
 }
 
-#socialMedia{
-    text-align: left;
-    position:fixed;
-    width: 30px;
-    bottom: 0;
+#end {
+	text-align: center;
+	font-size: large;
+	position: relative;
+	bottom: 0;
+	right: 0;
+	width: 100%;
 }
-
-#end{
-    text-align: center;
-    font-size: large;
-    position: relative;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-}
-
 
 /* css for the table in specialsOTW.html*/
 
 table, th, td {
-    border: 1.2px solid black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    border-color: black;
-    margin-top: 2em;
-   width: 100%;
+	border: 1.2px solid black;
+	text-align: center;
+	border-color: black;
+	margin-top: 2em;
+	width: 100%;
 }
 
-/*table {
-    width: 10%;
-}*/
-
-dt{
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: underline;
-
+dt {
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
 #Specials {
-    position: relative;
-    left: auto;
-    text-align: left;
-    font-family:serif;
-    ;
-
+	position: absolute;
+	left: auto;
+	text-align: left;
+	font-family: serif;
 }
-
 
 /*css for mainPage.html*/
 
-#ingredients {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/3dletUn");
-   height: 400px;
-   background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.ingredients-text {
-    text-align: center;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-}
-
-#wingplatter {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/wingplatter.jpg");
-    height: 400px;
-   background-position: left;
-    background-repeat: repeat;
-    position: relative; 
-    width: 100%;
-    background-size: 100%;
-}
-
 .table {
-    margin-right: auto;
-    margin-left: auto;
-    width: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
 }
 
 #hours {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+	text-align: center;
 }
 
 /*for mainpage.html wingassortment text*/
+
 .connectTexts {
-    text-align: left;
-    padding: 40px;
+	text-align: left;
+	padding: 40px;
 }
 
 .row {
-    display: flex;
-    background-color: lightgray;
+	display: flex;
+	margin: auto;
+	background-color: lightgray;
 }
 
 #connect img {
-    padding: 20px;
-  object-fit: contain;
-  width: 500px;
+	padding: 20px;
+	object-fit: contain;
+	width: 500px;
 }
 
 .column {
-    float: left;
-    width: 50%;
+	float: left;
+	width: 50%;
 }
 
 .column img {
-    /*width: 400px;
-float: right;*/
-padding: 20px;
-  width: 600px;
-  object-fit: contain;
+	width: 600px;
+	padding: 20px;
+	object-fit: contain;
+	float: right;
 }
-
-
-/* css for starbull.php*/
-.cwing {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/cwing.jpg");
-    height: 400px;
-   background-position: left;
-    background-repeat: repeat;
-    position: relative; 
-    width: 100%;
-    background-size: 100%;
-}
-
-/*.container {
-    display: inline-block;
-    width: 100%;
-}*/
-
 
 /*css for us.html*/
 
-
 p {
-    font-size: 25px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 25px;
 }
 
 h3 {
-    font-size: 35px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 35px;
 }
 
+.navbar.sticky-top {
+	z-index: 1100;
+}
+
+.accordion-header.sticky-top {
+	top: 180px;
+}
+
+/* beginning of CSS for specials */
+
+.column {
+	float: left;
+	width: 50%;
+}
+
+#Specials {
+	position: absolute;
+	left: auto;
+	text-align: left;
+	font-family: serif;
+}
+
+#end {
+	text-align: center;
+	font-size: large;
+	position: relative;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+
+.form-container {
+	display: inline-block;
+	box-sizing: border-box;
+	background-color: rgb(202, 202, 202);
+	padding: 20px;
+	padding-right: 40px;
+	border-radius: 2%;
+}
+
+input {
+	width: 100%;
+	color: black;
+}
+
+.name, .dob, .phone, .address, .email {
+	display: inline-block;
+	color: black;
+	border-radius: 2px;
+	padding-right: 5px;
+}
+
+.submit>input[type=submit] {
+	padding: 2% 2%;
+	border-radius: 6px;
+}
+
+.hero-text {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-shadow: 3px 3px 6px black;
+}
+
+#columns {
+	column-count: 2;
+	column-width: 500px;
+	padding-top: 20px;
+}
+
+.column-left {
+	width: 50%;
+	margin-left: 20%;
+}
+
+.column-right {
+	width: 80%;
+	padding-top: 1px;
+}
+
+.review1 {
+	background-color: rgba(122, 242, 132, 0.461);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 6px;
+	text-align: center;
+	padding: 6%;
+}
+
+.review2 {
+	background-color: rgba(116, 108, 108, 0.742);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 6px;
+	text-align: center;
+	padding: 4%;
+}
+
+.review1:hover, .review2:hover {
+	background-color: rgba(255, 255, 255, .4);
+	transition: .4s;
+	border: 1px solid black;
+}
+
+.container {
+	display: inline-block;
+	width: 100%;
+}
+
+.company, .heritage, .tools {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 6px;
+	text-align: center;
+	padding: 4%;
+}
+
+.navbar.sticky-top {
+	z-index: 1100;
+}
+
+.accordion-header.sticky-top {
+	top: 180px;
+}
+
+#socialMedia {
+	position: fixed;
+	right: 0;
+	bottom: 15px;
+	z-index: 1200;
+}
+
+#socialMedia img {
+	text-align: center;
+	max-width: 40px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 3px 3px #222222;
+	z-index: 1300px;
+}
