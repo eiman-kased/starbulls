@@ -37,6 +37,10 @@ body {
     background-color: white;
 }
 
+.nav-pills>li>a.active {
+    background-color: white!important;
+}
+
 /* css for the navigation bar across all pages*/
 
 nav {
@@ -52,7 +56,6 @@ nav {
     margin: 6px;
 }
 
-
 #end {
     text-align: center;
     font-size: large;
@@ -63,6 +66,7 @@ nav {
 }
 
 /* css for the table in specialsOTW.html*/
+
 table, th, td {
     border: 1.2px solid black;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -87,6 +91,7 @@ dt {
 }
 
 /*css for mainPage.html*/
+
 #ingredients {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/3dletUn");
     height: 400px;
@@ -169,6 +174,7 @@ dt {
 }
 
 /*css for us.html*/
+
 p {
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -179,14 +185,16 @@ h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.navbar.sticky-top{
+.navbar.sticky-top {
     z-index: 1100;
 }
+
 .accordion-header.sticky-top {
     top: 180px;
-} 
+}
 
 /* beginning of CSS for specials */
+
 .column {
     float: left;
     width: 50%;
@@ -196,10 +204,10 @@ h3 {
     position: absolute;
     left: auto;
     text-align: left;
-    font-family:serif;
+    font-family: serif;
 }
 
-#end{
+#end {
     text-align: center;
     font-size: large;
     position: relative;
@@ -215,24 +223,23 @@ h3 {
     padding: 20px;
     padding-right: 40px;
     border-radius: 2%;
-    }
+}
 
 input {
     width: 100%;
     color: black;
-    }
+}
 
 .name, .dob, .phone, .address, .email {
-   display: inline-block;
+    display: inline-block;
     color: black;
     border-radius: 2px;
     padding-right: 5px;
 }
 
-.submit > input[type=submit]
-{
-padding: 2% 2%;
-border-radius: 6px;
+.submit>input[type=submit] {
+    padding: 2% 2%;
+    border-radius: 6px;
 }
 
 .hero {
@@ -256,7 +263,7 @@ border-radius: 6px;
 #columns {
     column-count: 2;
     column-width: 500px;
-   padding-top: 20px;
+    padding-top: 20px;
 }
 
 .column-left {
@@ -302,6 +309,7 @@ border-radius: 6px;
     text-align: center;
     padding: 4%;
 }
+
 .navbar.sticky-top {
     z-index: 1100;
 }
