@@ -14,13 +14,19 @@ ini_set('display_errors', 1);
 
 <body>
 	<?php include 'navbar.php'; ?>
-	<div class="hero">
-		<div class="hero-text">
-			<h2>Become a Part of the StarBulls</h2>
-			<p>Apply Today!</p>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<img src="imgs/coffee12.png" width="100%">
+			<div class="item active">
+				<div class="carousel-caption d-none d-md-block">
+					<div class="hero-text">
+						<h2>Become a Part of the StarBulls</h2>
+						<p>Apply Today!</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-
 	<div id="columns">
 		<div class="column-wrap">
 			<div class="column-left">
