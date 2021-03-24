@@ -55,13 +55,13 @@
 			<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="wednesday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
 					<p>Tis' the middle of an hardworking week, come to StarBulls and let us get you a great discount
-						on wings. For $100 get yourself an all you can wing buffet for five people!!<br /> We're talking about
+						on wings. For $100 get yourself an all you can wing buffet for five people!<br /> We're talking about
 						any flavor
-						you can ask for; buffalo, BBQ, honey mustard, garlic, original, blueberry, watermelon, and many
+						you can ask for: Buffalo, BBQ, Honey Mustard, Garlic, Original, Blueberry, Watermelon, and many
 						more.
 						There's no other restaurant that does it the same way we do.<br /> Now come and enjoy an authentic
-						experience here
-						in Buffalo. We will not dissapoint. ($100/per table of five)</p>
+						experience in the birthplace of the chicken wing.
+					  We will not dissapoint. ($100/per table of five)</p>
 				</div>
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 						your friends
 						and meet new people as well.<br /> Use this day as a day to recharge yourself with a nice shot of
 						sriracha. Spicy not your
-						style? Try our buy one get one of our BBQ beer pints. Live life on the edge and come to StarBulls on
+						style? Try our buy one, get one free BBQ beer pints. Live life on the edge and come to StarBulls on
 						Thirsty Thursdays.
 						($8.25)</p>
 				</div>
