@@ -20,9 +20,9 @@
 			</h2>
 			<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="monday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
-					<p>Come and enjoy hot milk chocolate for a party of 4 for only the price of 3.
+					<p>Come and enjoy hot milk chocolate for a party of four for only the price of three.
 						The Milk Chocolate Monday package comes with a giant mug of decadent hot chocolate and only two spoons so sharing is caring!
-						Milk Chocolate Mondays are a good way to get closer with family and friends. <br />Don't
+						Milk Chocolate Monday are a good way to get closer with family and friends. <br />Don't
 						have friends? Have no fear, our StarBulls Matchmaker&trade; is here. Come to the counter and ask to
 						sign up for a matchmaking table where we set you up with people also looking
 						for new friends...or...family... ($50/per table of 4)</p>
@@ -32,7 +32,7 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="tuesday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-					Tingle Tuesdays
+					Try to Stay Awake Tuesday
 				</button>
 			</h2>
 			<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="tuesday" data-bs-parent="#accordionSpecials">
@@ -40,34 +40,33 @@
 					<p>Have you had a long day of web development? Well come to StarBulls on Tuesdays
 						and try our buffalo coffee and buffalo wings combo. I guarantee you will wake up so fast to code
 						a whole project.<br /> Bring your computer and pitch ideas to us and if we like it then
-						we will give you one free half eating wing! If we really like the idea we'll throw
-						in an extra bone in there. ($20/combo)</p>
+						we will give you one free half eaten wing! If we really like the idea we may even throw you a bone. ($20/combo)</p>
 				</div>
 			</div>
 		</div>
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="wednesday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-					Wings n Wednesdays
+					Wingin' it Wednesday
 				</button>
 			</h2>
 			<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="wednesday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
 					<p>Tis' the middle of an hardworking week, come to StarBulls and let us get you a great discount
-						on wings. For $100 get yourself an all you can wing buffet for 5 people!!<br /> We're talking about
+						on wings. For $100 get yourself an all you can wing buffet for five people!!<br /> We're talking about
 						any flavor
 						you can ask for; buffalo, BBQ, honey mustard, garlic, original, blueberry, watermelon, and many
 						more.
 						There's no other restaurant that does it the same way we do.<br /> Now come and enjoy an authentic
 						experience here
-						in Buffalo. We will not dissapoint. ($100/per table of 4)</p>
+						in Buffalo. We will not dissapoint. ($100/per table of five)</p>
 				</div>
 			</div>
 		</div>
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="thursday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-					Thirsty Thursdays
+					Thirsty Thursday
 				</button>
 			</h2>
 			<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="thursday" data-bs-parent="#accordionSpecials">
@@ -77,7 +76,7 @@
 						beverages all day long. Although our full menu will not be available, come and sit down with
 						your friends
 						and meet new people as well.<br /> Use this day as a day to recharge yourself with a nice shot of
-						siracha. Spicy not your
+						sriracha. Spicy not your
 						style? Try our buy one get one of our BBQ beer pints. Live life on the edge and come to StarBulls on
 						Thirsty Thursdays.
 						($8.25)</p>
@@ -87,7 +86,7 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="friday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-					Fugettaboudit Fridays
+					Fugettaboudit Friday
 				</button>
 			</h2>
 			<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="friday" data-bs-parent="#accordionSpecials">
@@ -101,12 +100,12 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="saturday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-					Seasoned Saturdays
+					Seasoned Saturday
 				</button>
 			</h2>
 			<div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="saturday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
-					<p>Stop by on Seasoned Saturdays to try our special homemade dry rub wings seasoning. The seasoning is
+					<p>Stop by on Saturday to try our special homemade dry rub wings seasoning. The seasoning is
 						a secret
 						recipe we keep in a glass bottle where no one will ever think to look. We are proud to be serving
 						this kind
@@ -123,7 +122,7 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="sunday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-					Sleepy Sunday
+					Sleepless Sunday
 				</button>
 			</h2>
 			<div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="sunday" data-bs-parent="#accordionSpecials">
