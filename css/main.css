@@ -10,6 +10,10 @@ body {
 	background-color: #048004;
 }
 
+.carousel-inner {
+	height: 400px;
+}
+
 h1 {
 	text-align: center;
 	color: white;
@@ -95,34 +99,6 @@ dt {
 
 /*css for mainPage.html*/
 
-#ingredients {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/3dletUn");
-	height: 400px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-
-.ingredients-text {
-	text-align: center;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: white;
-}
-
-#wingplatter {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/wingplatter.jpg");
-	height: 400px;
-	background-position: left;
-	background-repeat: repeat;
-	position: relative;
-	width: 100%;
-	background-size: 100%;
-}
-
 .table {
 	margin-right: auto;
 	margin-left: auto;
@@ -161,18 +137,6 @@ dt {
 	padding: 20px;
 	object-fit: contain;
 	float: right;
-}
-
-/* css for starbull.php*/
-
-.cwing {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/cwing.jpg");
-	height: 400px;
-	background-position: left;
-	background-repeat: repeat;
-	position: relative;
-	width: 100%;
-	background-size: 100%;
 }
 
 /*css for us.html*/
@@ -242,15 +206,6 @@ input {
 	border-radius: 6px;
 }
 
-.hero {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://bit.ly/2N5kvOq");
-	height: 400px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-
 .hero-text {
 	text-align: center;
 	position: relative;
@@ -258,6 +213,7 @@ input {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
+	text-shadow: 3px 3px 6px black;
 }
 
 #columns {
