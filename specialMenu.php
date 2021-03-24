@@ -32,15 +32,17 @@
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="tuesday">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-					Try to Stay Awake Tuesday
+					Techie Tuesday
 				</button>
+
 			</h2>
 			<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="tuesday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
-					<p>Have you had a long day of web development? Well come to StarBulls on Tuesdays
-						and try our buffalo coffee and buffalo wings combo. I guarantee you will wake up so fast to code
-						a whole project.<br /> Bring your computer and pitch ideas to us and if we like it then
-						we will give you one free half eaten wing! If we really like the idea we may even throw you a bone. ($20/combo)</p>
+					<p>Already burnt out, and your regular cup of java just won't cut it? Well, come to StarBulls every Tuesday for our
+						Buffalo coffee and wing combo. The combination of heat from our secret sauces, paired with our strongest espresso, will awaken even the sleepiest developer.
+						<br /> <br />Bring your computer and pitch ideas to us, if we like it,
+						we may cover the cost of your wings. If we really like the idea, we may even throw you a bone. ($20/combo)
+					</p>
 				</div>
 			</div>
 		</div>
@@ -91,9 +93,9 @@
 			</h2>
 			<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="friday" data-bs-parent="#accordionSpecials">
 				<div class="accordion-body">
-					<p>Did this week suck the life out of you? We get it. On Friday's we bust out some of our more experimental beverages with a bit more...spirit. Sometimes you need something a 
-                        bit stronger than coffee. Our top baristas take the floor to share their latest craft microbrews, vodkas, and bourbon inspired by StarBulls' most popular dishes and drinks. </br> 
-					</br> * Please drink responsibly *</p>
+					<p>Did this week suck the life out of you? We get it. On Friday's we bust out some of our more experimental beverages with a bit more...spirit. Sometimes you need something a
+						bit stronger than coffee. Our top baristas take the floor to share their latest craft microbrews, vodkas, and bourbon inspired by StarBulls' most popular dishes and drinks. </br>
+						</br> * Please drink responsibly *</p>
 				</div>
 			</div>
 		</div>
