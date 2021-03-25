@@ -5,7 +5,7 @@
 </head>
 
 <body>
-	Please sign up
+Please sign up
 	<?php include 'forms/user.form.php'; ?>
 </body>
 
