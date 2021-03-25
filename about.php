@@ -50,23 +50,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="tools">
-				<h3>Tools We Used</h3>
-				<p>Like any other company, the founders of StarBulls rely on various resources and tools to help
-					create this site. We want to share our tools and resources with the world!
-				</p>
-				<h3>They are:</h3>
-				<ol>
-					<li>Bill C.: You may have heard of him. The Man. The Myth. The Legend. If you haven't, then
-						maybe StarBulls is not for you!</li>
-					<li>Google.com: This one can have you running in circles BUT a lot of questions have been
-						answered by our friend Google.</li>
-					<li>Last but not least, the founders at StarBulls, relied on one another and other
-						classmates.
-					</li>
-				</ol>
-			</div> -->
-	</div>
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
