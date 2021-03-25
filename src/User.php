@@ -28,7 +28,7 @@ class User
 	{
 		// make/get db connection
 		$this->db = $this->db ?? new Database();
-		$dbConnection = $this->db->getConnection();
+		$dbCon = $this->db->getConnection();
 		// check to make sure this user doesn't already exist, based on email
 		if ($foundUser = self::findUserByEmail($this->email)) {
 			return $foundUser;
@@ -38,28 +38,28 @@ class User
 		$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred)
 		VALUES ('$this->firstName', '$this->lastName', '$this->email', '$this->password', '$this->phoneNumber', '$preferred')";
 		//echo $sql;
-		$insertSuccess = $dbConnection->query($sql);
+		$insertSuccess = $dbCon->query($sql);
 		// Check for errors in the insert process
 		if (!$insertSuccess) {
 			// there was an error
 			// TODO log said error rather than just display
 			// echo 'Debug SQL Statement: ' . $sql . '<br/>';
-			echo 'Error inserting user:' . $dbConnection->error;
+			echo 'Error inserting user:' . $dbCon->error;
 			return false;
 		}
 		// everything went well
-		$this->id = $dbConnection->insert_id;
-		$dbConnection->close();
+		$this->id = $dbCon->insert_id;
+		$dbCon->close();
 		return $this;
 	}
 
 	public static function findUserByEmail($email)
 	{
 		$db = new Database();
-		$dbConnection = $db->getConnection();
+		$dbCon = $db->getConnection();
 		$sql = "SELECT * FROM `user` WHERE email='$email'";
 		// echo $sql;
-		$result = $dbConnection->query($sql);
+		$result = $dbCon->query($sql);
 		if ($result->num_rows < 1) {
 			return false;
 		}
@@ -73,7 +73,7 @@ class User
 		// echo '<pre>';
 		// var_dump($tmp);
 		// echo '</pre>';
-		$dbConnection->close();
+		$dbCon->close();
 		$retUser =  new User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred);
 		$retUser->setId($tmp->id);
 		return $retUser;

@@ -1,10 +1,10 @@
 <?php
 class Database extends mysqli
 {
-	private string $servername; // 'localhost';
-	private string $username; // 'ecc';
-	private string $password; // '';// TODO set to get from env vars at some point
-	private string $dbName; // 'starbulls';
+	private string $servername;
+	private string $username;
+	private string $password; // TODO set to get from env vars at some point
+	private string $dbName;
 
 	private mysqli $connection;
 
