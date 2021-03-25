@@ -56,7 +56,7 @@ class User
 		$db = new Database();
 		$dbCon = $db->getConnection();
 		$sql = "SELECT * FROM `user` WHERE email='$email'";
-		// echo $sql;
+
 		$result = $dbCon->query($sql);
 		if ($result->num_rows < 1) {
 			return false;
