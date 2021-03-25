@@ -14,8 +14,8 @@
 						<a class="nav-link" href="about.php">ABOUT US</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="menu.php" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							MENU
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							OUR MENUS
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item" href="http://starbulls.com/menu.php#coffee">Specialty Coffee</a></li>
