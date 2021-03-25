@@ -1,6 +1,6 @@
 <?php
 
-require_once('src/DB/db_connect.php');
+require_once 'src/DB/Database.php';
 
 class Review implements JsonSerializable
 {
@@ -10,7 +10,7 @@ class Review implements JsonSerializable
 	private int $user_id;
 	private \DateTime $createdAt;
 
-	private static mysqli $db;
+	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
 	public function __construct($score, $comment, $userId = null)
@@ -27,16 +27,17 @@ class Review implements JsonSerializable
 	public function saveToDB()
 	{
 		//Establish connection to DB
-		self::$db = self::$db ?? dbConn();
+		$this->db = $this->db ?? new Database();
+		$dbCon = $this->db->getConnection();
 		//Write query to save info 
 		$sql = "INSERT INTO review (score, comment, user_id, created_at)
 		VALUES ($this->score, '$this->comment', $this->user_id, '" . $this->createdAt->format('Y-m-d H:i:s') . "')";
-		// echo $sql;
+
 		//DB run query 
-		$insertSuccess = self::$db->query($sql);
+		$insertSuccess = $dbCon->query($sql);
 		//Does it work succesfully
 		if (!$insertSuccess) {
-			echo self::$db->error;
+			echo $dbCon->error;
 			return false;
 		}
 		//Return true
@@ -47,15 +48,16 @@ class Review implements JsonSerializable
 	public function getReviewsByScore($score)
 	{
 		//Establish connection to DB
-		self::$db = self::$db ?? dbConn();
+		$this->db = $this->db ?? new Database();
+		$dbCon = $this->db->getConnection();
 		//Write query to get review based on score
 		$sql = "SELECT * FROM review where score=$score";
 		//DB run query 
-		$results = self::$db->query($sql);
+		$results = $dbCon->query($sql);
 		//Create array to return results
 		$reviews = array();
 		//Loop through results
-		while ($row = mysqli_fetch_assoc($results)) {
+		while ($row = $results->fetch_assoc()) {
 			$review = new Review($row['score'], $row['comment'], $row['user_id']);
 			$reviews[] = $review;
 		}
@@ -85,14 +87,13 @@ class Review implements JsonSerializable
 	// We need this to convert private vars to json correctly
 	public function jsonSerialize()
 	{
-		return
-			[
-				'id'   => $this->getId(),
-				'score' => $this->getScore(),
-				'comment' => $this->getComment(),
-				'userId' => $this->getUserID(),
-				'createdAt' => $this->getCreatedAt()->getTimestamp(),
-			];
+		return [
+			'id'   => $this->getId(),
+			'score' => $this->getScore(),
+			'comment' => $this->getComment(),
+			'userId' => $this->getUserID(),
+			'createdAt' => $this->getCreatedAt()->getTimestamp(),
+		];
 	}
 
 	/**
