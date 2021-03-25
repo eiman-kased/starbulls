@@ -44,6 +44,17 @@ body {
     margin-bottom: 100px;
 }
 
+.nav-active {
+	background-color: #44c767;
+	border-radius: 28px;
+	border: 1px solid #18ab29;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	padding: 1px;
+	text-decoration: none;
+}
+
 /* css for the navigation bar across all pages*/
 
 nav {

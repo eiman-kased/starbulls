@@ -42,7 +42,7 @@
 			<div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="regularCoffee" data-bs-parent="#accordianMenu">
 				<div class="accordion-body">
 					<ul class="list-group">
-						<li class="list-group-item">Regular Cup'o Joe</li><br />
+						<li class="list-group-item">Regular Cup O' Joe</li><br />
 						<li class="list-group-item">Decaf - $2.00</li><br />
 						<li class="list-group-item">Hot Chocolate - $2.00</li><br />
 						<li class="list-group-item">Cafe Mocha - $2.00</li><br />
@@ -85,7 +85,7 @@
 						<li class="list-group-item">Green Shake Eggs & Ham $13.99</li><br />
 						<li class="list-group-item">Breakfast Sam (Your Choice Breakfast Sandwich) - $15.99</li><br />
 						<li class="list-group-item">Pancake Thangs (Combo Meal/Two Sides) - $14.50</li><br />
-						<li class="list-group-item">Grandads French Toast & Thangs (Combo Meal/Two Sides)- $14.50</li><br />
+						<li class="list-group-item">Grandad's French Toast & Thangs (Combo Meal/Two Sides)- $14.50</li><br />
 						<li class="list-group-item">Breakfast Feast (Sample of all breakfast entrees and sides + Open Bar) - $300</li><br />
 					</ul>
 				</div>
@@ -165,8 +165,8 @@
 			<div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="sides" data-bs-parent="#accordianMenu">
 				<div class="accordion-body">
 					<ul class="list-group">
-						<li class="list-group-item">Eggs :Scrambled,Over Easy,Sunny Side,Boiled</li><br />
-						<li class="list-group-item">Great Grandads Grits</li><br />
+						<li class="list-group-item">Eggs: Scrambled, Over Easy, Sunny Side Up, Boiled</li><br />
+						<li class="list-group-item">Great Grandad's Grits</li><br />
 						<li class="list-group-item">Sausage</li><br />
 						<li class="list-group-item">Cream of Wheat</li><br />
 						<li class="list-group-item">Oatmeal</li><br />
@@ -174,13 +174,14 @@
 						<li class="list-group-item">Yogurt</li><br />
 						<li class="list-group-item">Butterfly Milk</li><br />
 						<li class="list-group-item">Overnight Oats</li><br />
-						<li class="list-group-item">Granny Nolas Granola</li><br />
+						<li class="list-group-item">Granny Nola's Granola</li><br />
 					</ul>
 				</div>
 			</div>
 		</div>
-		<?php include 'footer.php'; ?>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	</div>
+	<?php include 'footer.php'; ?>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
 </html>
