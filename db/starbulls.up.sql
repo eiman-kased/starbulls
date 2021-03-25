@@ -16,7 +16,7 @@ CREATE TABLE `starbulls`.`user` (
 	`firstName` VARCHAR(30) NOT NULL,
 	`lastName` VARCHAR(30) NOT NULL,
 	`email` VARCHAR(50) NOT NULL,
-	`password` VARCHAR(50) NOT NULL,
+	`password` VARCHAR(60) NOT NULL,
 	`phoneNumber` VARCHAR(14) NULL,
 	`isPreferred` TINYINT NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`)
