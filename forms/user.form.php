@@ -1,7 +1,7 @@
 <?php
 
 // display errors so we know if there is a problem
-ini_set('display_errors', 1);
+// ini_set('display_errors', 1);
 
 // call session_start so we can utilize the $_SESSION super global
 if (session_status() === PHP_SESSION_NONE) {
@@ -21,14 +21,6 @@ $password = '';
 // set an empty error array
 $error = array();
 
-// echo '$_POST<pre>';
-// var_dump($_POST);
-// echo '</pre>';
-
-// echo '$_SESSION<pre>';
-// var_dump($_SESSION);
-// echo '</pre>';
-
 if (isset($_SESSION['review_post']) && !(isset($_POST['userSubmit']))) {
 	// if redirected an alert message will prompt user to signup
 	echo '<script language="javascript">';
@@ -43,16 +35,11 @@ if (isset($_SESSION['review_post'])) {
 
 	// presets the userEmail from the review form
 	$_POST['userEmail'] = $_POST['review']['userEmail'] ?? '';
-	// echo '$_POST<pre>';
-	// var_dump($_POST);
-	// echo '</pre>';
+
 }
 
 // check to see if the submit button was clicked on the user form
 if (isset($_POST['userSubmit'])) {
-	// echo '$_POST<pre>';
-	// var_dump($_POST);
-	// echo '</pre>';
 
 	// check to make sure firstName is not empty
 	if (!empty(trim($_POST['firstName']))) {
@@ -118,8 +105,7 @@ if (isset($_POST['userSubmit'])) {
 		// TODO determine if we are going to display a message
 		echo 'User Saved';
 		// echo 'confirmation email sent to ' . $user->getEmail();
-		// debugging
-		// var_dump($user);
+
 	} else {
 		// displays error message if user cannot be saved
 		echo 'Error saving user!';
@@ -129,7 +115,7 @@ if (isset($_POST['userSubmit'])) {
 	if (isset($_SESSION['review_submit'])) {
 		// sets $reviewJSON to an associative array of review data
 		$reviewJSON = json_decode($_SESSION['review_submit'], true);
-		// var_dump($reviewJSON);
+
 
 		// creates a new review object from the reviewJSON
 		$review = new Review($reviewJSON['score'], $reviewJSON['comment'], $userSaved->getId());
@@ -151,13 +137,36 @@ if (isset($_POST['userSubmit'])) {
 	}
 }
 ?>
+<div class="wrapper">
+	<img src="https://static01.nyt.com/images/2016/02/09/dining/09COOKING_CHICKENWINGS2/09COOKING_CHICKENWINGS2-superJumbo.jpg" id=bg alt="wings">
+	<div id="userAccount" class="inputbox container">
+		<form id="userForm" class="mb-0" action='' method="post">
+			<div class="row my-3">
+				<div class="col-12">
+					<h3 class="fw-bold">Sign up for a Starbulls Account</h3>
+				</div>
+				<div class="col-lg-5 col-md-6 col-sm-12">
+					<label class="form-label" for="">First Name</label><input type="text" name="firstName" id="firstName" class="form-control" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> <?= (isset($error['firstName']) ? 'class="is-invalid" ' : '') ?> required /> <?= $error['firstName'] ?? '' ?>
+				</div>
+				<div class="col-lg-5 col-md-6 col-sm-12">
+					<label class="form-label" for="">Last Name:</label><input type="text" name="lastName" id="lastName" class="form-control" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> <?= (isset($error['lastName']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['lastName'] ?? '' ?>
+				</div>
+				<div class="col-lg-2 col-md-12 col-sm-12">
+					<label class="form-label" for="">Phone Number:</label><input type="tel" name="tel" id="tel" class="form-control" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> />
+				</div>
+				<div class="col-lg-5 col-md-6 col-sm-12 my-2">
+					<label class="form-label" for="">Enter an Email</label><input type="email" id="email" name="userEmail" class="form-control" placeholder="email@example.com" <?= (isset($_POST['userEmail']) ? 'value="' . $_POST['userEmail'] . '"' : '') ?> <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?>
+				</div>
+				<div class="col-lg-5 col-md-6 col-sm-12 my-2">
+					<label class="form-label" for="">Enter your Password (8 characters minimum):</label><input type="password" id="password" class="form-control" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['password'] ?? '' ?>
+				</div>
+				<div class="row">
+					<div class="col-lg-2 col-sm-12 mt-2 mb-0 ">
+						<input type="submit" class="btn btn-outline-success text-dark btn-lg" name="userSubmit" value="Submit" />
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 
-<form action='' method="post">
-	First Name:<input type="text" name="firstName" id="firstName" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> <?= (isset($error['firstName']) ? 'class="is-invalid" ' : '') ?> required /> <?= $error['firstName'] ?? '' ?>
-	Last Name:<input type="text" name="lastName" id="lastName" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> <?= (isset($error['lastName']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['lastName'] ?? '' ?>
-	Phone Number:<input type="tel" name="tel" id="tel" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> />
-	Enter an Email<input type="email" id="email" name="userEmail" placeholder="email@example.com" <?= (isset($_POST['userEmail']) ? 'value="' . $_POST['userEmail'] . '"' : '') ?> <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?>
-	Enter your Password (8 characters minimum):<input type="password" id="password" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required> <?= $error['password'] ?? '' ?>
-
-	<input type="submit" name="userSubmit" value="Submit" />
-</form>
