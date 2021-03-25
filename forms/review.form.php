@@ -75,8 +75,8 @@ if (isset($_POST['reviewSubmit'])) {
 		// if user does exist, set the found user's ID as userID property of $review.
 		$review->setUserId($user->getId());
 		// echo '<pre>';
-		// // var_dump($review);
-		// // var_dump($user);
+		// var_dump($review);
+		// var_dump($user);
 		// echo '</pre>';
 
 		//save $review object to database
