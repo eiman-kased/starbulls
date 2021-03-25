@@ -70,7 +70,9 @@ if (isset($_POST['reviewSubmit'])) {
 		$_SESSION['review_post'] = json_encode($_POST);
 
 		// redirects the user to the signup page
-		header('Location:signup.php');
+		$URL = 'signup.php';
+		echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+		echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
 	} else {
 		// if user does exist, set the found user's ID as userID property of $review. 
 		$review->setUserId($user->getId());

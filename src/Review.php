@@ -7,7 +7,7 @@ class Review implements JsonSerializable
 	private int $id;
 	private float $score;
 	private string $comment;
-	private int $user_id;
+	private int $userID;
 	private \DateTime $createdAt;
 
 	private Database $db;
@@ -19,7 +19,7 @@ class Review implements JsonSerializable
 		$this->comment = $comment;
 		$this->createdAt = new \DateTime();
 		if ($userId !== null) {
-			$this->user_id = $userId;
+			$this->userID = $userId;
 		}
 	}
 
@@ -30,8 +30,7 @@ class Review implements JsonSerializable
 		$this->db = $this->db ?? new Database();
 		$dbCon = $this->db->getConnection();
 		//Write query to save info 
-		$sql = "INSERT INTO review (score, comment, user_id, created_at)
-		VALUES ($this->score, '$this->comment', $this->user_id, '" . $this->createdAt->format('Y-m-d H:i:s') . "')";
+		$sql = "INSERT INTO review (score, comment, userID) VALUES ($this->score, '$this->comment', $this->userID)";
 
 		//DB run query 
 		$insertSuccess = $dbCon->query($sql);
@@ -58,28 +57,28 @@ class Review implements JsonSerializable
 		$reviews = array();
 		//Loop through results
 		while ($row = $results->fetch_assoc()) {
-			$review = new Review($row['score'], $row['comment'], $row['user_id']);
+			$review = new Review($row['score'], $row['comment'], $row['userID']);
 			$reviews[] = $review;
 		}
 		return $reviews;
 	}
 
 	/**
-	 * Get the value of user_id
+	 * Get the value of userID
 	 */
 	public function getUserID()
 	{
-		return $this->user_id ?? null;
+		return $this->userID ?? null;
 	}
 
 	/**
-	 * Set the value of user_id
+	 * Set the value of userID
 	 *
 	 * @return  self
 	 */
-	public function setUserID($user_id)
+	public function setUserID($userID)
 	{
-		$this->user_id = $user_id;
+		$this->userID = $userID;
 
 		return $this;
 	}
