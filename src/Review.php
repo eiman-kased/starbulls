@@ -28,11 +28,10 @@ class Review implements JsonSerializable
 	{
 		//Establish connection to DB
 		self::$db = self::$db ?? dbConn();
-		//Write query to save info 
-		$sql = "INSERT INTO review (score, comment, userID, createdAt)
-		VALUES ($this->score, '$this->comment', $this->userID, '" . $this->createdAt->format('Y-m-d H:i:s') . "')";
-		// echo $sql;
-		//DB run query 
+		//Write query to save info
+		$sql = "INSERT INTO review (score, comment, userID) VALUES ($this->score, '$this->comment', $this->userID )";
+		// echo $sql
+		//DB run query
 		$insertSuccess = self::$db->query($sql);
 		//Does it work succesfully
 		if (!$insertSuccess) {
@@ -50,7 +49,7 @@ class Review implements JsonSerializable
 		self::$db = self::$db ?? dbConn();
 		//Write query to get review based on score
 		$sql = "SELECT * FROM review where score=$score";
-		//DB run query 
+		//DB run query
 		$results = self::$db->query($sql);
 		//Create array to return results
 		$reviews = array();
