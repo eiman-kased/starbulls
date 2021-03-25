@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
 		<div class="container-fluid">
 			<div class="logo">
