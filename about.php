@@ -12,7 +12,7 @@
 
 <body>
 	<?php include 'navbar.php'; ?>
-	<div class="conatiner containerAbout">
+	<div class="containerAbout">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<img src="imgs/cofee3.png" width="100%">
