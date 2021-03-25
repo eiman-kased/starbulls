@@ -67,13 +67,14 @@ nav {
 
 /* css for the table in specialsOTW.html*/
 
-table, th, td {
+th, td {
 	border: 1.2px solid black;
 	text-align: center;
 	border-color: black;
 	margin-top: 2em;
 	width: 100%;
 }
+
 
 dt {
 	font-size: 30px;
@@ -279,4 +280,8 @@ input {
 	border-radius: 5px;
 	box-shadow: 5px 5px 3px 3px #222222;
 	z-index: 1300px;
+}
+
+.carousel-caption {
+	text-shadow: 3px 3px 6px black;
 }
