@@ -10,26 +10,31 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav nav-pills">
+			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="about.php" id="aboutPage">ABOUT US</a>
+					<a class="nav-link" href="about.php">ABOUT US</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						MENU
+						OUR MENUS
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="menus">
-						<li><a class="dropdown-item" href="#cafe">Cafe</a></li>
-						<li><a class="dropdown-item" href="#breakfastSingles">Breakfast</a></li>
-						<li><a class="dropdown-item" href="#tradWings">Wings</a></li>
-						<li><a class="dropdown-item" href="#dinner">Dinner+Sides</a></li>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<li><a class="dropdown-item" href="menu.php">Full Menu</a></li>
+						<li><a class="dropdown-item" href="menu.php#coffee">Specialty Coffee</a></li>
+						<li><a class="dropdown-item" href="menu.php#regularcoffee">Coffee</a></li>
+						<li><a class="dropdown-item" href="menu.php#breakfastsingles">Breakfast Singles</a></li>
+						<li><a class="dropdown-item" href="menu.php#breakfastcombos">Breakfast Combos</a></li>
+						<li><a class="dropdown-item" href="menu.php#traditionalwings">Traditional Wings</a></li>
+						<li><a class="dropdown-item" href="menu.php#specialitywings">Starbulls Speciality Wings</a></li>
+						<li><a class="dropdown-item" href="menu.php#bullsDinner">Bulls Dinner</a></li>
+						<li><a class="dropdown-item" href="menu.php#sides">Sides</a></li>
 					</ul>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="specialMenu.php" id="weekly">WEEKLY SPECIALS</a>
+					<a class="nav-link" href="specialMenu.php">WEEKLY SPECIALS</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="apply.php" id="apply">APPLY NOW</a>
+					<a class="nav-link" href="apply.php">APPLY NOW</a>
 				</li>
 			</ul>
 		</div>
