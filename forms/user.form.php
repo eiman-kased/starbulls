@@ -21,14 +21,6 @@ $password = '';
 // set an empty error array
 $error = array();
 
-// echo '$_POST<pre>';
-// var_dump($_POST);
-// echo '</pre>';
-
-// echo '$_SESSION<pre>';
-// var_dump($_SESSION);
-// echo '</pre>';
-
 if (isset($_SESSION['review_post']) && !(isset($_POST['userSubmit']))) {
 	// if redirected an alert message will prompt user to signup
 	echo '<script language="javascript">';
@@ -43,16 +35,11 @@ if (isset($_SESSION['review_post'])) {
 
 	// presets the userEmail from the review form
 	$_POST['userEmail'] = $_POST['review']['userEmail'] ?? '';
-	// echo '$_POST<pre>';
-	// var_dump($_POST);
-	// echo '</pre>';
+
 }
 
 // check to see if the submit button was clicked on the user form
 if (isset($_POST['userSubmit'])) {
-	// echo '$_POST<pre>';
-	// var_dump($_POST);
-	// echo '</pre>';
 
 	// check to make sure firstName is not empty
 	if (!empty(trim($_POST['firstName']))) {
@@ -111,8 +98,7 @@ if (isset($_POST['userSubmit'])) {
 		// TODO determine if we are going to display a message
 		echo 'User Saved';
 		// echo 'confirmation email sent to ' . $user->getEmail();
-		// debugging
-		// var_dump($user);
+
 	} else {
 		// displays error message if user cannot be saved
 		echo 'Error saving user!';
@@ -122,7 +108,7 @@ if (isset($_POST['userSubmit'])) {
 	if (isset($_SESSION['review_submit'])) {
 		// sets $reviewJSON to an associative array of review data
 		$reviewJSON = json_decode($_SESSION['review_submit'], true);
-		// var_dump($reviewJSON);
+
 
 		// creates a new review object from the reviewJSON
 		$review = new Review($reviewJSON['score'], $reviewJSON['comment'], $userSaved->getId());

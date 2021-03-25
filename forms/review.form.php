@@ -17,10 +17,6 @@ $error = array();
 
 // check to see if the submit button was clicked on review form
 if (isset($_POST['reviewSubmit'])) {
-	// debugging, leave in for now
-	// echo '<pre>';
-	// var_dump($_POST);
-	// echo '</pre>';
 
 	// make sure comment isn't empty
 	if (!empty($_POST['comment'])) {
@@ -74,10 +70,6 @@ if (isset($_POST['reviewSubmit'])) {
 	} else {
 		// if user does exist, set the found user's ID as userID property of $review.
 		$review->setUserId($user->getId());
-		// echo '<pre>';
-		// var_dump($review);
-		// var_dump($user);
-		// echo '</pre>';
 
 		//save $review object to database
 		$review->saveToDB();
