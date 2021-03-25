@@ -9,9 +9,6 @@
 </head>
 
 <body>
-	<div class="wrapper">
-		<img src="https://static01.nyt.com/images/2016/02/09/dining/09COOKING_CHICKENWINGS2/09COOKING_CHICKENWINGS2-superJumbo.jpg" id=bg alt="wings">
-	</div>
 	<?php include 'navbar.php'; ?>
 	<?php include 'forms/user.form.php'; ?>
 	<?php include 'footer.php'; ?>

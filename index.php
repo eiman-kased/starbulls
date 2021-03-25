@@ -68,12 +68,11 @@ if (session_status() === PHP_SESSION_NONE) {
 			</tr>
 		</table>
 		</br></br>
-
-		<div class="row row-index">
-			<div class="column">
-				<div id="connect">
-					<img src="images/connect.jpg" />
-				</div>
+	</div>
+	<div class="row row-index">
+		<div class="column">
+			<div id="connect">
+				<img src="images/connect.jpg" />
 			</div>
 		</div>
 		<div class="column">
@@ -83,21 +82,22 @@ if (session_status() === PHP_SESSION_NONE) {
 				<p>Follow us to find out the latest buzz!</p>
 			</div>
 		</div>
+	</div>
 
-		<div class="row row-index">
-			<div class="column">
-				<div id="connect">
-					<div class="connectTexts">
-						<h2>Enjoy a Variety of Food!</h2>
-						<p>We offer a variety of food and drinks to satisfy any and all cravings!</p> </br>
-						<p>Head over to our menu page!</p>
-					</div>
+	<div class="row row-index">
+		<div class="column">
+			<div id="connect">
+				<div class="connectTexts">
+					<h2>Enjoy a Variety of Food!</h2>
+					<p>We offer a variety of food and drinks to satisfy any and all cravings!</p> </br>
+					<p>Head over to our menu page!</p>
 				</div>
 			</div>
 		</div>
-		<div class="column">
-			<img src="imgs/chickenWings.jpg" />
-		</div>
+	</div>
+	<div class="column">
+		<img src="imgs/chickenWings.jpg" />
+	</div>
 	</div> </br></br>
 	<?php include 'forms/review.form.php'; ?>
 	<?php include 'footer.php'; ?>

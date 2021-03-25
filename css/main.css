@@ -280,17 +280,19 @@ input {
     font-family: 'Montserrat', Arial, sans-serif;
 }
 
-.wrapper {
-    position: fixed;
+.wrapper img{
+    position: absolute;
+	display: block;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
+	width: 100%;
+	height: 100%;
     filter: brightness(80%);
 }
 
+
 #userAccount {
-    position: relative;
+	position: relative;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: larger;
     background-color: rgb(83, 184, 69);
