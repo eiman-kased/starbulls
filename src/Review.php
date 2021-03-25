@@ -32,7 +32,7 @@ class Review implements JsonSerializable
 		//Write query to save info 
 		$sql = "INSERT INTO review (score, comment, user_id, created_at)
 		VALUES ($this->score, '$this->comment', $this->user_id, '" . $this->createdAt->format('Y-m-d H:i:s') . "')";
-		// echo $sql;
+
 		//DB run query 
 		$insertSuccess = $dbCon->query($sql);
 		//Does it work succesfully

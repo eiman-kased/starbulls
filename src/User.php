@@ -37,13 +37,11 @@ class User
 		$preferred = $this->isPreferred ? 1 : 0;
 		$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred)
 		VALUES ('$this->firstName', '$this->lastName', '$this->email', '$this->password', '$this->phoneNumber', '$preferred')";
-		//echo $sql;
+
 		$insertSuccess = $dbCon->query($sql);
 		// Check for errors in the insert process
 		if (!$insertSuccess) {
-			// there was an error
 			// TODO log said error rather than just display
-			// echo 'Debug SQL Statement: ' . $sql . '<br/>';
 			echo 'Error inserting user:' . $dbCon->error;
 			return false;
 		}
@@ -64,15 +62,8 @@ class User
 			return false;
 		}
 
-
-		// echo '<pre>';
-		// var_dump($result);
-		// echo '</pre>';
 		$tmp = $result->fetch_object();
 
-		// echo '<pre>';
-		// var_dump($tmp);
-		// echo '</pre>';
 		$dbCon->close();
 		$retUser =  new User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred);
 		$retUser->setId($tmp->id);
