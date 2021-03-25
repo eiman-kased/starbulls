@@ -11,7 +11,7 @@ body {
 }
 
 .carousel-inner {
-	height: 400px;
+	max-height: 400px;
 }
 
 h1 {
@@ -262,12 +262,27 @@ input {
 	width: 100%;
 }
 
-.company, .heritage, .tools {
+.tools {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	border-radius: 6px;
 	text-align: center;
 	padding: 4%;
 }
+
+.containerAbout {
+	background-color: lightgray;
+}
+.aboutInfo1 {
+	background-color: rgba(255, 255, 255, .4);
+	border-radius: 20px;
+	text-align: center;
+}
+.aboutInfo2 {
+	background-color:  rgba(122, 242, 132, 0.461);
+	border-radius: 20px;
+	text-align: center;
+}
+
 
 .navbar.sticky-top {
 	z-index: 1100;
