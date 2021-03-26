@@ -11,11 +11,11 @@ class User
 	private string $password;
 	private string $phoneNumber;
 	private bool $isPreferred;
-	private DateTime $createdAt;
+	private \DateTime $createdAt;
 
-	private Database $db;
+	private \Database $db;
 
-	public function __construct(string $firstName, string $lastName, string $email, string $password, string $phoneNumber, bool $isPreferred = false, DateTime $createdAt = null )
+	public function __construct(string $firstName, string $lastName, string $email, string $password, string $phoneNumber, bool $isPreferred = false, DateTime $createdAt = null)
 	{
 		$this->firstName = $firstName;
 		$this->lastName = $lastName;
@@ -23,13 +23,13 @@ class User
 		$this->password = $password; // FIXME hash this before saving
 		$this->phoneNumber = $phoneNumber;
 		$this->isPreferred = $isPreferred;
-		$this->createdAt = $createdAt ?? new DateTime();
+		$this->createdAt = $createdAt ?? new \DateTime();
 	}
 
 	public function saveToDB(): User
 	{
 		// make/get db connection
-		$this->db = $this->db ?? new Database();
+		$this->db = $this->db ?? new \Database();
 		$dbCon = $this->db->getConnection();
 		// check to make sure this user doesn't already exist, based on email
 		if ($foundUser = self::findUserByEmail($this->email)) {
@@ -37,9 +37,12 @@ class User
 		}
 		// Construct the insert sql statement/query
 		$preferred = $this->isPreferred ? 1 : 0;
+		// here we want to hash the pw and save the hash in the db
+		$hash = password_hash($this->password, PASSWORD_BCRYPT);
+
 		// excluding datetime since it defaults to current timestamp
 		$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred)
-		VALUES ('$this->firstName', '$this->lastName', '$this->email', '$this->password', '$this->phoneNumber', '$preferred')";
+		VALUES ('$this->firstName', '$this->lastName', '$this->email', '$hash', '$this->phoneNumber', '$preferred')";
 
 		$insertSuccess = $dbCon->query($sql);
 		// Check for errors in the insert process
@@ -56,7 +59,7 @@ class User
 
 	public static function findUserByEmail($email)
 	{
-		$db = new Database();
+		$db = new \Database();
 		$dbCon = $db->getConnection();
 		$sql = "SELECT * FROM `user` WHERE email='$email'";
 
@@ -68,7 +71,7 @@ class User
 		$tmp = $result->fetch_object();
 
 		$dbCon->close();
-		$retUser =  new User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new DateTime($tmp->createdAt));
+		$retUser =  new \User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new \DateTime($tmp->createdAt));
 		$retUser->setId($tmp->id);
 		return $retUser;
 	}
@@ -191,17 +194,17 @@ class User
 
 	/**
 	 * Get the value of createdAt
-	 */ 
+	 */
 	public function getCreatedAt()
 	{
-		return new DateTime($this->createdAt);
+		return new \DateTime($this->createdAt);
 	}
 
 	/**
 	 * Set the value of createdAt
 	 *
 	 * @return  self
-	 */ 
+	 */
 	public function setCreatedAt(DateTime $createdAt)
 	{
 		$this->createdAt = $createdAt;
