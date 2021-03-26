@@ -135,6 +135,10 @@ if (isset($_POST['userSubmit'])) {
 			}
 		};
 	}
+	// after successful submission the user will  be redirected to the home page
+	$URL = 'index.php';
+	echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+	echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
 }
 ?>
 <div class="wrapper">
