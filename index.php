@@ -57,11 +57,12 @@ if (session_status() === PHP_SESSION_NONE) {
 				<td>9AM - 7PM</td>
 			</tr>
 		</table>
+		</br></br>
 	</div>
-	<div class="row">
+	<div class="row row-index">
 		<div class="column">
 			<div id="connect">
-				<img src="imgs/contactUs.jpeg" />
+				<img src="images/connect.jpg" />
 			</div>
 		</div>
 		<div class="column">
@@ -72,7 +73,8 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 		</div>
 	</div>
-	<div class="row">
+
+	<div class="row row-index">
 		<div class="column">
 			<div id="connect">
 				<div class="connectTexts">

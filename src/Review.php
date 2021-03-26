@@ -1,16 +1,16 @@
 <?php
 
-require_once('src/DB/db_connect.php');
+require_once 'src/DB/Database.php';
 
 class Review implements JsonSerializable
 {
 	private int $id;
 	private float $score;
 	private string $comment;
-	private int $user_id;
+	private int $userID;
 	private \DateTime $createdAt;
 
-	private static mysqli $db;
+	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
 	public function __construct($score, $comment, $userId = null)
@@ -19,7 +19,7 @@ class Review implements JsonSerializable
 		$this->comment = $comment;
 		$this->createdAt = new \DateTime();
 		if ($userId !== null) {
-			$this->user_id = $userId;
+			$this->userID = $userId;
 		}
 	}
 
@@ -27,16 +27,16 @@ class Review implements JsonSerializable
 	public function saveToDB()
 	{
 		//Establish connection to DB
-		self::$db = self::$db ?? dbConn();
+		$this->db = $this->db ?? new Database();
+		$dbCon = $this->db->getConnection();
 		//Write query to save info 
-		$sql = "INSERT INTO review (score, comment, user_id, created_at)
-		VALUES ($this->score, '$this->comment', $this->user_id, '" . $this->createdAt->format('Y-m-d H:i:s') . "')";
-		// echo $sql;
+		$sql = "INSERT INTO review (score, comment, userID) VALUES ($this->score, '$this->comment', $this->userID)";
+
 		//DB run query 
-		$insertSuccess = self::$db->query($sql);
+		$insertSuccess = $dbCon->query($sql);
 		//Does it work succesfully
 		if (!$insertSuccess) {
-			echo self::$db->error;
+			echo $dbCon->error;
 			return false;
 		}
 		//Return true
@@ -47,37 +47,38 @@ class Review implements JsonSerializable
 	public function getReviewsByScore($score)
 	{
 		//Establish connection to DB
-		self::$db = self::$db ?? dbConn();
+		$this->db = $this->db ?? new Database();
+		$dbCon = $this->db->getConnection();
 		//Write query to get review based on score
 		$sql = "SELECT * FROM review where score=$score";
 		//DB run query 
-		$results = self::$db->query($sql);
+		$results = $dbCon->query($sql);
 		//Create array to return results
 		$reviews = array();
 		//Loop through results
-		while ($row = mysqli_fetch_assoc($results)) {
-			$review = new Review($row['score'], $row['comment'], $row['user_id']);
+		while ($row = $results->fetch_assoc()) {
+			$review = new Review($row['score'], $row['comment'], $row['userID']);
 			$reviews[] = $review;
 		}
 		return $reviews;
 	}
 
 	/**
-	 * Get the value of user_id
+	 * Get the value of userID
 	 */
 	public function getUserID()
 	{
-		return $this->user_id ?? null;
+		return $this->userID ?? null;
 	}
 
 	/**
-	 * Set the value of user_id
+	 * Set the value of userID
 	 *
 	 * @return  self
 	 */
-	public function setUserID($user_id)
+	public function setUserID($userID)
 	{
-		$this->user_id = $user_id;
+		$this->userID = $userID;
 
 		return $this;
 	}
@@ -85,14 +86,13 @@ class Review implements JsonSerializable
 	// We need this to convert private vars to json correctly
 	public function jsonSerialize()
 	{
-		return
-			[
-				'id'   => $this->getId(),
-				'score' => $this->getScore(),
-				'comment' => $this->getComment(),
-				'userId' => $this->getUserID(),
-				'createdAt' => $this->getCreatedAt()->getTimestamp(),
-			];
+		return [
+			'id'   => $this->getId(),
+			'score' => $this->getScore(),
+			'comment' => $this->getComment(),
+			'userId' => $this->getUserID(),
+			'createdAt' => $this->getCreatedAt()->getTimestamp(),
+		];
 	}
 
 	/**
