@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<div class="logo">
 			<a href="index.php" class="logo">
-				<img src="images/starbulls_logo.png" alt="logo" />
+				<img src="imgs/starbulls_logo.png" alt="logo" />
 			</a>
 		</div>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
