@@ -17,10 +17,6 @@ $error = array();
 
 // check to see if the submit button was clicked on review form
 if (isset($_POST['reviewSubmit'])) {
-	// debugging, leave in for now
-	// echo '<pre>';
-	// var_dump($_POST);
-	// echo '</pre>';
 
 	// make sure comment isn't empty
 	if (!empty($_POST['comment'])) {
@@ -33,7 +29,7 @@ if (isset($_POST['reviewSubmit'])) {
 
 	// check score is set to a numeric value
 	if (is_numeric($_POST['score'])) {
-		// set score to accept float value of user input 
+		// set score to accept float value of user input
 		$score = floatval($_POST['score']);
 	} else {
 		// if score is not set, add error message to array to be displayed later
@@ -57,8 +53,8 @@ if (isset($_POST['reviewSubmit'])) {
 
 	// check to see if the user exists
 	if (!$user) {
-		//if the user doesn't exist, we need to try to create a user 
-		// call session_start so we can utilize the $_SESSION super global to pass data to the user form 
+		//if the user doesn't exist, we need to try to create a user
+		// call session_start so we can utilize the $_SESSION super global to pass data to the user form
 		if (session_status() === PHP_SESSION_NONE) {
 			session_start();
 		}
@@ -70,26 +66,44 @@ if (isset($_POST['reviewSubmit'])) {
 		$_SESSION['review_post'] = json_encode($_POST);
 
 		// redirects the user to the signup page
-		header('Location:signup.php');
+		$URL = 'signup.php';
+		echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+		echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
 	} else {
-		// if user does exist, set the found user's ID as userID property of $review. 
+		// if user does exist, set the found user's ID as userID property of $review.
 		$review->setUserId($user->getId());
-		echo '<pre>';
-		var_dump($review);
-		var_dump($user);
-		echo '</pre>';
 
 		//save $review object to database
 		$review->saveToDB();
+		if ($review->getUserID()) {
+			echo '<script language="javascript">';
+			echo 'alert("Thank you for your review!")';
+			echo '</script>';
+		}
 	}
 }
 
 ?>
-
-<form method="post" action="">
-	Enter an Email<input type="email" id="userEmail" name="userEmail" placeholder="email@example.com" required <?= (!empty($userEmail) ? 'value="' . $userEmail . '"' : '') ?> <?= (isset($error['userEmail']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['userEmail'] ?? '' ?>
-	Score Rating:<input type="number" step="0.5" name="score" min="0" max="5" <?= (is_numeric($score) ? "value='$score'" : '') ?>' <?= (isset($error['score']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['score'] ?? '' ?>
-	Please Leave a Message Here:<textarea id="comment" name="comment" rows="5" cols="50" <?= (isset($error['comment']) ? 'class="is-invalid"' : '') ?> required><?= (!empty($comment) ? $comment : '') ?> </textarea> <?= $error['comment'] ?? '' ?>
-
-	<input type="submit" name="reviewSubmit" value="Submit" />
-</form>
+<div class="inputbox container">
+	<div id="reviewForm" class="row my-3">
+		<form method="post" action="">
+			<div class="row my-3 ">
+				<div class="colform col-12">
+					<h3 class="fw-bold">Tell Us About Your Experience at Starbulls</h3>
+				</div>
+				<div class="colform col-lg-8 col-sm-8">
+					<label class="form-label" for="">Enter an Email</label><input type="email" id="userEmail" class="form-control" name="userEmail" placeholder="email@example.com" required <?= (!empty($userEmail) ? 'value="' . $userEmail . '"' : '') ?> <?= (isset($error['userEmail']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['userEmail'] ?? '' ?>
+				</div>
+				<div class="colform col-lg-2 col-sm-4">
+					<label class="form-label" for="">Score Rating:</label><input type="number" class="form-control" step="0.5" name="score" min="0" max="5" <?= (is_numeric($score) ? "value='$score'" : '') ?>' <?= (isset($error['score']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['score'] ?? '' ?>
+				</div>
+				<div class="colform col-lg-12">
+					<label class="form-label" for="">Please Leave a Message Here:</label><textarea id="comment" class="form-control" name="comment" rows="5" cols="50" <?= (isset($error['comment']) ? 'class="is-invalid"' : '') ?> required><?= (!empty($comment) ? $comment : '') ?> </textarea> <?= $error['comment'] ?? '' ?>
+				</div>
+				<div class="colform col-lg-2 my-3">
+					<input type="submit" class="btn btn-outline-success btn-lg" name="reviewSubmit" value="Submit" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

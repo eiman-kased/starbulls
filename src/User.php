@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/DB/db_connect.php';
+require_once 'src/DB/Database.php';
 
 class User
 {
@@ -11,10 +11,11 @@ class User
 	private string $password;
 	private string $phoneNumber;
 	private bool $isPreferred;
+	private DateTime $createdAt;
 
-	private static mysqli $db;
+	private Database $db;
 
-	public function __construct(string $firstName, string $lastName, string $email, string $password, string $phoneNumber, bool $isPreferred = false)
+	public function __construct(string $firstName, string $lastName, string $email, string $password, string $phoneNumber, bool $isPreferred = false, DateTime $createdAt = null )
 	{
 		$this->firstName = $firstName;
 		$this->lastName = $lastName;
@@ -22,57 +23,52 @@ class User
 		$this->password = $password; // FIXME hash this before saving
 		$this->phoneNumber = $phoneNumber;
 		$this->isPreferred = $isPreferred;
+		$this->createdAt = $createdAt ?? new DateTime();
 	}
 
 	public function saveToDB(): User
 	{
 		// make/get db connection
-		self::$db = self::$db ?? dbConn();
+		$this->db = $this->db ?? new Database();
+		$dbCon = $this->db->getConnection();
 		// check to make sure this user doesn't already exist, based on email
 		if ($foundUser = self::findUserByEmail($this->email)) {
 			return $foundUser;
 		}
 		// Construct the insert sql statement/query
 		$preferred = $this->isPreferred ? 1 : 0;
+		// excluding datetime since it defaults to current timestamp
 		$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred)
 		VALUES ('$this->firstName', '$this->lastName', '$this->email', '$this->password', '$this->phoneNumber', '$preferred')";
-		//echo $sql;
-		$insertSuccess = self::$db->query($sql);
+
+		$insertSuccess = $dbCon->query($sql);
 		// Check for errors in the insert process
 		if (!$insertSuccess) {
-			// there was an error
 			// TODO log said error rather than just display
-			// echo 'Debug SQL Statement: ' . $sql . '<br/>';
-			echo 'Error inserting user:' . self::$db->error;
+			echo 'Error inserting user:' . $dbCon->error;
 			return false;
 		}
 		// everything went well
-		$this->id = self::$db->insert_id;
-		self::$db->close();
+		$this->id = $dbCon->insert_id;
+		$dbCon->close();
 		return $this;
 	}
 
 	public static function findUserByEmail($email)
 	{
-		self::$db = self::$db ?? dbConn();
+		$db = new Database();
+		$dbCon = $db->getConnection();
 		$sql = "SELECT * FROM `user` WHERE email='$email'";
-		// echo $sql;
-		$result = self::$db->query($sql);
+
+		$result = $dbCon->query($sql);
 		if ($result->num_rows < 1) {
 			return false;
 		}
 
-
-		// echo '<pre>';
-		// var_dump($result);
-		// echo '</pre>';
 		$tmp = $result->fetch_object();
 
-		// echo '<pre>';
-		// var_dump($tmp);
-		// echo '</pre>';
-		self::$db->close();
-		$retUser =  new User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred);
+		$dbCon->close();
+		$retUser =  new User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new DateTime($tmp->createdAt));
 		$retUser->setId($tmp->id);
 		return $retUser;
 	}
@@ -189,6 +185,26 @@ class User
 	public function setPhoneNumber($phoneNumber)
 	{
 		$this->phoneNumber = $phoneNumber;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of createdAt
+	 */ 
+	public function getCreatedAt()
+	{
+		return new DateTime($this->createdAt);
+	}
+
+	/**
+	 * Set the value of createdAt
+	 *
+	 * @return  self
+	 */ 
+	public function setCreatedAt(DateTime $createdAt)
+	{
+		$this->createdAt = $createdAt;
 
 		return $this;
 	}
