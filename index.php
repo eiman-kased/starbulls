@@ -57,12 +57,69 @@ if (session_status() === PHP_SESSION_NONE) {
 				<td>9AM - 7PM</td>
 			</tr>
 		</table>
-		</br></br>
 	</div>
+
+	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="imgs/coffee.jpg" class="d-block w-100" alt="pouring coffee">
+				<div class="carousel-caption d-none d-md-block">
+					<h3 class="display-4">StarBulls Selection of Coffee</h3>
+					<p>A selection of coffee to satisfy your taste.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="imgs/chickenwings2.jpg" class="d-block w-100" alt="plate of chicken wings">
+				<div class="carousel-caption d-none d-md-block">
+				<h3 class="display-4">Traditional and Specialty Wings</h3>
+					<p>Chicken Wing flavors ranging from traditional to daring.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="imgs/hotchocolate.jpg" class="d-block w-100" alt="four mugs of hot chocolate">
+				<div class="carousel-caption d-none d-md-block">
+				<h3 class="display-4">Milk Chocolate Monday</h3>
+					<p>Our Monday Special! Hot Milk Chocolate serving a party of four.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="imgs/burgerfries.jpg" class="d-block w-100" alt="burger and fries">
+				<div class="carousel-caption d-none d-md-block">
+				<h3 class="display-4">Bulls Dinner</h3>
+					<p>Try our delicious Burgers and Fries.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="imgs/wingbuffet.jpg" class="d-block w-100" alt="chicken wing buffet">
+				<div class="carousel-caption d-none d-md-block">
+					<h3 class="display-4">Wingin' It Wednesday</h3>
+					<p>Our Wednesday Special! All You Can Eat Chicken Wing Buffet!</p>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+	<?php include 'forms/review.form.php'; ?>
+
 	<div class="row row-index">
 		<div class="column">
 			<div id="connect">
-				<img src="images/connect.jpg" />
+				<img src="imgs/contactUs.jpeg" />
 			</div>
 		</div>
 		<div class="column">
@@ -89,62 +146,6 @@ if (session_status() === PHP_SESSION_NONE) {
 		</div>
 	</div>
 
-	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-		</div>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="imgs/coffee.jpg" class="d-block w-100" alt="pouring coffee">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>StarBulls Selection of Coffee</h3>
-					<p>A selection of coffee to satisfy your taste.</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="imgs/chickenwings2.jpg" class="d-block w-100" alt="plate of chicken wings">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>Traditional and Specialty Wings</h3>
-					<p>Chicken Wing flavors ranging from traditional to daring.</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="imgs/hotchocolate.jpg" class="d-block w-100" alt="four mugs of hot chocolate">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>Milk Chocolate Monday</h3>
-					<p>Our Monday Special! Hot Milk Chocolate serving a party of four.</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="imgs/burgerfries.jpg" class="d-block w-100" alt="burger and fries">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>Bulls Dinner</h3>
-					<p>Try our delicious Burger and Fries.</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="imgs/wingbuffet.jpg" class="d-block w-100" alt="chicken wing buffet">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>Wingin' It Wednesday</h3>
-					<p>Our Wednesday Special, All You Can Eat Chicken Wing Buffet!.</p>
-				</div>
-			</div>
-		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
-	</div>
-
-	<?php include 'forms/review.form.php'; ?>
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
