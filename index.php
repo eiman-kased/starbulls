@@ -29,28 +29,28 @@ if (session_status() === PHP_SESSION_NONE) {
 							<h2>Only the best of the best here at StarBulls</h2>
 							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
 								only purchase high-quality ingredients that are ethically sourced.</p>
-								<div id="hours">
-		<h4 class="display-6">Hours of Operation</h4>
-		<table class="table">
-			<tr>
-				<td>Monday - Friday</td>
-				<td>Saturday</td>
-				<td>Sunday</td>
+							<div id="hours">
+								<h4 class="display-6">Hours of Operation</h4>
+								<table class="table">
+									<tr>
+										<td>Monday - Friday</td>
+										<td>Saturday</td>
+										<td>Sunday</td>
 
-			</tr>
-			<tr>
-				<td>9AM - 7PM</td>
-				<td>9AM - 9PM</td>
-				<td>*Closed*</td>
-			</tr>
-		</table>
-	</div>
+									</tr>
+									<tr>
+										<td>9AM - 7PM</td>
+										<td>9AM - 9PM</td>
+										<td>*Closed*</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div><br/>
+	</div><br />
 	<!-- <div id="hours">
 		<h4>Hours of Operation</h4>
 		<table class="table">
@@ -87,21 +87,21 @@ if (session_status() === PHP_SESSION_NONE) {
 			<div class="carousel-item">
 				<img src="imgs/chickenwings2.jpg" class="d-block w-100" alt="plate of chicken wings">
 				<div class="carousel-caption d-none d-md-block">
-				<h3 class="display-4">Traditional and Specialty Wings</h3>
+					<h3 class="display-4">Traditional and Specialty Wings</h3>
 					<p>Chicken Wing flavors ranging from traditional to daring.</p>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="imgs/hotchocolate.jpg" class="d-block w-100" alt="four mugs of hot chocolate">
 				<div class="carousel-caption d-none d-md-block">
-				<h3 class="display-4">Milk Chocolate Monday</h3>
+					<h3 class="display-4">Milk Chocolate Monday</h3>
 					<p>Our Monday Special! Hot Milk Chocolate serving a party of four.</p>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="imgs/burgerfries.jpg" class="d-block w-100" alt="burger and fries">
 				<div class="carousel-caption d-none d-md-block">
-				<h3 class="display-4">Bulls Dinner</h3>
+					<h3 class="display-4">Bulls Dinner</h3>
 					<p>Try our delicious Burgers and Fries.</p>
 				</div>
 			</div>
@@ -125,7 +125,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 	<?php include 'forms/review.form.php'; ?>
 
-	<div class="row row-index">
+	<!--<div class="row row-index">
 		<div class="column">
 			<div id="connect">
 				<img src="imgs/contactUs.jpeg" />
@@ -152,8 +152,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		</div>
 		<div class="column">
 			<img src="imgs/chickenWings.jpg" />
-		</div>
-	</div>
+		</div>-->
 
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
