@@ -306,3 +306,10 @@ input {
 	box-shadow: 5px 5px 3px 3px #222222;
 	z-index: 1300px;
 }
+
+.card-img-top{
+	width: 350px;
+    height: 320px;
+	margin-left: 10%;
+	margin-top: 2%;	
+}
