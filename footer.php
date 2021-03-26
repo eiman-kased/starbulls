@@ -8,9 +8,11 @@
 			<img src="imgs/twitterIcon.jpg" alt="twitter"></a>
 	</div> </br>
 	<div id="end">
-		<b>
-			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
-			Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
-		</b>
+		<div class="container">
+			<b>
+				Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web
+				Development Street&nbsp; |&nbsp; Buffalo , NY 14220&nbsp; |&nbsp;
+			</b>
+		</div>
 	</div>
 </footer>
