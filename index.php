@@ -29,35 +29,44 @@ if (session_status() === PHP_SESSION_NONE) {
 							<h2>Only the best of the best here at StarBulls</h2>
 							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
 								only purchase high-quality ingredients that are ethically sourced.</p>
+								<div id="hours">
+		<h4 class="display-6">Hours of Operation</h4>
+		<table class="table">
+			<tr>
+				<td>Monday - Friday</td>
+				<td>Saturday</td>
+				<td>Sunday</td>
+
+			</tr>
+			<tr>
+				<td>9AM - 7PM</td>
+				<td>9AM - 9PM</td>
+				<td>*Closed*</td>
+			</tr>
+		</table>
+	</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div><br/>
-	<div id="hours">
+	<!-- <div id="hours">
 		<h4>Hours of Operation</h4>
 		<table class="table">
 			<tr>
-				<td>Sunday</td>
-				<td>Monday</td>
-				<td>Tuesday</td>
-				<td>Wednesday</td>
-				<td>Thursday</td>
-				<td>Friday</td>
+				<td>Monday - Friday</td>
 				<td>Saturday</td>
+				<td>Sunday</td>
+
 			</tr>
 			<tr>
+				<td>9AM - 7PM</td>
+				<td>9AM - 9PM</td>
 				<td>*Closed*</td>
-				<td>9AM - 7PM</td>
-				<td>9AM - 7PM</td>
-				<td>9AM - 7PM</td>
-				<td>9AM - 7PM</td>
-				<td>9AM - 7PM</td>
-				<td>9AM - 7PM</td>
 			</tr>
 		</table>
-	</div>
+	</div> -->
 
 	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-indicators">
