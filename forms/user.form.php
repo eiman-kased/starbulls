@@ -86,11 +86,11 @@ if (isset($_POST['userSubmit'])) {
 	}
 
 	if (empty($password) || strlen($password) < 8) {
-		throw new InvalidArgumentException("Password cannot be empty and must be at least 8 characters");
+		throw new \InvalidArgumentException("Password cannot be empty and must be at least 8 characters");
 	}
 
 	// creating a new user object
-	$user = new User($firstName, $lastName, $email, $password, $tel, false);
+	$user = new \User($firstName, $lastName, $email, $password, $tel, false);
 
 	// save user to the database which will return false if unsuccessful
 	$userSaved = $user->saveToDB();
@@ -114,7 +114,7 @@ if (isset($_POST['userSubmit'])) {
 
 
 		// creates a new review object from the reviewJSON
-		$review = new Review($reviewJSON['score'], $reviewJSON['comment'], $userSaved->getId());
+		$review = new \Review($reviewJSON['score'], $reviewJSON['comment'], $userSaved->getId());
 
 		// saves $review object to database
 		if ($review->saveToDB()) {
