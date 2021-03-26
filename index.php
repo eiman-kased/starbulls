@@ -97,7 +97,6 @@ if (session_status() === PHP_SESSION_NONE) {
 		<div class="column">
 			<img src="imgs/chickenWings.jpg" />
 		</div>
-	</div>
 	</div> </br></br>
 	<?php include 'forms/review.form.php'; ?>
 	<?php include 'footer.php'; ?>
