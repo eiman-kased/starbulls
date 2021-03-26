@@ -52,9 +52,7 @@
 		<div class="row row-cols-1 row-cols-lg-3 g-4 pb-4">
 			<div class="col">
 				<div class="card border-light mb-3 rounded">
-					<div id="will">
-						<img src="imgs/chickenWings.jpg" class="pic card-img-top rounded-circle" alt="...">
-					</div>
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">Will</h5>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

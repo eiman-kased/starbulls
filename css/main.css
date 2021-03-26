@@ -308,8 +308,8 @@ input {
 }
 
 .card-img-top{
-	width: 350px;
-    height: 320px;
-	margin-left: 10%;
+	width: 270px;
+	height: 240px;
+	margin: 0 auto;
 	margin-top: 2%;	
 }
