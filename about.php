@@ -54,7 +54,7 @@
 				<div class="card border-light mb-3 rounded">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Will</h5>
+						<h3 class="card-title">Will</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
@@ -63,7 +63,7 @@
 				<div class="card border-light mb-3 rounded">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Margaret</h5>
+						<h3 class="card-title">Margaret</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
@@ -72,7 +72,7 @@
 				<div class="card border-light mb-3 rounded">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Becca</h5>
+						<h3 class="card-title">Becca</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 				<div class="card border-light mb-3 rounded">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Eiman</h5>
+						<h3 class="card-title">Eiman</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
@@ -90,7 +90,7 @@
 				<div class="card border-light mb-3 rounded">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Nick</h5>
+						<h3 class="card-title">Nick</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
@@ -99,7 +99,7 @@
 				<div class="card border-light mb-3 rounded">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Vince</h5>
+						<h3 class="card-title">Vince</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
@@ -108,7 +108,7 @@
 				<div class="card border-light mb-3 rounded">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Waymon</h5>
+						<h3 class="card-title">Waymon</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
@@ -117,7 +117,7 @@
 				<div class="card border-light mb-3 rounded">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Gagan</h5>
+						<h3 class="card-title">Gagan</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
@@ -126,7 +126,7 @@
 				<div class="card border-light mb-3 rounded ">
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Charles</h5>
+						<h3 class="card-title">Charles</h3>
 						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
 				</div>
