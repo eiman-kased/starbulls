@@ -72,7 +72,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	<div class="row row-index">
 		<div class="column">
 			<div id="connect">
-				<img src="images/connect.jpg" />
+				<img src="imgs/contactUs.jpeg" />
 			</div>
 		</div>
 		<div class="column">
@@ -94,9 +94,9 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="column">
-		<img src="imgs/chickenWings.jpg" />
+		<div class="column">
+			<img src="imgs/chickenWings.jpg" />
+		</div>
 	</div>
 	</div> </br></br>
 	<?php include 'forms/review.form.php'; ?>
