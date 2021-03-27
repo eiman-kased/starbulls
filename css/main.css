@@ -129,6 +129,7 @@ dt {
 
 .row.row-index {
     display: flex;
+	margin: auto;
     background-color: lightgray;
 }
 
