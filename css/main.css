@@ -165,7 +165,7 @@ h3 {
 }
 
 .accordion-header.sticky-top {
-	top: 180px;
+	top: 110px;
 }
 
 /* beginning of CSS for specials */
@@ -293,14 +293,6 @@ input {
 	text-align: center;
 }
 
-.navbar.sticky-top {
-	z-index: 1100;
-}
-
-.accordion-header.sticky-top {
-	top: 180px;
-}
-
 /* review and sign up forms */
 
 #userForm h3 {
@@ -381,4 +373,11 @@ input {
 	border-radius: 5px;
 	box-shadow: 5px 5px 3px 3px #222222;
 	z-index: 1300px;
+}
+
+.card-img-top {
+	width: 270px;
+	height: 240px;
+	margin: 0 auto;
+	margin-top: 2%;
 }
