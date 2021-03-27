@@ -235,18 +235,18 @@ input {
 	text-shadow: 3px 3px 6px black;
 }
 
-#columns {
+#applyContent {
 	column-count: 2;
 	column-width: 500px;
 	padding-top: 20px;
 }
 
-.column-left {
+.apply-column-left {
 	width: 50%;
 	margin-left: 20%;
 }
 
-.column-right {
+.apply-column-right {
 	width: 80%;
 	padding-top: 1px;
 }

@@ -28,9 +28,9 @@ ini_set('display_errors', 1);
 				</div>
 			</div>
 		</div>
-		<div id="columns">
+		<div id="applyContent">
 			<div class="column-wrap">
-				<div class="column-left">
+				<div class="apply-column-left">
 					<!--left content-->
 					<h2>Application</h2>
 					<h3>*required fields</h3>
@@ -39,7 +39,7 @@ ini_set('display_errors', 1);
 					</div>
 				</div>
 			</div>
-			<div class="column-right">
+			<div class="apply-column-right">
 				<h2>Reviews</h2>
 				<div class="review1 ">
 					<p>McLovin:"No fake ID required: they'll hire you at 16!"</p>
