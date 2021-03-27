@@ -48,22 +48,7 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 		</div><br />
-		<!-- <div id="hours">
-		<h4>Hours of Operation</h4>
-		<table class="table">
-			<tr>
-				<td>Monday - Friday</td>
-				<td>Saturday</td>
-				<td>Sunday</td>
 
-			</tr>
-			<tr>
-				<td>9AM - 7PM</td>
-				<td>9AM - 9PM</td>
-				<td>*Closed*</td>
-			</tr>
-		</table>
-	</div> -->
 
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
@@ -120,8 +105,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			</button>
 		</div>
 
-		<?php include 'forms/review.form.php'; ?>
-
 		<!--<div class="row row-index">
 		<div class="column">
 			<div id="connect">
@@ -150,7 +133,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<div class="column">
 			<img src="imgs/chickenWings.jpg" />
 		</div>
-	</div> </br></br>
+	</div> </br></br>-->
 	<?php include 'forms/review.form.php'; ?>
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
