@@ -19,13 +19,12 @@
 						OUR MENUS
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<li><a class="dropdown-item" href="menu.php">Full Menu</a></li>
 						<li><a class="dropdown-item" href="menu.php#coffee">Specialty Coffee</a></li>
 						<li><a class="dropdown-item" href="menu.php#regularcoffee">Coffee</a></li>
 						<li><a class="dropdown-item" href="menu.php#breakfastsingles">Breakfast Singles</a></li>
 						<li><a class="dropdown-item" href="menu.php#breakfastcombos">Breakfast Combos</a></li>
 						<li><a class="dropdown-item" href="menu.php#traditionalwings">Traditional Wings</a></li>
-						<li><a class="dropdown-item" href="menu.php#specialitywings">Starbulls Speciality Wings</a></li>
+						<li><a class="dropdown-item" href="menu.php#specialitywings">Starbulls Specialty Wings</a></li>
 						<li><a class="dropdown-item" href="menu.php#bullsDinner">Bulls Dinner</a></li>
 						<li><a class="dropdown-item" href="menu.php#sides">Sides</a></li>
 					</ul>

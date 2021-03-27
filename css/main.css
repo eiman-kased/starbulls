@@ -127,8 +127,12 @@ dt {
 }
 
 .row.row-index {
-	display: flex;
+	<<<<<<< HEAD display: flex;
 	background-color: lightgray;
+	=======display: flex;
+	margin: auto;
+	background-color: lightgray;
+	>>>>>>>master
 }
 
 #connect img {
@@ -298,14 +302,6 @@ input {
 	text-align: center;
 }
 
-.navbar.sticky-top {
-	z-index: 1100;
-}
-
-.accordion-header.sticky-top {
-	top: 180px;
-}
-
 /* review and sign up forms */
 
 #userForm h3 {
@@ -388,6 +384,9 @@ input {
 	z-index: 1300px;
 }
 
-.carousel-caption {
-	text-shadow: 3px 3px 6px black;
+.card-img-top {
+	width: 270px;
+	height: 240px;
+	margin: 0 auto;
+	margin-top: 2%;
 }

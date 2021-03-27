@@ -35,7 +35,6 @@ if (isset($_SESSION['review_post'])) {
 
 	// presets the userEmail from the review form
 	$_POST['userEmail'] = $_POST['review']['userEmail'] ?? '';
-
 }
 
 // check to see if the submit button was clicked on the user form
@@ -87,14 +86,11 @@ if (isset($_POST['userSubmit'])) {
 	}
 
 	if (empty($password) || strlen($password) < 8) {
-		throw new InvalidArgumentException("Password cannot be empty and must be at least 8 characters");
+		throw new \InvalidArgumentException("Password cannot be empty and must be at least 8 characters");
 	}
 
-	// here we want to hash the pw and save the hash in the db
-	$hash = password_hash($password, PASSWORD_BCRYPT);
-
 	// creating a new user object
-	$user = new User($firstName, $lastName, $email, $hash, $tel, false);
+	$user = new \User($firstName, $lastName, $email, $password, $tel, false);
 
 	// save user to the database which will return false if unsuccessful
 	$userSaved = $user->saveToDB();
@@ -118,7 +114,7 @@ if (isset($_POST['userSubmit'])) {
 
 
 		// creates a new review object from the reviewJSON
-		$review = new Review($reviewJSON['score'], $reviewJSON['comment'], $userSaved->getId());
+		$review = new \Review($reviewJSON['score'], $reviewJSON['comment'], $userSaved->getId());
 
 		// saves $review object to database
 		if ($review->saveToDB()) {
@@ -135,6 +131,10 @@ if (isset($_POST['userSubmit'])) {
 			}
 		};
 	}
+	// after successful submission the user will  be redirected to the home page
+	$URL = 'index.php';
+	echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+	echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
 }
 ?>
 <div class="wrapper">
@@ -169,4 +169,3 @@ if (isset($_POST['userSubmit'])) {
 		</form>
 	</div>
 </div>
-

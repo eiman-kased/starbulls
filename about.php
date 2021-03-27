@@ -45,8 +45,91 @@
 					StarBulls we are Winners!
 				</p>
 			</div>
-			<div class="my-5">
+			<div class="my-1">
 				<h2>Meet Our Team</h2>
+			</div>
+		</div>
+		<div class="row row-cols-1 row-cols-lg-3 g-4 pb-4">
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Will</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Margaret</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Becca</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Eiman</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Nick</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Vince</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Waymon</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Gagan</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded ">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Charles</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
