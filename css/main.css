@@ -383,3 +383,10 @@ input {
     box-shadow: 5px 5px 3px 3px #222222;
     z-index: 1300px;
 }
+
+.card-img-top{
+	width: 270px;
+	height: 240px;
+	margin: 0 auto;
+	margin-top: 2%;	
+}

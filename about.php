@@ -24,34 +24,116 @@
 					</div>
 				</div>
 			</div>
-			<div class="row my-5 px-3 px-5">
-				<div class="aboutInfo1 p-4">
-					<p>We are the StarBulls. The mighty, mighty StarBulls. </br> Everywhere we go, people want to know:
-						WHO WE
-						ARE! So we tell
-						them: </br><strong> WE ARE THE STARBULLS; THE MIGHTY, MIGHTY STARBULLS!</strong></p>
+		</div>
+		<div class="row my-5 px-3 px-5">
+			<div class="aboutInfo1 p-4">
+				<p>We are the StarBulls. The mighty, mighty StarBulls. </br> Everywhere we go, people want to know:
+					WHO WE
+					ARE! So we tell
+					them: </br><strong> WE ARE THE STARBULLS; THE MIGHTY, MIGHTY STARBULLS!</strong></p>
+			</div>
+			<div class="my-5 px-5 p-3 aboutInfo2">
+				<h3 class="fw-bold">Our Heritage</h3>
+				<p>We are humbled by the success of our company thus far. The name StarBulls was created by Will,
+					one of our founders. Fueled by a continual flow of caffeine and blue cheese, Will opened StarBulls in Febuary of 2021.
+				</p>
+				<p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
+					look at our site! A beauty to say the least.
+				</p>
+				<p>Just a week ago, StarBulls did not exist. It has taken hours of dedication, caffeine, and chicken wings to get this
+					company up on the server. Days of frustration, trying to figure out why the code looks different on
+					our screens. Hours of trial and error as we figured out where we went wrong. One thing the
+					founders of StarBulls knew from the beginning is: Quitters Never Win. And Winners Never Quit. At
+					StarBulls we are Winners!
+				</p>
+			</div>
+			<div class="my-1">
+				<h2>Meet Our Team</h2>
+			</div>
+		</div>
+		<div class="row row-cols-1 row-cols-lg-3 g-4 pb-4">
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Will</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
 				</div>
-				<div class="my-5 px-5 p-3 aboutInfo2">
-					<h3 class="fw-bold">Our Heritage</h3>
-					<p>We are humbled by the success of our company thus far. The name StarBulls was created by Will,
-						one of our founders. Fueled by a continual flow of caffeine and blue cheese, Will opened StarBulls in Febuary of 2021.
-					</p>
-					<p>How do we measure success? Simply: we started from the bottom, now we are here! Seriously,
-						look at our site! A beauty to say the least.
-					</p>
-					<p>Just a week ago, StarBulls did not exist. It has taken hours of dedication, caffeine, and chicken wings to get this
-						company up on the server. Days of frustration, trying to figure out why the code looks different on
-						our screens. Hours of trial and error as we figured out where we went wrong. One thing the
-						founders of StarBulls knew from the beginning is: Quitters Never Win. And Winners Never Quit. At
-						StarBulls we are Winners!
-					</p>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Margaret</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
 				</div>
-				<div class="my-5">
-					<h2>Meet Our Team</h2>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Becca</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Eiman</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Nick</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Vince</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Waymon</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Gagan</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-light mb-3 rounded ">
+					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
+					<div class="card-body">
+						<h3 class="card-title">Charles</h3>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
 				</div>
 			</div>
 		</div>
-		<?php include 'footer.php'; ?>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
