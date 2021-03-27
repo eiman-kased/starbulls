@@ -54,7 +54,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="accordion-item">
 				<h2 class="accordion-header sticky-top" id="breakfastSingles">
 					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -109,12 +108,10 @@
 							<li class="list-group-item">Honey BBQ</li><br />
 							<li class="list-group-item">Lemon Pepper</li><br />
 							<li class="list-group-item">Cajun</li><br />
-
 						</ul>
 					</div>
 				</div>
 			</div>
-
 			<div class="accordion-item">
 				<h2 class="accordion-header sticky-top" id="specialityWings">
 					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -139,7 +136,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="accordion-item">
 				<h2 class="accordion-header sticky-top" id="bullsDinner">
 					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
@@ -156,7 +152,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="accordion-item">
 				<h2 class="accordion-header sticky-top" id="sides">
 					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">

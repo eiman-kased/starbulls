@@ -70,7 +70,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			</table>
 			</br></br>
 		</div>
-		<div class="row row-index">
+		<div class="row row-index graybg">
 			<div class="column">
 				<div id="connect">
 					<img src="imgs/contactUs.jpeg" />
@@ -84,8 +84,7 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 		</div>
-
-		<div class="row row-index">
+		<div class="row row-index graybg">
 			<div class="column">
 				<div id="connect">
 					<div class="connectTexts">
@@ -98,7 +97,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			<div class="column">
 				<img src="imgs/chickenWings.jpg" />
 			</div>
-		</div> </br></br>
+		</div>
 		<?php include 'forms/review.form.php'; ?>
 		<?php include 'footer.php'; ?>
 	</div>

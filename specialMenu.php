@@ -35,7 +35,6 @@
 					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
 						Techie Tuesday
 					</button>
-
 				</h2>
 				<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="tuesday" data-bs-parent="#accordionSpecials">
 					<div class="accordion-body">

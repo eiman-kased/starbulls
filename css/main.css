@@ -127,10 +127,17 @@ dt {
 	padding: 40px;
 }
 
+.graybg {
+	background-color: lightgray;
+}
+
+.row {
+	margin: auto;
+}
+
 .row.row-index {
     display: flex;
 	margin: auto;
-    background-color: lightgray;
 }
 
 #connect img {
@@ -388,5 +395,5 @@ input {
 	width: 270px;
 	height: 240px;
 	margin: 0 auto;
-	margin-top: 2%;	
+	margin-top: 2%;
 }

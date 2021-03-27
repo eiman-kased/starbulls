@@ -17,43 +17,36 @@ if (isset($_POST["submit_btn"])) {
 	} else {
 		echo '<span class="error">*First Name is Required</span> </br>';
 	}
-
 	if (!empty(trim($_POST['lastName']))) {
 		$lastName = trim($_POST['lastName']);
 	} else {
 		echo '<span class="error">*Last Name is Required</span> </br>';
 	}
-
 	if (!empty(trim($_POST['dob']))) {
 		$dob = trim($_POST['dob']);
 	} else {
 		echo '<span class="error">*Date of Birth Required</span> </br>';
 	}
-
 	if (!empty(trim($_POST['tel']))) {
 		$tel = trim($_POST['tel']);
 	} else {
 		echo '<span class="error">*Phone Number is Required</span> </br>';
 	}
-
 	if (!empty(trim($_POST['address1']))) {
 		$address1 = trim($_POST['addresss1']);
 	} else {
 		echo '<span class="error">*Street Address is Required</span> </br>';
 	}
-
 	if (!empty(trim($_POST['city']))) {
 		$city = trim($_POST['city']);
 	} else {
 		echo '<span class="error">*City field is Required</span> </br>';
 	}
-
 	if (!empty(trim($_POST['state']))) {
 		$state = trim($_POST['state']);
 	} else {
 		echo '<span class="error">*Please Select a State</span> </br>';
 	}
-
 	if (!empty(trim($_POST['zip']))) {
 		$zip = trim($_POST['zip']);
 	} else {
@@ -64,13 +57,11 @@ if (isset($_POST["submit_btn"])) {
 	} else {
 		echo '<span class="error">*Country is Required</span> </br>';
 	}
-
 	if (!empty(trim($_POST['email']))) {
 		$email = trim($_POST['email']);
 	} else {
 		echo '<span class="error">*An Email is Required</span> </br>';
 	}
-
 	if (!empty(trim($_POST['title']))) {
 		$title = trim($_POST['title']);
 	} else {
@@ -79,48 +70,26 @@ if (isset($_POST["submit_btn"])) {
 }
 
 ?>
-
 <form action="apply.php" method="post" enctype="multipart/form-data">
-
 	<div class="name">
-
 		First Name:*<input type="text" name="firstName" id="firstName" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> required />
-		</br></br>
-
 		Middle Initial:<input type="text" name="middleName" id="middleName" <?= (isset($_POST['middleName']) ? 'value="' . $_POST['middleName'] . '"' : '') ?> />
-		</br></br>
-
 		Last Name:*<input type="text" name="lastName" id="lastName" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> required />
-		</br></br>
-
 	</div>
-	</br>
 	<div class="dob">
 		<label for="dob">DOB*</label>
 		<input type="date" id="dob" name="dob" <?= (isset($_POST['dob']) ? 'value="' . $_POST['dob'] . '"' : '') ?> required />
-		</br></br>
-
 	</div>
-
 	<div class="phone">
 		<label for="phone">Phone Number*</br>Format:123-456-7890</label>
 		<input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> required />
-		</br>
 	</div>
-
 	<div class="address">
 		<p>Please Enter Your Address:</p>
 		Street Address:* <input type="text" name="address1" id="address1" <?= (isset($_POST['address1']) ? 'value="' . $_POST['address1'] . '"' : '') ?> required />
-		<br></br>
-
 		Address Line 2:<input type="text" name="address2" id="address2" <?= (isset($_POST['address2']) ? 'value="' . $_POST['address2'] . '"' : '') ?> />
-		</br></br>
-
 		City:*<input type="text" name="city" id="city" <?= (isset($_POST['city']) ? 'value="' . $_POST['city'] . '"' : '') ?> required />
-		<br></br>
-
 		State:<select id="state" name="state" required>
-			<option value=></option>
 			<option value="AL" <?= ((isset($_POST['state']) && $_POST['state'] === 'AL') ? 'selected' : '') ?>>AL</option>
 			<option value="AK" <?= ((isset($_POST['state']) && $_POST['state'] === 'AK') ? 'selected' : '') ?>>AK</option>
 			<option value="AZ" <?= ((isset($_POST['state']) && $_POST['state'] === 'AZ') ? 'selected' : '') ?>>AZ</option>
@@ -172,18 +141,11 @@ if (isset($_POST["submit_btn"])) {
 			<option value="WI" <?= ((isset($_POST['state']) && $_POST['state'] === 'WI') ? 'selected' : '') ?>>WI</option>
 			<option value="WY" <?= ((isset($_POST['state']) && $_POST['state'] === 'WY') ? 'selected' : '') ?>>WY</option>
 		</select>
-
-		</br></br>
 		ZIP:*<input type="number" name="zip" id="zip" maxlength="5" <?= (isset($_POST['zip']) ? 'value="' . $_POST['zip'] . '"' : '') ?> required />
-		</br></br>
-
 		Country:*<input type="text" name="country" id="country" <?= (isset($_POST['country']) ? 'value="' . $_POST['country'] . '"' : '') ?> required />
-
-		</br> </br>
 	</div>
 	<div class="email">
 		Enter an Email<input type="email" id="email" name="email" placeholder="email@example.com" <?= (isset($_POST['email']) ? 'value="' . $_POST['email'] . '"' : '') ?> required />
-		</br></br>
 	</div>
 	<label>Select Job Applying For</label>
 	<select id="title" name="title" required>
@@ -193,16 +155,10 @@ if (isset($_POST["submit_btn"])) {
 		<option value="corporate" <?= (isset($_POST['title']) && $_POST['title'] === 'corporate') ? 'selected' : ''; ?>>Corporate</option>
 		<option value="dist" <?= (isset($_POST['title']) && $_POST['title'] === 'dist') ? 'selected' : ''; ?>>Manufacturing and Distribution</option>
 	</select>
-
-	</br></br>
-
 	<div class="file">
 		<h3>Upload Resume:</h3>
 		<input type="file" name="resume" id="resume" />
-
 	</div>
-
-	</br></br>
 	<div class="submit">
 		<input type="submit" name="submit_btn" value="Submit Application" />
 	</div>
