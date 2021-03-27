@@ -224,7 +224,7 @@ input {
 .hero-text {
 	text-align: center;
 	background-position: center;
-	transform: translate(-50%, -50%);
+	transform: translate(-0%, -140%);
 	color: white;
 	text-shadow: 3px 3px 6px black;
 	/*left: 50%;
