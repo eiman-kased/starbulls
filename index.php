@@ -22,30 +22,26 @@ if (session_status() === PHP_SESSION_NONE) {
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<img src="imgs/cofee1.png" width="100%">
-			<div class="item active">
-				<div class="carousel-caption d-none d-md-block">
-					<div name="ingredients" class="ingredients" id="ingredients">
-						<div class="hero-text">
-							<h2>Only the best of the best here at StarBulls</h2>
-							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
-								only purchase high-quality ingredients that are ethically sourced.</p>
-							<div id="hours">
-								<h4 class="display-6">Hours of Operation</h4>
-								<table class="table">
-									<tr>
-										<td>Monday - Friday</td>
-										<td>Saturday</td>
-										<td>Sunday</td>
+			<div class="hero-banner">
+				<div class="hero-text">
+					<h2>Only the best of the best here at StarBulls</h2>
+					<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
+						only purchase high-quality ingredients that are ethically sourced.</p>
+					<div id="hours">
+						<h4 class="display-6">Hours of Operation</h4>
+						<table class="table">
+							<tr>
+								<td>Monday - Friday</td>
+								<td>Saturday</td>
+								<td>Sunday</td>
 
-									</tr>
-									<tr>
-										<td>9AM - 7PM</td>
-										<td>9AM - 9PM</td>
-										<td>*Closed*</td>
-									</tr>
-								</table>
-							</div>
-						</div>
+							</tr>
+							<tr>
+								<td>9AM - 7PM</td>
+								<td>9AM - 9PM</td>
+								<td>*Closed*</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>
