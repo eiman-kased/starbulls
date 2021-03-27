@@ -6,7 +6,7 @@
 			<img src="imgs/faceIcon.jpg" alt="facebook"></a>
 		<a href="https://twitter.com/home/" class="btn btn-default" target="_blank">
 			<img src="imgs/twitterIcon.jpg" alt="twitter"></a>
-	</div> </br>
+	</div>
 	<div id="end">
 		<b>
 			Starbulls Wings and Coffee&nbsp; |&nbsp; 01101000 01101001 00100000 01100010 01101001 01101100 01101100 Web

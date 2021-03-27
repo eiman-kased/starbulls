@@ -68,7 +68,6 @@ if (session_status() === PHP_SESSION_NONE) {
 					<td>9AM-9PM</td>
 				</tr>
 			</table>
-			</br></br>
 		</div>
 		<div class="row row-index graybg">
 			<div class="column">

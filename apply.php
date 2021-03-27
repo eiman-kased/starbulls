@@ -41,24 +41,24 @@ ini_set('display_errors', 1);
 			</div>
 			<div class="column-right">
 				<h2>Reviews</h2>
-				<div class="review1">
+				<div class="review1 ">
 					<p>McLovin:"No fake ID required: they'll hire you at 16!"</p>
-				</div> </br>
+				</div>
 				<div class="review2">
 					<p>Ragnar L:"Don’t waste your time looking back you are not going that way. Apply to StarBulls and change your life."</p>
-				</div> </br>
+				</div>
 				<div class="review1">
 					<p>Uhtred:"What is it that you want? Great bosses and colleagues? Good pay? Then work at StarBulls"</p>
-				</div> </br>
+				</div>
 				<div class="review2">
 					<p>Dwight S.:"Nothing stresses me out. Except having to seek the approval of my inferiors. Here at StarBulls I don't stress about this!</p>
-				</div></br>
+				</div>
 				<div class="review1">
 					<p> Winnie T.P:"How lucky I am to have something that makes saying goodbye so hard."</p>
-				</div> </br>
+				</div>
 				<div class="review2">
 					<p>John L: "StarBulls offers a great astmosphere; everyone is very relaxed!"</p>
-				</div></br>
+				</div>
 			</div>
 		</div>
 		<?php include 'footer.php'; ?>
