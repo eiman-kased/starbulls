@@ -49,7 +49,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 		</div><br />
 
-
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -103,38 +102,21 @@ if (session_status() === PHP_SESSION_NONE) {
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Next</span>
 			</button>
+		</div><br />
+
+	<?php include 'forms/review.form.php'; ?><br/>
+
+	<div class="socialmedia">
+		<h3>StarBulls offers the very best of Wings, Coffee and More!</h3>
+		<h4>Follow us on Social Media for Special Offers, Updates and more!</h4>
+		<img src="imgs/contactUs.jpeg" alt="contact us" class="social-pic">
+		<div class="social-links">
+			<img src="imgs/facebook.svg" alt="facebook icon"> <br/>
+			<img src="imgs/instagram.svg" alt="instagram icon"> <br/>
+			<img src="imgs/twitter.svg" alt="twitter icon"> <br/>
 		</div>
 
-		<!--<div class="row row-index">
-		<div class="column">
-			<div id="connect">
-				<img src="imgs/contactUs.jpeg" />
-			</div>
-		</div>
-		<div class="column">
-			<div class="connectText">
-				<h2>Connect with us on Social Media!</h2>
-				<p>We'd love to hear from YOU!</p>
-				<p>Follow us to find out the latest buzz!</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="row row-index">
-		<div class="column">
-			<div id="connect">
-				<div class="connectTexts">
-					<h2>Enjoy a Variety of Food!</h2>
-					<p>We offer a variety of food and drinks to satisfy any and all cravings!</p> </br>
-					<p>Head over to our menu page!</p>
-				</div>
-			</div>
-		</div>
-		<div class="column">
-			<img src="imgs/chickenWings.jpg" />
-		</div>
-	</div> </br></br>-->
-	<?php include 'forms/review.form.php'; ?>
+	</div><br/>
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>

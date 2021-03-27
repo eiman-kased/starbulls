@@ -127,12 +127,9 @@ dt {
 }
 
 .row.row-index {
-	<<<<<<< HEAD display: flex;
-	background-color: lightgray;
-	=======display: flex;
+	display: flex;
 	margin: auto;
 	background-color: lightgray;
-	>>>>>>>master
 }
 
 #connect img {
@@ -389,4 +386,36 @@ input {
 	height: 240px;
 	margin: 0 auto;
 	margin-top: 2%;
+}
+
+/* Social Media Call to Action */
+
+.socialmedia {
+	background-color: rgba(122, 242, 132, 0.461);
+	border-radius: 20px;
+	width: 90%;
+	margin: auto;
+	padding: 1em;
+}
+
+.socialmedia h3, h4 {
+	font-weight: 800;
+	text-align: center;
+}
+
+.social-pic {
+	width: 40%;
+	display: inline-block;
+	border-radius: 1rem;
+	margin: 1em 3em 1em 3em;
+}
+
+.social-links {
+	display: inline-block;
+	margin: auto 0 auto 0;
+}
+
+.social-links img {
+	width: 150%;
+	padding: 1em;
 }
