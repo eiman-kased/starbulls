@@ -216,14 +216,20 @@ input {
 	border-radius: 6px;
 }
 
+.hero-banner {
+	width: 100%;
+	align-content: center;
+}
+
 .hero-text {
 	text-align: center;
-	position: relative;
-	top: 50%;
-	left: 50%;
+	background-position: center;
 	transform: translate(-50%, -50%);
 	color: white;
 	text-shadow: 3px 3px 6px black;
+	/*left: 50%;
+	margin: auto;
+	top: 50%;*/
 }
 
 #columns {
