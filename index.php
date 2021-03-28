@@ -18,7 +18,10 @@ if (session_status() === PHP_SESSION_NONE) {
 </head>
 
 <body>
+	<!-- Logo and Navigation Bar -->
 	<?php include 'navbar.php'; ?>
+
+	<!-- Hero Image, Intro Text, Hours of Operation -->
 	<div class="containerAbout">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
@@ -35,7 +38,6 @@ if (session_status() === PHP_SESSION_NONE) {
 									<td>Monday - Friday</td>
 									<td>Saturday</td>
 									<td>Sunday</td>
-
 								</tr>
 								<tr>
 									<td>9AM - 7PM</td>
@@ -49,6 +51,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 		</div><br />
 
+		<!-- 5 slide carousel featuring specials and menu items -->
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -104,21 +107,30 @@ if (session_status() === PHP_SESSION_NONE) {
 			</button>
 		</div><br />
 
-	<?php include 'forms/review.form.php'; ?><br/>
+		<!-- Customer Review Form -->
+		<?php include 'forms/review.form.php'; ?><br />
 
-	<div class="socialmedia">
-		<h3>StarBulls offers the very best of Wings, Coffee and More!</h3>
-		<h4>Follow us on Social Media for Special Offers, Updates and more!</h4>
-		<img src="imgs/contactUs.jpeg" alt="contact us" class="social-pic">
-		<div class="social-links">
-			<img src="imgs/facebook.svg" alt="facebook icon"> <br/>
-			<img src="imgs/instagram.svg" alt="instagram icon"> <br/>
-			<img src="imgs/twitter.svg" alt="twitter icon"> <br/>
-		</div>
+		<!-- Carousel of Customer Reviews -->
 
-	</div><br/>
-	<?php include 'footer.php'; ?>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+		<!-- Social Media Call to Action -->
+		<div class="social-bkg socialmedia">
+			<h3>StarBulls offers the very best of Wings, Coffee and More!</h3>
+			<h4>Follow us on Social Media for Special Offers, Updates and more!</h4>
+			<div class="social-pic">
+				<img src="imgs/contactUs.jpeg" alt="contact us">
+				<img src="imgs/chickenWings.jpg" alt="chicken wings">
+				<img src="imgs/coffeesocial.jpg" alt="follow us">
+			</div>
+			<div class="social-links">
+				<img src="imgs/facebook.svg" alt="facebook icon"><a href="https://www.facebook.com/starbulls.buffalo/"> Facebook: Starbulls-buffalo | </a>
+				<img src="imgs/instagram.svg" alt="instagram icon"><a href="https://www.instagram.com/starbulls716/"> Instagram: starbulls716 | </a>
+				<img src="imgs/twitter.svg" alt="twitter icon"><a href="https://twitter.com/login"> Twitter: starbulls716</a><br />
+			</div>
+		</div><br />
+
+		<!-- Footer with Address -->
+		<?php include 'footer.php'; ?>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
 </html>

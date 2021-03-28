@@ -390,12 +390,16 @@ input {
 
 /* Social Media Call to Action */
 
-.socialmedia {
+.social-bkg {
 	background-color: rgba(122, 242, 132, 0.461);
-	border-radius: 20px;
+	border-radius: 2rem;
 	width: 90%;
 	margin: auto;
 	padding: 1em;
+}
+
+.socialmedia {
+	text-align: center;
 }
 
 .socialmedia h3, h4 {
@@ -403,19 +407,24 @@ input {
 	text-align: center;
 }
 
-.social-pic {
-	width: 40%;
-	display: inline-block;
-	border-radius: 1rem;
-	margin: 1em 3em 1em 3em;
+.social-pic img {
+	width: 30%;
+	border-radius: 2rem;
+	padding: 1rem;
 }
 
-.social-links {
+.social-links, .social-pic {
 	display: inline-block;
-	margin: auto 0 auto 0;
+}
+
+.social-links a {
+	/* margin: auto; */
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
 }
 
 .social-links img {
-	width: 150%;
-	padding: 1em;
+	padding: 0.5rem;
 }
