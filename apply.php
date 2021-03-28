@@ -28,19 +28,18 @@ ini_set('display_errors', 1);
 				</div>
 			</div>
 		</div>
-		<div id="applyContent">
-			<div class="column-wrap">
-				<div class="apply-column-left">
-					<!--left content-->
-					<h2>Application</h2>
-					<h3>*required fields</h3>
-					<div class="form-container">
-						<?php include 'forms/apply.form.php'; ?>
-					</div>
+		<div class="row g-lg-5 gx-lg-5 mx-lg-5 ">
+			<div class="col-lg-6 my-5">
+				<!--left content-->
+				<h2>Application</h2>
+				<h3>*required fields</h3>
+				<div class="form-container">
+					<?php include 'forms/apply.form.php'; ?>
 				</div>
 			</div>
-			<div class="apply-column-right">
-				<h2>Reviews</h2>
+			<div class="col-lg-6 my-lg-5">
+				<!--right content-->
+					<h2>Reviews</h2>
 				<div class="review1 ">
 					<p>McLovin:"No fake ID required: they'll hire you at 16!"</p>
 				</div>

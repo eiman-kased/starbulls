@@ -235,22 +235,6 @@ input {
 	text-shadow: 3px 3px 6px black;
 }
 
-#applyContent {
-	column-count: 2;
-	column-width: 500px;
-	padding-top: 20px;
-}
-
-.apply-column-left {
-	width: 50%;
-	margin-left: 20%;
-}
-
-.apply-column-right {
-	width: 80%;
-	padding-top: 1px;
-}
-
 .review1 {
 	background-color: rgba(122, 242, 132, 0.461);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
