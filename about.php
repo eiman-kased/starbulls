@@ -99,8 +99,8 @@
 					<div class="card-body">
 						<h3 class="card-title">Nick</h3>
 						<p class="card-text">Hi, I'm Nick Burdick. </br>
-							I emphasize initiative while providing an intimate understanding of dynamic communication styles and how to adapt accordingly. The desire of wanting to be understood by our peers is innate, and bringing that simple but often overlooked element into our communicative repertoire, can elevate team efficiency to another level.
-							</br>Check out my repo for more information!<br />
+							I'm a web developer from Western New York. I emphasize initiative while providing an intimate understanding of dynamic communication styles and how to adapt accordingly.
+							</br>Check out my repo to see some of my projects.<br />
 							<a href="https://github.com/nburd90">Github</a>
 						</p>
 					</div>
