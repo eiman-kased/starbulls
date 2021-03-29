@@ -307,10 +307,11 @@ input {
     font-family: 'Montserrat', Arial, sans-serif;
 }
 .wrapper {
+	position: fixed;
 	top: 0;
 	left: 0;
-	width: 200%;
-	height: 200%;
+	width: 100%;
+	height: 100%;
 }
 .wrapper img{
 	position: absolute;
@@ -318,9 +319,9 @@ input {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	margin: 0;
-	min-width: 50%;
-	min-height: 50%;
+	margin: auto;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 
@@ -329,7 +330,7 @@ input {
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: larger;
     background-color: rgb(83, 184, 69);
-    width: auto;
+	top: 125;
     margin: 125px auto 0px auto;
     border: 5px;
     border-radius: 10px;
