@@ -65,7 +65,6 @@ nav {
 .logo img {
 	float: left;
 	position: relative;
-	width: 150px;
 	margin: 6px;
 }
 
@@ -166,7 +165,7 @@ h3 {
 }
 
 .accordion-header.sticky-top {
-	top: 180px;
+	top: 110px;
 }
 
 /* beginning of CSS for specials */
@@ -292,14 +291,6 @@ input {
 	background-color: rgba(122, 242, 132, 0.461);
 	border-radius: 20px;
 	text-align: center;
-}
-
-.navbar.sticky-top {
-	z-index: 1100;
-}
-
-.accordion-header.sticky-top {
-	top: 180px;
 }
 
 /* review and sign up forms */
