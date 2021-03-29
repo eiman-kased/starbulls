@@ -114,8 +114,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Waymon</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
+						<p class="card-text">In a rapidly changing world, it's easy to be overwhelmed by the myriad of options available, but not enough answers. I appreciate the bold people who have decided to monetize their skills, hobbies, talents and insights to make a profit and accept the responsibility of ensuring their successes.<br/>By taking a simplified approach of combining principals with easy to follow systems that help us use our resources conservatively, we can all enjoy a rewarding lifestyle in the information age.
+						<br/><a href="https://github.com/WaymonBrown84">Github</a></p>
 					</div>
 				</div>
 			</div>
