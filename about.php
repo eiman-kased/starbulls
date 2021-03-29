@@ -55,7 +55,7 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Will</h3>
-						<p class="card-text">Hey! My name's William, and I'm an aspiring Full Stack Developer. If I'm not programming and trying to find that extra semicolon that's broken my project, you can find me at StarBulls eating 40pcs of the vanilla wings. I also like long walks on the beach. <br/>Check out my repository and the projects I've worked on!<br/>
+						<p class="card-text">Hey! My name's William, and I'm an aspiring Full Stack Developer. <br/>If I'm not programming and trying to find that extra semicolon that's broken my project, you can find me at StarBulls eating 40pcs of the vanilla wings. I also like long walks on the beach. <br/>Check out my repository and the projects I've worked on!<br/>
 						<a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
 						</div>
 				</div>
@@ -65,7 +65,7 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Margaret</h3>
-						<p class="card-text">Hi! My name is Margaret Schrecongost, and I have a Bachelor of Fine Arts from *college* and an insatiable appetite for innovation. When I am not slinging wings, I'm sharpening my web development skills by constantly improving my artwork's portfolio website.<br/> You can check out my repository below!
+						<p class="card-text">Hi! My name is Margaret Schrecongost.<br/> I have a Bachelor of Fine Arts from *college* and an insatiable appetite for innovation. When I am not slinging wings, I'm sharpening my web development skills by constantly improving my artwork's portfolio website.<br/> You can check out my repository below!
 						<br/><a href="https://github.com/margeschrec">Github</a></p>
 					</div>
 				</div>
@@ -75,8 +75,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Becca</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-						</br><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
+						<p class="card-text">Hi! I'm Becca. <br/>I love chicken wings and caffeine. I have a history of working in public relations within the legal, hospitality, and entertainment fields. I have a background in branding, marketing, project management, and content creation.  <br/> Check out my repo!
+						</br><a href="https://github.com/rbaia28">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -85,7 +85,7 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Eiman</h3>
-						<p class="card-text">Hello! My name is Eiman Kased. I am a busy mother of two awesome boys! I do it all! From whipping up coffee-inspired wing sauce in the kitchen to coding sites in my at-home office! Take a look at my Git Repository. Let me know if you would like to contribute to my project!
+						<p class="card-text">Hello! My name is Eiman Kased.<br/> I am a busy mother of two awesome boys! I do it all! From whipping up coffee-inspired wing sauce in the kitchen to coding sites in my at-home office! Take a look at my Git Repository. Let me know if you would like to contribute to my project!
 						<br/><a href="https://github.com/eiman-kased">Github</a></p></div>
 				</div>
 			</div>
@@ -94,8 +94,10 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Nick</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
+						<p class="card-text">Hi, I'm Nick Burdick. </br>Hi, I'm Nick Burdick.
+I emphasize initiative while providing an intimate understanding of dynamic communication styles and how to adapt accordingly. The desire of wanting to be understood by our peers is innate, and bringing that simple but often overlooked element into our communicative repertoire, can elevate team efficiency to another level.
+</br>Check out my repo for more information!<br/>
+						<a href="https://github.com/nburd90">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -104,7 +106,7 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Vince</h3>
-						<p class="card-text">Hi there, I'm Vince, and I'm a self-proclaimed "Coffee Achiever of America!" My background is in graphic design. I like my coffee smooth and my wings spicy! If you call them "Buffalo Wings" or ask for a side of Ranch, you'll be on the receiving end of one of my world-famous disparaging looks. My motto is: "It shouldn't just taste good; it should also look good!" </br>Head on over to my GitHub Repo and take a look at what I've done.</br>
+						<p class="card-text">Hi there, I'm Vince! <br/> I'm a self-proclaimed "Coffee Achiever of America!" My background is in graphic design. I like my coffee smooth and my wings spicy! If you call them "Buffalo Wings" or ask for a side of Ranch, you'll be on the receiving end of one of my world-famous disparaging looks. My motto is: "It shouldn't just taste good; it should also look good!" </br>Head on over to my GitHub Repo and take a look at what I've done.</br>
 						<a href="https://github.com/vricci518">Github</a></p>
 						</div>
 				</div>
@@ -135,8 +137,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Charles</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
+						<p class="card-text">Hi! I'm Charles.
+						<br/><a href="https://github.com/CharleswithLove">Github</a></p>
 					</div>
 				</div>
 			</div>
