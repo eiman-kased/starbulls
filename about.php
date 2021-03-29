@@ -65,8 +65,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Margaret</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
+						<p class="card-text">Hi! My name is Margaret Schrecongost, and I have a Bachelor of Fine Arts from *college* and an insatiable appetite for innovation. When I am not slinging wings, I'm sharpening my web development skills by constantly improving my artwork's portfolio website.<br/> You can check out my repository below!
+						<br/><a href="https://github.com/margeschrec">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -85,8 +85,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Eiman</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p></div>
+						<p class="card-text">Hello! My name is Eiman Kased. I am a busy mother of two awesome boys! I do it all! From whipping up coffee-inspired wing sauce in the kitchen to coding sites in my at-home office! Take a look at my Git Repository. Let me know if you would like to contribute to my project!
+						<br/><a href="https://github.com/eiman-kased">Github</a></p></div>
 				</div>
 			</div>
 			<div class="col">
