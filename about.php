@@ -55,7 +55,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Will</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">Hey! My name's William, and I'm an aspiring Full Stack Developer. <br />If I'm not programming and trying to find that extra semicolon that's broken my project, you can find me at StarBulls eating 40pcs of the vanilla wings. I also like long walks on the beach. <br />Check out my repository and the projects I've worked on!<br />
+							<a href="https://github.com/williamrockowl?tab=repositories">Github</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -64,7 +66,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Margaret</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">Hi! My name is Margaret Schrecongost.<br /> I have a Bachelor of Fine Arts from Alfred University and an insatiable appetite for innovation. When I am not slinging wings, I'm sharpening my web development skills by constantly improving my artwork's portfolio website.<br /> You can check out my repository below!
+							<br /><a href="https://github.com/margeschrec">Github</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -73,7 +77,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Becca</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">Hi! I'm Becca Baia. <br />I love chicken wings and caffeine. I have a history of working in public relations within the legal, hospitality, and entertainment fields. I have a background in branding, marketing, project management, and content creation. <br /> Check out my repo!
+							</br><a href="https://github.com/rbaia28">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -82,7 +87,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Eiman</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">Hello! My name is Eiman Kased.<br /> I am a busy mother of two awesome boys! I do it all! From whipping up coffee-inspired wing sauce in the kitchen to coding sites in my at-home office! Take a look at my Git Repository. Let me know if you would like to contribute to my project!
+							<br /><a href="https://github.com/eiman-kased">Github</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -91,7 +98,11 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Nick</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">Hi, I'm Nick Burdick. </br>
+							I'm a web developer from Western New York. I emphasize initiative while providing an intimate understanding of dynamic communication styles and how to adapt accordingly.
+							</br>Check out my repo to see some of my projects.<br />
+							<a href="https://github.com/nburd90">Github</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -100,7 +111,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Vince</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">Hi there, I'm Vince! <br /> I'm a self-proclaimed "Coffee Achiever of America!" My background is in graphic design. I like my coffee smooth and my wings spicy! If you call them "Buffalo Wings" or ask for a side of Ranch, you'll be on the receiving end of one of my world-famous disparaging looks. My motto is: "It shouldn't just taste good; it should also look good!" </br>Head on over to my GitHub Repo and take a look at what I've done.</br>
+							<a href="https://github.com/vricci518">Github</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -109,7 +122,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Waymon</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">In a rapidly changing world, it's easy to be overwhelmed by the myriad of options available, but not enough answers. I appreciate the bold people who have decided to monetize their skills, hobbies, talents and insights to make a profit and accept the responsibility of ensuring their successes.<br />By taking a simplified approach of combining principals with easy to follow systems that help us use our resources conservatively, we can all enjoy a rewarding lifestyle in the information age.
+							<br /><a href="https://github.com/WaymonBrown84">Github</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -118,7 +133,10 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Gagan</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">“Talent wins games, but teamwork and intelligence win championships.”
+							<br />This team did not come together by choice, but our destiny brought us to Starbulls. It was a great privilege and honor to work on this site. Starbulls is the place to be.</br> When you are in town, make sure to try our Wingin’ it Wednesday. It is all you can eat buffet-style WINGS! with a variety of selections to choose from.<br /> I invite you to check out my portfolio as I continue to build on more projects.
+							<br /><a href="https://github.com/gc824">Github</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -127,7 +145,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Charles</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">Hi! I'm Charles.
+							<br /><a href="https://github.com/CharleswithLove">Github</a>
+						</p>
 					</div>
 				</div>
 			</div>
