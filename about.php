@@ -55,8 +55,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Will</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					</div>
+						<p class="card-text">Hey! My name's William, and I'm an aspiring Full Stack Developer. If I'm not programming and trying to find that extra semicolon that's broken my project, you can find me at StarBulls eating 40pcs of the vanilla wings. I also like long walks on the beach. Check out my repository and the projects I've worked on!<br/>
+						<a href="https://github.com/williamrockowl?tab=repositories">Github</a>
+						</div>
 				</div>
 			</div>
 			<div class="col">
