@@ -55,8 +55,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Will</h3>
-						<p class="card-text">Hey! My name's William, and I'm an aspiring Full Stack Developer. If I'm not programming and trying to find that extra semicolon that's broken my project, you can find me at StarBulls eating 40pcs of the vanilla wings. I also like long walks on the beach. Check out my repository and the projects I've worked on!<br/>
-						<a href="https://github.com/williamrockowl?tab=repositories">Github</a>
+						<p class="card-text">Hey! My name's William, and I'm an aspiring Full Stack Developer. If I'm not programming and trying to find that extra semicolon that's broken my project, you can find me at StarBulls eating 40pcs of the vanilla wings. I also like long walks on the beach. <br/>Check out my repository and the projects I've worked on!<br/>
+						<a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
 						</div>
 				</div>
 			</div>
@@ -65,7 +65,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Margaret</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -74,7 +75,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Becca</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						</br><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -83,8 +85,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Eiman</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					</div>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p></div>
 				</div>
 			</div>
 			<div class="col">
@@ -92,7 +94,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Nick</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -101,8 +104,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Vince</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					</div>
+						<p class="card-text">Hi there, I'm Vince, and I'm a self-proclaimed "Coffee Achiever of America!" My background is in graphic design. I like my coffee smooth and my wings spicy! If you call them "Buffalo Wings" or ask for a side of Ranch, you'll be on the receiving end of one of my world-famous disparaging looks. My motto is: "It shouldn't just taste good; it should also look good!" </br>Head on over to my GitHub Repo and take a look at what I've done.</br>
+						<a href="https://github.com/vricci518">Github</a></p>
+						</div>
 				</div>
 			</div>
 			<div class="col">
@@ -110,7 +114,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Waymon</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -119,7 +124,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Gagan</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -128,7 +134,8 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Charles</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
 					</div>
 				</div>
 			</div>
