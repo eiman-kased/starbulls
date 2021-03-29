@@ -23,7 +23,7 @@
 					<div class="accordion-body">
 						<p>Come and enjoy hot milk chocolate for a party of four for only the price of three.
 							The Milk Chocolate Monday package comes with a giant mug of decadent hot chocolate and only two spoons so sharing is caring!
-							Milk Chocolate Monday are a good way to get closer with family and friends. <br />Don't
+							Milk Chocolate Monday are a good way to get closer with family and friends. Don't
 							have friends? Have no fear, our StarBulls Matchmaker&trade; is here. Come to the counter and ask to
 							sign up for a matchmaking table where we set you up with people also looking
 							for new friends...or...family... ($50/per table of 4)</p>
@@ -40,7 +40,7 @@
 					<div class="accordion-body">
 						<p>Already burnt out, and your regular cup of java just won't cut it? Well, come to StarBulls every Tuesday for our
 							Buffalo coffee and wing combo. The combination of heat from our secret sauces, paired with our strongest espresso, will awaken even the sleepiest developer.
-							<br /> Bring your computer and pitch ideas to us, if we like it,
+							 Bring your computer and pitch ideas to us, if we like it,
 							we may cover the cost of your wings. If we really like the idea, we may even throw you a bone. ($20/combo)
 						</p>
 					</div>
@@ -55,11 +55,11 @@
 				<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="wednesday" data-bs-parent="#accordionSpecials">
 					<div class="accordion-body">
 						<p>Tis' the middle of an hardworking week, come to StarBulls and let us get you a great discount
-							on wings. For $100 get yourself an all you can eat buffet for up to five people!<br /> We're talking about
+							on wings. For $100 get yourself an all you can eat buffet for up to five people! We're talking about
 							any flavor
 							you can ask for: Buffalo, BBQ, Honey Mustard, Garlic, Original, Blueberry, Watermelon, and many
 							more.
-							There's no other restaurant that does it the same way we do.<br /> Now come and enjoy an authentic
+							There's no other restaurant that does it the same way we do. Now come and enjoy an authentic
 							experience in the birthplace of the chicken wing.
 							We will not dissapoint. ($100/per table of five)</p>
 					</div>
@@ -77,7 +77,7 @@
 							discounted
 							beverages all day long. Although our full menu will not be available, come and sit down with
 							your friends
-							and meet new people as well.<br /> Use this day as a day to recharge yourself with a nice shot of
+							and meet new people as well. Use this day as a day to recharge yourself with a nice shot of
 							sriracha. Spicy not your
 							style? Try our buy one, get one free BBQ beer pints. Live life on the edge and come to StarBulls on
 							Thirsty Thursdays.
@@ -94,8 +94,8 @@
 				<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="friday" data-bs-parent="#accordionSpecials">
 					<div class="accordion-body">
 						<p>Did this week suck the life out of you? We get it. On Friday's we bust out some of our more experimental beverages with a bit more...spirit. Sometimes you need something a
-							bit stronger than coffee. Our top baristas take the floor to share their latest craft microbrews, vodkas, and bourbon inspired by StarBulls' most popular dishes and drinks. </br>
-							</br> * Please drink responsibly *</p>
+							bit stronger than coffee. Our top baristas take the floor to share their latest craft microbrews, vodkas, and bourbon inspired by StarBulls' most popular dishes and drinks.
+							 * Please drink responsibly *</p>
 					</div>
 				</div>
 			</div>
@@ -111,11 +111,11 @@
 							a secret
 							recipe we keep in a glass bottle where no one will ever think to look. We are proud to be serving
 							this kind
-							of sauce to our supporters on Saturdays.<br /> It's one of those sauces that you'd wanna order a
+							of sauce to our supporters on Saturdays. It's one of those sauces that you'd wanna order a
 							seperate gallon
 							of dry sauce just for your 6 pieces of wings. Along with the wings we serve the most seasoned fries
 							you
-							have ever eaten. <br />We are not done yet, adding onto the seasoned family, try our seasoned beer as
+							have ever eaten. We are not done yet, adding onto the seasoned family, try our seasoned beer as
 							well.
 							($20.95/per 12pc combo) </p>
 					</div>
