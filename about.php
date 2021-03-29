@@ -124,8 +124,9 @@
 					<img src="imgs/chickenWings.jpg" class="card-img-top rounded-circle" alt="...">
 					<div class="card-body">
 						<h3 class="card-title">Gagan</h3>
-						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-						<br/><a href="https://github.com/williamrockowl?tab=repositories">Github</a></p>
+						<p class="card-text">“Talent wins games, but teamwork and intelligence win championships.” 
+<br/>This team did not come together by choice, but our destiny brought us to Starbulls. It was a great privilege and honor to work on this site. Starbulls is the place to be. When you are in town, make sure to try our Wingin’ it Wednesday. It is all you can eat buffet-style WINGS! with a variety of selections to choose from. I invite you to check out my portfolio as I continue to build on more projects.
+						<br/><a href="https://github.com/gc824">Github</a></p>
 					</div>
 				</div>
 			</div>
