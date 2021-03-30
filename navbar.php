@@ -19,14 +19,14 @@
 						OUR MENUS
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<li><a class="dropdown-item" href="menu.php#coffee">Specialty Coffee</a></li>
-						<li><a class="dropdown-item" href="menu.php#regularcoffee">Coffee</a></li>
-						<li><a class="dropdown-item" href="menu.php#breakfastsingles">Breakfast Singles</a></li>
-						<li><a class="dropdown-item" href="menu.php#breakfastcombos">Breakfast Combos</a></li>
-						<li><a class="dropdown-item" href="menu.php#traditionalwings">Traditional Wings</a></li>
-						<li><a class="dropdown-item" href="menu.php#specialitywings">Starbulls Specialty Wings</a></li>
-						<li><a class="dropdown-item" href="menu.php#bullsDinner">Bulls Dinner</a></li>
-						<li><a class="dropdown-item" href="menu.php#sides">Sides</a></li>
+						<li><a class="dropdown-item" href="menu.php#coffee" id="specialCoffee">Specialty Coffee</a></li>
+						<li><a class="dropdown-item" href="menu.php#regularcoffee" id="coffee">Coffee</a></li>
+						<li><a class="dropdown-item" href="menu.php#breakfastsingles" id="breakfastSingles">Breakfast Singles</a></li>
+						<li><a class="dropdown-item" href="menu.php#breakfastcombos" id="breakfastcombos">Breakfast Combos</a></li>
+						<li><a class="dropdown-item" href="menu.php#traditionalwings" id="tradWings">Traditional Wings</a></li>
+						<li><a class="dropdown-item" href="menu.php#specialitywings" id="starWings">Starbulls Specialty Wings</a></li>
+						<li><a class="dropdown-item" href="menu.php#bullsDinner" id="bullsDinner">Bulls Dinner</a></li>
+						<li><a class="dropdown-item" href="menu.php#sides" id="sides">Sides</a></li>
 					</ul>
 				</li>
 				<li class="nav-item">
@@ -42,4 +42,5 @@
 <script src="js/indicator.js"></script>
 <script>
 	$(document).load(indicate());
+	$(document).load(menuHighlight());
 </script>
