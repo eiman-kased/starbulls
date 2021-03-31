@@ -137,10 +137,10 @@ if (isset($_POST['userSubmit'])) {
 	echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
 }
 ?>
-<div class="wrapper">
+<div class="signup-wrapper">
 	<img src="https://static01.nyt.com/images/2016/02/09/dining/09COOKING_CHICKENWINGS2/09COOKING_CHICKENWINGS2-superJumbo.jpg" id=bg alt="wings">
 	<div id="userAccount" class="inputbox container">
-		<form id="userForm" class="mb-0" action='' method="post">
+		<form id="userForm" class="mb-0 gx-4" action='' method="post">
 			<div class="row my-3">
 				<div class="col-12">
 					<h3 class="fw-bold">Sign up for a Starbulls Account</h3>
