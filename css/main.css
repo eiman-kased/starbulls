@@ -126,10 +126,17 @@ dt {
 	padding: 40px;
 }
 
+.graybg {
+	background-color: lightgray;
+}
+
+.row {
+	margin: auto;
+}
+
 .row.row-index {
 	display: flex;
 	margin: auto;
-	background-color: lightgray;
 }
 
 #connect img {
@@ -225,22 +232,6 @@ input {
 	transform: translate(-50%, -50%);
 	color: white;
 	text-shadow: 3px 3px 6px black;
-}
-
-#columns {
-	column-count: 2;
-	column-width: 500px;
-	padding-top: 20px;
-}
-
-.column-left {
-	width: 50%;
-	margin-left: 20%;
-}
-
-.column-right {
-	width: 80%;
-	padding-top: 1px;
 }
 
 .review1 {

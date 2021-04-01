@@ -11,14 +11,16 @@
 </head>
 
 <body>
-	<?php include 'navbar.php'; ?>
-	<div class="containerAbout">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				<img src="imgs/cofee3.png" width="100%">
-				<div class="item active">
-					<div class="carousel-caption">
-						<h1 class="p-2 hero-text">About Us</h1>
+	<div class="container-fluid p-0 graybg">
+		<?php include 'navbar.php'; ?>
+		<div class="containerAbout">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<img src="imgs/cofee3.png" width="100%">
+					<div class="item active">
+						<div class="carousel-caption">
+							<h1 class="p-2 hero-text">About Us</h1>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -152,8 +154,8 @@
 				</div>
 			</div>
 		</div>
+		<?php include 'footer.php'; ?>
 	</div>
-	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
