@@ -18,33 +18,35 @@ if (session_status() === PHP_SESSION_NONE) {
 </head>
 
 <body>
-	<!-- Logo and Navigation Bar -->
-	<?php include 'navbar.php'; ?>
+	<div class="container-fluid p-0 graybg">
+		<!-- Logo and Navigation Bar -->
+		<?php include 'navbar.php'; ?>
 
-	<!-- Hero Image, Intro Text, Hours of Operation -->
-	<div class="containerAbout">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				<img src="imgs/cofee1.png" width="100%">
-				<div class="hero-banner">
-					<div class="hero-text">
-						<h2>Only the best of the best here at StarBulls</h2>
-						<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
-							only purchase high-quality ingredients that are ethically sourced.</p>
-						<div id="hours">
-							<h4 class="display-6">Hours of Operation</h4>
-							<table class="table">
-								<tr>
-									<td>Monday - Friday</td>
-									<td>Saturday</td>
-									<td>Sunday</td>
-								</tr>
-								<tr>
-									<td>9AM - 7PM</td>
-									<td>9AM - 9PM</td>
-									<td>*Closed*</td>
-								</tr>
-							</table>
+		<!-- Hero Image, Intro Text, Hours of Operation -->
+		<div class="containerAbout">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<img src="imgs/cofee1.png" width="100%">
+					<div class="hero-banner">
+						<div class="hero-text">
+							<h2>Only the best of the best here at StarBulls</h2>
+							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
+								only purchase high-quality ingredients that are ethically sourced.</p>
+							<div id="hours">
+								<h4 class="display-6">Hours of Operation</h4>
+								<table class="table">
+									<tr>
+										<td>Monday - Friday</td>
+										<td>Saturday</td>
+										<td>Sunday</td>
+									</tr>
+									<tr>
+										<td>9AM - 7PM</td>
+										<td>9AM - 9PM</td>
+										<td>*Closed*</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -127,7 +129,7 @@ if (session_status() === PHP_SESSION_NONE) {
 				<img src="imgs/twitter.svg" alt="twitter icon"><a href="https://twitter.com/login"> Twitter: starbulls716</a><br />
 			</div>
 		</div><br />
-
+	</div>
 		<!-- Footer with Address -->
 		<?php include 'footer.php'; ?>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
