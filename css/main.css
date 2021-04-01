@@ -359,7 +359,7 @@ input {
 
 .form-control:focus {
 	border-color: rgb(27, 61, 22);
-	box-shadow: inset 0 1px 1px rgba(14, 31, 11, 0.075), 0 0 8px rgba(12, 27, 10, 0.6)
+	box-shadow: inset 0 1px 1px rgba(14, 31, 11, 0.075), 0 0 8px rgba(12, 27, 10, 0.6);
 }
 
 .colform {
