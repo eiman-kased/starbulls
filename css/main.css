@@ -14,6 +14,10 @@ body {
 	max-height: 400px;
 }
 
+.carousel-caption {
+	bottom: 20%;
+}
+
 h1 {
 	text-align: center;
 	color: white;
