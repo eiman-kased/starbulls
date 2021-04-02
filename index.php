@@ -65,35 +65,35 @@ if (session_status() === PHP_SESSION_NONE) {
 			<div class="carousel-inner">
 				<div class="carousel-item active">
 					<img src="imgs/coffee.jpg" class="d-block w-100" alt="pouring coffee">
-					<div class="carousel-caption d-none d-md-block">
+					<div class="carousel-caption">
 						<h3 class="display-4">StarBulls Selection of Coffee</h3>
 						<p>A selection of coffee to satisfy your taste.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="imgs/chickenwings2.jpg" class="d-block w-100" alt="plate of chicken wings">
-					<div class="carousel-caption d-none d-md-block">
+					<div class="carousel-caption">
 						<h3 class="display-4">Traditional and Specialty Wings</h3>
 						<p>Chicken Wing flavors ranging from traditional to daring.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="imgs/hotchocolate.jpg" class="d-block w-100" alt="four mugs of hot chocolate">
-					<div class="carousel-caption d-none d-md-block">
+					<div class="carousel-caption">
 						<h3 class="display-4">Milk Chocolate Monday</h3>
 						<p>Our Monday Special! Hot Milk Chocolate serving a party of four.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="imgs/burgerfries.jpg" class="d-block w-100" alt="burger and fries">
-					<div class="carousel-caption d-none d-md-block">
+					<div class="carousel-caption">
 						<h3 class="display-4">Bulls Dinner</h3>
 						<p>Try our delicious Burgers and Fries.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="imgs/wingbuffet.jpg" class="d-block w-100" alt="chicken wing buffet">
-					<div class="carousel-caption d-none d-md-block">
+					<div class="carousel-caption">
 						<h3 class="display-4">Wingin' It Wednesday</h3>
 						<p>Our Wednesday Special! All You Can Eat Chicken Wing Buffet!</p>
 					</div>
