@@ -36,6 +36,13 @@ $app->addRoutingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 // Define app routes
+$app->get('/', function (Request $request, Response $response, $args) {
+	$name = $args['name'];
+	$response->getBody()->write("Hello, $name");
+	return $response;
+});
+
+// Define app routes
 $app->get('/hello/{name}', function (Request $request, Response $response, $args) {
 	$name = $args['name'];
 	$response->getBody()->write("Hello, $name");
@@ -53,7 +60,9 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 
 // Create new user
 $app->post('/users/new', function (Request $request, Response $response, array $args) {
-	return json_encode(var_dump($request));
+	$body = json_decode($request->getBody());
+	$response->getBody()->write($body->test);
+	return $response;
 });
 
 // Run app
