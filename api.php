@@ -51,5 +51,11 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 	return $response;
 });
 
+// Create new user
+$app->post('/users/new', function (Request $request, Response $response, array $args) {
+	return json_encode(var_dump($request));
+});
+
 // Run app
 $app->run();
+
