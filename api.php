@@ -8,6 +8,7 @@ use Slim\Factory\AppFactory;
 
 require __DIR__ .'/vendor/autoload.php';
 require __DIR__ .'/src/User.php';
+require __DIR__ .'/src/Review.php';
 
 // var_dump($_SERVER);
 /**
@@ -65,6 +66,15 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 	return $response;
 });
 
+// /review/show/{reviewID} - displays the info about a specific review not just the review contents
+$app->get('/review/{reviewID}', function (Request $request, Response $response, array $args){
+	$reviewID = intval($args['reviewID']);
+	$review = \Review::getReviewsByID($reviewID);
+	var_dump($review);
+	//return review info based on ID
+	// $response->getBody()->write(json_encode($review));
+	return $response;
+});
 // Run app
 $app->run();
 

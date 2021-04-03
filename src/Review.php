@@ -13,26 +13,21 @@ class Review implements JsonSerializable
 	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
-	public function __construct($score, $comment, $userId = null)
+	public function __construct()
 	{
-		$this->score = $score;
-		$this->comment = $comment;
+		$this->db = $this->db ?? new Database();
 		$this->createdAt = new \DateTime();
-		if ($userId !== null) {
-			$this->userID = $userId;
-		}
 	}
 
 	//Function to save to database
 	public function saveToDB()
 	{
 		//Establish connection to DB
-		$this->db = $this->db ?? new Database();
 		$dbCon = $this->db->getConnection();
-		//Write query to save info 
+		//Write query to save info
 		$sql = "INSERT INTO review (score, comment, userID) VALUES ($this->score, '$this->comment', $this->userID)";
 
-		//DB run query 
+		//DB run query
 		$insertSuccess = $dbCon->query($sql);
 		//Does it work succesfully
 		if (!$insertSuccess) {
@@ -43,6 +38,24 @@ class Review implements JsonSerializable
 		return true;
 	}
 
+	public static function getReviewsByID(int $id)
+	{
+		//Establish connection to DB
+		$db = new \Database();
+		$dbCon = $db->getConnection();
+		//Write query to get info on review from ID
+		$sql = "SELECT * FROM `review` where id=$id";
+		//DB run query
+		$results = $dbCon->query($sql);
+		//Create array to return results
+		$reviews = array();
+		//Loop through results
+		var_dump($results->fetch_object(Review::class));
+		while ($review = $results->fetch_object(Review::class)) {
+			$reviews[] = $review;
+		}
+		return $reviews;
+	}
 	//Chunk of comments based on some specific piece of data
 	public function getReviewsByScore($score)
 	{
@@ -51,7 +64,7 @@ class Review implements JsonSerializable
 		$dbCon = $this->db->getConnection();
 		//Write query to get review based on score
 		$sql = "SELECT * FROM review where score=$score";
-		//DB run query 
+		//DB run query
 		$results = $dbCon->query($sql);
 		//Create array to return results
 		$reviews = array();
@@ -162,4 +175,5 @@ class Review implements JsonSerializable
 
 		return $this;
 	}
+
 }
