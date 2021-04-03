@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<div class="logo">
 			<a href="index.php" class="logo">
-				<img src="images/starbulls_logo.png" alt="logo" />
+				<img src="imgs/starbulls_logoWhite.png" alt="logo" />
 			</a>
 		</div>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,9 +15,7 @@
 					<a class="nav-link" href="about.php">ABOUT US</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						OUR MENUS
-					</a>
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">OUR MENUS</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li><a class="dropdown-item" href="menu.php#coffee" id="specialCoffee">Specialty Coffee</a></li>
 						<li><a class="dropdown-item" href="menu.php#regularcoffee" id="coffee">Coffee</a></li>
@@ -42,5 +40,4 @@
 <script src="js/indicator.js"></script>
 <script>
 	$(document).load(indicate());
-	$(document).load(menuHighlight());
 </script>
