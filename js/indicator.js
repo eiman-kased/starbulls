@@ -32,6 +32,7 @@ function indicate() {
 }
 
 
+<<<<<<< Updated upstream
 function menuHighlight() {
   $(document).ready(function () {
 	var allElements = $("a");
@@ -72,3 +73,10 @@ function menuHighlight() {
   });
 }
 */
+=======
+function findMenu(){
+	$(document).ready (function () {
+		var thePage = window.location.pathname;
+		$(thePage).find("menu.php").css("background-color", "red");
+	})}
+>>>>>>> Stashed changes
