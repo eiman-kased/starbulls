@@ -70,7 +70,9 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 $app->get('/review/{reviewID}', function (Request $request, Response $response, array $args){
 	$reviewID = intval($args['reviewID']);
 	$review = \Review::getReviewsByID($reviewID);
+	echo '<pre>';
 	var_dump($review);
+	echo '</pre>';
 	//return review info based on ID
 	// $response->getBody()->write(json_encode($review));
 	return $response;

@@ -13,8 +13,12 @@ class Review implements JsonSerializable
 	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
-	public function __construct()
+	public function __construct(int $id = null, float $score, string $comment, int $userId = null)
 	{
+		$this->id = $id;
+		$this->score = $score;
+		$this->comment = $comment;
+		$this->userID = $userId;
 		$this->db = $this->db ?? new Database();
 		$this->createdAt = new \DateTime();
 	}
@@ -50,9 +54,8 @@ class Review implements JsonSerializable
 		//Create array to return results
 		$reviews = array();
 		//Loop through results
-		var_dump($results->fetch_object(Review::class));
-		while ($review = $results->fetch_object(Review::class)) {
-			$reviews[] = $review;
+		while ($row = $results->fetch_object()) {
+			$reviews[] = new Review($row->id, $row->score, $row->comment, $row->userID);
 		}
 		return $reviews;
 	}
@@ -70,8 +73,8 @@ class Review implements JsonSerializable
 		$reviews = array();
 		//Loop through results
 		while ($row = $results->fetch_assoc()) {
-			$review = new Review($row['score'], $row['comment'], $row['userID']);
-			$reviews[] = $review;
+			// $review = new Review($row['score'], $row['comment'], $row['userID']);
+			// $reviews[] = $review;
 		}
 		return $reviews;
 	}
