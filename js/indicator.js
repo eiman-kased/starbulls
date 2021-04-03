@@ -33,12 +33,11 @@ function indicate() {
 
 function menuHighlight() {
   $(document).ready(function () {
-	var allElements = $("a");
-	$("ul.dropdown-menu")
-	  .find(allElements)
-	  .click(function () {
-		$(this).toggleClass("nav-active");
-	  });
+    var allElements = $("a");
+    $("ul.dropdown-menu")
+      .find(allElements)
+      .click(function () {
+        $(this).toggleClass("nav-active");
+      });
   });
-}  
-
+}
