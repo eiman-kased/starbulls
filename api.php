@@ -6,9 +6,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 
 
-require __DIR__ .'/vendor/autoload.php';
-require __DIR__ .'/src/User.php';
-require __DIR__ .'/src/Review.php';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/src/User.php';
+require __DIR__ . '/src/Review.php';
 
 // var_dump($_SERVER);
 /**
@@ -67,7 +67,7 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 });
 
 // /review/show/{reviewID} - displays the info about a specific review not just the review contents
-$app->get('/review/{reviewID}', function (Request $request, Response $response, array $args){
+$app->get('/review/{reviewID}', function (Request $request, Response $response, array $args) {
 	$reviewID = intval($args['reviewID']);
 	$review = \Review::getReviewsByID($reviewID);
 	echo '<pre>';
@@ -77,6 +77,33 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 	// $response->getBody()->write(json_encode($review));
 	return $response;
 });
+
+$app->post('/review/new', function (Request $request, Response $response, array $args) {
+	$body = json_decode($request->getBody());
+
+	if (empty($body->score) || empty($body->comment)) {
+		return $response->withStatus(500);
+	}
+
+	if (empty($body->userID) && intval($body->userID) == 0) {
+		return $response->withStatus(400);
+	}
+
+	if (!intval($body->score) > 0) {
+		return $response->withStatus(400);
+	}
+
+	$review = new Review($body->score, $body->comment, $body->userID);
+	if ($review->saveToDB()) {
+		$response->getBody()->write(json_encode($review));
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(201);
+	}
+
+	return $response->withStatus(500);
+});
+
+
 // Run app
 $app->run();
-

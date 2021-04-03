@@ -13,9 +13,8 @@ class Review implements JsonSerializable
 	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
-	public function __construct(int $id = null, float $score, string $comment, int $userId = null)
+	public function __construct( float $score, string $comment, int $userId = null)
 	{
-		$this->id = $id;
 		$this->score = $score;
 		$this->comment = $comment;
 		$this->userID = $userId;
@@ -38,6 +37,7 @@ class Review implements JsonSerializable
 			echo $dbCon->error;
 			return false;
 		}
+		$this->id = $dbCon->insert_id;
 		//Return true
 		return true;
 	}
@@ -77,6 +77,14 @@ class Review implements JsonSerializable
 			// $reviews[] = $review;
 		}
 		return $reviews;
+	}
+
+	/**
+	 * Set the value of Review id
+	 */
+	public function setId($id)
+	{
+		$this->id = $id;
 	}
 
 	/**
