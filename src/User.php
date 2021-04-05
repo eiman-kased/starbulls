@@ -77,7 +77,7 @@ class User implements JsonSerializable
 	}
 
 	// find user by id
-	public static function findUserById($id)
+	public static function findUserById(int $id)
 	{
 		$db = new \Database();
 		$dbCon = $db->getConnection();
@@ -88,7 +88,7 @@ class User implements JsonSerializable
 			return false;
 		}
 
-		$tmp = $result->fetch_object();
+		$tmp = $result->fetch_object(User::class);
 
 		$dbCon->close();
 		$retUser =  new \User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new \DateTime($tmp->createdAt));
