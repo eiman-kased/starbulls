@@ -8,6 +8,7 @@ use Slim\Factory\AppFactory;
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/src/User.php';
+require __DIR__ . '/src/Review.php';
 
 // var_dump($_SERVER);
 /**
@@ -36,6 +37,13 @@ $app->addRoutingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 // Define app routes
+$app->get('/', function (Request $request, Response $response, $args) {
+	$name = $args['name'];
+	$response->getBody()->write("Hello, $name");
+	return $response;
+});
+
+// Define app routes
 $app->get('/hello/{name}', function (Request $request, Response $response, $args) {
 	$name = $args['name'];
 	$response->getBody()->write("Hello, $name");
@@ -53,7 +61,9 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 
 // Create new user
 $app->post('/users/new', function (Request $request, Response $response, array $args) {
-	return json_encode(var_dump($request));
+	$body = json_decode($request->getBody());
+	$response->getBody()->write($body->test);
+	return $response;
 });
 
 //Change info for a user that already exists
@@ -75,6 +85,71 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 
 
 
+// /review/show/{reviewID} - displays the info about a specific review not just the review contents
+$app->get('/review/{reviewID}', function (Request $request, Response $response, array $args) {
+	$reviewID = intval($args['reviewID']);
+	$review = \Review::getReviewsByID($reviewID);
+	echo '<pre>';
+	var_dump($review);
+	echo '</pre>';
+	//return review info based on ID
+	// $response->getBody()->write(json_encode($review));
+	return $response;
+});
+
+$app->post('/review/new', function (Request $request, Response $response, array $args) {
+	$body = json_decode($request->getBody());
+
+	if (empty($body->score) || empty($body->comment)) {
+		return $response->withStatus(500);
+	}
+
+	if (empty($body->userID) && intval($body->userID) == 0) {
+		return $response->withStatus(400);
+	}
+
+	if (!intval($body->score) > 0) {
+		return $response->withStatus(400);
+	}
+
+	$review = new Review($body->score, $body->comment, $body->userID);
+	if ($review->saveToDB()) {
+		$response->getBody()->write(json_encode($review));
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(201);
+	}
+
+	return $response->withStatus(500);
+});
+
+$app->post('/review/edit/{reviewid}', function (Request $request, Response $response, array $args) {
+	$id = $args['reviewID'];
+	$body = json_decode($request->getBody());
+	//check that the review has an id and user id
+	if (!empty($body->$id)) {
+		if (intval($body->$id) == 0) {
+			return $response->withStatus(400);
+		}
+		//check that the score and comment are not empty
+		if (empty($body->score) || empty($body->comment)) {
+			return $response->withStatus(500);
+		}
+		//check to make sure score is more than 0
+		if (!intval($body->score) > 0) {
+			return $response->withStatus(400);
+		}
+		//update db
+		$review = new Review($body->$id, $body->score, $body->comment);
+		if ($review->updateReview()) {
+			$response->getBody()->write(json_encode($review));
+			return $response
+				->withHeader('Content-Type', 'application/json')
+				->withStatus(201);
+		}
+	}
+	return $response->withStatus(500);
+});
 
 
 // Run app
