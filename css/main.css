@@ -14,6 +14,11 @@ body {
 	max-height: 400px;
 }
 
+.carousel-caption {
+	bottom: 20%;
+	text-shadow: 3px 3px 6px black;
+}
+
 h1 {
 	text-align: center;
 	color: white;
@@ -86,12 +91,10 @@ footer {
 
 /* css for the table in specialsOTW.html*/
 
-table, th, td {
-	border: 1.2px solid black;
+th, td {
+	border: 2px solid black;
 	text-align: center;
-	border-color: black;
 	margin-top: 2em;
-	width: 100%;
 }
 
 dt {
@@ -112,7 +115,8 @@ dt {
 .table {
 	margin-right: auto;
 	margin-left: auto;
-	width: 200px;
+	width: 40%;
+	background-color: white;
 }
 
 #hours {
@@ -224,12 +228,15 @@ input {
 	border-radius: 6px;
 }
 
+.hero-banner {
+	width: 100%;
+	align-content: center;
+}
+
 .hero-text {
 	text-align: center;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	background-position: center;
+	transform: translate(-0%, -140%);
 	color: white;
 	text-shadow: 3px 3px 6px black;
 }
@@ -383,4 +390,45 @@ input {
 	height: 240px;
 	margin: 0 auto;
 	margin-top: 2%;
+}
+
+/* Social Media Call to Action */
+
+.social-bkg {
+	background-color: rgba(122, 242, 132, 0.461);
+	border-radius: 2rem;
+	width: 90%;
+	margin: auto;
+	padding: 1em;
+}
+
+.socialmedia {
+	text-align: center;
+}
+
+.socialmedia h3, h4 {
+	font-weight: 800;
+	text-align: center;
+}
+
+.social-pic img {
+	width: 30%;
+	border-radius: 2rem;
+	padding: 1rem;
+}
+
+.social-links, .social-pic {
+	display: inline-block;
+}
+
+.social-links a {
+	/* margin: auto; */
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+}
+
+.social-links img {
+	padding: 0.5rem;
 }
