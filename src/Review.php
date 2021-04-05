@@ -29,10 +29,10 @@ class Review implements JsonSerializable
 		//Establish connection to DB
 		$this->db = $this->db ?? new Database();
 		$dbCon = $this->db->getConnection();
-		//Write query to save info 
+		//Write query to save info
 		$sql = "INSERT INTO review (score, comment, userID) VALUES ($this->score, '$this->comment', $this->userID)";
 
-		//DB run query 
+		//DB run query
 		$insertSuccess = $dbCon->query($sql);
 		//Does it work succesfully
 		if (!$insertSuccess) {
@@ -43,6 +43,27 @@ class Review implements JsonSerializable
 		return true;
 	}
 
+	public static function getReviewsByID(int $id)
+	{
+		//Establish connection to DB
+		$db = new \Database();
+		$dbCon = $db->getConnection();
+		//Write query to get info on review from ID
+		$sql = "SELECT * FROM `review` where id = $id";
+		//DB run query
+		$results = $dbCon->query($sql);
+		//Create array to return results
+		$reviews = array();
+		//Loop through results
+		while ($row = $results->fetch_assoc()) {
+			$results->id = $row['id'];
+			$results->score = $row['score'];
+			$results->comment = $row['comment'];
+			$results->userID = $row['userID'];
+			$reviews[] = $results;
+		}
+		return $reviews;
+	}
 	//Chunk of comments based on some specific piece of data
 	public function getReviewsByScore($score)
 	{
@@ -51,7 +72,7 @@ class Review implements JsonSerializable
 		$dbCon = $this->db->getConnection();
 		//Write query to get review based on score
 		$sql = "SELECT * FROM review where score=$score";
-		//DB run query 
+		//DB run query
 		$results = $dbCon->query($sql);
 		//Create array to return results
 		$reviews = array();
@@ -62,6 +83,25 @@ class Review implements JsonSerializable
 		}
 		return $reviews;
 	}
+		// Update a Review in the db
+		public function updateReview(int $id){
+
+			$dbCon = $this->db->getConnection();
+			//write query to update db
+			$sql = "UPDATE review (score, comment) SET ($this->score, $this->comment') WHERE id=$id";
+			//run query
+			$results = $dbCon->query($sql);
+			//place results in array
+			$reviewupdate = array();
+			//update review
+			while ($row = $results->fetch_assoc()) {
+				$results = new Review();
+				$results->score = $row['score'];
+				$results->comment = $row['comment'];
+				$reviewupdate[] = $results;
+			}
+			return $reviewupdate;
+		}
 
 	/**
 	 * Get the value of userID
@@ -163,3 +203,4 @@ class Review implements JsonSerializable
 		return $this;
 	}
 }
+
