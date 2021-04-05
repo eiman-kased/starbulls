@@ -290,14 +290,24 @@ input {
 	font-family: 'Montserrat', Arial, sans-serif;
 }
 
-.wrapper img {
-	position: absolute;
-	display: block;
+.signup-wrapper {
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	filter: brightness(80%);
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.signup-wrapper img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	min-width: 100vh;
+	height: 100vh;
 }
 
 #userAccount {
@@ -305,11 +315,13 @@ input {
 	font-family: 'Montserrat', Arial, sans-serif;
 	font-size: larger;
 	background-color: rgb(83, 184, 69);
-	width: auto;
+	top: 100px;
+	bottom: 125px;
 	margin: 125px auto 0px auto;
 	border: 5px;
 	border-radius: 10px;
 	border-style: outset;
+	z-index: 1300;
 }
 
 #userForm {
