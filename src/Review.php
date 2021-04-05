@@ -207,7 +207,6 @@ class Review implements JsonSerializable
 			$results = new Review();
 			$results->score = $row['score'];
 			$results->comment = $row['comment'];
-			$results = new Review ($row["score"]->score, $row["comment"]->comment);
 			$reviewupdate[] = $results;
 		}
 		return $reviewupdate;
