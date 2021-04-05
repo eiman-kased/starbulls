@@ -66,6 +66,25 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 	return $response;
 });
 
+//Change info for a user that already exists
+$app->post('/user/{id}', function (Request $request, Response $response, array $args) {
+
+	//update info identified by $args['id']
+	$id = $args['id'];
+	$user = \User::findUserById(intval($id));
+	$user = findUserById($request->id);
+	$user->setFname($request->fname);
+	$user->setLname($request->lname);
+	//Convert the string to an integer value
+	foreach ($id as $user => $values) {}
+	//Return updated user info
+	$response->getBody()->write(json_encode($user));
+	return $response;
+});
+
+
+
+
 // /review/show/{reviewID} - displays the info about a specific review not just the review contents
 $app->get('/review/{reviewID}', function (Request $request, Response $response, array $args) {
 	$reviewID = intval($args['reviewID']);
@@ -74,7 +93,7 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 	var_dump($review);
 	echo '</pre>';
 	//return review info based on ID
-	$response->getBody()->write(json_encode($review));
+	// $response->getBody()->write(json_encode($review));
 	return $response;
 });
 

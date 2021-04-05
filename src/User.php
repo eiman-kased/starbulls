@@ -2,7 +2,7 @@
 
 require_once 'src/DB/Database.php';
 
-class User
+class User implements JsonSerializable
 {
 	private int $id;
 	private string $firstName;
@@ -69,6 +69,26 @@ class User
 		}
 
 		$tmp = $result->fetch_object();
+
+		$dbCon->close();
+		$retUser =  new \User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new \DateTime($tmp->createdAt));
+		$retUser->setId($tmp->id);
+		return $retUser;
+	}
+
+	// find user by id
+	public static function findUserById(int $id)
+	{
+		$db = new \Database();
+		$dbCon = $db->getConnection();
+		$sql = "SELECT * FROM `user` WHERE id='$id'";
+
+		$result = $dbCon->query($sql);
+		if ($result->num_rows < 1) {
+			return false;
+		}
+
+		$tmp = $result->fetch_object(User::class);
 
 		$dbCon->close();
 		$retUser =  new \User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new \DateTime($tmp->createdAt));
@@ -211,4 +231,16 @@ class User
 
 		return $this;
 	}
+
+	public function jsonSerialize()
+	{
+		return [
+			'id' => $this->getID(),
+			'first_name' => $this->getFirstName(),
+			'last_name' => $this->getLastName(),
+			'email' => $this->getEmail(),
+			'phone_number' => $this->getPhoneNumber(),
+		];
+	}
 }
+
