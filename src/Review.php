@@ -55,14 +55,14 @@ class Review implements JsonSerializable
 		$reviews = array();
 		//Loop through results
 		while ($row = $results->fetch_assoc()) {
-			$reviews = new Review();
-			$reviews->id = $row['id'];
-			$reviews->score = $row['score'];
-			$reviews->comment = $row['comment'];
-			$reviews->userID = $row['userID'];
-			$reviews[] = $results;
+			$review = new Review($row['score'], $row['comment'], $row['userID']);
+			$review->id = $row['id'];
+			$reviews[] = $review;
 		}
-		return $reviews;
+		if (count($reviews) > 1) {
+			throw new Exception("Error more than one result found for ID: $id");
+		}
+		return $reviews[0];
 	}
 	//Chunk of comments based on some specific piece of data
 	public function getReviewsByScore($score)
@@ -82,26 +82,6 @@ class Review implements JsonSerializable
 			// $reviews[] = $review;
 		}
 		return $reviews;
-	}
-	// Update a Review in the db
-	public function updateReview(){
-
-		$dbCon = $this->db->getConnection();
-		//write query to update db
-		$sql = "UPDATE review (score, comment) SET ($this->score, $this->comment') WHERE id=$id";
-		//run query
-		$results = $dbCon->query($sql);
-		//place results in array
-		$reviewupdate = array();
-		//update review
-		while ($row = $results->fetch_assoc()) {
-			$results = new Review();
-			$results->id = $row['id'];
-			$results->score = $row['score'];
-			$results->comment = $row['comment'];
-			$reviewupdate[] = $results;
-		}
-		return $reviewupdate;
 	}
 
 	/**
@@ -140,7 +120,7 @@ class Review implements JsonSerializable
 			'score' => $this->getScore(),
 			'comment' => $this->getComment(),
 			'userId' => $this->getUserID(),
-			'createdAt' => $this->getCreatedAt()->getTimestamp(),
+			'createdAt' => $this->getCreatedAt()->getTimestamp(), //TODO timestamp message 
 		];
 	}
 
@@ -154,14 +134,10 @@ class Review implements JsonSerializable
 
 	/**
 	 * Set the value of score
-	 *
-	 * @return  self
 	 */
 	public function setScore($score)
 	{
 		$this->score = $score;
-
-		return $this;
 	}
 
 	/**
@@ -212,25 +188,6 @@ class Review implements JsonSerializable
 		return $this;
 	}
 
-	// Update a Review in the db
-	public function updateReview(int $id){
-
-		$dbCon = $this->db->getConnection();
-		//write query to update db
-		$sql = "UPDATE review (score, comment) SET ($this->score, $this->comment') WHERE id=$id";
-		//run query
-		$results = $dbCon->query($sql);
-		//place results in array
-		$reviewupdate = array();
-		//update review
-		while ($row = $results->fetch_assoc()) {
-			$results = new Review();
-			$results->score = $row['score'];
-			$results->comment = $row['comment'];
-			$reviewupdate[] = $results;
-		}
-		return $reviewupdate;
-	}
 
 }
 

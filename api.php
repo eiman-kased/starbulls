@@ -37,9 +37,8 @@ $app->addRoutingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 // Define app routes
-$app->get('/', function (Request $request, Response $response, $args) {
-	$name = $args['name'];
-	$response->getBody()->write("Hello, $name");
+$app->get('/test', function (Request $request, Response $response, $args) {
+	$response->getBody()->write(json_encode($_SERVER));
 	return $response;
 });
 
@@ -76,7 +75,8 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	$user->setFname($request->fname);
 	$user->setLname($request->lname);
 	//Convert the string to an integer value
-	foreach ($id as $user => $values) {}
+	foreach ($id as $user => $values) {
+	}
 	//Return updated user info
 	$response->getBody()->write(json_encode($user));
 	return $response;
@@ -123,30 +123,28 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	return $response->withStatus(500);
 });
 
-$app->post('/review/edit', function (Request $request, Response $response, array $args) {
+$app->post('/review/{reviewId}', function (Request $request, Response $response, array $args) {
+	$id = $args['reviewId'];
 	$body = json_decode($request->getBody());
 	//check that the review has an id and user id
-	if (!empty($body->id)) {
-		$review = Review::getReviewsByID($body->id);
-		if (intval($body->id) == 0) {
-			return $response->withStatus(400);
-		}
+	if (intval($id)) {
+		$review = Review::getReviewsByID($id);
 		//check that the score and comment are not empty
 		if (empty($body->score) && empty($body->comment)) {
-			return $response->withStatus(500);
+			return $response->withStatus(400);
 		}
 		//check to make sure score is more than 0
 		if (!intval($body->score) > 0) {
 			return $response->withStatus(400);
 		}
-		//update db
-		$review = new Review($body->id, $body->score, $body->comment);
-		if ($review->updateReview()) {
-			$response->getBody()->write(json_encode($review));
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(201);
-		}
+		//update review
+		$review->setScore($body->score);
+		$review->setComment($body->comment);
+
+		$response->getBody()->write(json_encode($review));
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(201);
 	}
 	return $response->withStatus(500);
 });
