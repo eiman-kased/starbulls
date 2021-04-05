@@ -13,7 +13,7 @@ class Review implements JsonSerializable
 	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
-	public function __construct( float $score, string $comment, int $userId = null)
+	public function __construct( float $score, string $comment, int $userId)
 	{
 		$this->score = $score;
 		$this->comment = $comment;
@@ -187,4 +187,26 @@ class Review implements JsonSerializable
 		return $this;
 	}
 
+	// Update a Review in the db
+	public function updateReview(int $id){
+
+		$dbCon = $this->db->getConnection();
+		//write query to update db
+		$sql = "UPDATE review (score, comment) SET ($this->score, $this->comment') WHERE id=$id";
+		//run query
+		$results = $dbCon->query($sql);
+		//place results in array
+		$reviewupdate = array();
+		//update review
+		while ($row = $results->fetch_assoc()) {
+		printf ("%s (%s)\n", $row["id"], $row["score"], $row["comment"]);
+		$results = $reviewupdate;
+			$reviewupdate = new Review ($row["id"], $row["score"]->score, $row["comment"]->comment);
+		}
+		return $reviewupdate;
+	}
+
 }
+
+
+

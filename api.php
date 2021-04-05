@@ -104,6 +104,34 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	return $response->withStatus(500);
 });
 
+$app->post('/review/edit/{reviewid}', function (Request $request, Response $response, array $args) {
+	$id = $args['reviewID'];
+	$body = json_decode($request->getBody());
+	//check that the review has an id and user id
+	if (!empty($body->$id)) {
+		if (intval($body->$id) == 0) {
+			return $response->withStatus(400);
+		}
+		//check that the score and comment are not empty
+		if (empty($body->score) || empty($body->comment)) {
+			return $response->withStatus(500);
+		}
+		//check to make sure score is more than 0
+		if (!intval($body->score) > 0) {
+			return $response->withStatus(400);
+		}
+		//update db
+		$review = new Review($body->$id, $body->score, $body->comment);
+		if ($review->updateReview()) {
+			$response->getBody()->write(json_encode($review));
+			return $response
+				->withHeader('Content-Type', 'application/json')
+				->withStatus(201);
+		}
+	}
+	return $response->withStatus(500);
+});
+
 
 // Run app
 $app->run();
