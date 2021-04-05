@@ -48,14 +48,19 @@ class Review implements JsonSerializable
 		$db = new \Database();
 		$dbCon = $db->getConnection();
 		//Write query to get info on review from ID
-		$sql = "SELECT * FROM `review` where id=$id";
+		$sql = "SELECT * FROM `review` where id = $id";
 		//DB run query
 		$results = $dbCon->query($sql);
 		//Create array to return results
 		$reviews = array();
 		//Loop through results
-		while ($row = $results->fetch_object()) {
-			$reviews[] = new Review($row->id, $row->score, $row->comment, $row->userID);
+		while ($row = $results->fetch_assoc()) {
+			$reviews = new Review();
+			$reviews->id = $row['id'];
+			$reviews->score = $row['score'];
+			$reviews->comment = $row['comment'];
+			$reviews->userID = $row['userID'];
+			$reviews[] = $results;
 		}
 		return $reviews;
 	}
@@ -199,9 +204,11 @@ class Review implements JsonSerializable
 		$reviewupdate = array();
 		//update review
 		while ($row = $results->fetch_assoc()) {
-		printf ("%s (%s)\n", $row["id"], $row["score"], $row["comment"]);
-		$results = $reviewupdate;
-			$reviewupdate = new Review ($row["id"], $row["score"]->score, $row["comment"]->comment);
+			$results = new Review();
+			$results->score = $row['score'];
+			$results->comment = $row['comment'];
+			$results = new Review ($row["score"]->score, $row["comment"]->comment);
+			$reviewupdate[] = $results;
 		}
 		return $reviewupdate;
 	}
