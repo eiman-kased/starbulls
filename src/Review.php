@@ -96,6 +96,7 @@ class Review implements JsonSerializable
 			//update review
 			while ($row = $results->fetch_assoc()) {
 				$results = new Review();
+				$results->id = $row['id'];
 				$results->score = $row['score'];
 				$results->comment = $row['comment'];
 				$reviewupdate[] = $results;

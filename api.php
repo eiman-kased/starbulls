@@ -112,7 +112,7 @@ $app->post('/review/edit', function (Request $request, Response $response, array
 			return $response->withStatus(400);
 		}
 		//check that the score and comment are not empty
-		if (empty($body->score) || empty($body->comment)) {
+		if (empty($body->score) && empty($body->comment)) {
 			return $response->withStatus(500);
 		}
 		//check to make sure score is more than 0
