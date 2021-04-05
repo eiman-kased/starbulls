@@ -6,8 +6,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 
 
-require __DIR__ .'/vendor/autoload.php';
-require __DIR__ .'/src/User.php';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/src/User.php';
 
 // var_dump($_SERVER);
 /**
@@ -56,6 +56,26 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 	return json_encode(var_dump($request));
 });
 
+//Change info for a user that already exists
+$app->post('/user/{id}', function (Request $request, Response $response, array $args) {
+
+	//update info identified by $args['id']
+	$id = $args['id'];
+	$user = \User::findUserById(intval($id));
+	$user = findUserById($request->id);
+	$user->setFname($request->fname);
+	$user->setLname($request->lname);
+	//Convert the string to an integer value
+	foreach ($id as $user => $values) {}
+	//Return updated user info
+	$response->getBody()->write(json_encode($user));
+	return $response;
+});
+
+
+
+
+
+
 // Run app
 $app->run();
-
