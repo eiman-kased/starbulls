@@ -83,26 +83,26 @@ class Review implements JsonSerializable
 		}
 		return $reviews;
 	}
-		// Update a Review in the db
-		public function updateReview(int $id){
+	// Update a Review in the db
+	public function updateReview(){
 
-			$dbCon = $this->db->getConnection();
-			//write query to update db
-			$sql = "UPDATE review (score, comment) SET ($this->score, $this->comment') WHERE id=$id";
-			//run query
-			$results = $dbCon->query($sql);
-			//place results in array
-			$reviewupdate = array();
-			//update review
-			while ($row = $results->fetch_assoc()) {
-				$results = new Review();
-				$results->id = $row['id'];
-				$results->score = $row['score'];
-				$results->comment = $row['comment'];
-				$reviewupdate[] = $results;
-			}
-			return $reviewupdate;
+		$dbCon = $this->db->getConnection();
+		//write query to update db
+		$sql = "UPDATE review (score, comment) SET ($this->score, $this->comment') WHERE id=$id";
+		//run query
+		$results = $dbCon->query($sql);
+		//place results in array
+		$reviewupdate = array();
+		//update review
+		while ($row = $results->fetch_assoc()) {
+			$results = new Review();
+			$results->id = $row['id'];
+			$results->score = $row['score'];
+			$results->comment = $row['comment'];
+			$reviewupdate[] = $results;
 		}
+		return $reviewupdate;
+	}
 
 	/**
 	 * Get the value of userID
@@ -204,4 +204,3 @@ class Review implements JsonSerializable
 		return $this;
 	}
 }
-

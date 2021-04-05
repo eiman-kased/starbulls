@@ -108,6 +108,7 @@ $app->post('/review/edit', function (Request $request, Response $response, array
 	$body = json_decode($request->getBody());
 	//check that the review has an id and user id
 	if (!empty($body->id)) {
+		$review = Review::getReviewsByID($body->id);
 		if (intval($body->id) == 0) {
 			return $response->withStatus(400);
 		}
