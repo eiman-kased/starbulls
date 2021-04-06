@@ -88,7 +88,7 @@ class User implements JsonSerializable
 			return false;
 		}
 
-		$tmp = $result->fetch_object(User::class);
+		$tmp = $result->fetch_object();
 
 		$dbCon->close();
 		$retUser =  new \User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new \DateTime($tmp->createdAt));
