@@ -70,4 +70,10 @@ $(function () {
 			return false;
 		}
 	}, "Invalid file format (pdf,doc,docx,odf supported)");
+
+	jQuery.validator.addMethod("age", function (value, element) {
+		console.log(element);
+		return false;
+	}, "Invalid file format (pdf,doc,docx,odf supported)");
+	
 });
