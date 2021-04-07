@@ -9,10 +9,11 @@
 
 		  $.ajax(settings)
 		  .done(function (response) {
+			  console.log(response);
 			  response.map(function(r){
 				$("#apiReview").append(`
 					<div data-review_id=${r.id}>
-					    <p>${r.username} : </p>
+					    <p>${r.user.email} : </p>
 						<p>${r.score}</p>
 						<p>${r.comment}</p>
 					</div>
@@ -23,16 +24,4 @@
 		  .fail(function(err){
 			  console.error(err)
 		  });
-		// var url = "/reviews"
-		// console.log("url is " , url)
-		// $("#apiReview").empty();
-		// $.ajax({
-		// 	url,
-		// 	method: "GET"
-		// }).done(
-		// 	function(data){
-		// 		// data.map()
-		// 	}
-		// )
-
 	})
