@@ -46,7 +46,7 @@ if (isset($_POST['reviewSubmit'])) {
 	}
 
 	// creating a new review object
-	$review = new Review($score, $comment);
+	$review = new Review(null, $score, $comment, null);
 
 	// seeing if the user already exists based on email so we can get the userId based on review
 	$user = \User::findUserByEmail($userEmail);
