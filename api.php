@@ -47,7 +47,11 @@ $app->get('/test', function (Request $request, Response $response, $args) {
 // lists a users info including their reviews //
 $app->get('/user/{id}', function (Request $request, Response $response, array $args) {
 	$id = $args['id'];
-	$user = \User::findUserById($id);
+	$user = User::findUserById($id);
+	if(empty($user)){
+		$response->getBody()->write('user not found');
+		return $response->withStatus(404);
+	}
 	//returning users info
 	$response->getBody()->write(json_encode($user->jsonSerialize()));
 	return $response;

@@ -88,6 +88,11 @@ class User implements JsonSerializable
 		if (!$result) {
 			throw new Exception("User info not found.");
 		}
+
+		if($result->num_rows === 0){
+			return null;
+		}
+
 		$row = $result->fetch_assoc();
 		$user = new User($row['firstName'], $row['lastName'], $row['email'], $row['phoneNumber'], $row['password']);
 		$user->id = $row['id'];
