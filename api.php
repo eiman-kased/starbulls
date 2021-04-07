@@ -159,13 +159,20 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 		if (empty($body->score) && empty($body->comment)) {
 			return $response->withStatus(400);
 		}
+
 		//check to make sure score is more than 0
-		if (!intval($body->score) > 0) {
+		if (!empty($body->score) && !intval($body->score) > 0) {
 			return $response->withStatus(400);
 		}
+
 		//update review
-		$review->setScore($body->score);
-		$review->setComment($body->comment);
+		if (!empty($body->score)) {
+			$review->setScore($body->score);
+		}
+
+		if (!empty($body->comment)) {
+			$review->setComment($body->comment);
+		}
 
 		$response->getBody()->write(json_encode($review));
 		return $response
