@@ -84,8 +84,15 @@ class User implements JsonSerializable
 		$sql = "SELECT * FROM `user` WHERE id='$id'";
 
 		$result = $dbCon->query($sql);
-		if ($result->num_rows < 1) {
-			return false;
+		//Create array to return results
+		$user = array();
+		//Loop through results
+		while ($row = $result->fetch_assoc()) {
+			$user = new User($row['firstName'], $row['lastName'], $row['email'], $row['phoneNumber'], $row['password']);
+			$user->id = $row['id'];
+			$users[] = $user;
+		} if (count($user) > 1) {
+			return $user[1];
 		}
 
 		$tmp = $result->fetch_object();
