@@ -273,9 +273,10 @@ class Review implements JsonSerializable
 			$reviewJSON['archivedAt'] = $this->getArchivedAt();
 		}
 
-		if ($this->userID) {
+		if (!empty($this->userID)) {
 			$reviewJSON['user'] = User::findUserById($this->userID);
 		}
+
 		return $reviewJSON;
 	}
 }
