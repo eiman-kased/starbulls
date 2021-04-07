@@ -15,11 +15,13 @@ class Review implements JsonSerializable
 	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
-	public function __construct(float $score, string $comment, int $userId= null)
+	public function __construct(float $score, string $comment, int $userId = null)
 	{
 		$this->score = $score;
 		$this->comment = $comment;
-		$this->userID = $userId;
+		if ($userId) {
+			$this->userID = $userId;
+		}
 		$this->db = $this->db ?? new Database();
 		$this->createdAt = new \DateTime();
 		$this->isArchived = false;
@@ -50,19 +52,20 @@ class Review implements JsonSerializable
 		return true;
 	}
 
-	public static function getAllReviews(string $filter = '', bool $includeArchived = false){
+	public static function getAllReviews(string $filter = '', bool $includeArchived = false)
+	{
 		//Establish connection to DB
 		$db = new \Database();
 		$dbCon = $db->getConnection();
 		$sql = 'SELECT * FROM review ';
-		if(!$includeArchived || !empty($filter)){
+		if (!$includeArchived || !empty($filter)) {
 			$sqlWhere = 'WHERE ';
 			$whereArr = [];
-			if(!$includeArchived){
+			if (!$includeArchived) {
 				$whereArr[] = 'archivedAt IS NULL';
 			}
 
-			if(!empty($filter)){
+			if (!empty($filter)) {
 				$whereArr[] = $filter;
 			}
 
@@ -270,7 +273,7 @@ class Review implements JsonSerializable
 			$reviewJSON['archivedAt'] = $this->getArchivedAt();
 		}
 
-		if($this->userID){
+		if ($this->userID) {
 			$reviewJSON['user'] = User::findUserById($this->userID);
 		}
 		return $reviewJSON;
