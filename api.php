@@ -69,14 +69,30 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 $app->post('/user/{id}', function (Request $request, Response $response, array $args) {
 	$id = $args['id'];
 	//Locate id
-	$user = \User::findUserById(intval($id));
+	$user = User::findUserById(intval($id));
 	$body = json_decode($request->getBody());
+	
 	//Update user info
-	$user->setFirstName($request->firstName);
-	$user->setLastName($request->lastName);
-	$user->setEmail($request->email);
-	$user->setPassword($request->password);
-	$user->setPhoneNumber($request->phoneNumber);
+	if(isset($body->first_name)) {
+		$user->setFirstName($body->first_name);
+	}
+	
+	if(isset($body->last_name)) {
+		$user->setLastName($body->last_name);
+	}
+	
+	if(isset($body->email)) {
+		$user->setEmail($body->email);
+	}
+	
+	if(isset($body->password)) {
+		$user->setPassword($body->password);
+	}
+	
+	if(isset($body->phone)) {
+		$user->setPhoneNumber($body->phone);
+	}
+	var_dump($user);
 	
 	$response->getBody()->write(json_encode($user));
 		return $response
