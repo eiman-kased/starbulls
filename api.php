@@ -104,7 +104,10 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 
 // /review/{reviewID} - displays the info about a specific review not just the review contents
 $app->get('/reviews', function (Request $request, Response $response, array $args) {
-	$reviews = Review::getAllReviews();
+	// get our sort/filter vals
+	$params = $request->getQueryParams();
+	$filterVal = (isset($params['filter-by']) ? $params['filter-by'].' '.$params['filter-val'] : '');
+	$reviews = Review::getAllReviews($filterVal, $params['archived'] ?? false);
 	//return review info based on ID
 	$response->getBody()->write(json_encode($reviews));
 	return $response

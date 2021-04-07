@@ -50,12 +50,25 @@ class Review implements JsonSerializable
 		return true;
 	}
 
-	public static function getAllReviews(bool $includeArchived = false){
+	public static function getAllReviews(string $filter = '', bool $includeArchived = false){
 		//Establish connection to DB
 		$db = new \Database();
 		$dbCon = $db->getConnection();
-		$sql = 'SELECT * FROM review '. (!$includeArchived? 'WHERE archivedAt IS NULL' : '');
-		// echo $sql;
+		$sql = 'SELECT * FROM review ';
+		if(!$includeArchived || !empty($filter)){
+			$sqlWhere = 'WHERE ';
+			$whereArr = [];
+			if(!$includeArchived){
+				$whereArr[] = 'archivedAt IS NULL';
+			}
+
+			if(!empty($filter)){
+				$whereArr[] = $filter;
+			}
+
+			$sql .= $sqlWhere . implode(' and ', $whereArr);
+			// echo $sql;
+		}
 
 		//DB run query
 		$results = $dbCon->query($sql);
