@@ -257,7 +257,7 @@ class Review implements JsonSerializable
 	// We need this to convert private vars to json correctly
 	public function jsonSerialize()
 	{
-		$userJSON = [
+		$reviewJSON = [
 			'id'   => $this->getId(),
 			'score' => $this->getScore(),
 			'comment' => $this->getComment(),
@@ -267,8 +267,12 @@ class Review implements JsonSerializable
 		];
 
 		if ($this->isArchived) {
-			$userJSON['archivedAt'] = $this->getArchivedAt();
+			$reviewJSON['archivedAt'] = $this->getArchivedAt();
 		}
-		return $userJSON;
+
+		if($this->userID){
+			$reviewJSON['user'] = User::findUserById($this->userID);
+		}
+		return $reviewJSON;
 	}
 }
