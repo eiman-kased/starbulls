@@ -15,7 +15,7 @@ class Review implements JsonSerializable
 	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
-	public function __construct(float $score, string $comment, int $userId)
+	public function __construct(float $score, string $comment, int $userId= null)
 	{
 		$this->score = $score;
 		$this->comment = $comment;
