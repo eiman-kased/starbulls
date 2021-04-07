@@ -67,19 +67,21 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 
 //Change info for a user that already exists
 $app->post('/user/{id}', function (Request $request, Response $response, array $args) {
-
-	//update info identified by $args['id']
 	$id = $args['id'];
+	//Locate id
 	$user = \User::findUserById(intval($id));
-	$user = findUserById($request->id);
-	$user->setFname($request->fname);
-	$user->setLname($request->lname);
-	//Convert the string to an integer value
-	foreach ($id as $user => $values) {
-	}
-	//Return updated user info
+	$body = json_decode($request->getBody());
+	//Update user info
+	$user->setFirstName($request->firstName);
+	$user->setLastName($request->lastName);
+	$user->setEmail($request->email);
+	$user->setPassword($request->password);
+	$user->setPhoneNumber($request->phoneNumber);
+	
 	$response->getBody()->write(json_encode($user));
-	return $response;
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(201);
 });
 
 
