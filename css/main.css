@@ -131,8 +131,17 @@ dt {
 	height: 100%;
 	position: relative;
 	text-align: center;
-	z-index: 1999;
 }
+
+#hours h4 {
+	color: #048004;
+}
+
+.table td {
+	border-width: 0.2rem;
+	font-weight: 800;
+}
+
 
 /*for mainpage.html wingassortment text*/
 
