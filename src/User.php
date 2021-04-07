@@ -84,23 +84,18 @@ class User implements JsonSerializable
 		$sql = "SELECT * FROM `user` WHERE id='$id'";
 
 		$result = $dbCon->query($sql);
-		//Create array to return results
-		$user = array();
-		//Loop through results
-		while ($row = $result->fetch_assoc()) {
-			$user = new User($row['firstName'], $row['lastName'], $row['email'], $row['phoneNumber'], $row['password']);
-			$user->id = $row['id'];
-			$users[] = $user;
-		} if (count($user) > 1) {
-			return $user[1];
-		}
 
-		$tmp = $result->fetch_object();
+		if (!$result) {
+			throw new Exception("User info not found.");
+		}
+		$row = $result->fetch_assoc();
+		$user = new User($row['firstName'], $row['lastName'], $row['email'], $row['phoneNumber'], $row['password']);
+		$user->id = $row['id'];
 
 		$dbCon->close();
-		$retUser =  new \User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new \DateTime($tmp->createdAt));
-		$retUser->setId($tmp->id);
-		return $retUser;
+
+		return $user;
+
 	}
 
 	/**
@@ -250,4 +245,3 @@ class User implements JsonSerializable
 		];
 	}
 }
-
