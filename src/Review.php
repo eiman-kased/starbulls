@@ -9,17 +9,20 @@ class Review implements JsonSerializable
 	private string $comment;
 	private int $userID;
 	private \DateTime $createdAt;
+	private bool $isArchived;
+	private \DateTime $archivedAt;
 
 	private Database $db;
 
 	//Initializes objects properties (variables) - two underscores
-	public function __construct( float $score, string $comment, int $userId)
+	public function __construct(float $score, string $comment, int $userId)
 	{
 		$this->score = $score;
 		$this->comment = $comment;
 		$this->userID = $userId;
 		$this->db = $this->db ?? new Database();
 		$this->createdAt = new \DateTime();
+		$this->isArchived = false;
 	}
 
 	//Function to save to database
@@ -27,22 +30,58 @@ class Review implements JsonSerializable
 	{
 		//Establish connection to DB
 		$dbCon = $this->db->getConnection();
-		//Write query to save info
-		$sql = "INSERT INTO review (score, comment, userID) VALUES ($this->score, '$this->comment', $this->userID)";
-
+		if (!empty($this->id)) {
+			$sql = "UPDATE review SET score = $this->score, comment = '$this->comment'" . ($this->isArchived && empty($this->archivedAt) ? ', archivedAt = NOW() ' : '') . "WHERE id=$this->id";
+			// echo $sql;
+		} else {
+			//Write query to save info
+			$sql = "INSERT INTO review (score, comment, userID) VALUES ($this->score, '$this->comment', $this->userID)";
+		}
 		//DB run query
 		$insertSuccess = $dbCon->query($sql);
-		//Does it work succesfully
+		//Does it work successfully
 		if (!$insertSuccess) {
 			echo $dbCon->error;
 			return false;
 		}
-		$this->id = $dbCon->insert_id;
+
+		$this->id = $this->id ?? $dbCon->insert_id;
 		//Return true
 		return true;
 	}
 
-	public static function getReviewsByID(int $id)
+	public static function getAllReviews(bool $includeArchived = false){
+		//Establish connection to DB
+		$db = new \Database();
+		$dbCon = $db->getConnection();
+		$sql = 'SELECT * FROM review '. (!$includeArchived? 'WHERE archivedAt IS NULL' : '');
+		// echo $sql;
+
+		//DB run query
+		$results = $dbCon->query($sql);
+
+		//Does it work successfully
+		if (!$results) {
+			echo $dbCon->error;
+			return false;
+		}
+		//Create array to return results
+		$reviews = array();
+		//Loop through results
+		while ($row = $results->fetch_assoc()) {
+			$review = new Review($row['score'], $row['comment'], $row['userID']);
+			$review->id = $row['id'];
+			if (!empty($row['archivedAt'])) {
+				$review->archivedAt = new \DateTime($row['archivedAt']);
+				$review->isArchived = true;
+			}
+			$reviews[] = $review;
+		}
+
+		return $reviews;
+	}
+
+	public static function getReviewByID(int $id)
 	{
 		//Establish connection to DB
 		$db = new \Database();
@@ -57,6 +96,10 @@ class Review implements JsonSerializable
 		while ($row = $results->fetch_assoc()) {
 			$review = new Review($row['score'], $row['comment'], $row['userID']);
 			$review->id = $row['id'];
+			if (!empty($row['archivedAt'])) {
+				$review->archivedAt = new \DateTime($row['archivedAt']);
+				$review->isArchived = true;
+			}
 			$reviews[] = $review;
 		}
 		if (count($reviews) > 1) {
@@ -78,8 +121,15 @@ class Review implements JsonSerializable
 		$reviews = array();
 		//Loop through results
 		while ($row = $results->fetch_assoc()) {
-			// $review = new Review($row['score'], $row['comment'], $row['userID']);
-			// $reviews[] = $review;
+			$review = new Review($row['score'], $row['comment'], $row['userID']);
+			if (!empty($row['archivedAt'])) {
+				$review->isArchived = true;
+				$review->archivedAt = new DateTime($row['archivedAt']);
+			} else {
+				$review->isArchived = false;
+			}
+
+			$reviews[] = $review;
 		}
 		return $reviews;
 	}
@@ -110,18 +160,6 @@ class Review implements JsonSerializable
 		$this->userID = $userID;
 
 		return $this;
-	}
-
-	// We need this to convert private vars to json correctly
-	public function jsonSerialize()
-	{
-		return [
-			'id'   => $this->getId(),
-			'score' => $this->getScore(),
-			'comment' => $this->getComment(),
-			'userId' => $this->getUserID(),
-			'createdAt' => $this->getCreatedAt()->getTimestamp(), //TODO timestamp message 
-		];
 	}
 
 	/**
@@ -158,14 +196,10 @@ class Review implements JsonSerializable
 
 	/**
 	 * Set the value of comment
-	 *
-	 * @return  self
 	 */
 	public function setComment($comment)
 	{
 		$this->comment = $comment;
-
-		return $this;
 	}
 
 	/**
@@ -178,18 +212,50 @@ class Review implements JsonSerializable
 
 	/**
 	 * Set the value of createdAt
-	 *
-	 * @return  self
 	 */
 	public function setCreatedAt($createdAt)
 	{
 		$this->createdAt = $createdAt;
-
-		return $this;
 	}
 
+	/**
+	 * Get the value of archivedAt
+	 */
+	public function getArchivedAt()
+	{
+		return $this->archivedAt ?? false;
+	}
 
+	/**
+	 * Set the value of archivedAt
+	 */
+	public function setArchivedAt($archivedAt)
+	{
+		$this->archivedAt = $archivedAt;
+	}
+
+	public function archive()
+	{
+		$this->isArchived = true;
+
+		$this->saveToDB();
+	}
+
+	// We need this to convert private vars to json correctly
+	public function jsonSerialize()
+	{
+		$userJSON = [
+			'id'   => $this->getId(),
+			'score' => $this->getScore(),
+			'comment' => $this->getComment(),
+			'userId' => $this->getUserID(),
+			'createdAt' => $this->getCreatedAt()->getTimestamp(), //TODO timestamp message 
+			'archived' => $this->isArchived,
+		];
+
+		if ($this->isArchived) {
+			$userJSON['archivedAt'] = $this->getArchivedAt();
+		}
+		return $userJSON;
+	}
 }
-
-
-

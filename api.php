@@ -42,12 +42,7 @@ $app->get('/test', function (Request $request, Response $response, $args) {
 	return $response;
 });
 
-// Define app routes
-$app->get('/hello/{name}', function (Request $request, Response $response, $args) {
-	$name = $args['name'];
-	$response->getBody()->write("Hello, $name");
-	return $response;
-});
+/********* USER ROUTES *********/
 
 // lists a users info including their reviews //
 $app->get('/user/{id}', function (Request $request, Response $response, array $args) {
@@ -61,8 +56,12 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 // Create new user
 $app->post('/users/new', function (Request $request, Response $response, array $args) {
 	$body = json_decode($request->getBody());
-	$response->getBody()->write($body->test);
-	return $response;
+
+	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $body->phone, $body->preferred ?? false);
+	$response->getBody()->write(json_encode($user));
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(201);
 });
 
 //Change info for a user that already exists
@@ -71,48 +70,57 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	//Locate id
 	$user = User::findUserById(intval($id));
 	$body = json_decode($request->getBody());
-	
+
 	//Update user info
-	if(isset($body->first_name)) {
+	if (isset($body->first_name)) {
 		$user->setFirstName($body->first_name);
 	}
-	
-	if(isset($body->last_name)) {
+
+	if (isset($body->last_name)) {
 		$user->setLastName($body->last_name);
 	}
-	
-	if(isset($body->email)) {
+
+	if (isset($body->email)) {
 		$user->setEmail($body->email);
 	}
-	
-	if(isset($body->password)) {
+
+	if (isset($body->password)) {
 		$user->setPassword($body->password);
 	}
-	
-	if(isset($body->phone)) {
+
+	if (isset($body->phone)) {
 		$user->setPhoneNumber($body->phone);
 	}
 	var_dump($user);
-	
+
 	$response->getBody()->write(json_encode($user));
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(201);
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(201);
 });
 
 
+/********* REVIEW ROUTES *********/
 
+// /review/{reviewID} - displays the info about a specific review not just the review contents
+$app->get('/reviews', function (Request $request, Response $response, array $args) {
+	$reviews = Review::getAllReviews();
+	//return review info based on ID
+	$response->getBody()->write(json_encode($reviews));
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
+});
 
-// /review/show/{reviewID} - displays the info about a specific review not just the review contents
+// /review/{reviewID} - displays the info about a specific review not just the review contents
 $app->get('/review/{reviewID}', function (Request $request, Response $response, array $args) {
 	$reviewID = intval($args['reviewID']);
-	$review = \Review::getReviewsByID($reviewID);
-	echo '<pre>';
-	var_dump($review);
-	echo '</pre>';
+	$review = \Review::getReviewByID($reviewID);
 	//return review info based on ID
-	// $response->getBody()->write(json_encode($review));
-	return $response;
+	$response->getBody()->write(json_encode($review));
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
 });
 
 $app->post('/review/new', function (Request $request, Response $response, array $args) {
@@ -146,7 +154,7 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 	$body = json_decode($request->getBody());
 	//check that the review has an id and user id
 	if (intval($id)) {
-		$review = Review::getReviewsByID($id);
+		$review = Review::getReviewByID($id);
 		//check that the score and comment are not empty
 		if (empty($body->score) && empty($body->comment)) {
 			return $response->withStatus(400);
@@ -165,6 +173,19 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 			->withStatus(201);
 	}
 	return $response->withStatus(500);
+});
+
+$app->delete('/review/{reviewId}', function (Request $request, Response $response, array $args) {
+	$id = $args['reviewId'];
+	$review = Review::getReviewByID($id);
+
+	$review->archive();
+
+	$response->getBody()->write(json_encode($review));
+
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
 });
 
 
