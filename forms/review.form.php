@@ -45,12 +45,12 @@ if (isset($_POST['reviewSubmit'])) {
 		$error['userEmail'] = 'Please Enter you Email';
 	}
 
-	// creating a new review object
-	$review = new Review(null, $score, $comment, null);
-
+	
 	// seeing if the user already exists based on email so we can get the userId based on review
 	$user = \User::findUserByEmail($userEmail);
-
+	
+	// creating a new review object
+	$review = new Review($score, $comment, $user->id);
 	// check to see if the user exists
 	if (!$user) {
 		//if the user doesn't exist, we need to try to create a user
