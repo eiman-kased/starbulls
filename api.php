@@ -50,7 +50,7 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 	$params = $request->getQueryParams();
 	// FIXME we need a specific and standard set of search params that are allowable.
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
-	$reviews = Review::getAllUsers($filterVal, $params['archived'] ?? false);
+	$reviews = User::getAllUsers($filterVal, $params['archived'] ?? false);
 	//return review info based on ID
 	$response->getBody()->write(json_encode($reviews));
 	return $response
