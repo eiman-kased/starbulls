@@ -41,8 +41,8 @@ class User implements JsonSerializable
 
 		if (!empty($this->id)) {
 			// if we have an id this user exists in the db and needs to be updated
-			$sql = "UPDATE `user` SET firstName = '$this->firstName', lastName = '$this->lastName', email = '$this->email', phoneNumber = $this->phoneNumber, isPreferred = $preferred, password = '$hash'" . ($this->isArchived ? ', archivedAt = '.$this->getArchivedAt()->format("Y-m-d H:i:s") : '') . "WHERE id=$this->id";
-			// echo $sql;
+			$sql = "UPDATE `user` SET firstName = '$this->firstName', lastName = '$this->lastName', email = '$this->email', phoneNumber = $this->phoneNumber, isPreferred = $preferred, password = '$hash'" . ($this->isArchived ? ", archivedAt = '".$this->getArchivedAt()->format("Y-m-d H:i:s")."'": '') . " WHERE id=$this->id";
+			//echo $sql;
 		} else {
 			// otherwise create new excluding createdAt since it defaults to current timestamp
 			$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred) VALUES ('$this->firstName', '$this->lastName', '$this->email', '$hash', '$this->phoneNumber', '$preferred')";
