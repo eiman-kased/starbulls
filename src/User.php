@@ -32,12 +32,8 @@ class User implements JsonSerializable
 	public function saveToDB(): User
 	{
 		// make/get db connection
-		$this->db = $this->db ?? new \Database();
+		$this->db = $this->db ?? new Database();
 		$dbCon = $this->db->getConnection();
-		// check to make sure this user doesn't already exist, based on email
-		if ($foundUser = self::findUserByEmail($this->email)) {
-			return $foundUser;
-		}
 		// Construct the insert sql statement/query
 		$preferred = $this->isPreferred ? 1 : 0;
 		// here we want to hash the pw and save the hash in the db
@@ -192,14 +188,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of firstName
-	 *
-	 * @return  self
 	 */
 	public function setFirstName($firstName)
 	{
 		$this->firstName = $firstName;
-
-		return $this;
 	}
 
 	/**
@@ -212,14 +204,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of lastName
-	 *
-	 * @return  self
 	 */
 	public function setLastName($lastName)
 	{
 		$this->lastName = $lastName;
-
-		return $this;
 	}
 
 	/**
@@ -232,14 +220,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of email
-	 *
-	 * @return  self
 	 */
 	public function setEmail($email)
 	{
 		$this->email = $email;
-
-		return $this;
 	}
 
 	/**
@@ -252,14 +236,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of password
-	 *
-	 * @return  self
 	 */
 	public function setPassword($password)
 	{
 		$this->password = $password;
-
-		return $this;
 	}
 
 	/**
@@ -272,14 +252,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of phoneNumber
-	 *
-	 * @return  self
 	 */
 	public function setPhoneNumber($phoneNumber)
 	{
 		$this->phoneNumber = $phoneNumber;
-
-		return $this;
 	}
 
 	/**
@@ -292,14 +268,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of createdAt
-	 *
-	 * @return  self
 	 */
 	public function setCreatedAt(DateTime $createdAt)
 	{
 		$this->createdAt = $createdAt;
-
-		return $this;
 	}
 
 	/**
