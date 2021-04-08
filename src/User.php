@@ -11,7 +11,9 @@ class User implements JsonSerializable
 	private string $password;
 	private string $phoneNumber;
 	private bool $isPreferred;
+	private bool $isArchived;
 	private \DateTime $createdAt;
+	private \DateTime $archivedAt;
 
 	private \Database $db;
 
@@ -23,6 +25,7 @@ class User implements JsonSerializable
 		$this->password = $password; // FIXME hash this before saving
 		$this->phoneNumber = $phoneNumber;
 		$this->isPreferred = $isPreferred;
+		$this->isPreferred = false;
 		$this->createdAt = $createdAt ?? new \DateTime();
 	}
 
@@ -40,9 +43,13 @@ class User implements JsonSerializable
 		// here we want to hash the pw and save the hash in the db
 		$hash = password_hash($this->password, PASSWORD_BCRYPT);
 
-		// excluding datetime since it defaults to current timestamp
-		$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred)
-		VALUES ('$this->firstName', '$this->lastName', '$this->email', '$hash', '$this->phoneNumber', '$preferred')";
+		if (!empty($this->id)) {
+			// if we have an id this user exists in the db and needs to be updated
+			$sql = "UPDATE `user` SET firstName = '$this->firstName', lastName = '$this->lastName', email = '$this->email', phoneNumber = $this->phoneNumber, isPreferred = $preferred, password = '$hash'" . ($this->isArchived && empty($this->archivedAt) ? ', archivedAt = NOW() ' : '') . "WHERE id=$this->id";
+		} else {
+			// otherwise create new excluding createdAt since it defaults to current timestamp
+			$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred) VALUES ('$this->firstName', '$this->lastName', '$this->email', '$hash', '$this->phoneNumber', '$preferred')";
+		}
 
 		$insertSuccess = $dbCon->query($sql);
 		// Check for errors in the insert process
@@ -57,6 +64,46 @@ class User implements JsonSerializable
 		return $this;
 	}
 
+	public static function getAllUsers(string $filter = '', bool $includeArchived = false)
+	{
+		$db = new \Database();
+		$dbCon = $db->getConnection();
+		$sql = "SELECT * FROM `user`";
+		if (!$includeArchived || !empty($filter)) {
+			$sqlWhere = 'WHERE ';
+			$whereArr = [];
+			if (!$includeArchived) {
+				$whereArr[] = 'archivedAt IS NULL';
+			}
+
+			if (!empty($filter)) {
+				$whereArr[] = $filter;
+			}
+
+			$sql .= $sqlWhere . implode(' and ', $whereArr);
+			// echo $sql;
+		}
+
+		//DB run query
+		$results = $dbCon->query($sql);
+
+		if ($results->num_rows < 1) {
+			return false;
+		}
+
+		$users = array();
+
+		while ($row = $results->fetch_assoc()) {
+			$retUser =  new \User($row['firstName'], $row['lastName'], $row['email'], $row['password'], $row['phoneNumber'], $row['isPreferred'], new \DateTime($row['createdAt']));
+			$retUser->setId($row['id']);
+			$users[] = $retUser;
+		}
+
+		$dbCon->close();
+
+		return $users;
+	}
+
 	public static function findUserByEmail($email)
 	{
 		$db = new \Database();
@@ -68,11 +115,11 @@ class User implements JsonSerializable
 			return false;
 		}
 
-		$tmp = $result->fetch_object();
+		$row = $result->fetch_object();
 
 		$dbCon->close();
-		$retUser =  new \User($tmp->firstName, $tmp->lastName, $tmp->email, $tmp->password, $tmp->phoneNumber, $tmp->isPreferred, new \DateTime($tmp->createdAt));
-		$retUser->setId($tmp->id);
+		$retUser =  new \User($row->firstName, $row->lastName, $row->email, $row->password, $row->phoneNumber, $row->isPreferred, new \DateTime($row->createdAt));
+		$retUser->setId($row->id);
 		return $retUser;
 	}
 
@@ -89,7 +136,7 @@ class User implements JsonSerializable
 			throw new Exception("User info not found.");
 		}
 
-		if($result->num_rows === 0){
+		if ($result->num_rows === 0) {
 			return null;
 		}
 
@@ -100,7 +147,6 @@ class User implements JsonSerializable
 		$dbCon->close();
 
 		return $user;
-
 	}
 
 	/**

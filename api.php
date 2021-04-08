@@ -44,6 +44,20 @@ $app->get('/test', function (Request $request, Response $response, $args) {
 
 /********* USER ROUTES *********/
 
+// /reviews - displays all reviews
+$app->get('/users', function (Request $request, Response $response, array $args) {
+	// get our sort/filter vals
+	$params = $request->getQueryParams();
+	// FIXME we need a specific and standard set of search params that are allowable.
+	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
+	$reviews = Review::getAllUsers($filterVal, $params['archived'] ?? false);
+	//return review info based on ID
+	$response->getBody()->write(json_encode($reviews));
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
+});
+
 // lists a users info including their reviews //
 $app->get('/user/{id}', function (Request $request, Response $response, array $args) {
 	// get the integer valus of the passed in id
@@ -82,6 +96,8 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 	$body = json_decode($request->getBody());
 	// create user from request values
 	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $body->phone, $body->preferred ?? false);
+	// save the user
+	$user->saveToDB();
 	// set encoded user as response body
 	$response->getBody()->write(json_encode($user));
 	// return response with 201 (added ok) code
@@ -138,6 +154,9 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	if (isset($body->phone)) {
 		$user->setPhoneNumber($body->phone);
 	}
+
+	// save the changes made to the db
+	$user->saveToDB();
 
 	// sent the response
 	$response->getBody()->write(json_encode($user));

@@ -32,9 +32,11 @@ class Review implements JsonSerializable
 	{
 		//Establish connection to DB
 		$dbCon = $this->db->getConnection();
+		// create blank sql string var
+		$sql = '';
+		// check if we need to update or insert
 		if (!empty($this->id)) {
 			$sql = "UPDATE review SET score = $this->score, comment = '$this->comment'" . ($this->isArchived && empty($this->archivedAt) ? ', archivedAt = NOW() ' : '') . "WHERE id=$this->id";
-			// echo $sql;
 		} else {
 			//Write query to save info
 			$sql = "INSERT INTO review (score, comment, userID) VALUES ($this->score, '$this->comment', $this->userID)";
