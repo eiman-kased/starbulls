@@ -265,7 +265,7 @@ class Review implements JsonSerializable
 			'score' => $this->getScore(),
 			'comment' => $this->getComment(),
 			'userId' => $this->getUserID(),
-			'createdAt' => $this->getCreatedAt()->getTimestamp(), //TODO timestamp message 
+			'createdAt' => $this->getCreatedAt()->getTimestamp(), //TODO timestamp message
 			'archived' => $this->isArchived,
 		];
 

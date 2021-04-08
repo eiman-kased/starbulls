@@ -106,7 +106,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 
 /********* REVIEW ROUTES *********/
 
-// /review/{reviewID} - displays the info about a specific review not just the review contents
+// /reviews - displays all reviews
 $app->get('/reviews', function (Request $request, Response $response, array $args) {
 	// get our sort/filter vals
 	$params = $request->getQueryParams();
@@ -130,14 +130,15 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 		->withStatus(200);
 });
 
+//review/new  Creates a new review
 $app->post('/review/new', function (Request $request, Response $response, array $args) {
 	$body = json_decode($request->getBody());
 
 	if (empty($body->score) || empty($body->comment)) {
-		return $response->withStatus(500);
+		return $response->withStatus(400);
 	}
 
-	if (empty($body->userID) && intval($body->userID) == 0) {
+	if (empty($body->userID) || intval($body->userID) == 0) {
 		return $response->withStatus(400);
 	}
 
@@ -156,6 +157,7 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	return $response->withStatus(500);
 });
 
+//review/{reviewid} Update a review
 $app->post('/review/{reviewId}', function (Request $request, Response $response, array $args) {
 	$id = $args['reviewId'];
 	$body = json_decode($request->getBody());
@@ -180,6 +182,7 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 		if (!empty($body->comment)) {
 			$review->setComment($body->comment);
 		}
+		$review->saveToDB();
 
 		$response->getBody()->write(json_encode($review));
 		return $response
@@ -189,6 +192,7 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 	return $response->withStatus(500);
 });
 
+//review/{reviewId}  delete a review by id 
 $app->delete('/review/{reviewId}', function (Request $request, Response $response, array $args) {
 	$id = $args['reviewId'];
 	$review = Review::getReviewByID($id);
