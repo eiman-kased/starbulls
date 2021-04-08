@@ -36,6 +36,22 @@ $app->addRoutingMiddleware();
  */
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
+
+// adding this so I dont have to do some tricky nonsense and can avoid long route names... efficient huh? 
+$app->setBasePath((function () {
+	// literally everything in here is to avoid typing Week_whatever each time this gets copied for the next week. DO NOT DO THIS!!!
+	$scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+	$uri = (string) parse_url('http://a' . $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+	if (stripos($uri, $_SERVER['SCRIPT_NAME']) === 0) {
+		return $_SERVER['SCRIPT_NAME'];
+	}
+	if ($scriptDir !== '/' && stripos($uri, $scriptDir) === 0) {
+		return $scriptDir;
+	}
+	return '';
+})());// Append route with api cuz I don't want to write that every time also
+
+
 // Define app routes
 $app->get('/test', function (Request $request, Response $response, $args) {
 	$response->getBody()->write(json_encode($_SERVER));
