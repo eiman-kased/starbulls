@@ -60,7 +60,7 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 
 // lists a users info including their reviews //
 $app->get('/user/{id}', function (Request $request, Response $response, array $args) {
-	// get the integer valus of the passed in id
+	// get the integer value of the passed in id
 	$id = intval($args['id']);
 	// if that id is not a number or is 0
 	if (!$id) {
@@ -144,6 +144,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	}
 
 	if (isset($body->email)) {
+		// TODO check if valid email
 		$user->setEmail($body->email);
 	}
 
@@ -218,7 +219,7 @@ $app->get('/reviews', function (Request $request, Response $response, array $arg
 
 // /review/{reviewID} - displays the info about a specific review
 $app->get('/review/{reviewID}', function (Request $request, Response $response, array $args) {
-	// get the integer valus of the passed in id
+	// get the integer value of the passed in id
 	$reviewID = intval($args['reviewID']);
 	// if that id is not a number or is 0
 	if (!$reviewID) {
@@ -264,9 +265,9 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	return $response->withStatus(500);
 });
 
-//review/{reviewid} Update a review
+//review/{reviewId} Update a review
 $app->post('/review/{reviewId}', function (Request $request, Response $response, array $args) {
-	// get the integer valus of the passed in id
+	// get the integer value of the passed in id
 	$id = intval($args['reviewId']);
 	// if that id is not a number or is 0
 	if (!$id) {
