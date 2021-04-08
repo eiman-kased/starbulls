@@ -25,19 +25,15 @@ class User implements JsonSerializable
 		$this->password = $password; // FIXME hash this before saving
 		$this->phoneNumber = $phoneNumber;
 		$this->isPreferred = $isPreferred;
-		$this->isPreferred = false;
+		$this->isArchived = false;
 		$this->createdAt = $createdAt ?? new \DateTime();
 	}
 
 	public function saveToDB(): User
 	{
 		// make/get db connection
-		$this->db = $this->db ?? new \Database();
+		$this->db = $this->db ?? new Database();
 		$dbCon = $this->db->getConnection();
-		// check to make sure this user doesn't already exist, based on email
-		if ($foundUser = self::findUserByEmail($this->email)) {
-			return $foundUser;
-		}
 		// Construct the insert sql statement/query
 		$preferred = $this->isPreferred ? 1 : 0;
 		// here we want to hash the pw and save the hash in the db
@@ -45,7 +41,8 @@ class User implements JsonSerializable
 
 		if (!empty($this->id)) {
 			// if we have an id this user exists in the db and needs to be updated
-			$sql = "UPDATE `user` SET firstName = '$this->firstName', lastName = '$this->lastName', email = '$this->email', phoneNumber = $this->phoneNumber, isPreferred = $preferred, password = '$hash'" . ($this->isArchived && empty($this->archivedAt) ? ', archivedAt = NOW() ' : '') . "WHERE id=$this->id";
+			$sql = "UPDATE `user` SET firstName = '$this->firstName', lastName = '$this->lastName', email = '$this->email', phoneNumber = $this->phoneNumber, isPreferred = $preferred, password = '$hash'" . ($this->isArchived ? ', archivedAt = '.$this->getArchivedAt()->format("Y-m-d H:i:s") : '') . "WHERE id=$this->id";
+			// echo $sql;
 		} else {
 			// otherwise create new excluding createdAt since it defaults to current timestamp
 			$sql = "INSERT INTO `user` (firstName, lastName, email, password, phoneNumber, isPreferred) VALUES ('$this->firstName', '$this->lastName', '$this->email', '$hash', '$this->phoneNumber', '$preferred')";
@@ -59,7 +56,7 @@ class User implements JsonSerializable
 			return false;
 		}
 		// everything went well
-		$this->id = $dbCon->insert_id;
+		$this->id = $this->id ?? $dbCon->insert_id;
 		$dbCon->close();
 		return $this;
 	}
@@ -87,7 +84,7 @@ class User implements JsonSerializable
 		//DB run query
 		$results = $dbCon->query($sql);
 
-		if(!$results){
+		if (!$results) {
 			return false;
 		}
 
@@ -100,6 +97,10 @@ class User implements JsonSerializable
 		while ($row = $results->fetch_assoc()) {
 			$retUser =  new \User($row['firstName'], $row['lastName'], $row['email'], $row['password'], $row['phoneNumber'], $row['isPreferred'], new \DateTime($row['createdAt']));
 			$retUser->setId($row['id']);
+			if (!empty($row['archivedAt'])) {
+				$retUser->archivedAt = new \DateTime($row['archivedAt']);
+				$retUser->isArchived = true;
+			}
 			$users[] = $retUser;
 		}
 
@@ -119,11 +120,15 @@ class User implements JsonSerializable
 			return false;
 		}
 
-		$row = $result->fetch_object();
+		$row = $result->fetch_assoc();
 
 		$dbCon->close();
-		$retUser =  new \User($row->firstName, $row->lastName, $row->email, $row->password, $row->phoneNumber, $row->isPreferred, new \DateTime($row->createdAt));
-		$retUser->setId($row->id);
+		$retUser =  new \User($row['firstName'], $row['lastName'], $row['email'], $row['password'], $row['phoneNumber'], $row['isPreferred'], new \DateTime($row['createdAt']));
+		$retUser->setId($row['id']);
+		if (!empty($row['archivedAt'])) {
+			$retUser->archivedAt = new \DateTime($row['archivedAt']);
+			$retUser->isArchived = true;
+		}
 		return $retUser;
 	}
 
@@ -147,6 +152,10 @@ class User implements JsonSerializable
 		$row = $result->fetch_assoc();
 		$user = new User($row['firstName'], $row['lastName'], $row['email'], $row['password'], $row['phoneNumber']);
 		$user->id = $row['id'];
+		if (!empty($row['archivedAt'])) {
+			$user->archivedAt = new \DateTime($row['archivedAt']);
+			$user->isArchived = true;
+		}
 
 		$dbCon->close();
 
@@ -179,14 +188,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of firstName
-	 *
-	 * @return  self
 	 */
 	public function setFirstName($firstName)
 	{
 		$this->firstName = $firstName;
-
-		return $this;
 	}
 
 	/**
@@ -199,14 +204,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of lastName
-	 *
-	 * @return  self
 	 */
 	public function setLastName($lastName)
 	{
 		$this->lastName = $lastName;
-
-		return $this;
 	}
 
 	/**
@@ -219,14 +220,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of email
-	 *
-	 * @return  self
 	 */
 	public function setEmail($email)
 	{
 		$this->email = $email;
-
-		return $this;
 	}
 
 	/**
@@ -239,14 +236,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of password
-	 *
-	 * @return  self
 	 */
 	public function setPassword($password)
 	{
 		$this->password = $password;
-
-		return $this;
 	}
 
 	/**
@@ -259,14 +252,10 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of phoneNumber
-	 *
-	 * @return  self
 	 */
 	public function setPhoneNumber($phoneNumber)
 	{
 		$this->phoneNumber = $phoneNumber;
-
-		return $this;
 	}
 
 	/**
@@ -279,19 +268,32 @@ class User implements JsonSerializable
 
 	/**
 	 * Set the value of createdAt
-	 *
-	 * @return  self
 	 */
 	public function setCreatedAt(DateTime $createdAt)
 	{
 		$this->createdAt = $createdAt;
+	}
 
-		return $this;
+	/**
+	 * Get the value of archivedAt
+	 */
+	public function setArchivedAt(DateTime $date)
+	{
+		$this->archivedAt = $date;
+	}
+
+	/**
+	 * Get the value of archivedAt
+	 */
+	public function getArchivedAt(): DateTime
+	{
+		return $this->archivedAt;
 	}
 
 	public function archive()
 	{
 		$this->isArchived = true;
+		$this->setArchivedAt(new DateTime());
 
 		$this->saveToDB();
 	}
@@ -307,8 +309,8 @@ class User implements JsonSerializable
 			'createdAt' => $this->createdAt,
 		];
 
-		if (!empty($this->isArchived)) {
-			$userJSON['archivedAt'] = $this->archivedAt;
+		if ($this->isArchived) {
+			$userJSON['archivedAt'] = $this->getArchivedAt();
 		}
 
 		return $userJSON;
