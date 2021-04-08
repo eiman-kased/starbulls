@@ -214,7 +214,17 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 
 //review/{reviewid} Update a review
 $app->post('/review/{reviewId}', function (Request $request, Response $response, array $args) {
-	$id = $args['reviewId'];
+	// get the integer valus of the passed in id
+	$id = intval($args['reviewID']);
+	// if that id is not a number or is 0
+	if (!$id) {
+		// set a message to explain what broke
+		$response->getBody()->write(json_encode([
+			'message' => 'invalid id provided',
+		]));
+		// return the error and a invalid request status
+		return $response->withStatus(400);
+	}
 	$body = json_decode($request->getBody());
 	//check that the review has an id and user id
 	if (intval($id)) {
