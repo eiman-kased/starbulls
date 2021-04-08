@@ -56,7 +56,7 @@ class User implements JsonSerializable
 			return false;
 		}
 		// everything went well
-		$this->id = $dbCon->insert_id;
+		$this->id = $this->id ?? $dbCon->insert_id;
 		$dbCon->close();
 		return $this;
 	}
