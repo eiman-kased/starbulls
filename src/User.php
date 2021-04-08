@@ -285,14 +285,26 @@ class User implements JsonSerializable
 		return $this;
 	}
 
+	public function archive()
+	{
+		$this->isArchived = true;
+
+		$this->saveToDB();
+	}
+
 	public function jsonSerialize()
 	{
-		return [
+		$userJSON = [
 			'id' => $this->getID(),
 			'first_name' => $this->getFirstName(),
 			'last_name' => $this->getLastName(),
 			'email' => $this->getEmail(),
 			'phone_number' => $this->getPhoneNumber(),
+			'createdAt' => $this->createdAt,
 		];
+
+		if ($this->isArchived) {
+			$userJSON['archivedAt'] = $this->archivedAt;
+		}
 	}
 }
