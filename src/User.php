@@ -141,7 +141,7 @@ class User implements JsonSerializable
 		}
 
 		$row = $result->fetch_assoc();
-		$user = new User($row['firstName'], $row['lastName'], $row['email'], $row['phoneNumber'], $row['password']);
+		$user = new User($row['firstName'], $row['lastName'], $row['email'], $row['password'], $row['phoneNumber']);
 		$user->id = $row['id'];
 
 		$dbCon->close();
@@ -303,8 +303,10 @@ class User implements JsonSerializable
 			'createdAt' => $this->createdAt,
 		];
 
-		if ($this->isArchived) {
+		if (!empty($this->isArchived)) {
 			$userJSON['archivedAt'] = $this->archivedAt;
 		}
+
+		return $userJSON;
 	}
 }

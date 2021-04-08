@@ -39,7 +39,9 @@ $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 // Define app routes
 $app->get('/test', function (Request $request, Response $response, $args) {
 	$response->getBody()->write(json_encode($_SERVER));
-	return $response;
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
 });
 
 /********* USER ROUTES *********/
@@ -80,7 +82,9 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 			'message' => 'user not found'
 		]));
 		// return 404
-		return $response->withStatus(404);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(404);
 	}
 	// assuming everything else went ok encode the user
 	$response->getBody()->write(json_encode($user->jsonSerialize()));
@@ -91,7 +95,7 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 });
 
 // Create new user
-$app->post('/users/new', function (Request $request, Response $response, array $args) {
+$app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
 	// create user from request values
