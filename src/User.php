@@ -87,6 +87,10 @@ class User implements JsonSerializable
 		//DB run query
 		$results = $dbCon->query($sql);
 
+		if(!$results){
+			return false;
+		}
+
 		if ($results->num_rows < 1) {
 			return false;
 		}
