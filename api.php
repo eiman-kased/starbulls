@@ -37,7 +37,7 @@ $app->addRoutingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 
-// adding this so I dont have to do some tricky nonsense and can avoid long route names... efficient huh? 
+// adding this so I dont have to do some tricky nonsense and can avoid long route names... efficient huh?
 $app->setBasePath((function () {
 	// literally everything in here is to avoid typing Week_whatever each time this gets copied for the next week. DO NOT DO THIS!!!
 	$scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
@@ -71,7 +71,7 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 	$users = User::getAllUsers($filterVal, $params['archived'] ?? false);
 	if (empty($users)) {
 		$response->getBody()->write(json_encode([
-			"message"=> "no Users Found"
+			"message" => "no Users Found"
 		]));
 		return $response
 			->withHeader('Content-Type', 'application/json')
@@ -95,7 +95,9 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 			'message' => 'invalid id provided',
 		]));
 		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
 	}
 	// otherwise get the user
 	$user = User::findUserById($id);
@@ -145,7 +147,9 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			'message' => 'invalid id provided',
 		]));
 		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
 	}
 	// look up the user
 	$user = User::findUserById($id);
@@ -156,7 +160,9 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			'message' => 'no user found for id:' . $id,
 		]));
 		// return the error and a 404 status
-		return $response->withStatus(404);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(404);
 	}
 
 	// get the request as a stdObject
@@ -195,7 +201,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		->withStatus(201);
 });
 
-//user/{userId}  delete a review by id
+//user/{userId}  delete a user by id
 $app->delete('/user/{userId}', function (Request $request, Response $response, array $args) {
 	// get int value of requested id
 	$id = intval($args['userId']);
@@ -340,7 +346,17 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 
 //review/{reviewId}  delete a review by id
 $app->delete('/review/{reviewId}', function (Request $request, Response $response, array $args) {
-	$id = $args['reviewId'];
+	// get the integer value of the passed in id
+	$id = intval($args['reviewId']);
+	// if that id is not a number or is 0
+	if (!$id) {
+		// set a message to explain what broke
+		$response->getBody()->write(json_encode([
+			'message' => 'invalid id provided',
+		]));
+		// return the error and a invalid request status
+		return $response->withStatus(400);
+	}
 	$review = Review::getReviewByID($id);
 
 	$review->archive();
