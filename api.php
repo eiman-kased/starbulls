@@ -166,7 +166,17 @@ $app->get('/reviews', function (Request $request, Response $response, array $arg
 
 // /review/{reviewID} - displays the info about a specific review
 $app->get('/review/{reviewID}', function (Request $request, Response $response, array $args) {
+	// get the integer valus of the passed in id
 	$reviewID = intval($args['reviewID']);
+	// if that id is not a number or is 0
+	if (!$reviewID) {
+		// set a message to explain what broke
+		$response->getBody()->write(json_encode([
+			'message' => 'invalid id provided',
+		]));
+		// return the error and a invalid request status
+		return $response->withStatus(400);
+	}
 	$review = Review::getReviewByID($reviewID);
 	//return review info based on ID
 	$response->getBody()->write(json_encode($review));
@@ -237,7 +247,7 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 	return $response->withStatus(500);
 });
 
-//review/{reviewId}  delete a review by id 
+//review/{reviewId}  delete a review by id
 $app->delete('/review/{reviewId}', function (Request $request, Response $response, array $args) {
 	$id = $args['reviewId'];
 	$review = Review::getReviewByID($id);
