@@ -44,15 +44,15 @@ $app->get('/test', function (Request $request, Response $response, $args) {
 
 /********* USER ROUTES *********/
 
-// /reviews - displays all reviews
+// /users - displays all users
 $app->get('/users', function (Request $request, Response $response, array $args) {
 	// get our sort/filter vals
 	$params = $request->getQueryParams();
 	// FIXME we need a specific and standard set of search params that are allowable.
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
-	$reviews = User::getAllUsers($filterVal, $params['archived'] ?? false);
+	$users = User::getAllUsers($filterVal, $params['archived'] ?? false);
 	//return review info based on ID
-	$response->getBody()->write(json_encode($reviews));
+	$response->getBody()->write(json_encode($users));
 	return $response
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(200);
@@ -166,6 +166,39 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		->withStatus(201);
 });
 
+//user/{userId}  delete a review by id
+$app->delete('/user/{userId}', function (Request $request, Response $response, array $args) {
+	// get int value of requested id
+	$id = intval($args['id']);
+	// check validity of id
+	if (!$id) {
+		// set a message to explain what broke
+		$response->getBody()->write(json_encode([
+			'message' => 'invalid id provided',
+		]));
+		// return the error and a invalid request status
+		return $response->withStatus(400);
+	}
+	// look up the user
+	$user = User::findUserById($id);
+	// if no matching user found
+	if (!$user) {
+		// set the response message
+		$response->getBody()->write(json_encode([
+			'message' => 'no user found for id:' . $id,
+		]));
+		// return the error and a 404 status
+		return $response->withStatus(404);
+	}
+
+	$user->archive();
+
+	$response->getBody()->write(json_encode($user));
+
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
+});
 
 /********* REVIEW ROUTES *********/
 
