@@ -71,7 +71,7 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 	$users = User::getAllUsers($filterVal, $params['archived'] ?? false);
 	if (empty($users)) {
 		$response->getBody()->write(json_encode([
-			"message"=> "no Users Found"
+			"message" => "no Users Found"
 		]));
 		return $response
 			->withHeader('Content-Type', 'application/json')
@@ -95,7 +95,9 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 			'message' => 'invalid id provided',
 		]));
 		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
 	}
 	// otherwise get the user
 	$user = User::findUserById($id);
@@ -145,7 +147,9 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			'message' => 'invalid id provided',
 		]));
 		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
 	}
 	// look up the user
 	$user = User::findUserById($id);
@@ -156,7 +160,9 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			'message' => 'no user found for id:' . $id,
 		]));
 		// return the error and a 404 status
-		return $response->withStatus(404);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(404);
 	}
 
 	// get the request as a stdObject
