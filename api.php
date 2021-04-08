@@ -215,7 +215,7 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 //review/{reviewid} Update a review
 $app->post('/review/{reviewId}', function (Request $request, Response $response, array $args) {
 	// get the integer valus of the passed in id
-	$id = intval($args['reviewID']);
+	$id = intval($args['reviewId']);
 	// if that id is not a number or is 0
 	if (!$id) {
 		// set a message to explain what broke
