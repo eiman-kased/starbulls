@@ -198,7 +198,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 //user/{userId}  delete a review by id
 $app->delete('/user/{userId}', function (Request $request, Response $response, array $args) {
 	// get int value of requested id
-	$id = intval($args['id']);
+	$id = intval($args['userId']);
 	// check validity of id
 	if (!$id) {
 		// set a message to explain what broke
