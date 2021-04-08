@@ -154,6 +154,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 $app->get('/reviews', function (Request $request, Response $response, array $args) {
 	// get our sort/filter vals
 	$params = $request->getQueryParams();
+	// FIXME we need a specific and standard set of search params that are allowable.
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$reviews = Review::getAllReviews($filterVal, $params['archived'] ?? false);
 	//return review info based on ID
@@ -163,10 +164,10 @@ $app->get('/reviews', function (Request $request, Response $response, array $arg
 		->withStatus(200);
 });
 
-// /review/{reviewID} - displays the info about a specific review not just the review contents
+// /review/{reviewID} - displays the info about a specific review
 $app->get('/review/{reviewID}', function (Request $request, Response $response, array $args) {
 	$reviewID = intval($args['reviewID']);
-	$review = \Review::getReviewByID($reviewID);
+	$review = Review::getReviewByID($reviewID);
 	//return review info based on ID
 	$response->getBody()->write(json_encode($review));
 	return $response
