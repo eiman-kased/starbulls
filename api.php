@@ -46,23 +46,45 @@ $app->get('/test', function (Request $request, Response $response, $args) {
 
 // lists a users info including their reviews //
 $app->get('/user/{id}', function (Request $request, Response $response, array $args) {
-	$id = $args['id'];
+	// get the integer valus of the passed in id
+	$id = intval($args['id']);
+	// if that id is not a number or is 0
+	if (!$id) {
+		// set a message to explain what broke
+		$response->getBody()->write(json_encode([
+			'message' => 'invalid id provided',
+		]));
+		// return the error and a invalid request status
+		return $response->withStatus(400);
+	}
+	// otherwise get the user
 	$user = User::findUserById($id);
-	if(empty($user)){
-		$response->getBody()->write('user not found');
+	// if we got nothing back from the user
+	if (empty($user)) {
+		// set not found message
+		$response->getBody()->write(json_encode([
+			'message' => 'user not found'
+		]));
+		// return 404
 		return $response->withStatus(404);
 	}
-	//returning users info
+	// assuming everything else went ok encode the user
 	$response->getBody()->write(json_encode($user->jsonSerialize()));
-	return $response;
+	// return users info
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
 });
 
 // Create new user
 $app->post('/users/new', function (Request $request, Response $response, array $args) {
+	// get request body
 	$body = json_decode($request->getBody());
-
+	// create user from request values
 	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $body->phone, $body->preferred ?? false);
+	// set encoded user as response body
 	$response->getBody()->write(json_encode($user));
+	// return response with 201 (added ok) code
 	return $response
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(201);
@@ -70,9 +92,30 @@ $app->post('/users/new', function (Request $request, Response $response, array $
 
 //Change info for a user that already exists
 $app->post('/user/{id}', function (Request $request, Response $response, array $args) {
-	$id = $args['id'];
-	//Locate id
-	$user = User::findUserById(intval($id));
+	// get int value of requested id
+	$id = intval($args['id']);
+	// check validity of id
+	if (!$id) {
+		// set a message to explain what broke
+		$response->getBody()->write(json_encode([
+			'message' => 'invalid id provided',
+		]));
+		// return the error and a invalid request status
+		return $response->withStatus(400);
+	}
+	// look up the user
+	$user = User::findUserById($id);
+	// if no matching user found
+	if (!$user) {
+		// set the response message
+		$response->getBody()->write(json_encode([
+			'message' => 'no user found for id:' . $id,
+		]));
+		// return the error and a 404 status
+		return $response->withStatus(404);
+	}
+
+	// get the request as a stdObject
 	$body = json_decode($request->getBody());
 
 	//Update user info
@@ -95,9 +138,10 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	if (isset($body->phone)) {
 		$user->setPhoneNumber($body->phone);
 	}
-	var_dump($user);
 
+	// sent the response
 	$response->getBody()->write(json_encode($user));
+	// return response with correct code
 	return $response
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(201);
@@ -110,7 +154,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 $app->get('/reviews', function (Request $request, Response $response, array $args) {
 	// get our sort/filter vals
 	$params = $request->getQueryParams();
-	$filterVal = (isset($params['filter-by']) ? $params['filter-by'].' '.$params['filter-val'] : '');
+	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$reviews = Review::getAllReviews($filterVal, $params['archived'] ?? false);
 	//return review info based on ID
 	$response->getBody()->write(json_encode($reviews));
