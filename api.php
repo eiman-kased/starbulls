@@ -49,7 +49,7 @@ $app->setBasePath((function () {
 		return $scriptDir;
 	}
 	return '';
-})());// Append route with api cuz I don't want to write that every time also
+})()); // Append route with api cuz I don't want to write that every time also
 
 
 // Define app routes
@@ -69,6 +69,14 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 	// FIXME we need a specific and standard set of search params that are allowable.
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$users = User::getAllUsers($filterVal, $params['archived'] ?? false);
+	if (empty($users)) {
+		$response->getBody()->write(json_encode([
+			"message"=> "no Users Found"
+		]));
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(404);
+	}
 	//return review info based on ID
 	$response->getBody()->write(json_encode($users));
 	return $response
