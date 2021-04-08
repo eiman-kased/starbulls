@@ -14,7 +14,7 @@ It's a 5 page site
 
 ### Create a configuration within your local server environment
 
-This can be done with either nginx or apache, the choice is yours. Be wary of what you set as the server name (ie starbulls.com) as some links may not work well or some functionality my not behave as expected.
+This can be done with either nginx or apache, the choice is yours. Be wary of what you set as the server name (ie starbulls.com) as some links may not work well or some functionality my not behave as expected. The DocumentRoot value should be the root of the project directory.
 
 ### Create the starbulls database
 
