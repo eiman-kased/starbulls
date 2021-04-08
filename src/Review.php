@@ -108,6 +108,10 @@ class Review implements JsonSerializable
 		$sql = "SELECT * FROM `review` where id = $id";
 		//DB run query
 		$results = $dbCon->query($sql);
+
+		if (!$results) {
+			return false;
+		}
 		//Create array to return results
 		$reviews = array();
 		//Loop through results
