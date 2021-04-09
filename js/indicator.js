@@ -23,7 +23,7 @@ function indicate() {
 				$('a[href="apply.php"').parent().addClass("nav-active");
 				break;
 			default:
-				console.log($("No matching element found."));
+				console.log("No matching element found.");
 				break;
 		}
 	});

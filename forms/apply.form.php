@@ -80,7 +80,10 @@ if (isset($_POST["submit_btn"])) {
 }
 
 ?>
-<form action="apply.php" method="post" enctype="multipart/form-data">
+<!-- Change the "src" attribute according to your installation path -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="js/apply.js"></script>
+<form action="apply.php" method="post" enctype="multipart/form-data" id="applyForm" name="applyForm">
 	<div class="name">
 		First Name:*<input type="text" name="firstName" id="firstName" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> required />
 		Middle Initial:<input type="text" name="middleName" id="middleName" <?= (isset($_POST['middleName']) ? 'value="' . $_POST['middleName'] . '"' : '') ?> />

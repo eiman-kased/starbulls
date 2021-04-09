@@ -432,3 +432,7 @@ input {
 .social-links img {
 	padding: 0.5rem;
 }
+
+form .error {
+	color: #ff0000;
+}
