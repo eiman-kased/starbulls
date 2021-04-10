@@ -84,8 +84,44 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 		->withStatus(200);
 });
 
+//finds User by Email TODO modify route
+$app->get('/user/{email}', function (Request $request, Response $response, array $args) {
+	$email = $args['email'];
+	if (!$email) {
+		// set a message to explain what broke
+		$response->getBody()->write(json_encode([
+			'message' => 'invalid email provided',
+		]));
+		// return the error and a invalid request status
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
+	}
+	// otherwise get the user
+	$user = User::findUserByEmail($email);
+	// if we got nothing back from the user
+	if (empty($user)) {
+		// set not found message
+		$response->getBody()->write(json_encode([
+			'message' => 'user not found'
+		]));
+		// return 404
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(404);
+	}
+	// assuming everything else went ok encode the user
+	$response->getBody()->write(json_encode($user->jsonSerialize()));
+	// return users info
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
+});
+
+
+
 // lists a users info including their reviews //
-$app->get('/user/{id}', function (Request $request, Response $response, array $args) {
+$app->get('/user/id/{id}', function (Request $request, Response $response, array $args) {
 	// get the integer value of the passed in id
 	$id = intval($args['id']);
 	// if that id is not a number or is 0
