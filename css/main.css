@@ -22,8 +22,7 @@ body {
 }
 
 .carousel-caption {
-	bottom: 20%;
-	margin-bottom: 10%;
+	top: 10%;
 	text-shadow: 3px 3px 6px black;
 }
 
@@ -142,7 +141,6 @@ dt {
 	font-weight: 800;
 }
 
-
 /*for mainpage.html wingassortment text*/
 
 .connectTexts {
@@ -255,11 +253,8 @@ input {
 }
 
 .hero-text {
-	/* height: max-content; */
-	padding-top: 20px;
+	top: 20%;
 	text-align: center;
-	/* background-position: center; */
-	/* transform: translate(-0%, -140%); */
 	color: white;
 	text-shadow: 3px 3px 6px black;
 }
@@ -297,7 +292,6 @@ input {
 	text-align: center;
 	padding: 4%;
 }
-
 
 .aboutInfo1 {
 	background-color: rgba(255, 255, 255, .4);
