@@ -82,7 +82,6 @@ async function createNewUser() {
 		'url': '/user/new',
 		'method': 'POST',
 		'data': JSON.stringify(userObj),
-		'async': false
 	};
 
 	console.log('user settings', userSettings);
