@@ -114,8 +114,8 @@ if (session_status() === PHP_SESSION_NONE) {
 			<div class="col-6" id="IndexReviewForm">
 				<?php include 'forms/review.form.php'; ?><br />
 			</div>
-			<div class="col-6" id="IndexUserForm">
-			<?php include 'forms/user.form.php'; ?><br />
+			<div class="col-6" id="IndexUserForm" style="display:none">
+				<?php include 'forms/user.form.php'; ?><br />
 			</div>
 			<!-- Carousel of Customer Reviews -->
 			<div class="col-6">
