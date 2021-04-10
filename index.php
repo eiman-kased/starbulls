@@ -110,9 +110,24 @@ if (session_status() === PHP_SESSION_NONE) {
 		</div><br />
 
 		<!-- Customer Review Form -->
-		<?php include 'forms/review.form.php'; ?><br />
-
-		<!-- Carousel of Customer Reviews -->
+		<div class="row">
+			<div class="col-6">
+				<?php include 'forms/review.form.php'; ?><br />
+			</div>
+			<!-- Carousel of Customer Reviews -->
+			<div class="col-6">
+				<div id="apiReview" class="review1">
+					<div data-review_id="review_reviewId">
+						<p>
+							3
+						</p>
+						<p>
+							food food food
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- Social Media Call to Action -->
 		<div class="social-bkg socialmedia">
@@ -133,6 +148,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	<!-- Footer with Address -->
 	<?php include 'footer.php'; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	<script src="js/reviewApi.js"></script>
 </body>
 
 </html>
