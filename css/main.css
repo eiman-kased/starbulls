@@ -350,8 +350,8 @@ input {
 	background-color: rgb(83, 184, 69);
 	width: 85%;
 	margin: auto;
-	border: 5px;
-	border-radius: 10px;
+	border: 0.4rem;
+	border-radius: 0.5rem;
 	border-style: outset;
 }
 
@@ -366,6 +366,61 @@ input {
 
 .container.inputbox {
 	display: flex;
+}
+
+/* Customer Testimonials */
+
+#testimonials {
+	font-family: 'Montserrat', Arial, sans-serif;
+	background-color: rgb(83, 184, 69);
+	border: 0.4rem;
+	border-radius: 0.5rem;
+	border-style: outset;
+	padding: 3%;
+	margin: 0rem 2rem 1rem 2rem;
+}
+
+.reviewIcon {
+	width: 25%;
+	display: inline-block;
+}
+
+.nameReview {
+	display: inline-block;
+}
+
+#userInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+blockquote {
+	font-style: italic;
+	font-weight: 900;
+	padding: 1rem 1rem 0rem 3rem;
+	position: relative;
+}
+
+blockquote::before {
+	content: "\201C";
+	color: #07DF07;
+	font-size: 5em;
+	position: absolute;
+	left: 0.7rem;
+	top: -1rem;
+}
+
+.customerReview {
+	background-color: #CEFDCE;
+	border-radius: 1rem;
+	border-left: 1.5em solid #07DF07;
+	padding: 2% 5%;
+	margin-top: 2%;
+	box-shadow: 0.5rem 0.5rem 1rem black;
+}
+
+.score {
+	text-align: center;
 }
 
 /* social Media icons */
