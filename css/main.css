@@ -1,22 +1,18 @@
-/* Google font assignment */
+/* || General Styles */
 
 body {
 	font-family: 'Montserrat', Arial, sans-serif;
+	position: relative;
+	background-color: white;
+	margin-bottom: 100px;
 }
 
-/*css accross all pages*/
+p {
+	font-size: 25px;
+}
 
 .header {
 	background-color: #048004;
-}
-
-.carousel-inner {
-	max-height: 400px;
-}
-
-.carousel-caption {
-	bottom: 20%;
-	text-shadow: 3px 3px 6px black;
 }
 
 h1 {
@@ -34,20 +30,26 @@ h2 {
 	margin-top: 0.1em;
 }
 
-.us {
-	font-size: 45px;
-	text-decoration: underline;
-	text-align: center;
-	font-weight: lighter;
-	margin-bottom: -0.3em;
-	margin-top: 0.1em;
+h3 {
+	font-size: 35px;
 }
 
-body {
-	position: relative;
-	background-color: white;
-	margin-bottom: 100px;
+.container {
+	display: inline-block;
+	width: 100%;
 }
+
+.row {
+	margin: auto;
+}
+
+.graybg {
+	background-color: lightgray;
+}
+
+/* || Sitewide */
+
+/* navbar */
 
 .nav-active {
 	background-color: #44c767;
@@ -60,11 +62,13 @@ body {
 	text-decoration: none;
 }
 
-/* css for the navigation bar across all pages*/
-
 nav {
 	background-color: #048004;
 	font-size: large;
+}
+
+.navbar.sticky-top {
+	z-index: 1100;
 }
 
 .logo img {
@@ -73,125 +77,7 @@ nav {
 	margin: 6px;
 }
 
-#end {
-	text-align: center;
-	font-size: large;
-	position: relative;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-}
-
-footer {
-	position: absolute;
-	bottom: -100;
-	left: 0;
-	width: 100%;
-}
-
-/* css for the table in specialsOTW.html*/
-
-th, td {
-	border: 2px solid black;
-	text-align: center;
-	margin-top: 2em;
-}
-
-dt {
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-#Specials {
-	position: absolute;
-	left: auto;
-	text-align: left;
-	font-family: serif;
-}
-
-/*css for mainPage.html*/
-
-.table {
-	margin-right: auto;
-	margin-left: auto;
-	width: 40%;
-	background-color: white;
-}
-
-#hours {
-	text-align: center;
-}
-
-/*for mainpage.html wingassortment text*/
-
-.connectTexts {
-	text-align: left;
-	padding: 40px;
-}
-
-.graybg {
-	background-color: lightgray;
-}
-
-.row {
-	margin: auto;
-}
-
-.row.row-index {
-	display: flex;
-	margin: auto;
-}
-
-#connect img {
-	padding: 20px;
-	object-fit: contain;
-	width: 500px;
-}
-
-.column {
-	float: left;
-	width: 50%;
-}
-
-.column img {
-	width: 600px;
-	padding: 20px;
-	object-fit: contain;
-	float: right;
-}
-
-/*css for us.html*/
-
-p {
-	font-size: 25px;
-}
-
-h3 {
-	font-size: 35px;
-}
-
-.navbar.sticky-top {
-	z-index: 1100;
-}
-
-.accordion-header.sticky-top {
-	top: 110px;
-}
-
-/* beginning of CSS for specials */
-
-.column {
-	float: left;
-	width: 50%;
-}
-
-#Specials {
-	position: absolute;
-	left: auto;
-	text-align: left;
-	font-family: serif;
-}
+/* footer styling */
 
 #end {
 	text-align: center;
@@ -201,174 +87,6 @@ h3 {
 	right: 0;
 	width: 100%;
 }
-
-.form-container {
-	display: inline-block;
-	box-sizing: border-box;
-	background-color: rgb(202, 202, 202);
-	padding: 20px;
-	padding-right: 40px;
-	border-radius: 2%;
-}
-
-input {
-	width: 100%;
-	color: black;
-}
-
-.name, .dob, .phone, .address, .email {
-	display: inline-block;
-	color: black;
-	border-radius: 2px;
-	padding-right: 5px;
-}
-
-.submit>input[type=submit] {
-	padding: 2% 2%;
-	border-radius: 6px;
-}
-
-.hero-banner {
-	width: 100%;
-	align-content: center;
-}
-
-.hero-text {
-	text-align: center;
-	background-position: center;
-	transform: translate(-0%, -140%);
-	color: white;
-	text-shadow: 3px 3px 6px black;
-}
-
-.review1 {
-	background-color: rgba(122, 242, 132, 0.461);
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	border-radius: 6px;
-	text-align: center;
-	padding: 6%;
-}
-
-.review2 {
-	background-color: rgba(116, 108, 108, 0.742);
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	border-radius: 6px;
-	text-align: center;
-	padding: 4%;
-}
-
-.review1:hover, .review2:hover {
-	background-color: rgba(255, 255, 255, .4);
-	transition: .4s;
-	border: 1px solid black;
-}
-
-.container {
-	display: inline-block;
-	width: 100%;
-}
-
-.tools {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	border-radius: 6px;
-	text-align: center;
-	padding: 4%;
-}
-
-.containerAbout {
-	background-color: lightgray;
-}
-
-.aboutInfo1 {
-	background-color: rgba(255, 255, 255, .4);
-	border-radius: 20px;
-	text-align: center;
-}
-
-.aboutInfo2 {
-	background-color: rgba(122, 242, 132, 0.461);
-	border-radius: 20px;
-	text-align: center;
-}
-
-/* review and sign up forms */
-
-#userForm h3 {
-	font-family: 'Montserrat', Arial, sans-serif;
-}
-
-.signup-wrapper {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
-}
-
-.signup-wrapper img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	min-width: 100vh;
-	height: 100vh;
-}
-
-#userAccount {
-	position: relative;
-	font-family: 'Montserrat', Arial, sans-serif;
-	font-size: larger;
-	background-color: rgb(83, 184, 69);
-	top: 100px;
-	bottom: 125px;
-	margin: 125px auto 0px auto;
-	border: 5px;
-	border-radius: 10px;
-	border-style: outset;
-	z-index: 1300;
-}
-
-#userForm {
-	display: inline-block;
-	padding: 5px 20px;
-}
-
-.btn-outline-success {
-	color: black !important;
-}
-
-#reviewForm h3 {
-	font-family: 'Montserrat', Arial, sans-serif;
-}
-
-#reviewForm {
-	font-family: 'Montserrat', Arial, sans-serif;
-	font-size: larger;
-	background-color: rgb(83, 184, 69);
-	width: 85%;
-	margin: auto;
-	border: 5px;
-	border-radius: 10px;
-	border-style: outset;
-}
-
-.form-control:focus {
-	border-color: rgb(27, 61, 22);
-	box-shadow: inset 0 1px 1px rgba(14, 31, 11, 0.075), 0 0 8px rgba(12, 27, 10, 0.6);
-}
-
-.colform {
-	padding-bottom: 15px;
-}
-
-.container.inputbox {
-	display: flex;
-}
-
-/* social Media icons */
 
 #socialMedia {
 	position: fixed;
@@ -385,11 +103,63 @@ input {
 	z-index: 1300px;
 }
 
-.card-img-top {
-	width: 270px;
-	height: 240px;
-	margin: 0 auto;
-	margin-top: 2%;
+footer {
+	position: absolute;
+	bottom: -100;
+	left: 0;
+	width: 100%;
+}
+
+/* Carousel Styling */
+
+.carousel-inner {
+	max-height: 400px;
+}
+
+.carousel-caption {
+	bottom: 20%;
+	text-shadow: 3px 3px 6px black;
+}
+
+.hero-banner {
+	width: 100%;
+	align-content: center;
+}
+
+.hero-text {
+	text-align: center;
+	background-position: center;
+	transform: translate(-0%, -140%);
+	color: white;
+	text-shadow: 3px 3px 6px black;
+}
+
+/* || Index Page */
+
+.hoursTable {
+	margin-right: auto;
+	margin-left: auto;
+	width: 40%;
+	background-color: white;
+}
+
+#hours {
+	text-align: center;
+}
+
+#hours th, td {
+	color: black;
+	border: 2px solid black;
+	text-align: center;
+	margin-top: 2em;
+}
+
+.review {
+	background-color: rgba(122, 242, 132, 0.461);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 6px;
+	text-align: center;
+	padding: 6%;
 }
 
 /* Social Media Call to Action */
@@ -422,7 +192,6 @@ input {
 }
 
 .social-links a {
-	/* margin: auto; */
 	color: black;
 	font-weight: bold;
 	text-decoration: none;
@@ -433,6 +202,98 @@ input {
 	padding: 0.5rem;
 }
 
+/* Review and Sign up Forms */
+
+#userAccount {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: larger;
+	background-color: rgb(83, 184, 69);
+	margin: auto;
+	border: 5px;
+	border-radius: 10px;
+	border-style: outset;
+}
+
+#userForm {
+	display: inline-block;
+	padding: 5px 20px;
+}
+
+.btn-outline-success {
+	color: black !important;
+}
+
+#reviewForm {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: larger;
+	background-color: rgb(83, 184, 69);
+	margin: auto;
+	border: 5px;
+	border-radius: 10px;
+	border-style: outset;
+}
+
+.form-control:focus {
+	border-color: rgb(27, 61, 22);
+	box-shadow: inset 0 1px 1px rgba(14, 31, 11, 0.075), 0 0 8px rgba(12, 27, 10, 0.6);
+}
+
+.colform {
+	padding-bottom: 15px;
+}
+
+/* || Menu Pages */
+
+.accordion-header.sticky-top {
+	top: 110px;
+}
+
+/* || Apply Page */
+
+.apply-form-container {
+	display: inline-block;
+	box-sizing: border-box;
+	background-color: rgb(202, 202, 202);
+	padding: 20px;
+	padding-right: 40px;
+	border-radius: 2%;
+}
+
+.apply-form-container input {
+	width: 100%;
+	color: black;
+}
+
+.submit>input[type=submit] {
+	padding: 2% 2%;
+	border-radius: 6px;
+}
+
 form .error {
 	color: #ff0000;
+}
+
+/* || About Page */
+
+.containerAbout {
+	background-color: lightgray;
+}
+
+.aboutInfo1 {
+	background-color: rgba(255, 255, 255, .4);
+	border-radius: 20px;
+	text-align: center;
+}
+
+.aboutInfo2 {
+	background-color: rgba(122, 242, 132, 0.461);
+	border-radius: 20px;
+	text-align: center;
+}
+
+.card-img-top.about-cards {
+	width: 270px;
+	height: 240px;
+	margin: 0 auto;
+	margin-top: 2%;
 }

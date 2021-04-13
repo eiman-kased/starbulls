@@ -34,7 +34,7 @@ if (session_status() === PHP_SESSION_NONE) {
 								only purchase high-quality ingredients that are ethically sourced.</p>
 							<div id="hours">
 								<h4 class="display-6">Hours of Operation</h4>
-								<table class="table">
+								<table class="hoursTable">
 									<tr>
 										<td>Monday - Friday</td>
 										<td>Saturday</td>
