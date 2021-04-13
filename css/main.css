@@ -47,9 +47,9 @@ h3 {
 	background-color: lightgray;
 }
 
-/* || Sitewide */
+/* || Sitewide CSS */
 
-/* navbar */
+/* Navbar */
 
 .nav-active {
 	background-color: #44c767;
@@ -77,7 +77,7 @@ nav {
 	margin: 6px;
 }
 
-/* footer styling */
+/* Footer Styling */
 
 #end {
 	text-align: center;
