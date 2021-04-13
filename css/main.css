@@ -348,7 +348,6 @@ input {
 	font-family: 'Montserrat', Arial, sans-serif;
 	font-size: larger;
 	background-color: rgb(83, 184, 69);
-	width: 85%;
 	margin: auto;
 	border: 0.4rem;
 	border-radius: 0.5rem;
@@ -376,8 +375,8 @@ input {
 	border: 0.4rem;
 	border-radius: 0.5rem;
 	border-style: outset;
-	padding: 3%;
-	margin: 0rem 2rem 1rem 2rem;
+	padding: 4%;
+	margin: 2rem;
 }
 
 .reviewIcon {
@@ -414,9 +413,13 @@ blockquote::before {
 	background-color: #CEFDCE;
 	border-radius: 1rem;
 	border-left: 1.5em solid #07DF07;
-	padding: 2% 5%;
+	padding: 5% 5%;
 	margin-top: 2%;
 	box-shadow: 0.5rem 0.5rem 1rem black;
+}
+
+.reviewEmail {
+	font-style: italic;
 }
 
 .score {

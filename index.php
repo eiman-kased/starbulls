@@ -116,43 +116,26 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 			<!-- Carousel of Customer Reviews -->
 			<div class="col-6">
-				<div class="container">
-					<div id="testimonials">
+				<div class="inputbox container">
+					<div id="testimonials" class="row my-3">
 						<h3 class="fw-bold">What people are saying about StarBulls:</h3>
 						<div data-review_id="review_reviewId" class="customerReview">
 							<img src="imgs/starbulls_icon.png" alt="starbulls icon" class="reviewIcon">
 							<div id="userInfo">
-								<h2 class="nameReview firstName lastName">
+								<h2 id="firstName lastName" class="nameReview">
 									Sally Jones
-								</h2><br />
-								<h5 class="email">sallyjones@email.com</h5><br />
-								<h6 class="createdAt">2021-04-08</h6>
+								</h2>
+								<h5 id="email" class="reviewEmail">sallyjones@email.com</h5>
+								<h6 id="createdAt" class="reviewDate">2021-04-08</h6>
 							</div>
 							<blockquote>
 								<p class="comment">
 									The place I go for my wings and coffee fix!
 								</p>
 							</blockquote>
-							<p class="score">Score Rating: 
+							<p class="score">Score Rating: <img src="imgs/scoreCoffeeCup5.png" class="scoreCup">
 							</p>
 						</div>
-						<!-- <div data-review_id="review_reviewId" class="customerReview">
-							<h3 class="nameReview firstName lastName">
-								Michael Smith
-							</h3>
-							<blockquote>
-								<p class="comment">
-									My day doesn't start until I've had my StarBulls fix of Buffalo Wing Blend!
-								</p>
-							</blockquote>
-							<p>Score Rating:
-								<img src="imgs/starbulls_icon.png" class="score">
-								<img src="imgs/starbulls_icon.png" class="score">
-								<img src="imgs/starbulls_icon.png" class="score">
-								<img src="imgs/starbulls_icon.png" class="score">
-								<img src="imgs/starbulls_icon.png" class="score">
-							</p>
-						</div> -->
 					</div>
 				</div>
 			</div>
