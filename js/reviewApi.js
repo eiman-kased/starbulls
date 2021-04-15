@@ -86,6 +86,7 @@ function createNewUser(review = null, reviewCallback = null) {
 			return response.id;
 		})
 		.fail(function (response) {
+			// FIXME let's fail gracefully
 			alert("broke it");
 			console.log(response);
 		})
