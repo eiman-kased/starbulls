@@ -67,7 +67,7 @@ function createNewReview(reviewObj) {
 		});
 }
 
-async function createNewUser() {
+function createNewUser(review = null, reviewCallback = null) {
 	var userObj = {
 		"first_name": $('[name="firstName"]').val(),
 		"last_name": $('[name="lastName"]').val(),
@@ -81,7 +81,7 @@ async function createNewUser() {
 	userSettings = {
 		'url': '/user/new',
 		'method': 'POST',
-		'data': JSON.stringify(userObj),
+		'data': JSON.stringify(userObj)
 	};
 
 	console.log('user settings', userSettings);
@@ -91,6 +91,10 @@ async function createNewUser() {
 			alert("Thank you for the review " + response.first_name + "!!");
 			console.log('response', response);
 			console.log('response.id', response.id);
+			if (review !== null) {
+				review.id = response.id;
+				reviewCallback(review.id);
+			}
 			return response.id;
 		})
 		.fail(function (response) {
@@ -124,10 +128,10 @@ $(document).ready(function () {
 
 			$("#userForm").submit(function (e) {
 				e.preventDefault();
-				createNewUser().then(function (id) {
+				createNewUser(reviewObj, function (id) {
 					console.log('id:', id)
 					if (id !== undefined && id !== false) {
-						reviewObj.id = id
+						reviewObj.userID = id
 						createNewReview(reviewObj);
 					} else {
 						alert('bad user id');
