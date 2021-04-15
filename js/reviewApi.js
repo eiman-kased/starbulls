@@ -32,19 +32,7 @@ function getUserByEmail(userEmail) {
 	}
 	var userID;
 	// check user route by email to see if the user exists
-	$.ajax(getUserSettings)
-		.done(function (response) { // successful response
-			console.log("success", response);
-			userID = response.id;
-			console.log("checking response id", userID);
-			return userID;
-		}).fail(function (response) { // error response
-			console.log("failure", response);
-			// check response code
-			if (response.status == 404) {
-				return false;
-			}
-		});
+	return $.ajax(getUserSettings);
 }
 
 function createNewReview(reviewObj) {
@@ -115,29 +103,32 @@ $(document).ready(function () {
 
 		e.preventDefault();
 		// get email value
-		var userID = getUserByEmail($("#userEmail").val());
-		if (userID !== undefined && userID !== false) {
-			reviewObj.userId = userID;
-			console.log("review object:", reviewObj);
-			createNewReview(reviewObj);
-		} else {
-			// show new user form
-			$("#IndexReviewForm").hide();
-			$("#IndexUserForm").show();
-			$("#IndexUserForm #email").val($("#userEmail").val());
+		$.when(getUserByEmail($("#userEmail").val())).done(function (response) {
+			console.log('$.when response:', response);
+			var userID = response.id;
+			if (userID !== undefined && userID !== false) {
+				reviewObj.userID = userID;
+				console.log("review object:", reviewObj);
+				createNewReview(reviewObj);
+			} else {
+				// show new user form
+				$("#IndexReviewForm").hide();
+				$("#IndexUserForm").show();
+				$("#IndexUserForm #email").val($("#userEmail").val());
 
-			$("#userForm").submit(function (e) {
-				e.preventDefault();
-				createNewUser(reviewObj, function (id) {
-					console.log('id:', id)
-					if (id !== undefined && id !== false) {
-						reviewObj.userID = id
-						createNewReview(reviewObj);
-					} else {
-						alert('bad user id');
-					}
+				$("#userForm").submit(function (e) {
+					e.preventDefault();
+					createNewUser(reviewObj, function (id) {
+						console.log('id:', id)
+						if (id !== undefined && id !== false) {
+							reviewObj.userID = id
+							createNewReview(reviewObj);
+						} else {
+							alert('bad user id');
+						}
+					});
 				});
-			});
-		}
+			}
+		});
 	});
 });
