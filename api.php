@@ -162,6 +162,13 @@ $app->get('/user/id/{id}', function (Request $request, Response $response, array
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
+	//Check number format 
+	$numberRegEx = $numberRegEx \(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4});
+	if(!preg_match('$numberRegEx', $body->phone)) {
+		return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(404);
+	}
 	// create user from request values
 	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $body->phone, $body->preferred ?? false);
 	// save the user
