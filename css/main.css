@@ -375,8 +375,19 @@ input {
 	border: 0.4rem;
 	border-radius: 0.5rem;
 	border-style: outset;
-	padding: 4%;
+	padding: 1rem;
 	margin: 2rem;
+}
+
+.carouselReviews {
+	position:relative;
+	width: 100%;
+}
+
+.carousel-item {
+	width: 100%;
+	padding-right: 2rem;
+	padding-bottom: 2rem;
 }
 
 .reviewIcon {
@@ -413,7 +424,7 @@ blockquote::before {
 	background-color: #CEFDCE;
 	border-radius: 1rem;
 	border-left: 1.5em solid #07DF07;
-	padding: 5% 5%;
+	padding: 5%;
 	margin-top: 2%;
 	box-shadow: 0.5rem 0.5rem 1rem black;
 }
