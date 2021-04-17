@@ -164,10 +164,12 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	$body = json_decode($request->getBody());
 	//Check number format 
 	$numberRegEx = $numberRegEx \(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4});
-	if(!preg_match('$numberRegEx', $body->phone)) {
+	if(!preg_match($numberRegEx, $body->phone)) {
 		return $response
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(404);
+	} else {
+		return 'format accepted!';
 	}
 	// create user from request values
 	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $body->phone, $body->preferred ?? false);
