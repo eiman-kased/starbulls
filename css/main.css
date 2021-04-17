@@ -404,7 +404,7 @@ input {
 	padding-bottom: 2rem;
 }
 
-.reviewIcon {
+#reviewIcon {
 	width: 25%;
 	display: inline-block;
 }
