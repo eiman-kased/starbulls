@@ -23,36 +23,36 @@ if (session_status() === PHP_SESSION_NONE) {
 		<?php include 'navbar.php'; ?>
 
 		<!-- Hero Image, Intro Text, Hours of Operation -->
-		<div class="containerAbout">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="row gx-0">
+			<div id="indexCarousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
-					<img src="imgs/cofee1.png" width="100%">
-					<div class="hero-banner">
-						<div class="hero-text">
+					<img src="imgs/cofee1.png">
+					<div class="carousel-item active hero-text my-4">
+						<div class="">
 							<h2>Only the best of the best here at StarBulls</h2>
-							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we
-								only purchase high-quality ingredients that are ethically sourced.</p>
-							<div id="hours">
-								<h4 class="display-6">Hours of Operation</h4>
-								<table class="table">
-									<tr>
-										<td>Monday - Friday</td>
-										<td>Saturday</td>
-										<td>Sunday</td>
-									</tr>
-									<tr>
-										<td>9AM - 7PM</td>
-										<td>9AM - 9PM</td>
-										<td>*Closed*</td>
-									</tr>
-								</table>
-							</div>
+							<p>At StarBulls we strive to provide our customers with the best ingredients. You can be assured that we only purchase high-quality ingredients that are ethically sourced.</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div><br />
-
+		</div>
+		<div class="row my-2">
+			<div id="hours">
+				<h4 class="display-6">Hours of Operation</h4>
+				<table class="table">
+					<tr>
+						<td>Monday - Friday</td>
+						<td>Saturday</td>
+						<td>Sunday</td>
+					</tr>
+					<tr>
+						<td>9AM - 7PM</td>
+						<td>9AM - 9PM</td>
+						<td>*Closed*</td>
+					</tr>
+				</table>
+			</div>
+		</div>
 		<!-- 5 slide carousel featuring specials and menu items -->
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
@@ -66,35 +66,35 @@ if (session_status() === PHP_SESSION_NONE) {
 				<div class="carousel-item active">
 					<img src="imgs/coffee.jpg" class="d-block w-100" alt="pouring coffee">
 					<div class="carousel-caption">
-						<h3 class="display-4">StarBulls Selection of Coffee</h3>
+						<h3>StarBulls Selection of Coffee</h3>
 						<p>A selection of coffee to satisfy your taste.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="imgs/chickenwings2.jpg" class="d-block w-100" alt="plate of chicken wings">
 					<div class="carousel-caption">
-						<h3 class="display-4">Traditional and Specialty Wings</h3>
+						<h3>Traditional and Specialty Wings</h3>
 						<p>Chicken Wing flavors ranging from traditional to daring.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="imgs/hotchocolate.jpg" class="d-block w-100" alt="four mugs of hot chocolate">
 					<div class="carousel-caption">
-						<h3 class="display-4">Milk Chocolate Monday</h3>
+						<h3>Milk Chocolate Monday</h3>
 						<p>Our Monday Special! Hot Milk Chocolate serving a party of four.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="imgs/burgerfries.jpg" class="d-block w-100" alt="burger and fries">
 					<div class="carousel-caption">
-						<h3 class="display-4">Bulls Dinner</h3>
+						<h3>Bulls Dinner</h3>
 						<p>Try our delicious Burgers and Fries.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="imgs/wingbuffet.jpg" class="d-block w-100" alt="chicken wing buffet">
 					<div class="carousel-caption">
-						<h3 class="display-4">Wingin' It Wednesday</h3>
+						<h3>Wingin' It Wednesday</h3>
 						<p>Our Wednesday Special! All You Can Eat Chicken Wing Buffet!</p>
 					</div>
 				</div>
