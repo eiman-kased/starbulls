@@ -25,7 +25,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<!-- Hero Image, Intro Text, Hours of Operation -->
 		<div class="row gx-0">
 			<div id="indexCarousel" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
+				<div class="carousel-inner hero-specials">
 					<img src="imgs/cofee1.png">
 					<div class="carousel-item active hero-text my-4">
 						<div class="">
@@ -62,7 +62,7 @@ if (session_status() === PHP_SESSION_NONE) {
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
 			</div>
-			<div class="carousel-inner">
+			<div class="carousel-inner hero-specials">
 				<div class="carousel-item active">
 					<img src="imgs/coffee.jpg" class="d-block w-100" alt="pouring coffee">
 					<div class="carousel-caption">
@@ -123,20 +123,17 @@ if (session_status() === PHP_SESSION_NONE) {
 							<div class="carouselReviews carousel-inner">
 								<div class="carousel-item active">
 									<div data-review_id="review_reviewId" class="customerReview">
-										<img src="imgs/starbulls_icon.png" alt="starbulls icon" class="reviewIcon">
+										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 										<div id="userInfo">
-											<h2 id="firstName lastName" class="nameReview">
-												Sally Jones
-											</h2>
-											<h5 id="email" class="reviewEmail">sallyjones@email.com</h5>
-											<h6 id="createdAt" class="reviewDate">2021-04-08</h6>
+											<p id="email" class="reviewEmail">sallyjones@email.com</p>
 										</div>
 										<blockquote>
 											<p class="comment">
 												The place I go for my wings and coffee fix!
 											</p>
 										</blockquote>
-										<p class="score">Score Rating: <img src="imgs/scoreCoffeeCup4.png" class="scoreCup">
+										<p class="score">Score Rating:
+											 <img src="imgs/scoreCoffeeCup4.png" class="scoreCup">
 										</p>
 									</div>
 								</div>
@@ -144,18 +141,15 @@ if (session_status() === PHP_SESSION_NONE) {
 									<div data-review_id="review_reviewId" class="customerReview">
 										<img src="imgs/starbulls_icon.png" alt="starbulls icon" class="reviewIcon">
 										<div id="userInfo">
-											<h2 id="firstName lastName" class="nameReview">
-												Michael Brown
-											</h2>
-											<h5 id="email" class="reviewEmail">mikeb@email.com</h5>
-											<h6 id="createdAt" class="reviewDate">2021-04-08</h6>
+											<p id="email" class="reviewEmail">mikeb@email.com</p>
 										</div>
 										<blockquote>
 											<p class="comment">
 												StarBulls is my Thursday night wings spot!
 											</p>
 										</blockquote>
-										<p class="score">Score Rating: <img src="imgs/scoreCoffeeCup5.png" class="scoreCup">
+										<p class="score">Score Rating: 
+											<img src="imgs/scoreCoffeeCup5.png" class="scoreCup">
 										</p>
 									</div>
 								</div>
@@ -163,18 +157,15 @@ if (session_status() === PHP_SESSION_NONE) {
 									<div data-review_id="review_reviewId" class="customerReview">
 										<img src="imgs/starbulls_icon.png" alt="starbulls icon" class="reviewIcon">
 										<div id="userInfo">
-											<h2 id="firstName lastName" class="nameReview">
-												Cora Jones
-											</h2>
-											<h5 id="email" class="reviewEmail">cj357@email.com</h5>
-											<h6 id="createdAt" class="reviewDate">2021-04-08</h6>
+											<p id="email" class="reviewEmail">cj357@email.com</p>
 										</div>
 										<blockquote>
 											<p class="comment">
 												Great wings, but the coffee was weak.
 											</p>
 										</blockquote>
-										<p class="score">Score Rating: <img src="imgs/scoreCoffeeCup2.png" class="scoreCup">
+										<p class="score">Score Rating:
+											 <img src="imgs/scoreCoffeeCup2.png" class="scoreCup">
 										</p>
 									</div>
 								</div>
@@ -184,7 +175,6 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 		</div>
-	</div>
 	<!-- Social Media Call to Action -->
 	<div class="social-bkg socialmedia">
 		<h3>StarBulls offers the very best of Wings, Coffee and More!</h3>

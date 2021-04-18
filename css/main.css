@@ -10,11 +10,11 @@ body {
 	background-color: #048004;
 }
 
-.carousel-inner {
+.hero-specials {
 	max-height: 25rem;
 }
 
-.carousel-inner img {
+.hero-specials img {
 	width: 100%;
 	min-height: 25rem;
 	max-height: fit-content;
@@ -405,11 +405,7 @@ input {
 }
 
 #reviewIcon {
-	width: 25%;
-	display: inline-block;
-}
-
-.nameReview {
+	width: 20%;
 	display: inline-block;
 }
 
