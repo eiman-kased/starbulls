@@ -10,6 +10,8 @@ body {
 	background-color: #048004;
 }
 
+/* The hero-specials class was added to the same div as carousel-inner to fix conflicts with the reviews carousel  */
+
 .hero-specials {
 	max-height: 25rem;
 }
@@ -398,10 +400,9 @@ input {
 	width: 100%;
 }
 
-.carousel-item {
+.review-item {
 	width: 100%;
-	padding-right: 2rem;
-	padding-bottom: 2rem;
+	padding: 0 2rem 2rem 2rem;
 }
 
 #reviewIcon {

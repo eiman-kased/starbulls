@@ -121,7 +121,7 @@ if (session_status() === PHP_SESSION_NONE) {
 						<div id="testimonials" class="row">
 							<h3 class="fw-bold">What people are saying about StarBulls:</h3>
 							<div class="carouselReviews carousel-inner">
-								<div class="carousel-item active">
+								<div class="carousel-item review-item active">
 									<div data-review_id="review_reviewId" class="customerReview">
 										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 										<div id="userInfo">
@@ -137,9 +137,9 @@ if (session_status() === PHP_SESSION_NONE) {
 										</p>
 									</div>
 								</div>
-								<div class="carousel-item">
+								<div class="carousel-item review-item">
 									<div data-review_id="review_reviewId" class="customerReview">
-										<img src="imgs/starbulls_icon.png" alt="starbulls icon" class="reviewIcon">
+										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 										<div id="userInfo">
 											<p id="email" class="reviewEmail">mikeb@email.com</p>
 										</div>
@@ -153,9 +153,9 @@ if (session_status() === PHP_SESSION_NONE) {
 										</p>
 									</div>
 								</div>
-								<div class="carousel-item">
+								<div class="carousel-item review-item">
 									<div data-review_id="review_reviewId" class="customerReview">
-										<img src="imgs/starbulls_icon.png" alt="starbulls icon" class="reviewIcon">
+										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 										<div id="userInfo">
 											<p id="email" class="reviewEmail">cj357@email.com</p>
 										</div>
