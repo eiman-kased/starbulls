@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
 	<div class="container-fluid">
 		<div class="logo">
-			<a href="index.php" class="logo">
+			<a href="http://starbulls.com/index.php" class="logo">
 				<img src="imgs/starbulls_logoWhite.png" alt="logo" />
 			</a>
 		</div>
