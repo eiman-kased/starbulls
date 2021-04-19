@@ -25,7 +25,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<!-- Hero Image, Intro Text, Hours of Operation -->
 		<div class="row gx-0">
 			<div id="indexCarousel" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
+				<div class="carousel-inner hero-specials">
 					<img src="imgs/cofee1.png">
 					<div class="carousel-item active hero-text my-4">
 						<div class="">
@@ -62,7 +62,7 @@ if (session_status() === PHP_SESSION_NONE) {
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
 			</div>
-			<div class="carousel-inner">
+			<div class="carousel-inner hero-specials">
 				<div class="carousel-item active">
 					<img src="imgs/coffee.jpg" class="d-block w-100" alt="pouring coffee">
 					<div class="carousel-caption">
@@ -116,34 +116,80 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 			<!-- Carousel of Customer Reviews -->
 			<div class="col-6">
-				<div id="apiReview" class="review1">
-					<div data-review_id="review_reviewId">
-						<p>
-							3
-						</p>
-						<p>
-							food food food
-						</p>
+				<div class="inputbox container">
+					<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+						<div id="testimonials" class="row">
+							<h3 class="fw-bold">What people are saying about StarBulls:</h3>
+							<div  id="reviews-carousel" class="carouselReviews carousel-inner">
+								<div class="carousel-item review-item active">
+									<div data-review_id="review_reviewId" class="customerReview">
+										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
+										<div id="userInfo">
+											<p id="email" class="reviewEmail">sallyjones@email.com</p>
+										</div>
+										<blockquote>
+											<p class="comment">
+												The place I go for my wings and coffee fix!
+											</p>
+										</blockquote>
+										<p class="score">Score Rating:
+											 <img src="imgs/scoreCoffeeCup4.png" class="scoreCup">
+										</p>
+									</div>
+								</div>
+								<div class="carousel-item review-item">
+									<div data-review_id="review_reviewId" class="customerReview">
+										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
+										<div id="userInfo">
+											<p id="email" class="reviewEmail">mikeb@email.com</p>
+										</div>
+										<blockquote>
+											<p class="comment">
+												StarBulls is my Thursday night wings spot!
+											</p>
+										</blockquote>
+										<p class="score">Score Rating: 
+											<img src="imgs/scoreCoffeeCup5.png" class="scoreCup">
+										</p>
+									</div>
+								</div>
+								<div class="carousel-item review-item">
+									<div data-review_id="review_reviewId" class="customerReview">
+										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
+										<div id="userInfo">
+											<p id="email" class="reviewEmail">cj357@email.com</p>
+										</div>
+										<blockquote>
+											<p class="comment">
+												Great wings, but the coffee was weak.
+											</p>
+										</blockquote>
+										<p class="score">Score Rating:
+											 <img src="imgs/scoreCoffeeCup2.png" class="scoreCup">
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- Social Media Call to Action -->
-		<div class="social-bkg socialmedia">
-			<h3>StarBulls offers the very best of Wings, Coffee and More!</h3>
-			<h4>Follow us on Social Media for Special Offers, Updates and more!</h4>
-			<div class="social-pic">
-				<img src="imgs/contactUs.jpeg" alt="contact us">
-				<img src="imgs/chickenWings.jpg" alt="chicken wings">
-				<img src="imgs/coffeesocial.jpg" alt="follow us">
-			</div>
-			<div class="social-links">
-				<img src="imgs/facebook.svg" alt="facebook icon"><a href="https://www.facebook.com/starbulls.buffalo/"> Facebook: Starbulls-buffalo | </a>
-				<img src="imgs/instagram.svg" alt="instagram icon"><a href="https://www.instagram.com/starbulls716/"> Instagram: starbulls716 | </a>
-				<img src="imgs/twitter.svg" alt="twitter icon"><a href="https://twitter.com/login"> Twitter: starbulls716</a><br />
-			</div>
-		</div><br />
+	<!-- Social Media Call to Action -->
+	<div class="social-bkg socialmedia">
+		<h3>StarBulls offers the very best of Wings, Coffee and More!</h3>
+		<h4>Follow us on Social Media for Special Offers, Updates and more!</h4>
+		<div class="social-pic">
+			<img src="imgs/contactUs.jpeg" alt="contact us">
+			<img src="imgs/chickenWings.jpg" alt="chicken wings">
+			<img src="imgs/coffeesocial.jpg" alt="follow us">
+		</div>
+		<div class="social-links">
+			<img src="imgs/facebook.svg" alt="facebook icon"><a href="https://www.facebook.com/starbulls.buffalo/"> Facebook: Starbulls-buffalo | </a>
+			<img src="imgs/instagram.svg" alt="instagram icon"><a href="https://www.instagram.com/starbulls716/"> Instagram: starbulls716 | </a>
+			<img src="imgs/twitter.svg" alt="twitter icon"><a href="https://twitter.com/login"> Twitter: starbulls716</a><br />
+		</div>
+	</div><br />
 	</div>
 	<!-- Footer with Address -->
 	<?php include 'footer.php'; ?>

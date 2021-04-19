@@ -1,4 +1,15 @@
 RewriteEngine On
+
+# redirect index.php to / for api reasons
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_FILENAME} ^.*/index\.php
+RewriteRule ^(.*)index.php$ /$1 [R=301,L]
+
+# enforce trailing slash for api
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ $1/ [QSA,L]
+
+# send anything that isn't a directory or a file to api
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ api.php [QSA,L]
