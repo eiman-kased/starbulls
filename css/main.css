@@ -4,18 +4,27 @@ body {
 	font-family: 'Montserrat', Arial, sans-serif;
 }
 
-/*css accross all pages*/
+/*css across all pages*/
 
 .header {
 	background-color: #048004;
 }
 
-.carousel-inner {
-	max-height: 400px;
+/* The hero-specials class was added to the same div as carousel-inner to fix conflicts with the reviews carousel  */
+
+.hero-specials {
+	max-height: 25rem;
+}
+
+.hero-specials img {
+	width: 100%;
+	min-height: 25rem;
+	max-height: fit-content;
+	object-fit: cover;
 }
 
 .carousel-caption {
-	bottom: 20%;
+	top: 10%;
 	text-shadow: 3px 3px 6px black;
 }
 
@@ -110,7 +119,7 @@ dt {
 	font-family: serif;
 }
 
-/*css for mainPage.html*/
+/*css for home.html*/
 
 .table {
 	margin-right: auto;
@@ -120,7 +129,18 @@ dt {
 }
 
 #hours {
+	height: 100%;
+	position: relative;
 	text-align: center;
+}
+
+#hours h4 {
+	color: #048004;
+}
+
+.table td {
+	border-width: 0.2rem;
+	font-weight: 800;
 }
 
 /*for mainpage.html wingassortment text*/
@@ -229,14 +249,14 @@ input {
 }
 
 .hero-banner {
+	height: fit-content;
 	width: 100%;
 	align-content: center;
 }
 
 .hero-text {
+	top: 20%;
 	text-align: center;
-	background-position: center;
-	transform: translate(-0%, -140%);
 	color: white;
 	text-shadow: 3px 3px 6px black;
 }
@@ -273,10 +293,6 @@ input {
 	border-radius: 6px;
 	text-align: center;
 	padding: 4%;
-}
-
-.containerAbout {
-	background-color: lightgray;
 }
 
 .aboutInfo1 {
@@ -348,10 +364,9 @@ input {
 	font-family: 'Montserrat', Arial, sans-serif;
 	font-size: larger;
 	background-color: rgb(83, 184, 69);
-	width: 85%;
 	margin: auto;
-	border: 5px;
-	border-radius: 10px;
+	border: 0.4rem;
+	border-radius: 0.5rem;
 	border-style: outset;
 }
 
@@ -366,6 +381,73 @@ input {
 
 .container.inputbox {
 	display: flex;
+}
+
+/* Customer Testimonials */
+
+#testimonials {
+	font-family: 'Montserrat', Arial, sans-serif;
+	background-color: rgb(83, 184, 69);
+	border: 0.4rem;
+	border-radius: 0.5rem;
+	border-style: outset;
+	padding: 1rem;
+	margin: 2rem;
+}
+
+.carouselReviews {
+	position:relative;
+	width: 100%;
+}
+
+.review-item {
+	width: 100%;
+	padding: 0 2rem 2rem 2rem;
+}
+
+#reviewIcon {
+	width: 20%;
+	display: inline-block;
+}
+
+#userInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+blockquote {
+	font-style: italic;
+	font-weight: 90;
+	padding: 1rem 1rem 0rem 3rem;
+	position: relative;
+}
+
+blockquote::before {
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bold;
+	content: "\201C";
+	color: #07DF07;
+	font-size: 5em;
+	position: absolute;
+	left: 0.5rem;
+	top: -1rem;
+}
+
+.customerReview {
+	background-color: #CEFDCE;
+	border-radius: 1rem;
+	border-left: 1.5em solid #07DF07;
+	padding: 5%;
+	margin-top: 2%;
+	box-shadow: 0.5rem 0.5rem 1rem black;
+}
+
+.reviewEmail {
+	font-style: italic;
+}
+
+.score {
+	text-align: center;
 }
 
 /* social Media icons */

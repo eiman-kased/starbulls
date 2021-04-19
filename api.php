@@ -10,6 +10,7 @@ require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/src/User.php';
 require __DIR__ . '/src/Review.php';
 
+// TODO Remove before release
 // var_dump($_SERVER);
 /**
  * Instantiate App
@@ -21,7 +22,8 @@ require __DIR__ . '/src/Review.php';
 $app = AppFactory::create();
 
 // Add Routing Middleware
-$app->addRoutingMiddleware();
+// TODO Implement security/format checking middle ware
+// $app->addRoutingMiddleware();
 
 /**
  * Add Error Handling Middleware
@@ -37,7 +39,7 @@ $app->addRoutingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 
-// adding this so I dont have to do some tricky nonsense and can avoid long route names... efficient huh?
+// sets the base path to allow systems with different configurations to run the same, mostly
 $app->setBasePath((function () {
 	// literally everything in here is to avoid typing Week_whatever each time this gets copied for the next week. DO NOT DO THIS!!!
 	$scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
