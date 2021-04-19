@@ -143,12 +143,28 @@ footer {
 
 /* || Index Page */
 
-.hoursTable {
+.table {
 	margin-right: auto;
 	margin-left: auto;
 	width: 40%;
 	background-color: white;
 }
+
+#hours {
+	height: 100%;
+	position: relative;
+	text-align: center;
+}
+
+#hours h4 {
+	color: #048004;
+}
+
+.table td {
+	border-width: 0.2rem;
+	font-weight: 800;
+}
+
 
 #hours th, td {
 	color: black;
