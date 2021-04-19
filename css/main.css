@@ -417,17 +417,19 @@ input {
 
 blockquote {
 	font-style: italic;
-	font-weight: 900;
+	font-weight: 90;
 	padding: 1rem 1rem 0rem 3rem;
 	position: relative;
 }
 
 blockquote::before {
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bold;
 	content: "\201C";
 	color: #07DF07;
 	font-size: 5em;
 	position: absolute;
-	left: 0.7rem;
+	left: 0.5rem;
 	top: -1rem;
 }
 
