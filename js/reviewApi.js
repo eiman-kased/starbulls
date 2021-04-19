@@ -7,7 +7,6 @@ function getAllReviews() {
 
 	$.ajax(settings)
 		.done(function (response) {
-			console.log(response);
 			response.map(function (r) {
 				$("#apiReview").append(`
 			<div data-review_id=${r.id}>
@@ -17,7 +16,6 @@ function getAllReviews() {
 			</div>
 			`)
 			})
-			console.log(response);
 		})
 		.fail(function (err) {
 			console.error(err)
@@ -30,7 +28,7 @@ function getUserByEmail(userEmail) {
 		"url": "/user/" + userEmail,
 		"method": "GET"
 	}
-	var userID;
+
 	// check user route by email to see if the user exists
 	return $.ajax(getUserSettings);
 }
@@ -97,39 +95,49 @@ $(document).ready(function () {
 	getAllReviews();
 
 	$("#reviewForm").submit(function (e) {
+		e.preventDefault();
+
 		reviewObj = {
 			'score': $('#reviewScore').val(),
 			'comment': $('#comment').val(),
 		};
 
-		e.preventDefault();
 		// get email value
-		$.when(getUserByEmail($("#userEmail").val())).done(function (response) {
+		$.when(getUserByEmail($("#userEmail").val())).then(function (response) {
+			// successful return ie user exists
 			console.log('$.when response:', response);
 			var userID = response.id;
-			if (userID !== undefined && userID !== false) {
-				reviewObj.userID = userID;
-				console.log("review object:", reviewObj);
-				createNewReview(reviewObj);
-			} else {
-				// show new user form
-				$("#IndexReviewForm").hide();
-				$("#IndexUserForm").show();
-				$("#IndexUserForm #email").val($("#userEmail").val());
+			reviewObj.userID = userID;
+			console.log("review object:", reviewObj);
+			createNewReview(reviewObj);
 
-				$("#userForm").submit(function (e) {
-					e.preventDefault();
-					createNewUser(reviewObj, function (id) {
-						console.log('id:', id)
-						if (id !== undefined && id !== false) {
-							reviewObj.userID = id
-							createNewReview(reviewObj);
-						} else {
-							alert('bad user id');
-						}
+		},
+			// failed reponse of some type
+			function (response) {
+				// check if user not found
+				if (response.status === 404) {
+					// show new user form
+					$("#IndexReviewForm").hide();
+					$("#IndexUserForm").show();
+					$("#IndexUserForm #email").val($("#userEmail").val());
+
+					$("#userForm").submit(function (e) {
+						e.preventDefault();
+						createNewUser(reviewObj, function (id) {
+							console.log('id:', id)
+							if (id !== undefined && id !== false) {
+								reviewObj.userID = id
+								createNewReview(reviewObj);
+							} else {
+								alert('bad user id');
+							}
+						});
 					});
-				});
-			}
-		});
+				}else{
+					// some other error
+					alert('Error: ',response.responseJSON.message);
+				}
+			});
+		console.log('after when');
 	});
 });
