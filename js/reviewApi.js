@@ -26,8 +26,8 @@ $(document).ready(function () {
 						${r.comment}
 						</p>
 					</blockquote>
-					<p class="score">Score Rating: ${r.score}
-						 <img src="imgs/scoreCoffeeCup4.png" class="scoreCup">
+					<p class="score">Score Rating: 
+						 <img src="imgs/scoreCoffeeCup${r.score}.png" class="scoreCup">
 					</p>
 				</div>
 			</div>`);
