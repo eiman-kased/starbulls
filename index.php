@@ -120,7 +120,7 @@ if (session_status() === PHP_SESSION_NONE) {
 					<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 						<div id="testimonials" class="row">
 							<h3 class="fw-bold">What people are saying about StarBulls:</h3>
-							<div class="carouselReviews carousel-inner">
+							<div  id="reviews-carousel" class="carouselReviews carousel-inner">
 								<div class="carousel-item review-item active">
 									<div data-review_id="review_reviewId" class="customerReview">
 										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
