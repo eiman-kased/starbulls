@@ -163,7 +163,7 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	// get request body
 	$body = json_decode($request->getBody());
 	//Check number format 
-	$numberRegEx = $numberRegEx \(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4});
+	$numberRegEx = \(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4}); 
 	if(!preg_match($numberRegEx, $body->phone)) {
 		return $response
 		->withHeader('Content-Type', 'application/json')
