@@ -16,7 +16,7 @@ ini_set('display_errors', 1);
 	<div class="container-fluid p-0">
 		<?php include 'navbar.php'; ?>
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
+			<div class="carousel-inner hero-specials">
 				<img src="imgs/coffee12.png" width="100%">
 				<div class="item active">
 					<div class="carousel-caption d-none d-md-block">

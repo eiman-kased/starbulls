@@ -15,6 +15,7 @@ p {
 	background-color: #048004;
 }
 
+
 h1 {
 	text-align: center;
 	color: white;
@@ -111,17 +112,6 @@ footer {
 }
 
 /* Carousel Styling */
-
-.carousel-inner {
-	max-height: 25rem;
-}
-
-.carousel-inner img {
-	width: 100%;
-	min-height: 25rem;
-	max-height: fit-content;
-	object-fit: cover;
-}
 
 .carousel-caption {
 	top: 10%;
@@ -247,8 +237,8 @@ footer {
 	font-size: larger;
 	background-color: rgb(83, 184, 69);
 	margin: auto;
-	border: 5px;
-	border-radius: 10px;
+	border: 0.4rem;
+	border-radius: 0.5rem;
 	border-style: outset;
 }
 
@@ -261,7 +251,91 @@ footer {
 	padding-bottom: 15px;
 }
 
-/* || Menu Pages */
+.container.inputbox {
+	display: flex;
+}
+
+/* Reviews Carousel  */
+
+.hero-specials {
+	max-height: 25rem;
+}
+
+.hero-specials img {
+	width: 100%;
+	min-height: 25rem;
+	max-height: fit-content;
+	object-fit: cover;
+}
+
+/* Customer Testimonials */
+
+#testimonials {
+	font-family: 'Montserrat', Arial, sans-serif;
+	background-color: rgb(83, 184, 69);
+	border: 0.4rem;
+	border-radius: 0.5rem;
+	border-style: outset;
+	padding: 1rem;
+	margin: 2rem;
+}
+
+.carouselReviews {
+	position:relative;
+	width: 100%;
+}
+
+.review-item {
+	width: 100%;
+	padding: 0 2rem 2rem 2rem;
+}
+
+#reviewIcon {
+	width: 20%;
+	display: inline-block;
+}
+
+#userInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+blockquote {
+	font-style: italic;
+	font-weight: 90;
+	padding: 1rem 1rem 0rem 3rem;
+	position: relative;
+}
+
+blockquote::before {
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bold;
+	content: "\201C";
+	color: #07DF07;
+	font-size: 5em;
+	position: absolute;
+	left: 0.5rem;
+	top: -1rem;
+}
+
+.customerReview {
+	background-color: #CEFDCE;
+	border-radius: 1rem;
+	border-left: 1.5em solid #07DF07;
+	padding: 5%;
+	margin-top: 2%;
+	box-shadow: 0.5rem 0.5rem 1rem black;
+}
+
+.reviewEmail {
+	font-style: italic;
+}
+
+.score {
+	text-align: center;
+}
+
+/* social Media icons */
 
 .accordion-header.sticky-top {
 	top: 110px;

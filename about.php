@@ -15,7 +15,7 @@
 		<?php include 'navbar.php'; ?>
 		<div class="containerAbout">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
+				<div class="carousel-inner hero-specials">
 					<img src="imgs/cofee3.png" width="100%">
 					<div class="item active">
 						<div class="carousel-caption">
