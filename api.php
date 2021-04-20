@@ -1,4 +1,5 @@
 <?php
+//Used for error testing
 ini_set('display_errors', 1);
 
 use Psr\Http\Message\ResponseInterface as Response;
@@ -163,7 +164,8 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	// get request body
 	$body = json_decode($request->getBody());
 	
-	/* Check phone number. Accepted patterns for phone-number
+	/* Check phone number
+	Accepted patterns for phone-number
 	###-###-####
 	(###)###-####
 	(###) ###-####
@@ -171,29 +173,31 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	### ### ####
 	*/
 
-	//string pattern assigned to variable
+	//regex pattern set to a string
 	$numberRegEx = '\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})';
-	//Check if pattern matches
+	//check input against string pattern
 	if (!preg_match($numberRegEx, $body->phone)) {
-		//If not return response
+		//getBody of response 
 		$response->getBody()->write(
 			json_encode(
 				['message' => 'invalid format for phone number']
 			)
 		);
+		//return response object w/ header and status code
 		return $response
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
 	}
 	
-	//set string pattern to userPhone variable
-	$userPhone = '\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})';
-	//replace  pattern  with output variables
-	function preg_replace($userPhone, "$1$2$3", $body->phone);
-	//output (###) ###-####
+	//return phone output (###) ###-####
+	//regx pattern set as a string
+	$userPhoneRegex = '\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})';
+	
+	//output of function set to userPhone 
+	$userPhone = preg_replace($userPhoneRegex, '$1$2$3', $body->phone);
 	
 	// create user from request values
-	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $body->phone, $body->preferred ?? false);
+	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $userPhone, $body->preferred ?? false);
 	// save the user
 	$user->saveToDB();
 	// set encoded user as response body
