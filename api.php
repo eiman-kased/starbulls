@@ -175,15 +175,15 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 
 	//regex pattern set to a string
 	$numberRegEx = '\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})';
-	//check input against string pattern
+	//check user input against string pattern
 	if (!preg_match($numberRegEx, $body->phone)) {
-		//getBody of response 
+		//set response message for invalid format
 		$response->getBody()->write(
 			json_encode(
 				['message' => 'invalid format for phone number']
 			)
 		);
-		//return response object w/ header and status code
+		//return the error with an invalid request status
 		return $response
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
