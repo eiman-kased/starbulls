@@ -162,7 +162,7 @@ $app->get('/user/id/{id}', function (Request $request, Response $response, array
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
-	/*Created regex pattern for phone #
+	/*Accepted patterns for phone-number
 	###-###-####
 	(###)###-####
 	(###) ###-####
@@ -170,8 +170,11 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	### ### ####
 	*/
 
+	//string pattern set assigned to variable
 	$numberRegEx = '\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})';
+	//Check if pattern matches
 	if (!preg_match($numberRegEx, $body->phone)) {
+		//If not return response
 		$response->getBody()->write(
 			json_encode(
 				['message' => 'invalid format for phone number']
@@ -181,9 +184,14 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
 	}
-
+	
+	//set string patter to userPhone variable
+	$userPhone = '\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})';
+	//replace  pattern  with output variables
+	preg_replace($userPhone, ($1)$2$3);
+	
 	// create user from request values
-	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $body->phone, $body->preferred ?? false);
+	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $userPhone, $body->preferred ?? false);
 	// save the user
 	$user->saveToDB();
 	// set encoded user as response body
