@@ -196,7 +196,7 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	//regx pattern set as a string
 	$userPhoneRegex = '\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})';
 
-	//output of function set to userPhone 
+	//output of function set to userPhone w/ this format (###) ###-####
 	$userPhone = preg_replace($userPhoneRegex, '$1$2$3', $body->phone);
 
 	// create user from request values
