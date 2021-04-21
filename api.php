@@ -106,7 +106,7 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	//create user object
 	$user = false;
 	// check if $value is a valid email
-	if (preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/', $value)) {
+	if (preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/i', $value)) {
 		// find user by email
 		$user = User::findUserByEmail($value);
 	} else if (!preg_match('/\D/', $value)) { //check if value is integers only
