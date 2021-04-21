@@ -105,13 +105,23 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	}
 	//create user object
 	$user = false;
-	//check if value is a number and an id
-	if (intval($value)) {
+	// check if $value is a valid email
+	if (preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/', $value)) {
+		// find user by email
+		$user = User::findUserByEmail($value);
+	} else if (!preg_match('/\D/', $value)) { //check if value is integers only
 		//assign output of function to $user
 		$user = User::findUserById($value);
 	} else {
-		//else find user by email
-		$user = User::findUserByEmail($value);
+		//set error message
+		$response->getBody()->write(
+			json_encode(
+				['message' => $value.' is not a valid identifier, must be email or integer id']
+			)
+		);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
 	}
 	// if we got nothing back from the user
 	if (empty($user)) {
