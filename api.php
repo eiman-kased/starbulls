@@ -1,4 +1,5 @@
 <?php
+//Used for error testing
 ini_set('display_errors', 1);
 
 use Psr\Http\Message\ResponseInterface as Response;
@@ -86,23 +87,42 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 		->withStatus(200);
 });
 
-// lists a users info including their reviews //
-$app->get('/user/{id}', function (Request $request, Response $response, array $args) {
-	// get the integer value of the passed in id
-	$id = intval($args['id']);
-	// if that id is not a number or is 0
-	if (!$id) {
-		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
+//finds User by email or id
+$app->get('/user/{value}', function (Request $request, Response $response, array $args) {
+	//set the string within args array to $value variable
+	$value = $args['value'];
+	//set value check if 0
+	if ($value === '0') {
+		//set error message
+		$response->getBody()->write(
+			json_encode(
+				['message' => 'zero is not a valid identifier']
+			)
+		);
 		return $response
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
 	}
-	// otherwise get the user
-	$user = User::findUserById($id);
+	//create user object
+	$user = false;
+	// check if $value is a valid email
+	if (preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/i', $value)) {
+		// find user by email
+		$user = User::findUserByEmail($value);
+	} else if (!preg_match('/\D/', $value)) { //check if value is integers only
+		//assign output of function to $user
+		$user = User::findUserById($value);
+	} else {
+		//set error message
+		$response->getBody()->write(
+			json_encode(
+				['message' => $value.' is not a valid identifier, must be email or integer id']
+			)
+		);
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
+	}
 	// if we got nothing back from the user
 	if (empty($user)) {
 		// set not found message
@@ -114,9 +134,9 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(404);
 	}
-	// assuming everything else went ok encode the user
-	$response->getBody()->write(json_encode($user->jsonSerialize()));
-	// return users info
+	//json encode the user data and write to the response body
+	$response->getBody()->write(json_encode($user));
+	//return the response w/ status code
 	return $response
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(200);
@@ -126,8 +146,48 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
+
+	/* Check phone number
+	Accepted patterns for phone-number
+	###-###-####
+	(###)###-####
+	(###) ###-####
+	##########
+	### ### ####
+	*/
+
+	//regex pattern set to a string
+	$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
+	//check user input against string pattern
+	if (!preg_match($numberRegEx, $body->phone)) {
+		//set response message for invalid format
+		$response->getBody()->write(
+			json_encode(
+				['message' => 'invalid format for phone number']
+			)
+		);
+		//return the error with an invalid request status
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
+	}
+
+	//output of function set to userPhone w/ this format (###) ###-####
+	$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
+	//if length of phone isn't equal to ten return an error 
+	if (strlen($userPhone) !== 10) {
+		$response->getBody()->write(json_encode([
+			'message' => 'phone number must be 10 digits'
+		]));
+		//return the error w/ status code
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
+	}
+
+
 	// create user from request values
-	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $body->phone, $body->preferred ?? false);
+	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $userPhone, $body->preferred ?? false);
 	// save the user
 	$user->saveToDB();
 	// set encoded user as response body
@@ -153,6 +213,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
 	}
+
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
@@ -169,6 +230,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 
 	// get the request as a stdObject
 	$body = json_decode($request->getBody());
+
 
 	//Update user info
 	if (isset($body->first_name)) {
@@ -189,7 +251,35 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	}
 
 	if (isset($body->phone)) {
-		$user->setPhoneNumber($body->phone);
+		//regex pattern set to a string
+		$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
+		//check user input against string pattern
+		if (!preg_match($numberRegEx, $body->phone)) {
+			//set response message for invalid format
+			$response->getBody()->write(
+				json_encode(
+					['message' => 'invalid format for phone number']
+				)
+			);
+			//return the error with an invalid request status
+			return $response
+				->withHeader('Content-Type', 'application/json')
+				->withStatus(400);
+		}
+
+		//output of function set to userPhone w/ this format (###) ###-####
+		$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
+		//if length of phone isn't equal to ten return an error 
+		if (strlen($userPhone) !== 10) {
+			$response->getBody()->write(json_encode([
+				'message' => 'phone number must be 10 digits'
+			]));
+			//return the error w/ status code
+			return $response
+				->withHeader('Content-Type', 'application/json')
+				->withStatus(400);
+		}
+		$user->setPhoneNumber($userPhone);
 	}
 
 	// save the changes made to the db
