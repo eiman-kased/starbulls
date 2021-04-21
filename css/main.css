@@ -1,32 +1,20 @@
-/* Google font assignment */
+/* || General Styles */
 
 body {
 	font-family: 'Montserrat', Arial, sans-serif;
+	position: relative;
+	background-color: white;
+	margin-bottom: 100px;
 }
 
-/*css across all pages*/
+p {
+	font-size: 25px;
+}
 
 .header {
 	background-color: #048004;
 }
 
-/* The hero-specials class was added to the same div as carousel-inner to fix conflicts with the reviews carousel  */
-
-.hero-specials {
-	max-height: 25rem;
-}
-
-.hero-specials img {
-	width: 100%;
-	min-height: 25rem;
-	max-height: fit-content;
-	object-fit: cover;
-}
-
-.carousel-caption {
-	top: 10%;
-	text-shadow: 3px 3px 6px black;
-}
 
 h1 {
 	text-align: center;
@@ -43,20 +31,26 @@ h2 {
 	margin-top: 0.1em;
 }
 
-.us {
-	font-size: 45px;
-	text-decoration: underline;
-	text-align: center;
-	font-weight: lighter;
-	margin-bottom: -0.3em;
-	margin-top: 0.1em;
+h3 {
+	font-size: 35px;
 }
 
-body {
-	position: relative;
-	background-color: white;
-	margin-bottom: 100px;
+.container {
+	display: inline-block;
+	width: 100%;
 }
+
+.row {
+	margin: auto;
+}
+
+.graybg {
+	background-color: lightgray;
+}
+
+/* || Sitewide CSS */
+
+/* Navbar */
 
 .nav-active {
 	background-color: #44c767;
@@ -69,11 +63,13 @@ body {
 	text-decoration: none;
 }
 
-/* css for the navigation bar across all pages*/
-
 nav {
 	background-color: #048004;
 	font-size: large;
+}
+
+.navbar.sticky-top {
+	z-index: 1100;
 }
 
 .logo img {
@@ -81,6 +77,8 @@ nav {
 	position: relative;
 	margin: 6px;
 }
+
+/* Footer Styling */
 
 #end {
 	text-align: center;
@@ -91,6 +89,21 @@ nav {
 	width: 100%;
 }
 
+#socialMedia {
+	position: fixed;
+	right: 0;
+	bottom: 15px;
+	z-index: 1200;
+}
+
+#socialMedia img {
+	text-align: center;
+	max-width: 40px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 3px 3px #222222;
+	z-index: 1300px;
+}
+
 footer {
 	position: absolute;
 	bottom: -100;
@@ -98,28 +111,27 @@ footer {
 	width: 100%;
 }
 
-/* css for the table in specialsOTW.html*/
+/* Carousel Styling */
 
-th, td {
-	border: 2px solid black;
+.carousel-caption {
+	top: 10%;
+	text-shadow: 3px 3px 6px black;
+}
+
+.hero-banner {
+	height: fit-content;
+	width: 100%;
+	align-content: center;
+}
+
+.hero-text {
+	top: 20%;
 	text-align: center;
-	margin-top: 2em;
+	color: white;
+	text-shadow: 3px 3px 6px black;
 }
 
-dt {
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-#Specials {
-	position: absolute;
-	left: auto;
-	text-align: left;
-	font-family: serif;
-}
-
-/*css for home.html*/
+/* || Index Page */
 
 .table {
 	margin-right: auto;
@@ -143,125 +155,15 @@ dt {
 	font-weight: 800;
 }
 
-/*for mainpage.html wingassortment text*/
 
-.connectTexts {
-	text-align: left;
-	padding: 40px;
-}
-
-.graybg {
-	background-color: lightgray;
-}
-
-.row {
-	margin: auto;
-}
-
-.row.row-index {
-	display: flex;
-	margin: auto;
-}
-
-#connect img {
-	padding: 20px;
-	object-fit: contain;
-	width: 500px;
-}
-
-.column {
-	float: left;
-	width: 50%;
-}
-
-.column img {
-	width: 600px;
-	padding: 20px;
-	object-fit: contain;
-	float: right;
-}
-
-/*css for us.html*/
-
-p {
-	font-size: 25px;
-}
-
-h3 {
-	font-size: 35px;
-}
-
-.navbar.sticky-top {
-	z-index: 1100;
-}
-
-.accordion-header.sticky-top {
-	top: 110px;
-}
-
-/* beginning of CSS for specials */
-
-.column {
-	float: left;
-	width: 50%;
-}
-
-#Specials {
-	position: absolute;
-	left: auto;
-	text-align: left;
-	font-family: serif;
-}
-
-#end {
-	text-align: center;
-	font-size: large;
-	position: relative;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-}
-
-.form-container {
-	display: inline-block;
-	box-sizing: border-box;
-	background-color: rgb(202, 202, 202);
-	padding: 20px;
-	padding-right: 40px;
-	border-radius: 2%;
-}
-
-input {
-	width: 100%;
+#hours th, td {
 	color: black;
-}
-
-.name, .dob, .phone, .address, .email {
-	display: inline-block;
-	color: black;
-	border-radius: 2px;
-	padding-right: 5px;
-}
-
-.submit>input[type=submit] {
-	padding: 2% 2%;
-	border-radius: 6px;
-}
-
-.hero-banner {
-	height: fit-content;
-	width: 100%;
-	align-content: center;
-}
-
-.hero-text {
-	top: 20%;
+	border: 2px solid black;
 	text-align: center;
-	color: white;
-	text-shadow: 3px 3px 6px black;
+	margin-top: 2em;
 }
 
-.review1 {
+.review {
 	background-color: rgba(122, 242, 132, 0.461);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	border-radius: 6px;
@@ -269,82 +171,56 @@ input {
 	padding: 6%;
 }
 
-.review2 {
-	background-color: rgba(116, 108, 108, 0.742);
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	border-radius: 6px;
-	text-align: center;
-	padding: 4%;
-}
+/* Social Media Call to Action */
 
-.review1:hover, .review2:hover {
-	background-color: rgba(255, 255, 255, .4);
-	transition: .4s;
-	border: 1px solid black;
-}
-
-.container {
-	display: inline-block;
-	width: 100%;
-}
-
-.tools {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	border-radius: 6px;
-	text-align: center;
-	padding: 4%;
-}
-
-.aboutInfo1 {
-	background-color: rgba(255, 255, 255, .4);
-	border-radius: 20px;
-	text-align: center;
-}
-
-.aboutInfo2 {
+.social-bkg {
 	background-color: rgba(122, 242, 132, 0.461);
-	border-radius: 20px;
+	border-radius: 2rem;
+	width: 90%;
+	margin: auto;
+	padding: 1em;
+}
+
+.socialmedia {
 	text-align: center;
 }
 
-/* review and sign up forms */
-
-#userForm h3 {
-	font-family: 'Montserrat', Arial, sans-serif;
+.socialmedia h3, h4 {
+	font-weight: 800;
+	text-align: center;
 }
 
-.signup-wrapper {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
+.social-pic img {
+	width: 30%;
+	border-radius: 2rem;
+	padding: 1rem;
 }
 
-.signup-wrapper img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	min-width: 100vh;
-	height: 100vh;
+.social-links, .social-pic {
+	display: inline-block;
 }
+
+.social-links a {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+}
+
+.social-links img {
+	padding: 0.5rem;
+}
+
+/* Review and Sign up Forms */
 
 #userAccount {
-	position: relative;
 	font-family: 'Montserrat', Arial, sans-serif;
 	font-size: larger;
 	background-color: rgb(83, 184, 69);
-	top: 100px;
-	bottom: 125px;
-	margin: 125px auto 0px auto;
+	margin: auto;
 	border: 5px;
 	border-radius: 10px;
 	border-style: outset;
-	z-index: 1300;
 }
 
 #userForm {
@@ -354,10 +230,6 @@ input {
 
 .btn-outline-success {
 	color: black !important;
-}
-
-#reviewForm h3 {
-	font-family: 'Montserrat', Arial, sans-serif;
 }
 
 #reviewForm {
@@ -381,6 +253,19 @@ input {
 
 .container.inputbox {
 	display: flex;
+}
+
+/* Reviews Carousel  */
+
+.hero-specials {
+	max-height: 25rem;
+}
+
+.hero-specials img {
+	width: 100%;
+	min-height: 25rem;
+	max-height: fit-content;
+	object-fit: cover;
 }
 
 /* Customer Testimonials */
@@ -452,69 +337,56 @@ blockquote::before {
 
 /* social Media icons */
 
-#socialMedia {
-	position: fixed;
-	right: 0;
-	bottom: 15px;
-	z-index: 1200;
+.accordion-header.sticky-top {
+	top: 110px;
 }
 
-#socialMedia img {
-	text-align: center;
-	max-width: 40px;
-	border-radius: 5px;
-	box-shadow: 5px 5px 3px 3px #222222;
-	z-index: 1300px;
-}
+/* || Apply Page */
 
-.card-img-top {
-	width: 270px;
-	height: 240px;
-	margin: 0 auto;
-	margin-top: 2%;
-}
-
-/* Social Media Call to Action */
-
-.social-bkg {
-	background-color: rgba(122, 242, 132, 0.461);
-	border-radius: 2rem;
-	width: 90%;
-	margin: auto;
-	padding: 1em;
-}
-
-.socialmedia {
-	text-align: center;
-}
-
-.socialmedia h3, h4 {
-	font-weight: 800;
-	text-align: center;
-}
-
-.social-pic img {
-	width: 30%;
-	border-radius: 2rem;
-	padding: 1rem;
-}
-
-.social-links, .social-pic {
+.apply-form-container {
 	display: inline-block;
+	box-sizing: border-box;
+	background-color: rgb(202, 202, 202);
+	padding: 20px;
+	padding-right: 40px;
+	border-radius: 2%;
 }
 
-.social-links a {
-	/* margin: auto; */
+.apply-form-container input {
+	width: 100%;
 	color: black;
-	font-weight: bold;
-	text-decoration: none;
-	text-align: center;
 }
 
-.social-links img {
-	padding: 0.5rem;
+.submit>input[type=submit] {
+	padding: 2% 2%;
+	border-radius: 6px;
 }
 
 form .error {
 	color: #ff0000;
+}
+
+/* || About Page */
+
+.containerAbout {
+	background-color: lightgray;
+}
+
+.aboutInfo1 {
+	background-color: rgba(255, 255, 255, .4);
+	border-radius: 20px;
+	text-align: center;
+}
+
+.aboutInfo2 {
+	background-color: rgba(122, 242, 132, 0.461);
+	border-radius: 20px;
+	text-align: center;
+}
+
+.card-img-top.about-cards {
+	width: 270px;
+	height: 240px;
+	margin: 0 auto;
+	margin-top: 2%;
 }

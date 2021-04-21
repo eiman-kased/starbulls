@@ -33,7 +33,7 @@ ini_set('display_errors', 1);
 				<!--left content-->
 				<h2>Application</h2>
 				<h3>*required fields</h3>
-				<div class="form-container">
+				<div class="apply-form-container">
 					<?php include 'forms/apply.form.php'; ?>
 				</div>
 			</div>
