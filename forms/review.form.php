@@ -44,7 +44,6 @@ if (isset($_POST['reviewSubmit'])) {
 		// if userEmail is empty, add error message to array to be displayed later
 		$error['userEmail'] = 'Please Enter you Email';
 	}
-
 	// creating a new review object
 	$review = new Review($score, $comment, null);
 
