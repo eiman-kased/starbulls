@@ -41,7 +41,7 @@ class User implements JsonSerializable
 
 		if (!empty($this->id)) {
 			// if we have an id this user exists in the db and needs to be updated
-			$sql = "UPDATE `user` SET firstName = '$this->firstName', lastName = '$this->lastName', email = '$this->email', phoneNumber = $this->phoneNumber, isPreferred = $preferred, password = '$hash'" . ($this->isArchived ? ", archivedAt = '".$this->getArchivedAt()->format("Y-m-d H:i:s")."'": '') . " WHERE id=$this->id";
+			$sql = "UPDATE `user` SET firstName = '$this->firstName', lastName = '$this->lastName', email = '$this->email', phoneNumber = $this->phoneNumber, isPreferred = $preferred, password = '$hash'" . ($this->isArchived ? ", archivedAt = '" . $this->getArchivedAt()->format("Y-m-d H:i:s") . "'" : '') . " WHERE id=$this->id";
 			//echo $sql;
 		} else {
 			// otherwise create new excluding createdAt since it defaults to current timestamp
@@ -249,7 +249,17 @@ class User implements JsonSerializable
 	{
 		return $this->phoneNumber;
 	}
-
+	
+	public function getFormattedPhoneNumber(){
+		$phone = $this->getPhoneNumber();
+		
+		//regex pattern set to a string
+		$numberRegEx = '/(\d{3})(\d{3})(\d{4})/';
+		//output format (###) ###-####
+		$userPhone = preg_replace($numberRegEx, '($1) $2-$3', $phone);
+		//return the userPhone
+		return $userPhone;
+	}
 	/**
 	 * Set the value of phoneNumber
 	 */
@@ -305,7 +315,7 @@ class User implements JsonSerializable
 			'first_name' => $this->getFirstName(),
 			'last_name' => $this->getLastName(),
 			'email' => $this->getEmail(),
-			'phone_number' => $this->getPhoneNumber(),
+			'phone' => $this->getFormattedPhoneNumber(),
 			'createdAt' => $this->createdAt,
 		];
 
