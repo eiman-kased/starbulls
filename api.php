@@ -89,12 +89,15 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 
 //finds User by Email TODO modify route
 $app->get('/user/{email}', function (Request $request, Response $response, array $args) {
+	//set the string within args array to $email variable
 	$email = $args['email'];
+	//check if input has been submitted
 	if (!$email) {
-		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid email provided',
-		]));
+		//set response message for invalid email format
+		$response->getBody()->write(
+			json_encode(
+				['message' => 'invalid email provided',]
+			));
 		// return the error and a invalid request status
 		return $response
 			->withHeader('Content-Type', 'application/json')
