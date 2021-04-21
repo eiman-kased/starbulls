@@ -97,7 +97,8 @@ $app->get('/user/{email}', function (Request $request, Response $response, array
 		$response->getBody()->write(
 			json_encode(
 				['message' => 'invalid email provided',]
-			));
+			)
+		);
 		// return the error and a invalid request status
 		return $response
 			->withHeader('Content-Type', 'application/json')
@@ -124,18 +125,18 @@ $app->get('/user/{email}', function (Request $request, Response $response, array
 		->withStatus(200);
 });
 
-
-
-// lists a users info including their reviews //
-$app->get('/user/id/{id}', function (Request $request, Response $response, array $args) {
+// lists all users info including their reviews //
+$app->get('/user/{id}', function (Request $request, Response $response, array $args) {
 	// get the integer value of the passed in id
 	$id = intval($args['id']);
 	// if that id is not a number or is 0
 	if (!$id) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
+		$response->getBody()->write(
+			json_encode(
+				['message' => 'invalid id provided',]
+			)
+		);
 		// return the error and a invalid request status
 		return $response
 			->withHeader('Content-Type', 'application/json')
@@ -166,7 +167,7 @@ $app->get('/user/id/{id}', function (Request $request, Response $response, array
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
-	
+
 	/* Check phone number
 	Accepted patterns for phone-number
 	###-###-####
@@ -191,14 +192,13 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
 	}
-	
-	//return phone output (###) ###-####
+
 	//regx pattern set as a string
 	$userPhoneRegex = '\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})';
-	
+
 	//output of function set to userPhone 
 	$userPhone = preg_replace($userPhoneRegex, '$1$2$3', $body->phone);
-	
+
 	// create user from request values
 	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $userPhone, $body->preferred ?? false);
 	// save the user
