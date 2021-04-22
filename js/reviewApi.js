@@ -121,8 +121,6 @@ $(document).ready(function () {
 				reviewObj.userID = userID;
 				console.log("review object:", reviewObj);
 				createNewReview(reviewObj);
-				//hide review form
-				$("#IndexReviewForm").hide();
 				//alert- thank you
 				alert('Thank you for the review ' + response.first_name);
 
@@ -131,19 +129,13 @@ $(document).ready(function () {
 			function (response) {
 				// check if user not found
 				if (response.status === 404) {
-					// show new user form
-					$("#IndexReviewForm").hide();
-					$("#IndexUserForm").show();
-					$("#IndexUserForm #email").val($("#userEmail").val());
-
+					$("#userForm #email").val($("#userEmail").val());
 					$("#userForm").submit(function (e) {
 						e.preventDefault();
 						createNewUser(reviewObj, function (id) {
 							if (id !== undefined && id !== false) {
 								reviewObj.userID = id
 								createNewReview(reviewObj);
-								//hide review form
-								$("#IndexUserForm").hide();
 								//alert- thank you
 								alert('Thank you for the review!');
 

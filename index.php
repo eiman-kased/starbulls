@@ -36,148 +36,148 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 		</div>
-		<div class="row my-2">
-			<div id="hours">
-				<h4 class="display-6">Hours of Operation</h4>
-				<table class="table">
-					<tr>
-						<td>Monday - Friday</td>
-						<td>Saturday</td>
-						<td>Sunday</td>
-					</tr>
-					<tr>
-						<td>9AM - 7PM</td>
-						<td>9AM - 9PM</td>
-						<td>*Closed*</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<!-- 5 slide carousel featuring specials and menu items -->
-		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-indicators">
-				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-			</div>
-			<div class="carousel-inner hero-specials">
-				<div class="carousel-item active">
-					<img src="imgs/coffee.jpg" class="d-block w-100" alt="pouring coffee">
-					<div class="carousel-caption">
-						<h3>StarBulls Selection of Coffee</h3>
-						<p>A selection of coffee to satisfy your taste.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="imgs/chickenwings2.jpg" class="d-block w-100" alt="plate of chicken wings">
-					<div class="carousel-caption">
-						<h3>Traditional and Specialty Wings</h3>
-						<p>Chicken Wing flavors ranging from traditional to daring.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="imgs/hotchocolate.jpg" class="d-block w-100" alt="four mugs of hot chocolate">
-					<div class="carousel-caption">
-						<h3>Milk Chocolate Monday</h3>
-						<p>Our Monday Special! Hot Milk Chocolate serving a party of four.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="imgs/burgerfries.jpg" class="d-block w-100" alt="burger and fries">
-					<div class="carousel-caption">
-						<h3>Bulls Dinner</h3>
-						<p>Try our delicious Burgers and Fries.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="imgs/wingbuffet.jpg" class="d-block w-100" alt="chicken wing buffet">
-					<div class="carousel-caption">
-						<h3>Wingin' It Wednesday</h3>
-						<p>Our Wednesday Special! All You Can Eat Chicken Wing Buffet!</p>
-					</div>
-				</div>
-			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div><br />
-
 		<!-- Customer Review Form -->
-		<div class="row">
-			<div class="col-6" id="IndexReviewForm">
-				<?php include 'forms/review.form.php'; ?><br />
-			</div>
-			<div class="col-6" id="IndexUserForm" style="display:none">
-				<?php include 'forms/user.form.php'; ?><br />
+		<div class="mainContent">
+			<div class="row my-2">
+				<div id="hours">
+					<h3 class="fw-bold">Hours of Operation</h3>
+					<table class="table">
+						<tr>
+							<td>Monday - Friday</td>
+							<td>Saturday</td>
+							<td>Sunday</td>
+						</tr>
+						<tr>
+							<td>9AM - 7PM</td>
+							<td>9AM - 9PM</td>
+							<td>*Closed*</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 			<!-- Carousel of Customer Reviews -->
-			<div class="col-6">
-				<div class="inputbox container">
-					<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-						<div id="testimonials" class="row">
-							<h3 class="fw-bold">What people are saying about StarBulls:</h3>
-							<div  id="reviews-carousel" class="carouselReviews carousel-inner">
-								<div class="carousel-item review-item active">
-									<div data-review_id="review_reviewId" class="customerReview">
-										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
-										<div id="userInfo">
-											<p id="email" class="reviewEmail">sallyjones@email.com</p>
-										</div>
-										<blockquote>
-											<p class="comment">
-												The place I go for my wings and coffee fix!
-											</p>
-										</blockquote>
-										<p class="score">Score Rating:
-											 <img src="imgs/scoreCoffeeCup4.png" class="scoreCup">
-										</p>
+			<div class="containerFlex container">
+				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+					<div id="testimonials" class="row">
+						<h3 class="fw-bold">What people are saying about StarBulls:</h3>
+						<div id="reviews-carousel" class="carouselReviews carousel-inner">
+							<div class="carousel-item review-item active">
+								<div data-review_id="review_reviewId" class="customerReview">
+									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
+									<div id="userInfo">
+										<p id="email" class="reviewEmail">sallyjones@email.com</p>
 									</div>
+									<blockquote>
+										<p class="comment">
+											The place I go for my wings and coffee fix!
+										</p>
+									</blockquote>
+									<p class="score">Score Rating:
+										<img src="imgs/scoreCoffeeCup4.png" class="scoreCup">
+									</p>
 								</div>
-								<div class="carousel-item review-item">
-									<div data-review_id="review_reviewId" class="customerReview">
-										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
-										<div id="userInfo">
-											<p id="email" class="reviewEmail">mikeb@email.com</p>
-										</div>
-										<blockquote>
-											<p class="comment">
-												StarBulls is my Thursday night wings spot!
-											</p>
-										</blockquote>
-										<p class="score">Score Rating: 
-											<img src="imgs/scoreCoffeeCup5.png" class="scoreCup">
-										</p>
+							</div>
+							<div class="carousel-item review-item">
+								<div data-review_id="review_reviewId" class="customerReview">
+									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
+									<div id="userInfo">
+										<p id="email" class="reviewEmail">mikeb@email.com</p>
 									</div>
+									<blockquote>
+										<p class="comment">
+											StarBulls is my Thursday night wings spot!
+										</p>
+									</blockquote>
+									<p class="score">Score Rating:
+										<img src="imgs/scoreCoffeeCup5.png" class="scoreCup">
+									</p>
 								</div>
-								<div class="carousel-item review-item">
-									<div data-review_id="review_reviewId" class="customerReview">
-										<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
-										<div id="userInfo">
-											<p id="email" class="reviewEmail">cj357@email.com</p>
-										</div>
-										<blockquote>
-											<p class="comment">
-												Great wings, but the coffee was weak.
-											</p>
-										</blockquote>
-										<p class="score">Score Rating:
-											 <img src="imgs/scoreCoffeeCup2.png" class="scoreCup">
-										</p>
+							</div>
+							<div class="carousel-item review-item">
+								<div data-review_id="review_reviewId" class="customerReview">
+									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
+									<div id="userInfo">
+										<p id="email" class="reviewEmail">cj357@email.com</p>
 									</div>
+									<blockquote>
+										<p class="comment">
+											Great wings, but the coffee was weak.
+										</p>
+									</blockquote>
+									<p class="score">Score Rating:
+										<img src="imgs/scoreCoffeeCup2.png" class="scoreCup">
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-sm-12 col-lg-6">
+						<?php include 'forms/review.form.php'; ?>
+					</div>
+					<div class="col-sm-12 col-lg-6">
+						<?php include 'forms/user.form.php'; ?>
+					</div>
+				</div>
 			</div>
 		</div>
+	</div>
+	<!-- 5 slide carousel featuring specials and menu items -->
+	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		</div>
+		<div class="carousel-inner hero-specials">
+			<div class="carousel-item active">
+				<img src="imgs/coffee.jpg" class="d-block w-100" alt="pouring coffee">
+				<div class="carousel-caption">
+					<h3>StarBulls Selection of Coffee</h3>
+					<p>A selection of coffee to satisfy your taste.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="imgs/chickenwings2.jpg" class="d-block w-100" alt="plate of chicken wings">
+				<div class="carousel-caption">
+					<h3>Traditional and Specialty Wings</h3>
+					<p>Chicken Wing flavors ranging from traditional to daring.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="imgs/hotchocolate.jpg" class="d-block w-100" alt="four mugs of hot chocolate">
+				<div class="carousel-caption">
+					<h3>Milk Chocolate Monday</h3>
+					<p>Our Monday Special! Hot Milk Chocolate serving a party of four.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="imgs/burgerfries.jpg" class="d-block w-100" alt="burger and fries">
+				<div class="carousel-caption">
+					<h3>Bulls Dinner</h3>
+					<p>Try our delicious Burgers and Fries.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="imgs/wingbuffet.jpg" class="d-block w-100" alt="chicken wing buffet">
+				<div class="carousel-caption">
+					<h3>Wingin' It Wednesday</h3>
+					<p>Our Wednesday Special! All You Can Eat Chicken Wing Buffet!</p>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div><br />
 	<!-- Social Media Call to Action -->
 	<div class="social-bkg socialmedia">
 		<h3>StarBulls offers the very best of Wings, Coffee and More!</h3>

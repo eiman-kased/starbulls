@@ -147,7 +147,7 @@ footer {
 }
 
 #hours h4 {
-	color: #048004;
+	color: #000000;
 }
 
 .table td {
@@ -161,14 +161,6 @@ footer {
 	border: 2px solid black;
 	text-align: center;
 	margin-top: 2em;
-}
-
-.review {
-	background-color: rgba(122, 242, 132, 0.461);
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	border-radius: 6px;
-	text-align: center;
-	padding: 6%;
 }
 
 /* Social Media Call to Action */
@@ -213,46 +205,13 @@ footer {
 
 /* Review and Sign up Forms */
 
-#userAccount {
-	font-family: 'Montserrat', Arial, sans-serif;
-	font-size: larger;
-	background-color: rgb(83, 184, 69);
-	margin: auto;
-	border: 5px;
-	border-radius: 10px;
-	border-style: outset;
-}
-
-#userForm {
-	display: inline-block;
-	padding: 5px 20px;
-}
-
 .btn-outline-success {
 	color: black !important;
-}
-
-#reviewForm {
-	font-family: 'Montserrat', Arial, sans-serif;
-	font-size: larger;
-	background-color: rgb(83, 184, 69);
-	margin: auto;
-	border: 0.4rem;
-	border-radius: 0.5rem;
-	border-style: outset;
 }
 
 .form-control:focus {
 	border-color: rgb(27, 61, 22);
 	box-shadow: inset 0 1px 1px rgba(14, 31, 11, 0.075), 0 0 8px rgba(12, 27, 10, 0.6);
-}
-
-.colform {
-	padding-bottom: 15px;
-}
-
-.container.inputbox {
-	display: flex;
 }
 
 /* Reviews Carousel  */
@@ -270,14 +229,18 @@ footer {
 
 /* Customer Testimonials */
 
-#testimonials {
+.reviewSectionForm {
+	margin: 4rem auto;
+}
+
+.mainContent {
 	font-family: 'Montserrat', Arial, sans-serif;
-	background-color: rgb(83, 184, 69);
+	background-color: hsl(127, 72%, 82%);
 	border: 0.4rem;
 	border-radius: 0.5rem;
 	border-style: outset;
 	padding: 1rem;
-	margin: 2rem;
+	margin: 0px auto;
 }
 
 .carouselReviews {
