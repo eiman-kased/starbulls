@@ -147,6 +147,12 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	// get request body
 	$body = json_decode($request->getBody());
 
+	//check name first name format 
+	//accepted name formats 
+	//set preg_match regex for name - will be used for first and last name
+	
+	
+	
 	/* Check phone number
 	Accepted patterns for phone-number
 	###-###-####
