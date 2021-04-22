@@ -174,7 +174,7 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 
 	//output of function set to userPhone w/ this format (###) ###-####
 	$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
-	//if length of phone isn't equal to ten return an error 
+	//if length of phone isn't equal to ten return an error
 	if (strlen($userPhone) !== 10) {
 		$response->getBody()->write(json_encode([
 			'message' => 'phone number must be 10 digits'
@@ -269,7 +269,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 
 		//output of function set to userPhone w/ this format (###) ###-####
 		$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
-		//if length of phone isn't equal to ten return an error 
+		//if length of phone isn't equal to ten return an error
 		if (strlen($userPhone) !== 10) {
 			$response->getBody()->write(json_encode([
 				'message' => 'phone number must be 10 digits'
@@ -369,18 +369,27 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	$body = json_decode($request->getBody());
 
 	if (empty($body->score) || empty($body->comment)) {
+		$response->getBody(json_encode([
+			'message'=>'score and comment cannot be empty'
+		]));
 		return $response->withStatus(400);
 	}
 
 	if (empty($body->userID) || intval($body->userID) == 0) {
+		$response->getBody(json_encode([
+			'message'=>'userID must have a value greater than 0'
+		]));
 		return $response->withStatus(400);
 	}
 
-	if (!intval($body->score) > 0) {
+	if (floatval($body->score) < 0) {
+		$response->getBody(json_encode([
+			'message'=>'score must be greater than 0'
+		]));
 		return $response->withStatus(400);
 	}
 
-	$review = new Review($body->score, $body->comment, $body->userID);
+	$review = new Review(floatval($body->score), trim($body->comment), $body->userID);
 	if ($review->saveToDB()) {
 		$response->getBody()->write(json_encode($review));
 		return $response
