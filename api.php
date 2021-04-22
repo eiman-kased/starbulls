@@ -148,8 +148,22 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	$body = json_decode($request->getBody());
 
 	//check name first name format 
-	//accepted name formats 
 	//set preg_match regex for name - will be used for first and last name
+	$nameRegEx = '/^[a-z ,.\'-]+$/';
+	//check name input against string pattern 
+	if(!preg_match($nameRegEx, $body->first_name)) {
+		//set response for invalid name format
+		$response->getBody()->write(
+			json_encode(
+				['message' => 'invalid name character included']
+			)
+		);
+		//return the error with an invalid request status
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
+	}
+
 	
 	
 	
