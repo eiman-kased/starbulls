@@ -138,7 +138,7 @@ if (isset($_POST['userSubmit'])) {
 }
 ?>
 
-<form id="userForm" class="reviewSectionForm" action='' method="post">
+<form id="userForm" class="reviewSectionForm d-flex align-items-stretch" action='' method="post">
 	<div class="">
 		<h3 class="fw-bold">Sign up for a Starbulls Account</h3>
 	</div>

@@ -82,7 +82,7 @@ if (isset($_POST['reviewSubmit'])) {
 	}
 }
 ?>
-	<form id="reviewForm" method="post" class="reviewSectionForm" action="">
+	<form id="reviewForm" method="post" class="reviewSectionForm d-flex align-items-stretch" action="">
 		<h3 class="fw-bold">Tell Us About Your Experience at Starbulls</h3>
 		<div class="">
 		<label class="form-label" for="">Enter an Email<input type="email" id="userEmail" class="form-control" name="userEmail" placeholder="email@example.com" required <?= (!empty($userEmail) ? 'value="' . $userEmail . '"' : '') ?> <?= (isset($error['userEmail']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['userEmail'] ?? '' ?></label>

@@ -231,6 +231,8 @@ footer {
 
 .reviewSectionForm {
 	margin: 4rem auto;
+	text-align: left;
+	height: 100%;
 }
 
 .mainContent {
@@ -241,6 +243,7 @@ footer {
 	border-style: outset;
 	padding: 1rem;
 	margin: 0px auto;
+	text-align: center;
 }
 
 .carouselReviews {
