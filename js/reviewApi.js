@@ -103,15 +103,19 @@ $(document).ready(function () {
 		};
 
 		// get email value
-		$.when(getUserByEmail($("#userEmail").val())).then(function (response) {
-			// successful return ie user exists
-			console.log('$.when response:', response);
-			var userID = response.id;
-			reviewObj.userID = userID;
-			console.log("review object:", reviewObj);
-			createNewReview(reviewObj);
+		$.when(getUserByEmail($("#userEmail").val())).then(
+			function (response) {
+				// successful return because the user exists
+				var userID = response.id;
+				reviewObj.userID = userID;
+				console.log("review object:", reviewObj);
+				createNewReview(reviewObj);
+				//hide review form
+				$("#IndexReviewForm").hide();
+				//alert- thank you
+				alert('Thank you for the review ' + response.first_name);
 
-		},
+			},
 			// failed reponse of some type
 			function (response) {
 				// check if user not found
@@ -124,21 +128,28 @@ $(document).ready(function () {
 					$("#userForm").submit(function (e) {
 						e.preventDefault();
 						createNewUser(reviewObj, function (id) {
-							console.log('id:', id)
 							if (id !== undefined && id !== false) {
 								reviewObj.userID = id
 								createNewReview(reviewObj);
+								//hide review form
+								$("#IndexUserForm").hide();
+								//alert- thank you
+								alert('Thank you for the review!');
+
 							} else {
+								//TODO handle error better
+
 								alert('bad user id');
 							}
 						});
 					});
-				}else{
+				} else {
 					// some other error
-					alert('Error: ',response.responseJSON.message);
+					//FIXME response not message not displaying on error
+					console.log(response);
+					alert('Error: ', response.message);
 				}
 			});
-		console.log('after when');
 	});
 });
 
