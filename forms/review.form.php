@@ -82,14 +82,14 @@ if (isset($_POST['reviewSubmit'])) {
 	}
 }
 ?>
-	<form id="reviewForm" method="post" class="reviewSectionForm d-flex align-items-stretch" action="">
-		<h3 class="fw-bold">Tell Us About Your Experience at Starbulls</h3>
-		<div class="">
+<form id="reviewForm" method="post" class="reviewSectionForm d-flex align-items-stretch" action="">
+	<h3 class="form-text">Tell Us About Your Experience at Starbulls</h3>
+	<div class="">
 		<label class="form-label" for="">Enter an Email<input type="email" id="userEmail" class="form-control" name="userEmail" placeholder="email@example.com" required <?= (!empty($userEmail) ? 'value="' . $userEmail . '"' : '') ?> <?= (isset($error['userEmail']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['userEmail'] ?? '' ?></label>
 		<label class="form-label" for="">Score Rating:<input type="number" id="reviewScore" class="form-control" step="0.5" name="score" min="0" max="5" <?= (is_numeric($score) ? "value='$score'" : '') ?>' <?= (isset($error['score']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['score'] ?? '' ?></label>
-		</div>
-		<div class="">
+	</div>
+	<div class="">
 		<label class="form-label" for="">Please Leave a Message Here:<textarea id="comment" class="form-control" name="comment" rows="5" cols="50" <?= (isset($error['comment']) ? 'class="is-invalid"' : '') ?> required><?= (!empty($comment) ? $comment : '') ?> </textarea> <?= $error['comment'] ?? '' ?></label>
-		</div>
-		<input type="submit" id="ReviewSubmit" class="btn btn-outline-success btn-lg" name="reviewSubmit" value="Submit" />
-	</form>
+	</div>
+	<input type="submit" id="ReviewSubmit" class="btn btn-outline-success btn-lg" name="reviewSubmit" value="Submit" />
+</form>

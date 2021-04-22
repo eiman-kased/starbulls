@@ -113,10 +113,10 @@ if (session_status() === PHP_SESSION_NONE) {
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-12 col-lg-6">
+					<div class="col-sm-12 col-lg-6 d-flex flex-column">
 						<?php include 'forms/review.form.php'; ?>
 					</div>
-					<div class="col-sm-12 col-lg-6">
+					<div class="col-sm-12 col-lg-6 d-flex flex-column">
 						<?php include 'forms/user.form.php'; ?>
 					</div>
 				</div>
