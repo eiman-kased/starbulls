@@ -147,7 +147,7 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	// get request body
 	$body = json_decode($request->getBody());
 
-	//check name first name format 
+	//check first_name format 
 	//set preg_match regex for name - will be used for first and last name
 	$nameRegEx = '/^[a-z ,.\'-]+$/';
 	//check name input against string pattern 
@@ -163,10 +163,21 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
 	}
+	
+	//check last_name format
+	if(!preg_match($nameRegEx, $body->last_name)) {
+		//set response for invalid name format
+		$response->getBody()->write(
+			json_encode(
+				['message' => 'invalid name character included']
+			)
+		);
+		//return the error with an invalid request status
+		return $response
+			->withHeader('Content-Type', 'application/json')
+			->withStatus(400);
+	}
 
-	
-	
-	
 	/* Check phone number
 	Accepted patterns for phone-number
 	###-###-####
