@@ -313,7 +313,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//preg replace for output?
 		//output of function set to lastName w/ this format - Johnson, Smith, Xian, Shelly, Worchester
 		$userLastName = preg_replace($nameRegEx, '$1', $body->last_name);
-		//if length of firstName isn't equal to one return an error
+		//if length of lastName isn't greater than or equal to one or less than or equal to thirty return an error
 		if (strlen($userLastName) !== 1) {
 			$response->getBody()->write(json_encode([
 				'message' => 'last name must be at least one character'
