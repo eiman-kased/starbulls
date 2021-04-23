@@ -35,7 +35,6 @@ h3 {
 }
 
 .container {
-	display: inline-block;
 	width: 100%;
 }
 
@@ -239,8 +238,15 @@ footer {
 	border-radius: 0.5rem;
 	border-style: outset;
 	padding: 1rem;
-	margin: 0px auto;
 	text-align: center;
+	margin: 0 auto;
+}
+
+/* hacky fix for review carousel width FIXME */
+
+#reviewCarousel {
+	width: 75%;
+	margin: 0 auto;
 }
 
 .carouselReviews {

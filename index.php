@@ -22,7 +22,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<!-- Logo and Navigation Bar -->
 		<?php include 'navbar.php'; ?>
 
-		<!-- Hero Image, Intro Text, Hours of Operation -->
+		<!-- Hero Image, Intro Text -->
 		<div class="row gx-0">
 			<div id="indexCarousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner hero-specials">
@@ -36,8 +36,9 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 		</div>
-		<!-- Customer Review Form -->
-		<div class="mainContent">
+		<!-- main page content -->
+		<div class="row mainContent">
+			<!-- hours of operation -->
 			<div class="row my-2">
 				<div id="hours">
 					<h3 class="fw-bold">Hours of Operation</h3>
@@ -56,7 +57,8 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 			<!-- Carousel of Customer Reviews -->
-			<div class="containerFlex container">
+			<div class="row container" id="reviewCarousel">
+				<!-- TODO set the id of the carousel below to the id of this div and remove the id from this div -->
 				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 					<div id="testimonials" class="row">
 						<h3 class="fw-bold">What people are saying about StarBulls:</h3>
@@ -112,13 +114,13 @@ if (session_status() === PHP_SESSION_NONE) {
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm-12 col-lg-6">
-						<?php include 'forms/review.form.php'; ?>
-					</div>
-					<div class="col-sm-12 col-lg-6">
-						<?php include 'forms/user.form.php'; ?>
-					</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-lg-6">
+					<?php include 'forms/review.form.php'; ?>
+				</div>
+				<div class="col-sm-12 col-lg-6">
+					<?php include 'forms/user.form.php'; ?>
 				</div>
 			</div>
 		</div>

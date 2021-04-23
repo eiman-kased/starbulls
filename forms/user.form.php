@@ -140,16 +140,31 @@ if (isset($_POST['userSubmit'])) {
 
 <form id="userForm" class="reviewSectionForm" action='' method="post">
 	<h3 class="fw-bold">Sign up for a Starbulls Account</h3>
-	<div class="">
-		<label class="form-label">First Name<input type="text" name="firstName" id="firstName" class="form-control" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> <?= (isset($error['firstName']) ? 'class="is-invalid" ' : '') ?> required /> <?= $error['firstName'] ?? '' ?></label>
-		<label class="form-label">Last Name:<input type="text" name="lastName" id="lastName" class="form-control" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> <?= (isset($error['lastName']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['lastName'] ?? '' ?></label>
+	<div class="row mb-3">
+		<div class="col-6">
+			<label class="form-label" for="firstName">First Name</label>
+			<input type="text" name="firstName" id="firstName" class="form-control" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> <?= (isset($error['firstName']) ? 'class="is-invalid" ' : '') ?> required /> <?= $error['firstName'] ?? '' ?>
+		</div>
+		<div class="col-6">
+			<label class="form-label" for="lastName">Last Name</label>
+			<input type="text" name="lastName" id="lastName" class="form-control" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> <?= (isset($error['lastName']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['lastName'] ?? '' ?>
+		</div>
 	</div>
-	<div class="">
-		<label class="form-label">Phone Number:<input type="tel" name="tel" id="tel" class="form-control" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> /></label>
-		<label class="form-label">Enter an Email<input type="email" id="email" name="userEmail" class="form-control" placeholder="email@example.com" <?= (isset($_POST['userEmail']) ? 'value="' . $_POST['userEmail'] . '"' : '') ?> <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?></label>
+	<div class="row mb-3">
+		<div class="col-6">
+			<label class="form-label" for="tel">Phone Number</label>
+			<input type="tel" name="tel" id="tel" class="form-control" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> />
+		</div>
+		<div class="col-6">
+			<label class="form-label" for="email">Enter an Email</label>
+			<input type="email" id="email" name="userEmail" class="form-control" placeholder="email@example.com" <?= (isset($_POST['userEmail']) ? 'value="' . $_POST['userEmail'] . '"' : '') ?> <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?>
+		</div>
 	</div>
-	<div class="">
-		<label class="form-label">Enter your Password (8 characters minimum):<input type="password" id="password" class="form-control" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['password'] ?? '' ?></label>
+	<div class="row mb-3">
+		<div class="col-6">
+			<label class="form-label" for="password">Enter your Password (8 characters minimum)</label>
+			<input type="password" id="password" class="form-control" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['password'] ?? '' ?>
+		</div>
 	</div>
 	<input type="submit" class="btn btn-success" name="userSubmit" value="Submit" />
 </form>
