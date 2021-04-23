@@ -138,8 +138,8 @@ if (isset($_POST['userSubmit'])) {
 }
 ?>
 
-<form id="userForm" class="reviewSectionForm d-flex align-items-stretch" action='' method="post">
-	<h3 class="form-text">Sign up for a Starbulls Account</h3>
+<form id="userForm" class="reviewSectionForm" action='' method="post">
+	<h3 class="fw-bold">Sign up for a Starbulls Account</h3>
 	<div class="">
 		<label class="form-label">First Name<input type="text" name="firstName" id="firstName" class="form-control" <?= (isset($_POST['firstName']) ? 'value="' . $_POST['firstName'] . '"' : '') ?> <?= (isset($error['firstName']) ? 'class="is-invalid" ' : '') ?> required /> <?= $error['firstName'] ?? '' ?></label>
 		<label class="form-label">Last Name:<input type="text" name="lastName" id="lastName" class="form-control" <?= (isset($_POST['lastName']) ? 'value="' . $_POST['lastName'] . '"' : '') ?> <?= (isset($error['lastName']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['lastName'] ?? '' ?></label>
@@ -151,7 +151,5 @@ if (isset($_POST['userSubmit'])) {
 	<div class="">
 		<label class="form-label">Enter your Password (8 characters minimum):<input type="password" id="password" class="form-control" name="password" minlength="8" <?= (isset($_POST['password']) ? 'value="' . $_POST['password'] . '"' : '') ?> <?= (isset($error['password']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['password'] ?? '' ?></label>
 	</div>
-	<div>
-		<input type="submit" class="btn btn-success" name="userSubmit" value="Submit" />
-	</div>
+	<input type="submit" class="btn btn-success" name="userSubmit" value="Submit" />
 </form>

@@ -15,7 +15,6 @@ p {
 	background-color: #048004;
 }
 
-
 h1 {
 	text-align: center;
 	color: white;
@@ -155,7 +154,6 @@ footer {
 	font-weight: 800;
 }
 
-
 #hours th, td {
 	color: black;
 	border: 2px solid black;
@@ -246,7 +244,7 @@ footer {
 }
 
 .carouselReviews {
-	position:relative;
+	position: relative;
 	width: 100%;
 }
 
