@@ -116,7 +116,7 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 		//set error message
 		$response->getBody()->write(
 			json_encode(
-				['message' => $value.' is not a valid identifier, must be email or integer id']
+				['message' => $value . ' is not a valid identifier, must be email or integer id']
 			)
 		);
 		return $response
@@ -151,7 +151,7 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	//set preg_match regex for name - will be used for first and last name
 	$nameRegEx = '/^[a-z ,.\'-]+$/';
 	//check name input against string pattern 
-	if(!preg_match($nameRegEx, $body->first_name)) {
+	if (!preg_match($nameRegEx, $body->first_name)) {
 		//set response for invalid name format
 		$response->getBody()->write(
 			json_encode(
@@ -163,9 +163,9 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
 	}
-	
+
 	//check last_name format
-	if(!preg_match($nameRegEx, $body->last_name)) {
+	if (!preg_match($nameRegEx, $body->last_name)) {
 		//set response for invalid name format
 		$response->getBody()->write(
 			json_encode(
@@ -265,6 +265,35 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 
 	//Update user info
 	if (isset($body->first_name)) {
+		//set preg_match regex for name -will be used for first and last name
+		$nameRegEx = '/^[a-z ,.\'-]+$/';
+		//check name input against string pattern 
+		if (!preg_match($nameRegEx, $body->first_name)) {
+			//set response for invalid name format
+			$response->getBody()->write(
+				json_encode(
+					['message' => 'invalid name character included']
+				)
+			);
+			//return the error with an invalid request status
+			return $response
+				->withHeader('Content-Type', 'application/json')
+				->withStatus(400);
+		}
+		//preg replace for output?
+		//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
+		$userFirstName = preg_replace($nameRegEx, '$1$2', $body->first_name);
+		//if length of firstName isn't equal to one return an error
+		if (strlen($userFirstName) !== 1) {
+			$response->getBody()->write(json_encode([
+				'message' => 'first name must be at least one character'
+			]));
+			//return the error w/ status code
+			return $response
+				->withHeader('Content-Type', 'application/json')
+				->withStatus(400);
+		}
+
 		$user->setFirstName($body->first_name);
 	}
 
@@ -401,21 +430,21 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 
 	if (empty($body->score) || empty($body->comment)) {
 		$response->getBody(json_encode([
-			'message'=>'score and comment cannot be empty'
+			'message' => 'score and comment cannot be empty'
 		]));
 		return $response->withStatus(400);
 	}
 
 	if (empty($body->userID) || intval($body->userID) == 0) {
 		$response->getBody(json_encode([
-			'message'=>'userID must have a value greater than 0'
+			'message' => 'userID must have a value greater than 0'
 		]));
 		return $response->withStatus(400);
 	}
 
 	if (floatval($body->score) < 0) {
 		$response->getBody(json_encode([
-			'message'=>'score must be greater than 0'
+			'message' => 'score must be greater than 0'
 		]));
 		return $response->withStatus(400);
 	}
