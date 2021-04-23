@@ -263,7 +263,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	$body = json_decode($request->getBody());
 
 
-	//Update user info
+	//Update user info that already exists
 	if (isset($body->first_name)) {
 		//set preg_match regex for name -will be used for first and last name
 		$nameRegEx = '/^[a-z ,.\'-]+$/';
@@ -282,7 +282,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		}
 		//preg replace for output?
 		//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
-		$userFirstName = preg_replace($nameRegEx, '$1$2', $body->first_name);
+		$userFirstName = preg_replace($nameRegEx, '$1', $body->first_name);
 		//if length of firstName isn't equal to one return an error
 		if (strlen($userFirstName) !== 1) {
 			$response->getBody()->write(json_encode([
@@ -293,11 +293,36 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 				->withHeader('Content-Type', 'application/json')
 				->withStatus(400);
 		}
-
 		$user->setFirstName($body->first_name);
 	}
 
 	if (isset($body->last_name)) {
+		//check last_name format
+		if (!preg_match($nameRegEx, $body->last_name)) {
+			//set response for invalid name format
+			$response->getBody()->write(
+				json_encode(
+					['message' => 'invalid name character included']
+				)
+			);
+			//return the error with an invalid request status
+			return $response
+				->withHeader('Content-Type', 'application/json')
+				->withStatus(400);
+		}
+		//preg replace for output?
+		//output of function set to lastName w/ this format - Johnson, Smith, Xian, Shelly, Worchester
+		$userLastName = preg_replace($nameRegEx, '$1', $body->last_name);
+		//if length of firstName isn't equal to one return an error
+		if (strlen($userFirstName) !== 1) {
+			$response->getBody()->write(json_encode([
+				'message' => 'last name must be at least one character'
+			]));
+			//return the error w/ status code
+			return $response
+				->withHeader('Content-Type', 'application/json')
+				->withStatus(400);
+		}
 		$user->setLastName($body->last_name);
 	}
 
