@@ -57,17 +57,32 @@ function createNewReview(reviewObj) {
 	reviewSettings.data = JSON.stringify(reviewObj);
 
 	// check user route by email to see if the user exists
-	$.ajax(reviewSettings)
-		.done(function (response) { // successful response
-			console.log('review created:', response);
-			// thank user for adding a review
-		}).fail(function (response) { // error response
-			console.log("failure", response);
-			// update form to reflect reason for failure
-		});
+	$.ajax(reviewSettings).then(
+		// successfully created new review
+		function (successfulReviewResponse) {
+			// if review was at least 3 out of 5
+			if (reviewObj.score > 3) {
+				// thank the reviewer
+				alert('Thank you for your review ' + successfulUserResponse.first_name);
+				// otherwise
+			} else {
+				// apologize
+				alert('Sorry for the poor experience ' + successfulUserResponse.responseJSON.first_name + ', we will try to do better than a ' + reviewObj.score + '/5 next time');
+			}
+			// log successful review with id
+			console.log('review ' + successfulReviewResponse.responseJSON.id + ' created successfully');
+		},
+		// unsuccessful review submission
+		function (reviewResponse) {
+			// alert the user there was an issue
+			alert('there was an error submitting your review: ' + reviewResponse.responseJSON.message);
+			// log the specific response
+			console.error(reviewResponse);
+		}
+	);
 }
 
-function createNewUser(review = null, reviewCallback = null) {
+function createNewUser() {
 	var userObj = {
 		"first_name": $('[name="firstName"]').val(),
 		"last_name": $('[name="lastName"]').val(),
@@ -86,77 +101,85 @@ function createNewUser(review = null, reviewCallback = null) {
 
 	console.log('user settings', userSettings);
 
-	$.ajax(userSettings)
-		.done(function (response) {
-			if (review !== null) {
-				review.id = response.id;
-				reviewCallback(review.id);
-			}
-			return response.id;
-		})
-		.fail(function (response) {
-			// FIXME let's fail gracefully
-			alert("broke it");
-			console.log(response);
-		})
+	return $.ajax(userSettings);
 };
 
 $(document).ready(function () {
 	// get all review and display
 	getAllReviews();
 
+	// add a submit event handler on th review form
 	$("#reviewForm").submit(function (e) {
+		// stop submission from going to defined form action
 		e.preventDefault();
 
-		reviewObj = {
+		// create review object
+		var reviewObj = {
 			'score': $('#reviewScore').val(),
 			'comment': $('#comment').val(),
 		};
 
-		// get email value
-		$.when(getUserByEmail($("#userEmail").val())).then(
-			function (response) {
-				// successful return because the user exists
-				var userID = response.id;
-				reviewObj.userID = userID;
-				console.log("review object:", reviewObj);
+		// get the value of the email from the form
+		var userEmail = $("#userEmail").val();
+		// attempt to find the user by email
+		$.when(getUserByEmail(userEmail)).then(
+			// successful response because the user exists
+			function (successfulUserResponse) {
+				// set the user id on the review
+				reviewObj.userID = successfulUserResponse.id;
+				// attempt to create the review
 				createNewReview(reviewObj);
-				//hide review form
-				$("#IndexReviewForm").hide();
-				//alert- thank you
-				alert('Thank you for the review ' + response.first_name);
-
 			},
-			// failed reponse of some type
-			function (response) {
+			// failed user response of some type
+			function (invalidUserResponse) {
 				// check if user not found
-				if (response.status === 404) {
-					// show new user form
+				if (invalidUserResponse.status === 404) {
+					// hide review form
 					$("#IndexReviewForm").hide();
+					// show new user form
 					$("#IndexUserForm").show();
+					// set email value to be the same as the review form
 					$("#IndexUserForm #email").val($("#userEmail").val());
+					// set user email field to readonly
+					$("#IndexUserForm #email").attr('readonly', 'readonly');
+					// set focus to first name field
+					$("#IndexUserForm #firstName").focus();
 
+					// attach submit event handler to user form
 					$("#userForm").submit(function (e) {
+						// prevent form from submitting to action target
 						e.preventDefault();
-						createNewUser(reviewObj, function (id) {
-							if (id !== undefined && id !== false) {
-								reviewObj.userID = id
-								createNewReview(reviewObj);
-								//hide review form
-								$("#IndexUserForm").hide();
-								//alert- thank you
-								alert('Thank you for the review!');
-
-							} else {
-								//TODO handle error better
-
-								alert('bad user id');
-							}
-						});
+						// attempt to create the new user
+						$.when(createNewUser(reviewObj)).then(
+							// successfully created the user
+							function (successfulNewUserResponse) {
+								// get the new users id
+								var userID = successfulNewUserResponse.responseJSON.id;
+								// make sure we get a valid id back
+								if (userID !== undefined && userID !== false) {
+									// set the review user id
+									reviewObj.userID = userID
+									// attempt to create the review
+									createNewReview(reviewObj);
+								}
+							},
+							// failed to create the new user
+							function (invalidNewUserResponse) {
+								// check the status code to see if we sent bad data
+								if(invalidNewUserResponse.status == 400){
+									// alert the user to the error so they can fix it
+									alert('there was an error creating your account: '+invalidNewUserResponse.responseJSON.message);
+									console.error('invalid new user request:', invalidNewUserResponse.responseJSON.message);
+									// TODO highlight the offending field
+								}
+							});
 					});
+					// error was not 404 there was some other issue with the find user request
 				} else {
-					// some other error
-					alert('Error: ' + response.responseJSON.message);
+					// alert the user there was an issue
+					alert('there was an issue, please try again later');
+					// log the error
+					console.error('error finding ' + userEmail + ': ' + invalidUserResponse.responseJSON.message);
 				}
 			});
 	});
