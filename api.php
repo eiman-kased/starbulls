@@ -284,7 +284,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
 		$userFirstName = preg_replace($nameRegEx, '$1', $body->first_name);
 		//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
-		if (strlen($userFirstName) !== 1) {
+		if (strlen($userFirstName) != 1 {
 			$response->getBody()->write(json_encode([
 				'message' => 'first name must be at least one character'
 			]));
