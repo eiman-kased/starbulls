@@ -117,15 +117,9 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 		$user = User::findUserById($value);
 	} else {
 		//set error message
-		$response->getBody()->write(
-			json_encode(
-				['message' => $value . ' is not a valid identifier, must be email or integer id']
-			)
-		);
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		return badRequest('is not a valid identifier, must be email or integer id', $response);
 	}
+		
 	// if we got nothing back from the user
 	if (empty($user)) {
 		// set not found message
@@ -149,36 +143,20 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
-
-	//check first_name format 
+	
 	//set preg_match regex for name - will be used for first and last name
 	$nameRegEx = '/^[a-z ,.\'-]+$/';
+	
 	//check name input against string pattern 
 	if (!preg_match($nameRegEx, $body->first_name)) {
 		//set response for invalid name format
-		$response->getBody()->write(
-			json_encode(
-				['message' => 'invalid name character included']
-			)
-		);
-		//return the error with an invalid request status
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		return badRequest('invalid name character included', $response);
 	}
 
 	//check last_name format
 	if (!preg_match($nameRegEx, $body->last_name)) {
 		//set response for invalid name format
-		$response->getBody()->write(
-			json_encode(
-				['message' => 'invalid name character included']
-			)
-		);
-		//return the error with an invalid request status
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		return badRequest('invalid name character included', $response);
 	}
 
 	/* Check phone number
@@ -195,30 +173,15 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	//check user input against string pattern
 	if (!preg_match($numberRegEx, $body->phone)) {
 		//set response message for invalid format
-		$response->getBody()->write(
-			json_encode(
-				['message' => 'invalid format for phone number']
-			)
-		);
-		//return the error with an invalid request status
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		return badRequest('invalid format for phone number', $response);
 	}
-
+		
 	//output of function set to userPhone w/ this format (###) ###-####
 	$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
 	//if length of phone isn't equal to ten return an error
 	if (strlen($userPhone) !== 10) {
-		$response->getBody()->write(json_encode([
-			'message' => 'phone number must be 10 digits'
-		]));
-		//return the error w/ status code
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		return badRequest('phone number must be 10 digits', $response);
 	}
-
 
 	// create user from request values
 	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $userPhone, $body->preferred ?? false);
@@ -239,15 +202,9 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	// check validity of id
 	if (!$id) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		return badRequest('invalid id provided', $response);
 	}
-
+		
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
@@ -273,32 +230,19 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//check name input against string pattern 
 		if (!preg_match($nameRegEx, $body->first_name)) {
 			//set response for invalid name format
-			$response->getBody()->write(
-				json_encode(
-					['message' => 'invalid name character included']
-				)
-			);
-			//return the error with an invalid request status
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(400);
+			return badRequest('invalid name character included', $response);
 		}
-		//preg replace for output?
-		//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
+		
+	//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
 		$userFirstName = preg_replace($nameRegEx, '$1', $body->first_name);
 		//set to variable
 		$stringLength = strlen($userFirstName);
 		
 		//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
 		if (!$stringLength>1 && !$stringLength<30) {
-			$response->getBody()->write(json_encode([
-				'message' => 'first name must be between 1 and 30 characters'
-			]));
-			//return the error w/ status code
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(400);
+			return badRequest('first name must be between 1 and 30 characters', $response);
 		}
+			
 		$user->setFirstName($body->first_name);
 	}
 
@@ -306,28 +250,15 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//check last_name format
 		if (!preg_match($nameRegEx, $body->last_name)) {
 			//set response for invalid name format
-			$response->getBody()->write(
-				json_encode(
-					['message' => 'invalid name character included']
-				)
-			);
-			//return the error with an invalid request status
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(400);
+			return badRequest('invalid name character included', $response);
 		}
-		//preg replace for output?
+			
 		//output of function set to lastName w/ this format - Johnson, Smith, Xian, Shelly, Worchester
 		$userLastName = preg_replace($nameRegEx, '$1', $body->last_name);
 		//if length of lastName isn't greater than or equal to one or less than or equal to thirty return an error
-		if (strlen($userLastName) !== 1) {
-			$response->getBody()->write(json_encode([
-				'message' => 'last name must be at least one character'
-			]));
-			//return the error w/ status code
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(400);
+		if (!$stringLength>1 && !$stringLength<30) {
+			return badRequest('last name must be at least one character', $response);
+			
 		}
 		$user->setLastName($body->last_name);
 	}
@@ -347,32 +278,18 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//check user input against string pattern
 		if (!preg_match($numberRegEx, $body->phone)) {
 			//set response message for invalid format
-			$response->getBody()->write(
-				json_encode(
-					['message' => 'invalid format for phone number']
-				)
-			);
-			//return the error with an invalid request status
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(400);
+			return badRequest('invalid format for phone number', $response);
 		}
-
+			
 		//output of function set to userPhone w/ this format (###) ###-####
 		$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
 		//if length of phone isn't equal to ten return an error
 		if (strlen($userPhone) !== 10) {
-			$response->getBody()->write(json_encode([
-				'message' => 'phone number must be 10 digits'
-			]));
-			//return the error w/ status code
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(400);
+			return badRequest('phone number must be 10 digits', $response);
 		}
 		$user->setPhoneNumber($userPhone);
 	}
-
+			
 	// save the changes made to the db
 	$user->saveToDB();
 
@@ -391,12 +308,9 @@ $app->delete('/user/{userId}', function (Request $request, Response $response, a
 	// check validity of id
 	if (!$id) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return badRequest('invalid id provided', $response);
 	}
+		
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
@@ -441,12 +355,9 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 	// if that id is not a number or is 0
 	if (!$reviewID) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return badRequest('invalid id provided', $response);
 	}
+		
 	$review = Review::getReviewByID($reviewID);
 	//return review info based on ID
 	$response->getBody()->write(json_encode($review));
