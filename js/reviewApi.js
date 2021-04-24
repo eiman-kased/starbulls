@@ -47,7 +47,7 @@ function getUserByEmail(userEmail) {
 	return $.ajax(getUserSettings);
 }
 
-function createNewReview(reviewObj) {
+function createNewReview(reviewObj, userObj = null) {
 	// setting for oue getUserByEmail route
 	var reviewSettings = {
 		"url": "/review/new",
@@ -56,6 +56,7 @@ function createNewReview(reviewObj) {
 
 	reviewSettings.data = JSON.stringify(reviewObj);
 
+	var userFName = userObj !== null ? userObj.first_name ?? '' : '';
 	// check user route by email to see if the user exists
 	$.ajax(reviewSettings).then(
 		// successfully created new review
@@ -63,14 +64,14 @@ function createNewReview(reviewObj) {
 			// if review was at least 3 out of 5
 			if (reviewObj.score > 3) {
 				// thank the reviewer
-				alert('Thank you for your review ' + successfulUserResponse.first_name);
+				alert('Thank you for your review '+ userFName );
 				// otherwise
 			} else {
 				// apologize
-				alert('Sorry for the poor experience ' + successfulUserResponse.responseJSON.first_name + ', we will try to do better than a ' + reviewObj.score + '/5 next time');
+				alert('Sorry for the poor experience ' + userFName ?? '' + ', we will try to do better than a ' + reviewObj.score + '/5 next time');
 			}
 			// log successful review with id
-			console.log('review ' + successfulReviewResponse.responseJSON.id + ' created successfully');
+			console.log('review ' + successfulReviewResponse.id + ' created successfully');
 		},
 		// unsuccessful review submission
 		function (reviewResponse) {
@@ -91,15 +92,11 @@ function createNewUser() {
 		"phone": $('[name="tel"]').val()
 	};
 
-	console.log('user object', userObj);
-
 	userSettings = {
 		'url': '/user/new',
 		'method': 'POST',
 		'data': JSON.stringify(userObj)
 	};
-
-	console.log('user settings', userSettings);
 
 	return $.ajax(userSettings);
 };
@@ -128,7 +125,7 @@ $(document).ready(function () {
 				// set the user id on the review
 				reviewObj.userID = successfulUserResponse.id;
 				// attempt to create the review
-				createNewReview(reviewObj);
+				createNewReview(reviewObj, successfulUserResponse);
 			},
 			// failed user response of some type
 			function (invalidUserResponse) {
@@ -154,13 +151,13 @@ $(document).ready(function () {
 							// successfully created the user
 							function (successfulNewUserResponse) {
 								// get the new users id
-								var userID = successfulNewUserResponse.responseJSON.id;
+								var userID = successfulNewUserResponse.id;
 								// make sure we get a valid id back
 								if (userID !== undefined && userID !== false) {
 									// set the review user id
 									reviewObj.userID = userID
 									// attempt to create the review
-									createNewReview(reviewObj);
+									createNewReview(reviewObj, successfulNewUserResponse);
 								}
 							},
 							// failed to create the new user
