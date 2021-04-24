@@ -54,8 +54,7 @@ $app->setBasePath((function () {
 })()); // Append route with api cuz I don't want to write that every time also
 
 // 400 request
-public function badRequest(string $message, Response $response)
-{
+public function badRequest(string $message, Response $response) {
 	$response->getBody()->write(json_encode([
 		"message" => $message
 	]));
@@ -63,7 +62,16 @@ public function badRequest(string $message, Response $response)
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(400);
 }
+
 //404 request
+public function badRequest404(string $message, Response $response) {
+	$response->getBody()->write(json_encode([
+		"message" => "no Users Found"
+	]));
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(404);
+}
 
 // Define app routes
 $app->get('/test', function (Request $request, Response $response, $args) {
@@ -83,12 +91,7 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$users = User::getAllUsers($filterVal, $params['archived'] ?? false);
 	if (empty($users)) {
-		$response->getBody()->write(json_encode([
-			"message" => "no Users Found"
-		]));
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(404);
+		return badRequest404('no Users Found', $response);
 	}
 	//return review info based on ID
 	$response->getBody()->write(json_encode($users));
@@ -123,13 +126,7 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	// if we got nothing back from the user
 	if (empty($user)) {
 		// set not found message
-		$response->getBody()->write(json_encode([
-			'message' => 'user not found'
-		]));
-		// return 404
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(404);
+		return badRequest404('user not found', $response);
 	}
 	//json encode the user data and write to the response body
 	$response->getBody()->write(json_encode($user));
@@ -210,13 +207,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	// if no matching user found
 	if (!$user) {
 		// set the response message
-		$response->getBody()->write(json_encode([
-			'message' => 'no user found for id:' . $id,
-		]));
-		// return the error and a 404 status
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(404);
+		return badRequest404('no user found for id', $response);
 	}
 
 	// get the request as a stdObject
@@ -316,11 +307,7 @@ $app->delete('/user/{userId}', function (Request $request, Response $response, a
 	// if no matching user found
 	if (!$user) {
 		// set the response message
-		$response->getBody()->write(json_encode([
-			'message' => 'no user found for id:' . $id,
-		]));
-		// return the error and a 404 status
-		return $response->withStatus(404);
+		return badRequest404('no user found for id', $response);
 	}
 
 	$user->archive();
