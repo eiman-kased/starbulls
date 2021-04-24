@@ -245,7 +245,6 @@ footer {
 /* hacky fix for review carousel width FIXME */
 
 #reviewCarousel {
-	width: 75%;
 	margin: 0 auto;
 }
 
@@ -271,7 +270,8 @@ footer {
 
 blockquote {
 	font-style: italic;
-	font-weight: 90;
+	font-weight:600;
+	text-align: left;
 	padding: 1rem 1rem 0rem 3rem;
 	position: relative;
 }
@@ -290,10 +290,10 @@ blockquote::before {
 .customerReview {
 	background-color: #CEFDCE;
 	border-radius: 1rem;
+	border: .2em solid #07DF07;
 	border-left: 1.5em solid #07DF07;
 	padding: 5%;
 	margin-top: 2%;
-	box-shadow: 0.5rem 0.5rem 1rem black;
 }
 
 .reviewEmail {

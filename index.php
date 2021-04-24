@@ -57,13 +57,12 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 			<!-- Carousel of Customer Reviews -->
-			<div class="row container" id="reviewCarousel">
-				<!-- TODO set the id of the carousel below to the id of this div and remove the id from this div -->
-				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-					<div id="testimonials" class="row">
+			<div class="row container col-sm-12 col-lg-9">
+				<div id="reviewCarousel" class="carousel slide col-sm-12 col-lg-9" data-bs-ride="carousel">
+					<div id="testimonials" class="row col-sm-12 col-lg-9">
 						<h3 class="fw-bold">What people are saying about StarBulls:</h3>
-						<div id="reviews-carousel" class="carouselReviews carousel-inner">
-							<div class="carousel-item review-item active">
+						<div id="reviews-carousel" class="carouselReviews carousel-inner col-sm-12 col-lg-9">
+							<div class="carousel-item review-item active col-sm-12 col-lg-9">
 								<div data-review_id="review_reviewId" class="customerReview">
 									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 									<div id="userInfo">
@@ -79,7 +78,7 @@ if (session_status() === PHP_SESSION_NONE) {
 									</p>
 								</div>
 							</div>
-							<div class="carousel-item review-item">
+							<div class="carousel-item review-item col-sm-12 col-lg-9">
 								<div data-review_id="review_reviewId" class="customerReview">
 									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 									<div id="userInfo">
@@ -95,7 +94,7 @@ if (session_status() === PHP_SESSION_NONE) {
 									</p>
 								</div>
 							</div>
-							<div class="carousel-item review-item">
+							<div class="carousel-item review-item col-sm-12 col-lg-9">
 								<div data-review_id="review_reviewId" class="customerReview">
 									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 									<div id="userInfo">
@@ -112,6 +111,14 @@ if (session_status() === PHP_SESSION_NONE) {
 								</div>
 							</div>
 						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+							<span class="carousel-control-next-icon reviewControl" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -126,13 +133,13 @@ if (session_status() === PHP_SESSION_NONE) {
 		</div>
 	</div>
 	<!-- 5 slide carousel featuring specials and menu items -->
-	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+	<div id="specialsCarousel" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+			<button type="button" data-bs-target="#specialsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#specialsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#specialsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			<button type="button" data-bs-target="#specialsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			<button type="button" data-bs-target="#specialsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
 		</div>
 		<div class="carousel-inner hero-specials">
 			<div class="carousel-item active">
@@ -171,11 +178,11 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+		<button class="carousel-control-prev" type="button" data-bs-target="#specialsCarousel" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Previous</span>
 		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+		<button class="carousel-control-next" type="button" data-bs-target="#specialsCarousel" data-bs-slide="next">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 		</button>
