@@ -53,7 +53,7 @@ $app->setBasePath((function () {
 	return '';
 })()); // Append route with api cuz I don't want to write that every time also
 
-// handle bad request
+// 400 request
 public function badRequest(string $message, Response $response)
 {
 	$response->getBody()->write(json_encode([
@@ -63,7 +63,7 @@ public function badRequest(string $message, Response $response)
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(400);
 }
-
+//404 request
 
 // Define app routes
 $app->get('/test', function (Request $request, Response $response, $args) {
@@ -371,26 +371,18 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	$body = json_decode($request->getBody());
 
 	if (empty($body->score) || empty($body->comment)) {
-		$response->getBody(json_encode([
-			'message' => 'score and comment cannot be empty'
-		]));
-		return $response->withStatus(400);
+		return badRequest('score and comment cannot be empty', $response);
 	}
+		
 
 	if (empty($body->userID) || intval($body->userID) == 0) {
-		$response->getBody(json_encode([
-			'message' => 'userID must have a value greater than 0'
-		]));
-		return $response->withStatus(400);
+		return badRequest('userID must have a value greater than 0', $response);
 	}
-
+		
 	if (floatval($body->score) < 0) {
-		$response->getBody(json_encode([
-			'message' => 'score must be greater than 0'
-		]));
-		return $response->withStatus(400);
+		return badRequest('score must be greater than 0', $response);
 	}
-
+		
 	$review = new Review(floatval($body->score), trim($body->comment), $body->userID);
 	if ($review->saveToDB()) {
 		$response->getBody()->write(json_encode($review));
@@ -454,11 +446,7 @@ $app->delete('/review/{reviewId}', function (Request $request, Response $respons
 	// if that id is not a number or is 0
 	if (!$id) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return badRequest('invalid id provided', $response);
 	}
 	$review = Review::getReviewByID($id);
 
