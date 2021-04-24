@@ -96,7 +96,7 @@ function createNewUser(review = null, reviewCallback = null) {
 		})
 		.fail(function (response) {
 			// FIXME let's fail gracefully
-			alert("broke it");
+			alert("failed to create new user: " + response.responseJSON.message);
 			console.log(response);
 		})
 };
