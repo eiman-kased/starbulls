@@ -39,7 +39,6 @@ $app = AppFactory::create();
  */
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
-
 // sets the base path to allow systems with different configurations to run the same, mostly
 $app->setBasePath((function () {
 	// literally everything in here is to avoid typing Week_whatever each time this gets copied for the next week. DO NOT DO THIS!!!
@@ -53,6 +52,17 @@ $app->setBasePath((function () {
 	}
 	return '';
 })()); // Append route with api cuz I don't want to write that every time also
+
+// handle bad request
+public function badRequest(string $message, Response $response)
+{
+	$response->getBody()->write(json_encode([
+		"message" => $message
+	]));
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(400);
+}
 
 
 // Define app routes
@@ -93,15 +103,8 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	$value = $args['value'];
 	//set value check if 0
 	if ($value === '0') {
-		//set error message
-		$response->getBody()->write(
-			json_encode(
-				['message' => 'zero is not a valid identifier']
-			)
-		);
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		//set error message -call bad request
+		return badRequest('zero is not a valid identifier', $response);
 	}
 	//create user object
 	$user = false;
@@ -283,10 +286,13 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//preg replace for output?
 		//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
 		$userFirstName = preg_replace($nameRegEx, '$1', $body->first_name);
+		//set to variable
+		$stringLength = strlen($userFirstName);
+		
 		//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
-		if (strlen($userFirstName) != 1 {
+		if (!$stringLength>1 && !$stringLength<30) {
 			$response->getBody()->write(json_encode([
-				'message' => 'first name must be at least one character'
+				'message' => 'first name must be between 1 and 30 characters'
 			]));
 			//return the error w/ status code
 			return $response
