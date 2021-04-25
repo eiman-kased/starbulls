@@ -61,8 +61,8 @@ if (session_status() === PHP_SESSION_NONE) {
 				<div id="reviewCarousel" class="carousel slide col-sm-12 col-lg-9" data-bs-ride="carousel">
 					<div id="testimonials" class="row col-sm-12 col-lg-9">
 						<h3 class="fw-bold">What people are saying about StarBulls:</h3>
-						<div id="reviews-carousel" class="carouselReviews carousel-inner col-sm-12 col-lg-9">
-							<div class="carousel-item review-item active col-sm-12 col-lg-9">
+						<div id="reviews-carousel" class="carouselReviews carousel-inner col-sm-12 col-lg-8">
+							<div class="carousel-item review-item active col-sm-12 col-lg-8">
 								<div data-review_id="review_reviewId" class="customerReview">
 									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 									<div id="userInfo">
@@ -78,7 +78,7 @@ if (session_status() === PHP_SESSION_NONE) {
 									</p>
 								</div>
 							</div>
-							<div class="carousel-item review-item col-sm-12 col-lg-9">
+							<div class="carousel-item review-item col-sm-12 col-lg-8">
 								<div data-review_id="review_reviewId" class="customerReview">
 									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 									<div id="userInfo">
@@ -94,7 +94,7 @@ if (session_status() === PHP_SESSION_NONE) {
 									</p>
 								</div>
 							</div>
-							<div class="carousel-item review-item col-sm-12 col-lg-9">
+							<div class="carousel-item review-item col-sm-12 col-lg-8">
 								<div data-review_id="review_reviewId" class="customerReview">
 									<img src="imgs/starbulls_icon.png" alt="starbulls icon" id="reviewIcon">
 									<div id="userInfo">
@@ -116,7 +116,7 @@ if (session_status() === PHP_SESSION_NONE) {
 							<span class="visually-hidden">Previous</span>
 						</button>
 						<button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
-							<span class="carousel-control-next-icon reviewControl" aria-hidden="true"></span>
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 							<span class="visually-hidden">Next</span>
 						</button>
 					</div>
