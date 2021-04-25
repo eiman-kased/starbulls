@@ -13,6 +13,32 @@ require __DIR__ . '/src/Review.php';
 
 // TODO Remove before release
 // var_dump($_SERVER);
+
+// FIXME add proper docblock comment here
+// 400 request
+function badRequest(string $message, Response $response)
+{
+	$response->getBody()->write(json_encode([
+		"message" => $message
+	]));
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(400);
+}
+
+// FIXME this function name makes no sense
+// FIXME add proper docblock comment here
+// 404 request 
+function badRequest404(string $message, Response $response)
+{
+	$response->getBody()->write(json_encode([
+		"message" => "no Users Found"
+	]));
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(404);
+}
+
 /**
  * Instantiate App
  *
@@ -132,7 +158,7 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 		//set error message
 		return badRequest400('is not a valid identifier, must be email or integer id', $response);
 	}
-		
+
 	// if we got nothing back from the user
 	if (empty($user)) {
 		// set not found message
@@ -150,10 +176,10 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
-	
+
 	//set preg_match regex for name - will be used for first and last name
 	$nameRegEx = '/^[a-z ,.\'-]+$/';
-	
+
 	//check name input against string pattern 
 	if (!preg_match($nameRegEx, $body->first_name)) {
 		//set response for invalid name format
@@ -182,7 +208,7 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 		//set response message for invalid format
 		return badRequest('invalid format for phone number', $response);
 	}
-		
+
 	//output of function set to userPhone w/ this format (###) ###-####
 	$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
 	//if length of phone isn't equal to ten return an error
@@ -211,7 +237,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		// set a message to explain what broke
 		return badRequest400('invalid id provided', $response);
 	}
-		
+
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
@@ -233,17 +259,17 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			//set response for invalid name format
 			return badRequest400('invalid name character included', $response);
 		}
-		
-	//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
+
+		//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
 		$userFirstName = preg_replace($nameRegEx, '$1', $body->first_name);
 		//set to variable
 		$stringLength = strlen($userFirstName);
-		
+
 		//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
-		if (!$stringLength>1 && !$stringLength<30) {
+		if (!$stringLength > 1 && !$stringLength < 30) {
 			return badRequest400('first name must be between 1 and 30 characters', $response);
 		}
-			
+
 		$user->setFirstName($body->first_name);
 	}
 
@@ -253,11 +279,11 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			//set response for invalid name format
 			return badRequest400('invalid name character included', $response);
 		}
-			
+
 		//output of function set to lastName w/ this format - Johnson, Smith, Xian, Shelly, Worchester
 		$userLastName = preg_replace($nameRegEx, '$1', $body->last_name);
 		//if length of lastName isn't greater than or equal to one or less than or equal to thirty return an error
-		if (!$stringLength>1 && !$stringLength<30) {
+		if (!$stringLength > 1 && !$stringLength < 30) {
 			return badRequest400('last name must be at least one character', $response);
 			
 		}
@@ -281,7 +307,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			//return 400 error message
 			return badRequest400('invalid format for phone number', $response);
 		}
-			
+
 		//output of function set to userPhone w/ this format (###) ###-####
 		$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
 		//if length of phone isn't equal to ten return an error
@@ -290,7 +316,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		}
 		$user->setPhoneNumber($userPhone);
 	}
-			
+
 	// save the changes made to the db
 	$user->saveToDB();
 
@@ -311,7 +337,7 @@ $app->delete('/user/{userId}', function (Request $request, Response $response, a
 		// set a message to explain what broke
 		return badRequest400('invalid id provided', $response);
 	}
-		
+
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
@@ -354,7 +380,7 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 		// set a message to explain what broke
 		return badRequest400('invalid id provided', $response);
 	}
-		
+
 	$review = Review::getReviewByID($reviewID);
 	//return review info based on ID
 	$response->getBody()->write(json_encode($review));
@@ -370,16 +396,16 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	if (empty($body->score) || empty($body->comment)) {
 		return badRequest400('score and comment cannot be empty', $response);
 	}
-		
+
 
 	if (empty($body->userID) || intval($body->userID) == 0) {
 		return badRequest400('userID must have a value greater than 0', $response);
 	}
-		
+
 	if (floatval($body->score) < 0) {
 		return badRequest400('score must be greater than 0', $response);
 	}
-		
+
 	$review = new Review(floatval($body->score), trim($body->comment), $body->userID);
 	if ($review->saveToDB()) {
 		$response->getBody()->write(json_encode($review));
