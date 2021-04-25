@@ -54,7 +54,7 @@ $app->setBasePath((function () {
 })()); // Append route with api cuz I don't want to write that every time also
 
 // 400 request
-public function badRequest(string $message, Response $response) {
+public function badRequest400(string $message, Response $response) {
 	$response->getBody()->write(json_encode([
 		"message" => $message
 	]));
@@ -66,11 +66,20 @@ public function badRequest(string $message, Response $response) {
 //404 request
 public function badRequest404(string $message, Response $response) {
 	$response->getBody()->write(json_encode([
-		"message" => "no Users Found"
+		"message" => $message
 	]));
 	return $response
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(404);
+}
+
+//200 status code - ok
+public function badRequest200(string $message, Response $response) {
+	$response->getBody()->write(json_encode($user));
+	//return the response w/ status code
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus(200);
 }
 
 // Define app routes
@@ -107,7 +116,7 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	//set value check if 0
 	if ($value === '0') {
 		//set error message -call bad request
-		return badRequest('zero is not a valid identifier', $response);
+		return badRequest400('zero is not a valid identifier', $response);
 	}
 	//create user object
 	$user = false;
@@ -115,12 +124,13 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	if (preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/i', $value)) {
 		// find user by email
 		$user = User::findUserByEmail($value);
-	} else if (!preg_match('/\D/', $value)) { //check if value is integers only
-		//assign output of function to $user
+	} //check if value is integers only
+		else if (!preg_match('/\D/', $value)) { 
+		 //assign output of function to $user
 		$user = User::findUserById($value);
 	} else {
 		//set error message
-		return badRequest('is not a valid identifier, must be email or integer id', $response);
+		return badRequest400('is not a valid identifier, must be email or integer id', $response);
 	}
 		
 	// if we got nothing back from the user
@@ -130,7 +140,7 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	}
 	//json encode the user data and write to the response body
 	$response->getBody()->write(json_encode($user));
-	//return the response w/ status code
+	//return the response w/ 200 status code
 	return $response
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(200);
@@ -199,7 +209,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	// check validity of id
 	if (!$id) {
 		// set a message to explain what broke
-		return badRequest('invalid id provided', $response);
+		return badRequest400('invalid id provided', $response);
 	}
 		
 	// look up the user
@@ -221,7 +231,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//check name input against string pattern 
 		if (!preg_match($nameRegEx, $body->first_name)) {
 			//set response for invalid name format
-			return badRequest('invalid name character included', $response);
+			return badRequest400('invalid name character included', $response);
 		}
 		
 	//output of function set to firstName w/ this format - Bo, John, Nancy, Monica
@@ -231,7 +241,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		
 		//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
 		if (!$stringLength>1 && !$stringLength<30) {
-			return badRequest('first name must be between 1 and 30 characters', $response);
+			return badRequest400('first name must be between 1 and 30 characters', $response);
 		}
 			
 		$user->setFirstName($body->first_name);
@@ -241,14 +251,14 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//check last_name format
 		if (!preg_match($nameRegEx, $body->last_name)) {
 			//set response for invalid name format
-			return badRequest('invalid name character included', $response);
+			return badRequest400('invalid name character included', $response);
 		}
 			
 		//output of function set to lastName w/ this format - Johnson, Smith, Xian, Shelly, Worchester
 		$userLastName = preg_replace($nameRegEx, '$1', $body->last_name);
 		//if length of lastName isn't greater than or equal to one or less than or equal to thirty return an error
 		if (!$stringLength>1 && !$stringLength<30) {
-			return badRequest('last name must be at least one character', $response);
+			return badRequest400('last name must be at least one character', $response);
 			
 		}
 		$user->setLastName($body->last_name);
@@ -268,15 +278,15 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
 		//check user input against string pattern
 		if (!preg_match($numberRegEx, $body->phone)) {
-			//set response message for invalid format
-			return badRequest('invalid format for phone number', $response);
+			//return 400 error message
+			return badRequest400('invalid format for phone number', $response);
 		}
 			
 		//output of function set to userPhone w/ this format (###) ###-####
 		$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
 		//if length of phone isn't equal to ten return an error
 		if (strlen($userPhone) !== 10) {
-			return badRequest('phone number must be 10 digits', $response);
+			return badRequest400('phone number must be 10 digits', $response);
 		}
 		$user->setPhoneNumber($userPhone);
 	}
@@ -299,14 +309,14 @@ $app->delete('/user/{userId}', function (Request $request, Response $response, a
 	// check validity of id
 	if (!$id) {
 		// set a message to explain what broke
-		return badRequest('invalid id provided', $response);
+		return badRequest400('invalid id provided', $response);
 	}
 		
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
 	if (!$user) {
-		// set the response message
+		// return 404 error message
 		return badRequest404('no user found for id', $response);
 	}
 
@@ -342,7 +352,7 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 	// if that id is not a number or is 0
 	if (!$reviewID) {
 		// set a message to explain what broke
-		return badRequest('invalid id provided', $response);
+		return badRequest400('invalid id provided', $response);
 	}
 		
 	$review = Review::getReviewByID($reviewID);
@@ -358,16 +368,16 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	$body = json_decode($request->getBody());
 
 	if (empty($body->score) || empty($body->comment)) {
-		return badRequest('score and comment cannot be empty', $response);
+		return badRequest400('score and comment cannot be empty', $response);
 	}
 		
 
 	if (empty($body->userID) || intval($body->userID) == 0) {
-		return badRequest('userID must have a value greater than 0', $response);
+		return badRequest400('userID must have a value greater than 0', $response);
 	}
 		
 	if (floatval($body->score) < 0) {
-		return badRequest('score must be greater than 0', $response);
+		return badRequest400('score must be greater than 0', $response);
 	}
 		
 	$review = new Review(floatval($body->score), trim($body->comment), $body->userID);
@@ -388,12 +398,9 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 	// if that id is not a number or is 0
 	if (!$id) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return badRequest400('invalid id provided', $response);
 	}
+		
 	$body = json_decode($request->getBody());
 	//check that the review has an id and user id
 	if (intval($id)) {
@@ -433,7 +440,7 @@ $app->delete('/review/{reviewId}', function (Request $request, Response $respons
 	// if that id is not a number or is 0
 	if (!$id) {
 		// set a message to explain what broke
-		return badRequest('invalid id provided', $response);
+		return badRequest400('invalid id provided', $response);
 	}
 	$review = Review::getReviewByID($id);
 
@@ -445,7 +452,6 @@ $app->delete('/review/{reviewId}', function (Request $request, Response $respons
 		->withHeader('Content-Type', 'application/json')
 		->withStatus(200);
 });
-
 
 // Run app
 $app->run();
