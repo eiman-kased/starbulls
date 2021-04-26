@@ -14,31 +14,6 @@ require __DIR__ . '/src/Review.php';
 // TODO Remove before release
 // var_dump($_SERVER);
 
-// FIXME add proper docblock comment here
-// 400 request
-function badRequest(string $message, Response $response)
-{
-	$response->getBody()->write(json_encode([
-		"message" => $message
-	]));
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(400);
-}
-
-// FIXME this function name makes no sense
-// FIXME add proper docblock comment here
-// 404 request 
-function notFound(string $message, Response $response)
-{
-	$response->getBody()->write(json_encode([
-		"message" => "no Users Found"
-	]));
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(404);
-}
-
 /**
  * Instantiate App
  *
@@ -80,23 +55,23 @@ $app->setBasePath((function () {
 })()); // Append route with api cuz I don't want to write that every time also
 
 //200 status code - ok
-public function sendResponse(array $data, int $code, Response $response) {
+function sendResponse(array $data, int $code, Response $response) {
 	return sendResponse(["data" => $data], 200, $response);
 }
 
 // 400 request
-public function badRequest(string $message, Response $response) {
+function badRequest(string $message, Response $response) {
 	return sendResponse(["message" => $message], 400, $response);
 }
 
 //404 request
-public function notFound(string $message, Response $response) {
+function notFound(string $message, Response $response) {
 	return sendResponse(["message" => $message], 404, $response);
 }
 
 // Define app routes
 $app->get('/test', function (Request $request, Response $response, $args) {
-	return sendResponse(["data" => $data], 200, $response);
+	return sendResponse(["data" => $_SERVER], 200, $response);
 });
 
 /********* USER ROUTES *********/
