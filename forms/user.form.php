@@ -14,7 +14,7 @@ require_once 'src/Review.php';
 // initialize empty variables
 $firstName = '';
 $lastName = '';
-$tel = '';
+$phone = '';
 $email = '';
 $password = '';
 
@@ -58,13 +58,13 @@ if (isset($_POST['userSubmit'])) {
 		$error['lastName'] = 'Last Name is Required';
 	}
 
-	// check to make sure tel is not empty
-	if (!empty(trim($_POST['tel']))) {
-		// set tel to user tel sans whitespace
-		$tel = trim($_POST['tel']);
+	// check to make sure phone is not empty
+	if (!empty(trim($_POST['phone']))) {
+		// set phone to user phone sans whitespace
+		$phone = trim($_POST['phone']);
 	} else {
 		//if it is empty, add error message to array to be displayed later
-		$error['tel'] = 'Phone Number is Required';
+		$error['phone'] = 'Phone Number is Required';
 	}
 
 	// check to make sure userEmail is not empty
@@ -90,7 +90,7 @@ if (isset($_POST['userSubmit'])) {
 	}
 
 	// creating a new user object
-	$user = new \User($firstName, $lastName, $email, $password, $tel, false);
+	$user = new \User($firstName, $lastName, $email, $password, $phone, false);
 
 	// save user to the database which will return false if unsuccessful
 	$userSaved = $user->saveToDB();
@@ -152,8 +152,8 @@ if (isset($_POST['userSubmit'])) {
 	</div>
 	<div class="row mb-3">
 		<div class="col-6">
-			<label class="form-label" for="tel">Phone Number</label>
-			<input type="tel" name="tel" id="tel" class="form-control" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> />
+			<label class="form-label" for="phone">Phone Number</label>
+			<input type="tel" name="phone" id="phone" class="form-control" <?= (isset($_POST['phone']) ? 'value="' . $_POST['phone'] . '"' : '') ?> />
 		</div>
 		<div class="col-6">
 			<label class="form-label" for="email">Enter an Email</label>

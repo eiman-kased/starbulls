@@ -3,7 +3,7 @@
 $firstName = '';
 $lastName = '';
 $dob = '';
-$tel = '';
+$phone = '';
 $address1 = '';
 $city = '';
 $state = '';
@@ -30,8 +30,8 @@ if (isset($_POST["submit_btn"])) {
 		echo '<span class="error">*Date of Birth Required</span> </br>';
 	}
 
-	if (!empty(trim($_POST['tel']))) {
-		$tel = trim($_POST['tel']);
+	if (!empty(trim($_POST['phone']))) {
+		$phone = trim($_POST['phone']);
 	} else {
 		echo '<span class="error">*Phone Number is Required</span> </br>';
 	}
@@ -95,7 +95,7 @@ if (isset($_POST["submit_btn"])) {
 	</div>
 	<div class="phone">
 		<label for="phone">Phone Number*</br>Format:123-456-7890</label>
-		<input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" <?= (isset($_POST['tel']) ? 'value="' . $_POST['tel'] . '"' : '') ?> required />
+		<input type="phone" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" <?= (isset($_POST['phone']) ? 'value="' . $_POST['phone'] . '"' : '') ?> required />
 	</div>
 	<div class="address">
 		<p>Please Enter Your Address:</p>

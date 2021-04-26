@@ -32,7 +32,7 @@ function getAllReviews() {
 			});
 		})
 		.fail(function (err) {
-			console.error(err)
+			console.log(err)
 		});
 }
 
@@ -78,7 +78,7 @@ function createNewReview(reviewObj, userObj = null) {
 			// alert the user there was an issue
 			alert('there was an error submitting your review: ' + reviewResponse.responseJSON.message);
 			// log the specific response
-			console.error(reviewResponse);
+			console.log(reviewResponse);
 		}
 	);
 }
@@ -89,7 +89,7 @@ function createNewUser() {
 		"last_name": $('[name="lastName"]').val(),
 		"email": $('[name="userEmail"]').val(),
 		"password": $('[name="password"]').val(),
-		"phone": $('[name="tel"]').val()
+		"phone": $('[name="phone"]').val()
 	};
 
 	userSettings = {
@@ -132,11 +132,11 @@ $(document).ready(function () {
 				// check if user not found
 				if (invalidUserResponse.status === 404) {
 					// set email value to be the same as the review form
-					$("#IndexUserForm #email").val($("#userEmail").val());
+					$("#userForm #email").val($("#userEmail").val());
 					// set user email field to readonly
 					$("#IndexUserForm #email").attr('readonly', 'readonly');
 					// set focus to first name field
-					$("#IndexUserForm #firstName").focus();
+					$("#userForm #firstName").focus();
 
 					// attach submit event handler to user form
 					$("#userForm").submit(function (e) {
@@ -162,9 +162,9 @@ $(document).ready(function () {
 								if (invalidNewUserResponse.status == 400) {
 									// alert the user to the error so they can fix it
 									alert('there was an error creating your account: ' + invalidNewUserResponse.responseJSON.message);
-									console.error('invalid new user request:', invalidNewUserResponse.responseJSON.message);
+									console.log('invalid new user request:', invalidNewUserResponse.responseJSON.field);
 									// TODO highlight the offending field
-									$("[name=" +invalidNewUserResponse.responseJSON.field[0]+"]").focus();
+									$('[name="' +invalidNewUserResponse.responseJSON.field[0]+'"]').focus();
 								}
 							});
 					});
@@ -173,7 +173,7 @@ $(document).ready(function () {
 					// alert the user there was an issue
 					alert('there was an issue, please try again later');
 					// log the error
-					console.error('error finding ' + userEmail + ': ' + invalidUserResponse.responseJSON.message);
+					console.log('error finding ' + userEmail + ': ' + invalidUserResponse.responseJSON.message);
 				}
 			});
 	});
