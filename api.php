@@ -94,16 +94,6 @@ public function notFound(string $message, Response $response) {
 	return sendResponse(["message" => $message], 404, $response);
 }
 
-/*200 status code - ok
-public function badRequest200(string $message, Response $response) {
-	//$user is not defined yet. Set to $value?
-	$response->getBody()->write(json_encode($value));
-	//return the response w/ status code
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);*/
-}
-
 // Define app routes
 $app->get('/test', function (Request $request, Response $response, $args) {
 	return sendResponse(["data" => $data], 200, $response);
