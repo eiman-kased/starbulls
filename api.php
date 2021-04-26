@@ -81,7 +81,7 @@ $app->setBasePath((function () {
 
 //200 status code - ok
 public function sendResponse(array $data, int $code, Response $response) {
-	return sendResponse([$data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response);
 }
 
 // 400 request
@@ -106,7 +106,7 @@ public function badRequest200(string $message, Response $response) {
 
 // Define app routes
 $app->get('/test', function (Request $request, Response $response, $args) {
-	return sendResponse([$data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response);
 });
 
 /********* USER ROUTES *********/
@@ -122,7 +122,7 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 		return notFound('no users Found', $response);
 	}
 	//return review info based on ID
-	return sendResponse([$data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response);
 });
 
 //finds User by email or id
@@ -155,7 +155,7 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 		return notFound('user not found', $response);
 	}
 	//json encode the user data and write to the response body
-	return sendResponse([$data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response);
 });
 
 // Create new user
@@ -329,7 +329,7 @@ $app->delete('/user/{userId}', function (Request $request, Response $response, a
 	//archive user
 	$user->archive();
 
-	return sendResponse([$data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response)
 });
 
 /********* REVIEW ROUTES *********/
@@ -342,7 +342,7 @@ $app->get('/reviews', function (Request $request, Response $response, array $arg
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$reviews = Review::getAllReviews($filterVal, $params['archived'] ?? false);
 	//return review info based on ID
-	return sendResponse([$data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response)
 });
 
 // /review/{reviewID} - displays the info about a specific review
@@ -357,7 +357,7 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 
 	$review = Review::getReviewByID($reviewID);
 	//return review info based on ID
-	return sendResponse([$data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response)
 });
 
 //review/new  Creates a new review
@@ -443,7 +443,7 @@ $app->delete('/review/{reviewId}', function (Request $request, Response $respons
 
 	$review->archive();
 
-	return sendResponse([$data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response)
 });
 
 // Run app
