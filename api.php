@@ -94,11 +94,9 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	//set value check if 0
 	if ($value === '0') {
 		//set error message
-		$response->getBody()->write(
-			json_encode(
-				['message' => 'zero is not a valid identifier']
-			)
-		);
+		$response->getBody()->write(json_encode(
+			['message' => 'zero is not a valid identifier']
+		));
 		return $response
 			->withHeader('Content-Type', 'application/json')
 			->withStatus(400);
@@ -116,7 +114,7 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 		//set error message
 		$response->getBody()->write(
 			json_encode(
-				['message' => $value.' is not a valid identifier, must be email or integer id']
+				['message' => $value . ' is not a valid identifier, must be email or integer id']
 			)
 		);
 		return $response
@@ -161,11 +159,10 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	//check user input against string pattern
 	if (!preg_match($numberRegEx, $body->phone)) {
 		//set response message for invalid format
-		$response->getBody()->write(
-			json_encode(
-				['message' => 'invalid format for phone number']
-			)
-		);
+		$response->getBody()->write(json_encode([
+			'field' => ['phone'],
+			'message' => 'invalid format for phone number',
+		]));
 		//return the error with an invalid request status
 		return $response
 			->withHeader('Content-Type', 'application/json')
@@ -177,6 +174,7 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	//if length of phone isn't equal to ten return an error
 	if (strlen($userPhone) !== 10) {
 		$response->getBody()->write(json_encode([
+			'field' => ['phone'],
 			'message' => 'phone number must be 10 digits'
 		]));
 		//return the error w/ status code
@@ -256,11 +254,10 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//check user input against string pattern
 		if (!preg_match($numberRegEx, $body->phone)) {
 			//set response message for invalid format
-			$response->getBody()->write(
-				json_encode(
-					['message' => 'invalid format for phone number']
-				)
-			);
+			$response->getBody()->write(json_encode([
+				'field' => ['phone'],
+				'message' => 'invalid format for phone number',
+			]));
 			//return the error with an invalid request status
 			return $response
 				->withHeader('Content-Type', 'application/json')
@@ -272,7 +269,8 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//if length of phone isn't equal to ten return an error
 		if (strlen($userPhone) !== 10) {
 			$response->getBody()->write(json_encode([
-				'message' => 'phone number must be 10 digits'
+				'field' => ['phone'],
+				'message' => 'phone number must be 10 digits',
 			]));
 			//return the error w/ status code
 			return $response
@@ -369,22 +367,28 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	$body = json_decode($request->getBody());
 
 	if (empty($body->score) || empty($body->comment)) {
-		$response->getBody(json_encode([
-			'message'=>'score and comment cannot be empty'
+		$response->getBody()->write(json_encode([
+			'field' => [
+				'score',
+				'comment',
+			],
+			'message' => 'score and comment cannot be empty',
 		]));
 		return $response->withStatus(400);
 	}
-
+	//TODO check validity of userID
 	if (empty($body->userID) || intval($body->userID) == 0) {
 		$response->getBody(json_encode([
-			'message'=>'userID must have a value greater than 0'
+			'field' => ['userID'],
+			'message' => 'userID must have a value greater than 0',
 		]));
 		return $response->withStatus(400);
 	}
 
 	if (floatval($body->score) < 0) {
 		$response->getBody(json_encode([
-			'message'=>'score must be greater than 0'
+			'field' => ['score'],
+			'message' => 'score must be greater than 0',
 		]));
 		return $response->withStatus(400);
 	}
@@ -408,6 +412,7 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 	if (!$id) {
 		// set a message to explain what broke
 		$response->getBody()->write(json_encode([
+			'field' => ['id'],
 			'message' => 'invalid id provided',
 		]));
 		// return the error and a invalid request status
@@ -419,11 +424,22 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 		$review = Review::getReviewByID($id);
 		//check that the score and comment are not empty
 		if (empty($body->score) && empty($body->comment)) {
+			$response->getBody()->write(json_encode([
+				'field' => [
+					'score',
+					'comment',
+				],
+				'message' => 'score and comment need values',
+			]));
 			return $response->withStatus(400);
 		}
 
 		//check to make sure score is more than 0
 		if (!empty($body->score) && !intval($body->score) > 0) {
+			$response->getBody()->write(json_encode([
+				'field' => ['score'],
+				'message' => 'score must be greater than 0',
+			]));
 			return $response->withStatus(400);
 		}
 
