@@ -134,7 +134,7 @@ $(document).ready(function () {
 					// set email value to be the same as the review form
 					$("#userForm #email").val($("#userEmail").val());
 					// set user email field to readonly
-					$("#IndexUserForm #email").attr('readonly', 'readonly');
+					$("#userForm #email").attr('readonly', 'readonly');
 					// set focus to first name field
 					$("#userForm #firstName").focus();
 
@@ -164,7 +164,7 @@ $(document).ready(function () {
 									alert('there was an error creating your account: ' + invalidNewUserResponse.responseJSON.message);
 									console.log('invalid new user request:', invalidNewUserResponse.responseJSON.field);
 									// TODO highlight the offending field
-									$('[name="' +invalidNewUserResponse.responseJSON.field[0]+'"]').focus();
+									$('[name="' +invalidNewUserResponse.responseJSON.field[0]+'"]').focus().addClass("is-invalid");
 								}
 							});
 					});
