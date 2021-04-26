@@ -99,13 +99,14 @@ public function badRequest404(string $message, Response $response) {
 		->withStatus(404);
 }
 
-//200 status code - ok
+/*200 status code - ok
 public function badRequest200(string $message, Response $response) {
-	$response->getBody()->write(json_encode($user));
+	//$user is not defined yet. Set to $value?
+	$response->getBody()->write(json_encode($value));
 	//return the response w/ status code
 	return $response
 		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);
+		->withStatus(200);*/
 }
 
 // Define app routes
@@ -126,7 +127,7 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$users = User::getAllUsers($filterVal, $params['archived'] ?? false);
 	if (empty($users)) {
-		return badRequest404('no Users Found', $response);
+		return badRequest404('no users Found', $response);
 	}
 	//return review info based on ID
 	$response->getBody()->write(json_encode($users));
