@@ -147,7 +147,7 @@ $(document).ready(function () {
 						// prevent form from submitting to action target
 						e.preventDefault();
 						// attempt to create the new user
-						$.when(createNewUser(reviewObj)).then(
+						$.when(createNewUser()).then(
 							// successfully created the user
 							function (successfulNewUserResponse) {
 								// get the new users id
