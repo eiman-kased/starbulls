@@ -64,7 +64,7 @@ function createNewReview(reviewObj, userObj = null) {
 			// if review was at least 3 out of 5
 			if (reviewObj.score > 3) {
 				// thank the reviewer
-				alert('Thank you for your review '+ userFName );
+				alert('Thank you for your review ' + userFName);
 				// otherwise
 			} else {
 				// apologize
@@ -163,9 +163,9 @@ $(document).ready(function () {
 							// failed to create the new user
 							function (invalidNewUserResponse) {
 								// check the status code to see if we sent bad data
-								if(invalidNewUserResponse.status == 400){
+								if (invalidNewUserResponse.status == 400) {
 									// alert the user to the error so they can fix it
-									alert('there was an error creating your account: '+invalidNewUserResponse.responseJSON.message);
+									alert('there was an error creating your account: ' + invalidNewUserResponse.responseJSON.message);
 									console.error('invalid new user request:', invalidNewUserResponse.responseJSON.message);
 									// TODO highlight the offending field
 								}
