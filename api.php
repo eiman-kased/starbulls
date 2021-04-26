@@ -319,7 +319,7 @@ $app->delete('/user/{userId}', function (Request $request, Response $response, a
 	//archive user
 	$user->archive();
 
-	return sendResponse(["data" => $data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response);
 });
 
 /********* REVIEW ROUTES *********/
@@ -332,7 +332,7 @@ $app->get('/reviews', function (Request $request, Response $response, array $arg
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$reviews = Review::getAllReviews($filterVal, $params['archived'] ?? false);
 	//return review info based on ID
-	return sendResponse(["data" => $data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response);
 });
 
 // /review/{reviewID} - displays the info about a specific review
@@ -347,7 +347,7 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 
 	$review = Review::getReviewByID($reviewID);
 	//return review info based on ID
-	return sendResponse(["data" => $data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response);
 });
 
 //review/new  Creates a new review
@@ -433,7 +433,7 @@ $app->delete('/review/{reviewId}', function (Request $request, Response $respons
 
 	$review->archive();
 
-	return sendResponse(["data" => $data], 200, $response)
+	return sendResponse(["data" => $data], 200, $response);
 });
 
 // Run app
