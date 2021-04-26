@@ -23,16 +23,16 @@ function sendResponse($data, int $code, Response $response)
 	} else {
 		$code = 500;
 	}
-		// return response with 201 (added ok) code
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus($code);
+	// return response with 201 (added ok) code
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus($code);
 }
 
 // 400 response
 function badRequestResponse(string $message, Response $response)
 {
-	return sendResponse(array("message" => $message), 400, $response);
+	return sendResponse(["message" => $message], 400, $response);
 }
 
 //404 response
