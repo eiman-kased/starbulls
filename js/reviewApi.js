@@ -164,6 +164,7 @@ $(document).ready(function () {
 									alert('there was an error creating your account: ' + invalidNewUserResponse.responseJSON.message);
 									console.error('invalid new user request:', invalidNewUserResponse.responseJSON.message);
 									// TODO highlight the offending field
+									$("[name=" +invalidNewUserResponse.responseJSON.field[0]+"]").focus();
 								}
 							});
 					});
