@@ -177,20 +177,17 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
-
 	//set preg_match regex for name - will be used for first and last name
 	$nameRegEx = '/^[a-z ,.\'-]+$/';
-
-	//check name input against string pattern 
+	//check first name input against string pattern 
 	if (!preg_match($nameRegEx, $body->first_name)) {
 		//set response for invalid name format
-		return badRequest('invalid name character included', $response);
+		return badRequest400('invalid name character included', $response);
 	}
-
 	//check last_name format
 	if (!preg_match($nameRegEx, $body->last_name)) {
 		//set response for invalid name format
-		return badRequest('invalid name character included', $response);
+		return badRequest400('invalid name character included', $response);
 	}
 
 	/* Check phone number
@@ -207,14 +204,13 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	//check user input against string pattern
 	if (!preg_match($numberRegEx, $body->phone)) {
 		//set response message for invalid format
-		return badRequest('invalid format for phone number', $response);
+		return badRequest400('invalid format for phone number', $response);
 	}
-
 	//output of function set to userPhone w/ this format (###) ###-####
 	$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
 	//if length of phone isn't equal to ten return an error
 	if (strlen($userPhone) !== 10) {
-		return badRequest('phone number must be 10 digits', $response);
+		return badRequest400('phone number must be 10 digits', $response);
 	}
 
 	// create user from request values
@@ -235,7 +231,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	$id = intval($args['id']);
 	// check validity of id
 	if (!$id) {
-		// set a message to explain what broke
+		// set the response message
 		return badRequest400('invalid id provided', $response);
 	}
 
