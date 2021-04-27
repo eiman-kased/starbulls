@@ -26,7 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<div class="row gx-0">
 			<div id="indexCarousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner hero-specials">
-					<img src="imgs/cofee1.png">
+					<img src="imgs/coffee1.png">
 					<div class="carousel-item active hero-text my-4">
 						<div class="">
 							<h2>Only the best of the best here at StarBulls</h2>
