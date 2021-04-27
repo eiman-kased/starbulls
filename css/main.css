@@ -15,7 +15,6 @@ p {
 	background-color: #048004;
 }
 
-
 h1 {
 	text-align: center;
 	color: white;
@@ -36,7 +35,6 @@ h3 {
 }
 
 .container {
-	display: inline-block;
 	width: 100%;
 }
 
@@ -147,7 +145,7 @@ footer {
 }
 
 #hours h4 {
-	color: #048004;
+	color: #000000;
 }
 
 .table td {
@@ -155,20 +153,11 @@ footer {
 	font-weight: 800;
 }
 
-
 #hours th, td {
 	color: black;
 	border: 2px solid black;
 	text-align: center;
 	margin-top: 2em;
-}
-
-.review {
-	background-color: rgba(122, 242, 132, 0.461);
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	border-radius: 6px;
-	text-align: center;
-	padding: 6%;
 }
 
 /* Social Media Call to Action */
@@ -213,46 +202,13 @@ footer {
 
 /* Review and Sign up Forms */
 
-#userAccount {
-	font-family: 'Montserrat', Arial, sans-serif;
-	font-size: larger;
-	background-color: rgb(83, 184, 69);
-	margin: auto;
-	border: 5px;
-	border-radius: 10px;
-	border-style: outset;
-}
-
-#userForm {
-	display: inline-block;
-	padding: 5px 20px;
-}
-
 .btn-outline-success {
 	color: black !important;
-}
-
-#reviewForm {
-	font-family: 'Montserrat', Arial, sans-serif;
-	font-size: larger;
-	background-color: rgb(83, 184, 69);
-	margin: auto;
-	border: 0.4rem;
-	border-radius: 0.5rem;
-	border-style: outset;
 }
 
 .form-control:focus {
 	border-color: rgb(27, 61, 22);
 	box-shadow: inset 0 1px 1px rgba(14, 31, 11, 0.075), 0 0 8px rgba(12, 27, 10, 0.6);
-}
-
-.colform {
-	padding-bottom: 15px;
-}
-
-.container.inputbox {
-	display: flex;
 }
 
 /* Reviews Carousel  */
@@ -270,24 +226,30 @@ footer {
 
 /* Customer Testimonials */
 
-#testimonials {
-	font-family: 'Montserrat', Arial, sans-serif;
-	background-color: rgb(83, 184, 69);
+.reviewSectionForm {
+	margin: 4rem auto;
+	text-align: left;
+	height: 100%;
+}
+
+.mainContent {
+	background-color: hsl(127, 72%, 82%);
 	border: 0.4rem;
 	border-radius: 0.5rem;
 	border-style: outset;
 	padding: 1rem;
-	margin: 2rem;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#reviewCarousel {
+	margin: auto;
 }
 
 .carouselReviews {
-	position:relative;
+	position: relative;
 	width: 100%;
-}
-
-.review-item {
-	width: 100%;
-	padding: 0 2rem 2rem 2rem;
+	padding: 2rem;
 }
 
 #reviewIcon {
@@ -302,7 +264,8 @@ footer {
 
 blockquote {
 	font-style: italic;
-	font-weight: 90;
+	font-weight:600;
+	text-align: left;
 	padding: 1rem 1rem 0rem 3rem;
 	position: relative;
 }
@@ -321,10 +284,10 @@ blockquote::before {
 .customerReview {
 	background-color: #CEFDCE;
 	border-radius: 1rem;
+	border: .2em solid #07DF07;
 	border-left: 1.5em solid #07DF07;
 	padding: 5%;
 	margin-top: 2%;
-	box-shadow: 0.5rem 0.5rem 1rem black;
 }
 
 .reviewEmail {

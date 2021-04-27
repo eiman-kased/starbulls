@@ -32,7 +32,7 @@ function getAllReviews() {
 			});
 		})
 		.fail(function (err) {
-			console.error(err)
+			console.log(err)
 		});
 }
 
@@ -64,7 +64,7 @@ function createNewReview(reviewObj, userObj = null) {
 			// if review was at least 3 out of 5
 			if (reviewObj.score > 3) {
 				// thank the reviewer
-				alert('Thank you for your review '+ userFName );
+				alert('Thank you for your review ' + userFName);
 				// otherwise
 			} else {
 				// apologize
@@ -78,7 +78,7 @@ function createNewReview(reviewObj, userObj = null) {
 			// alert the user there was an issue
 			alert('there was an error submitting your review: ' + reviewResponse.responseJSON.message);
 			// log the specific response
-			console.error(reviewResponse);
+			console.log(reviewResponse);
 		}
 	);
 }
@@ -89,7 +89,7 @@ function createNewUser() {
 		"last_name": $('[name="lastName"]').val(),
 		"email": $('[name="userEmail"]').val(),
 		"password": $('[name="password"]').val(),
-		"phone": $('[name="tel"]').val()
+		"phone": $('[name="phone"]').val()
 	};
 
 	userSettings = {
@@ -131,23 +131,19 @@ $(document).ready(function () {
 			function (invalidUserResponse) {
 				// check if user not found
 				if (invalidUserResponse.status === 404) {
-					// hide review form
-					$("#IndexReviewForm").hide();
-					// show new user form
-					$("#IndexUserForm").show();
 					// set email value to be the same as the review form
-					$("#IndexUserForm #email").val($("#userEmail").val());
+					$("#userForm #email").val($("#userEmail").val());
 					// set user email field to readonly
-					$("#IndexUserForm #email").attr('readonly', 'readonly');
+					$("#userForm #email").attr('readonly', 'readonly');
 					// set focus to first name field
-					$("#IndexUserForm #firstName").focus();
+					$("#userForm #firstName").focus();
 
 					// attach submit event handler to user form
 					$("#userForm").submit(function (e) {
 						// prevent form from submitting to action target
 						e.preventDefault();
 						// attempt to create the new user
-						$.when(createNewUser(reviewObj)).then(
+						$.when(createNewUser()).then(
 							// successfully created the user
 							function (successfulNewUserResponse) {
 								// get the new users id
@@ -163,11 +159,12 @@ $(document).ready(function () {
 							// failed to create the new user
 							function (invalidNewUserResponse) {
 								// check the status code to see if we sent bad data
-								if(invalidNewUserResponse.status == 400){
+								if (invalidNewUserResponse.status == 400) {
 									// alert the user to the error so they can fix it
-									alert('there was an error creating your account: '+invalidNewUserResponse.responseJSON.message);
-									console.error('invalid new user request:', invalidNewUserResponse.responseJSON.message);
+									alert('there was an error creating your account: ' + invalidNewUserResponse.responseJSON.message);
+									console.log('invalid new user request:', invalidNewUserResponse.responseJSON.field);
 									// TODO highlight the offending field
+									$('[name="' +invalidNewUserResponse.responseJSON.field[0]+'"]').focus().addClass("is-invalid");
 								}
 							});
 					});
@@ -176,7 +173,7 @@ $(document).ready(function () {
 					// alert the user there was an issue
 					alert('there was an issue, please try again later');
 					// log the error
-					console.error('error finding ' + userEmail + ': ' + invalidUserResponse.responseJSON.message);
+					console.log('error finding ' + userEmail + ': ' + invalidUserResponse.responseJSON.message);
 				}
 			});
 	});
