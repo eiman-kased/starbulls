@@ -61,6 +61,8 @@ function createNewReview(reviewObj, userObj = null) {
 	$.ajax(reviewSettings).then(
 		// successfully created new review
 		function (successfulReviewResponse) {
+			// clear the form
+			$('.reviewSectionForm').trigger('reset');
 			// if review was at least 3 out of 5
 			if (reviewObj.score > 3) {
 				// thank the reviewer
@@ -72,8 +74,6 @@ function createNewReview(reviewObj, userObj = null) {
 			}
 			// log successful review with id
 			console.log('review ' + successfulReviewResponse.id + ' created successfully');
-			// scroll to the top of page after successful response
-			$(window).scrollTop(0);
 		},
 		// unsuccessful review submission
 		function (reviewResponse) {
@@ -155,12 +155,6 @@ $(document).ready(function () {
 									reviewObj.userID = userID
 									// attempt to create the review
 									createNewReview(reviewObj, successfulNewUserResponse);
-									// reset review form
-									$("#reviewForm").trigger('reset');
-									//reset user form
-									$("#userForm").trigger('reset');
-									// scroll to the top of page after user and review are created 
-									$(window).scrollTop(0);
 								}
 							},
 							// failed to create the new user
