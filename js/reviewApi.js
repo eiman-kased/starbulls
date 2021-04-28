@@ -1,3 +1,9 @@
+
+function showUserForm() {
+	$('#userForm').show();
+	$('#showSignUpBtn').hide();
+}
+
 function getAllReviews() {
 	var settings = {
 		"url": "/reviews",

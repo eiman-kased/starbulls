@@ -202,8 +202,24 @@ footer {
 
 /* Review and Sign up Forms */
 
-.btn-outline-success {
-	color: black !important;
+
+.reviewSectionForm {
+	width: 80%;
+	margin: 4rem auto;
+	text-align: left;
+	height: 100%;
+}
+
+.centerBtn {
+	text-align: center;
+}
+
+#userForm {
+	display: none;
+}
+
+#showSignUpBtn {
+	text-align: center;
 }
 
 .form-control:focus {
@@ -212,6 +228,16 @@ footer {
 }
 
 /* Reviews Carousel  */
+
+.mainContent {
+	background-color: hsl(127, 72%, 82%);
+	border: 0.4rem;
+	border-radius: 0.5rem;
+	border-style: outset;
+	padding: 1rem;
+	text-align: center;
+	margin: 0 auto;
+}
 
 .hero-specials {
 	max-height: 25rem;
@@ -222,24 +248,6 @@ footer {
 	min-height: 25rem;
 	max-height: fit-content;
 	object-fit: cover;
-}
-
-/* Customer Testimonials */
-
-.reviewSectionForm {
-	margin: 4rem auto;
-	text-align: left;
-	height: 100%;
-}
-
-.mainContent {
-	background-color: hsl(127, 72%, 82%);
-	border: 0.4rem;
-	border-radius: 0.5rem;
-	border-style: outset;
-	padding: 1rem;
-	text-align: center;
-	margin: 0 auto;
 }
 
 #reviewCarousel {
