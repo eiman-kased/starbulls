@@ -124,10 +124,58 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 			<div class="row">
 				<div class="col-sm-12 col-lg-6">
-					<?php include 'forms/review.form.php'; ?>
+					<form id="reviewForm" method="post" class="reviewSectionForm" action="">
+						<h3 class="fw-bold">Tell Us About Your Experience at Starbulls</h3>
+						<div class="row mb-3">
+							<div class="col-9">
+								<label class="form-label" for="userEmail">Enter an Email</label>
+								<input type="email" id="userEmail" class="form-control" name="userEmail" placeholder="email@example.com" required />
+							</div>
+							<div class="col">
+								<label class="form-label" for="reviewScore">Score Rating</label>
+								<input type="number" id="reviewScore" class="form-control" step="0.5" name="score" min="0" max="5" required />
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col">
+								<label class="form-label" for="comment">Please Leave a Message Here</label>
+								<textarea id="comment" class="form-control" name="comment" rows="5" cols="50" required></textarea>
+							</div>
+						</div>
+						<input type="submit" id="ReviewSubmit" class="btn btn-success" name="reviewSubmit" value="Submit" />
+					</form>
 				</div>
 				<div class="col-sm-12 col-lg-6">
-					<?php include 'forms/user.form.php'; ?>
+					<form id="userForm" class="reviewSectionForm" action='' method="post">
+						<h3 class="fw-bold">Sign up for a Starbulls Account</h3>
+						<div class="row mb-3">
+							<div class="col-6">
+								<label class="form-label" for="firstName">First Name</label>
+								<input type="text" name="firstName" id="firstName" class="form-control" required />
+							</div>
+							<div class="col-6">
+								<label class="form-label" for="lastName">Last Name</label>
+								<input type="text" name="lastName" id="lastName" class="form-control" required />
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-6">
+								<label class="form-label" for="phone">Phone Number</label>
+								<input type="tel" name="phone" id="phone" class="form-control" />
+							</div>
+							<div class="col-6">
+								<label class="form-label" for="email">Enter an Email</label>
+								<input type="email" id="email" name="userEmail" class="form-control" placeholder="email@example.com" required />
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-6">
+								<label class="form-label" for="password">Enter your Password (8 characters minimum)</label>
+								<input type="password" id="password" class="form-control" name="password" minlength="8" required />
+							</div>
+						</div>
+						<input type="submit" class="btn btn-success" name="userSubmit" value="Submit" />
+					</form>
 				</div>
 			</div>
 		</div>
