@@ -266,7 +266,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		if (!$stringLength >= 1 && !$stringLength <= 30) {
 			return badRequestResponse([
 				'field' => ['last_name'],
-				'message' => 'last name must be at least one character'
+				'message' => 'last name must be between 1 and 30 characters'
 			], $response);
 		}
 		//set last name to $user
@@ -283,10 +283,9 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	}
 
 	if (isset($body->phone)) {
-		//regex pattern set to a string
-		$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
+		$userPhone = $body->phone;
 		//check user input against string pattern
-		if (!preg_match($numberRegEx, $body->phone)) {
+		if (!preg_match($numberRegEx, $userPhone)) {
 			//return 400 error message
 			return badRequestResponse([
 				'field' => ['phone'],
@@ -295,7 +294,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		}
 
 		//output of function set to userPhone w/ this format (###) ###-####
-		$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
+		$userPhone = preg_replace($numberRegEx, '$1$2$3', $userPhone);
 		//if length of phone isn't equal to ten return an error
 		if (strlen($userPhone) !== 10) {
 			return badRequestResponse([
