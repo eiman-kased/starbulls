@@ -72,6 +72,8 @@ function createNewReview(reviewObj, userObj = null) {
 			}
 			// log successful review with id
 			console.log('review ' + successfulReviewResponse.id + ' created successfully');
+			// scroll to the top of page after successful response
+			$(window).scrollTop(0);
 		},
 		// unsuccessful review submission
 		function (reviewResponse) {
@@ -137,7 +139,6 @@ $(document).ready(function () {
 					$("#userForm #email").attr('readonly', 'readonly');
 					// set focus to first name field
 					$("#userForm #firstName").focus();
-
 					// attach submit event handler to user form
 					$("#userForm").submit(function (e) {
 						// prevent form from submitting to action target
@@ -154,6 +155,12 @@ $(document).ready(function () {
 									reviewObj.userID = userID
 									// attempt to create the review
 									createNewReview(reviewObj, successfulNewUserResponse);
+									// reset review form
+									$("#reviewForm").trigger('reset');
+									//reset user form
+									$("#userForm").trigger('reset');
+									// scroll to the top of page after user and review are created 
+									$(window).scrollTop(0);
 								}
 							},
 							// failed to create the new user
@@ -164,7 +171,7 @@ $(document).ready(function () {
 									alert('there was an error creating your account: ' + invalidNewUserResponse.responseJSON.message);
 									console.log('invalid new user request:', invalidNewUserResponse.responseJSON.field);
 									// TODO highlight the offending field
-									$('[name="' +invalidNewUserResponse.responseJSON.field[0]+'"]').focus().addClass("is-invalid");
+									$('[name="' + invalidNewUserResponse.responseJSON.field[0] + '"]').focus().addClass("is-invalid");
 								}
 							});
 					});

@@ -21,13 +21,6 @@ $password = '';
 // set an empty error array
 $error = array();
 
-if (isset($_SESSION['review_post']) && !(isset($_POST['userSubmit']))) {
-	// if redirected an alert message will prompt user to signup
-	echo '<script language="javascript">';
-	echo 'alert("Please complete signup to save your review!")';
-	echo '</script>';
-}
-
 // check to see if $_SESSION contains a review in case we were redirected
 if (isset($_SESSION['review_post'])) {
 	// set the review.form data as $_POST review
@@ -157,7 +150,7 @@ if (isset($_POST['userSubmit'])) {
 		</div>
 		<div class="col-6">
 			<label class="form-label" for="email">Enter an Email</label>
-			<input type="email" id="email" name="userEmail" class="form-control" placeholder="email@example.com" <?= (isset($_POST['userEmail']) ? 'value="' . $_POST['userEmail'] . '"' : '') ?> <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?>
+			<input type="email" id="email" name="userEmail" class="form-control" placeholder="email@example.com" <?= (isset($error['email']) ? 'class="is-invalid"' : '') ?> required /> <?= $error['email'] ?? '' ?>
 		</div>
 	</div>
 	<div class="row mb-3">
