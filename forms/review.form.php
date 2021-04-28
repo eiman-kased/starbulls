@@ -56,7 +56,10 @@ if (isset($_POST['reviewSubmit'])) {
 		// call session_start so we can utilize the $_SESSION super global to pass data to the user form
 		if (session_status() === PHP_SESSION_NONE) {
 			session_start();
+		} else {
 		}
+
+
 
 		// set review_submit element to the JSON value of review object
 		$_SESSION['review_submit'] = json_encode($review);
@@ -74,13 +77,15 @@ if (isset($_POST['reviewSubmit'])) {
 
 		//save $review object to database
 		$review->saveToDB();
-		if ($review->getUserID()) {
+		if ($review->getID()) {
+			session_destroy();
 			echo '<script language="javascript">';
 			echo 'alert("Thank you for your review!")';
 			echo '</script>';
 		}
 	}
 }
+
 ?>
 <form id="reviewForm" method="post" class="reviewSectionForm" action="">
 	<h3 class="fw-bold">Tell Us About Your Experience at Starbulls</h3>

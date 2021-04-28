@@ -136,6 +136,8 @@ if (isset($_POST['userSubmit'])) {
 	echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
 	echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
 }
+
+session_destroy();
 ?>
 
 <form id="userForm" class="reviewSectionForm" action='' method="post">
