@@ -142,6 +142,12 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 
 // Create new user
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
+
+	//set preg_match regex for name -will be used for first and last name
+	$nameRegEx = '/^[a-z ,.\'-]+$/i';
+
+	//regex pattern for phone number
+	$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
 	// get request body
 	$body = json_decode($request->getBody());
 	//check first name input against string pattern 
@@ -203,6 +209,12 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 
 //Change info for a user that already exists
 $app->post('/user/{id}', function (Request $request, Response $response, array $args) {
+
+	//set preg_match regex for name -will be used for first and last name
+	$nameRegEx = '/^[a-z ,.\'-]+$/i';
+
+	//regex pattern for phone number
+	$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
 	// get int value of requested id
 	$id = intval($args['id']);
 	// check validity of id
@@ -259,7 +271,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 				'message' => 'invalid character in last name'
 			], $response);
 		}
-		
+
 		//string length of last name
 		$stringLength = strlen($userLastName);
 		//if length of lastName isn't greater than or equal to one or less than or equal to thirty return an error
@@ -272,7 +284,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		//set last name to $user
 		$user->setLastName($userLastName);
 	}
-	
+
 	if (isset($body->email)) {
 		// TODO check if valid email
 		$user->setEmail($body->email);
