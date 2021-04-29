@@ -14,11 +14,67 @@ require __DIR__ . '/src/Review.php';
 // TODO Remove before release
 // var_dump($_SERVER);
 
-//set preg_match regex for name -will be used for first and last name
-$nameRegEx = '/^[a-z ,.\'-]+$/i';
 
-//regex pattern for phone number
-$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
+/**
+ * validates $name passed into function for length and characters
+ * 
+ * '/^[a-z ,.\'-]+$/i' name must match this regex
+ * and must be between 1 and 30 characaters inclusively
+ *  
+ * @param string $name
+ * @return boolean
+ */
+function validateName(string $name): bool
+{
+	//check length
+	//length of first name
+	$stringLength = strlen($name);
+
+	//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
+	if (!$stringLength >= 1 && !$stringLength <= 30) {
+		return false;
+	}
+	//check for bad characters
+	//set preg_match regex for name -will be used for first and last name
+	$nameRegEx = '/^[a-z ,.\'-]+$/i';
+	//check name input against string pattern 
+	if (!preg_match($nameRegEx, $name)) {
+		//set response for invalid name format
+		return false;
+	}
+	//passes validation
+	return true;
+}
+
+/**
+ * validates phone number against regex pattern
+ * 
+ * Accepted patterns for phone-number
+ * ###-###-####
+ * (###)###-####
+ * (###) ###-####
+ * ##########
+ * ### ### ####
+ *
+ * @param string $phone
+ * @return boolean|string
+ */
+function validatePhone(string $phone)
+{
+	//check against regex pattern 
+	//regex pattern for phone number
+	$numberRegEx = '/^\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})$/';
+
+	//check user input against string pattern
+	if (!preg_match($numberRegEx, $phone)) {
+		//set response message for invalid format
+		return false;
+	}
+	$userPhone = preg_replace($numberRegEx, '$1$2$3', $phone);
+	return $userPhone;
+}
+
+
 
 //200 status code - ok
 function sendResponse($data, int $code, Response $response)
@@ -142,43 +198,28 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 
 // Create new user
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
-
-	//set preg_match regex for name -will be used for first and last name
-	$nameRegEx = '/^[a-z ,.\'-]+$/i';
-
-	//regex pattern for phone number
-	$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
 	// get request body
 	$body = json_decode($request->getBody());
+
 	//check first name input against string pattern 
-	if (!preg_match($nameRegEx, $body->first_name)) {
+	if (!validateName($body->first_name)) {
 		//set response for invalid name format
 		return badRequestResponse([
 			'field' => ['first_name'],
-			'message' => 'invalid character in first name',
+			'message' => 'invalid character or length of first name',
 		], $response);
 	}
 	//check last_name format
-	if (!preg_match($nameRegEx, $body->last_name)) {
+	if (!validateName($body->last_name)) {
 		//set response for invalid name format
 		return badRequestResponse([
 			'field' => ['last_name'],
-			'message' => 'invalid character in last name',
+			'message' => 'invalid character or length of last name',
 		], $response);
 	}
 
-	/* Check phone number
-	Accepted patterns for phone-number
-	###-###-####
-	(###)###-####
-	(###) ###-####
-	##########
-	### ### ####
-	*/
-
-
-	//check user input against string pattern
-	if (!preg_match($numberRegEx, $body->phone)) {
+	// Check phone number
+	if (!validatePhone($body->phone)) {
 		//set response message for invalid format
 		return badRequestResponse([
 			'field' => ['phone'],
@@ -239,7 +280,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	if (isset($body->first_name)) {
 		$userFirstName = $body->first_name;
 		//check name input against string pattern 
-		if (!preg_match($nameRegEx, $userFirstName)) {
+		if (!validateName($userFirstName)) {
 			//set response for invalid name format
 			return badRequestResponse([
 				'field' => ['first_name'],
@@ -247,16 +288,6 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			], $response);
 		}
 
-		//length of first name
-		$stringLength = strlen($userFirstName);
-
-		//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
-		if (!$stringLength >= 1 && !$stringLength <= 30) {
-			return badRequestResponse([
-				'field' => ['first_name'],
-				'message' => 'first name must be between 1 and 30 characters'
-			], $response);
-		}
 		//set first name to $user
 		$user->setFirstName($userFirstName);
 	}
