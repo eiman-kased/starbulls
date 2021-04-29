@@ -13,6 +13,99 @@ require __DIR__ . '/src/Review.php';
 
 // TODO Remove before release
 // var_dump($_SERVER);
+
+
+/**
+ * validates $name passed into function for length and characters
+ * 
+ * '/^[a-z ,.\'-]+$/i' name must match this regex
+ * and must be between 1 and 30 characters inclusively
+ * 
+ * Returns formatted phone number if valid or false if invalid
+ *  
+ * @param string $name
+ * @return boolean|string
+ */
+function validateName(string $name)
+{
+
+	//check length
+	//length of first name
+	$stringLength = strlen($name);
+
+	//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
+	if (!($stringLength >= 1 && $stringLength <= 30)) {
+		return false;
+	}
+	//check for bad characters
+	//set preg_match regex for name -will be used for first and last name
+	$nameRegEx = '/^[a-z ,.\'-]+$/i';
+	//check name input against string pattern 
+	if (!preg_match($nameRegEx, $name)) {
+		//set response for invalid name format
+		return false;
+	}
+
+	return true;
+}
+
+/**
+ * validates phone number against regex pattern
+ * 
+ * Accepted patterns for phone-number
+ * ###-###-####
+ * (###)###-####
+ * (###) ###-####
+ * ##########
+ * ### ### ####
+ *
+ * @param string $phone
+ * @return boolean|string
+ */
+function validatePhone(string $phone)
+{
+	//check against regex pattern 
+	//regex pattern for phone number
+	$numberRegEx = '/^\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})$/';
+
+	//check user input against string pattern
+	if (!preg_match($numberRegEx, $phone)) {
+		//set response message for invalid format
+		return false;
+	}
+
+	$userPhone = preg_replace($numberRegEx, '$1$2$3', $phone);
+	return $userPhone;
+}
+
+
+
+//200 status code - ok
+function sendResponse($data, int $code, Response $response)
+{
+	if ($data instanceof JsonSerializable || is_array($data)) {
+		$response->getBody()->write(json_encode($data));
+	} else {
+		$code = 500;
+	}
+	// return response with 201 (added ok) code
+	return $response
+		->withHeader('Content-Type', 'application/json')
+		->withStatus($code);
+}
+
+// 400 response
+function badRequestResponse(array $data, Response $response)
+{
+	return sendResponse($data, 400, $response);
+}
+
+//404 response
+function notFoundResponse(string $message, Response $response)
+{
+	return sendResponse(["message" => $message], 404, $response);
+}
+
 /**
  * Instantiate App
  *
@@ -39,7 +132,6 @@ $app = AppFactory::create();
  */
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
-
 // sets the base path to allow systems with different configurations to run the same, mostly
 $app->setBasePath((function () {
 	// literally everything in here is to avoid typing Week_whatever each time this gets copied for the next week. DO NOT DO THIS!!!
@@ -54,13 +146,9 @@ $app->setBasePath((function () {
 	return '';
 })()); // Append route with api cuz I don't want to write that every time also
 
-
 // Define app routes
 $app->get('/test', function (Request $request, Response $response, $args) {
-	$response->getBody()->write(json_encode($_SERVER));
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);
+	return sendResponse($_SERVER, 200, $response);
 });
 
 /********* USER ROUTES *********/
@@ -73,18 +161,10 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$users = User::getAllUsers($filterVal, $params['archived'] ?? false);
 	if (empty($users)) {
-		$response->getBody()->write(json_encode([
-			"message" => "no Users Found"
-		]));
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(404);
+		return notFoundResponse('no users Found', $response);
 	}
 	//return review info based on ID
-	$response->getBody()->write(json_encode($users));
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);
+	return sendResponse($users, 200, $response);
 });
 
 //finds User by email or id
@@ -93,13 +173,8 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	$value = $args['value'];
 	//set value check if 0
 	if ($value === '0') {
-		//set error message
-		$response->getBody()->write(json_encode(
-			['message' => 'zero is not a valid identifier']
-		));
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		//set error message -call bad request
+		return badRequestResponse(['message' => 'zero is not a valid identifier'], $response);
 	}
 	//create user object
 	$user = false;
@@ -107,82 +182,61 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 	if (preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/i', $value)) {
 		// find user by email
 		$user = User::findUserByEmail($value);
-	} else if (!preg_match('/\D/', $value)) { //check if value is integers only
+	} //check if value is integers only
+	else if (!preg_match('/\D/', $value)) {
 		//assign output of function to $user
 		$user = User::findUserById($value);
 	} else {
 		//set error message
-		$response->getBody()->write(
-			json_encode(
-				['message' => $value . ' is not a valid identifier, must be email or integer id']
-			)
-		);
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		return badRequestResponse(['message' => $value . ' is not a valid identifier, must be email or integer id'], $response);
 	}
+
 	// if we got nothing back from the user
 	if (empty($user)) {
 		// set not found message
-		$response->getBody()->write(json_encode([
-			'message' => 'user not found'
-		]));
-		// return 404
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(404);
+		return notFoundResponse('user not found', $response);
 	}
 	//json encode the user data and write to the response body
-	$response->getBody()->write(json_encode($user));
-	//return the response w/ status code
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);
+	return sendResponse($user, 200, $response);
 });
 
 // Create new user
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
+	//create empty array
+	$errors = array();
 
-	/* Check phone number
-	Accepted patterns for phone-number
-	###-###-####
-	(###)###-####
-	(###) ###-####
-	##########
-	### ### ####
-	*/
+	//check first name input against string pattern 
+	if (!validateName($body->first_name)) {
+		//set response for invalid name format
+		$errors[] = [
+			'field' => ['first_name'],
+			'message' => 'invalid character or length of first name',
+		];
+	}
+	//check last_name format
+	if (!validateName($body->last_name)) {
+		//set response for invalid name format
+		$errors[] = [
+			'field' => ['last_name'],
+			'message' => 'invalid character or length of last name',
+		];
+	}
 
-	//regex pattern set to a string
-	$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
-	//check user input against string pattern
-	if (!preg_match($numberRegEx, $body->phone)) {
+	// Check phone number
+	$userPhone = validatePhone($body->phone);
+	if (!$userPhone) {
 		//set response message for invalid format
-		$response->getBody()->write(json_encode([
+		$errors[] = [
 			'field' => ['phone'],
 			'message' => 'invalid format for phone number',
-		]));
-		//return the error with an invalid request status
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		];
 	}
-
-	//output of function set to userPhone w/ this format (###) ###-####
-	$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
-	//if length of phone isn't equal to ten return an error
-	if (strlen($userPhone) !== 10) {
-		$response->getBody()->write(json_encode([
-			'field' => ['phone'],
-			'message' => 'phone number must be 10 digits'
-		]));
-		//return the error w/ status code
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+	//check if any errors were reported
+	if (!empty($errors)) {
+		return badRequestResponse($errors, $response);
 	}
-
 
 	// create user from request values
 	$user = new User($body->first_name, $body->last_name, $body->email, $body->password, $userPhone, $body->preferred ?? false);
@@ -198,49 +252,60 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 
 //Change info for a user that already exists
 $app->post('/user/{id}', function (Request $request, Response $response, array $args) {
-	// get int value of requested id
 	$id = intval($args['id']);
+	//Create empty array for errors
+	$errors = array();
 	// check validity of id
 	if (!$id) {
-		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(400);
+		// add error message to error array 
+		$errors[] = ['message' => 'invalid id provided'];
 	}
 
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
 	if (!$user) {
-		// set the response message
-		$response->getBody()->write(json_encode([
-			'message' => 'no user found for id:' . $id,
-		]));
-		// return the error and a 404 status
-		return $response
-			->withHeader('Content-Type', 'application/json')
-			->withStatus(404);
+		// set the response message for 404 not found
+		return notFoundResponse('no user found for id', $response);
 	}
 
 	// get the request as a stdObject
 	$body = json_decode($request->getBody());
 
-
-	//Update user info
+	//Update user info that already exists
 	if (isset($body->first_name)) {
-		$user->setFirstName($body->first_name);
+		$userFirstName = $body->first_name;
+		//check name input against string pattern 
+		if (!validateName($userFirstName)) {
+			// pass error message through error array 
+			$errors[] = [
+				'field' => ['first_name'],
+				'message' => 'invalid character or length of first name'
+			];
+		}
+
+		//set first name to $user
+		$user->setFirstName($userFirstName);
 	}
 
 	if (isset($body->last_name)) {
-		$user->setLastName($body->last_name);
+		$userLastName = $body->last_name;
+		//check last_name format
+		if (!validateName($userLastName)) {
+			//pass error message through error array 
+			$errors[] = [
+				'field' => ['last_name'],
+				'message' => 'invalid character in last name'
+			];
+		}
+
+		//set last name to $user
+		$user->setLastName($userLastName);
 	}
 
 	if (isset($body->email)) {
-		// TODO check if valid email
+		// TODO check if valid email 
+		//TODO if not valid enter error into array
 		$user->setEmail($body->email);
 	}
 
@@ -249,37 +314,23 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	}
 
 	if (isset($body->phone)) {
-		//regex pattern set to a string
-		$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
 		//check user input against string pattern
-		if (!preg_match($numberRegEx, $body->phone)) {
-			//set response message for invalid format
-			$response->getBody()->write(json_encode([
+		$userPhone = validatePhone($body->phone);
+		if (!$userPhone) {
+			//return 400 error message into array
+			$errors[] = [
 				'field' => ['phone'],
 				'message' => 'invalid format for phone number',
-			]));
-			//return the error with an invalid request status
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(400);
+			];
+		} else {
+			$user->setPhoneNumber($userPhone);
 		}
-
-		//output of function set to userPhone w/ this format (###) ###-####
-		$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
-		//if length of phone isn't equal to ten return an error
-		if (strlen($userPhone) !== 10) {
-			$response->getBody()->write(json_encode([
-				'field' => ['phone'],
-				'message' => 'phone number must be 10 digits',
-			]));
-			//return the error w/ status code
-			return $response
-				->withHeader('Content-Type', 'application/json')
-				->withStatus(400);
-		}
-		$user->setPhoneNumber($userPhone);
 	}
-
+	//check for errors in the array
+	if (!empty($errors)) {
+		//return bad response 
+		return badRequestResponse($errors, $response);
+	}
 	// save the changes made to the db
 	$user->saveToDB();
 
@@ -297,32 +348,20 @@ $app->delete('/user/{userId}', function (Request $request, Response $response, a
 	$id = intval($args['userId']);
 	// check validity of id
 	if (!$id) {
-		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response->withStatus(400);
+		// return 400  bad request error for invalid id
+		return badRequestResponse(['message' => 'invalid id provided'], $response);
 	}
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
 	if (!$user) {
-		// set the response message
-		$response->getBody()->write(json_encode([
-			'message' => 'no user found for id:' . $id,
-		]));
-		// return the error and a 404 status
-		return $response->withStatus(404);
+		// return 404 not found error for no user id 
+		return notFoundResponse('no user found for id', $response);
 	}
-
+	//archive user
 	$user->archive();
 
-	$response->getBody()->write(json_encode($user));
-
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);
+	return sendResponse($user, 200, $response);
 });
 
 /********* REVIEW ROUTES *********/
@@ -335,10 +374,7 @@ $app->get('/reviews', function (Request $request, Response $response, array $arg
 	$filterVal = (isset($params['filter-by']) ? $params['filter-by'] . ' ' . $params['filter-val'] : '');
 	$reviews = Review::getAllReviews($filterVal, $params['archived'] ?? false);
 	//return review info based on ID
-	$response->getBody()->write(json_encode($reviews));
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);
+	return sendResponse($reviews, 200, $response);
 });
 
 // /review/{reviewID} - displays the info about a specific review
@@ -348,18 +384,12 @@ $app->get('/review/{reviewID}', function (Request $request, Response $response, 
 	// if that id is not a number or is 0
 	if (!$reviewID) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return badRequestResponse(['message' => 'invalid id provided'], $response);
 	}
+
 	$review = Review::getReviewByID($reviewID);
 	//return review info based on ID
-	$response->getBody()->write(json_encode($review));
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);
+	return sendResponse($review, 200, $response);
 });
 
 //review/new  Creates a new review
@@ -367,30 +397,28 @@ $app->post('/review/new', function (Request $request, Response $response, array 
 	$body = json_decode($request->getBody());
 
 	if (empty($body->score) || empty($body->comment)) {
-		$response->getBody()->write(json_encode([
+		return badRequestResponse([
 			'field' => [
 				'score',
 				'comment',
 			],
 			'message' => 'score and comment cannot be empty',
-		]));
-		return $response->withStatus(400);
+		], $response);
 	}
-	//TODO check validity of userID
+
+
 	if (empty($body->userID) || intval($body->userID) == 0) {
-		$response->getBody(json_encode([
+		return badRequestResponse([
 			'field' => ['userID'],
 			'message' => 'userID must have a value greater than 0',
-		]));
-		return $response->withStatus(400);
+		], $response);
 	}
 
 	if (floatval($body->score) < 0) {
-		$response->getBody(json_encode([
+		return badRequestResponse([
 			'field' => ['score'],
 			'message' => 'score must be greater than 0',
-		]));
-		return $response->withStatus(400);
+		], $response);
 	}
 
 	$review = new Review(floatval($body->score), trim($body->comment), $body->userID);
@@ -411,13 +439,12 @@ $app->post('/review/{reviewId}', function (Request $request, Response $response,
 	// if that id is not a number or is 0
 	if (!$id) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
+		return badRequestResponse([
 			'field' => ['id'],
 			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response->withStatus(400);
+		], $response);
 	}
+
 	$body = json_decode($request->getBody());
 	//check that the review has an id and user id
 	if (intval($id)) {
@@ -468,23 +495,14 @@ $app->delete('/review/{reviewId}', function (Request $request, Response $respons
 	// if that id is not a number or is 0
 	if (!$id) {
 		// set a message to explain what broke
-		$response->getBody()->write(json_encode([
-			'message' => 'invalid id provided',
-		]));
-		// return the error and a invalid request status
-		return $response->withStatus(400);
+		return badRequestResponse(['message' => 'invalid id provided'], $response);
 	}
 	$review = Review::getReviewByID($id);
 
 	$review->archive();
 
-	$response->getBody()->write(json_encode($review));
-
-	return $response
-		->withHeader('Content-Type', 'application/json')
-		->withStatus(200);
+	return sendResponse($review, 200, $response);
 });
-
 
 // Run app
 $app->run();
