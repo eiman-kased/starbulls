@@ -8,7 +8,7 @@ body {
 }
 
 p {
-	font-size: 25px;
+	font-size: 1.5625em;
 }
 
 .header {
@@ -18,20 +18,20 @@ p {
 h1 {
 	text-align: center;
 	color: white;
-	font-size: 60px;
+	font-size: 3.75em;
 	font-weight: 900;
 	padding-top: 4px;
 }
 
 h2 {
-	font-size: 45px;
+	font-size: 2.8125em;
 	text-align: center;
 	font-weight: bold;
 	margin-top: 0.1em;
 }
 
 h3 {
-	font-size: 35px;
+	font-size: 2.1875em;
 }
 
 .container {
@@ -252,6 +252,7 @@ footer {
 	padding: 2rem;
 }
 
+
 #reviewIcon {
 	width: 20%;
 	display: inline-block;
@@ -296,6 +297,14 @@ blockquote::before {
 
 .score {
 	text-align: center;
+}
+
+.review-controlL {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='green' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.review-controlR {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='green' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
 /* social Media icons */
