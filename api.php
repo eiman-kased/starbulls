@@ -20,11 +20,13 @@ require __DIR__ . '/src/Review.php';
  * 
  * '/^[a-z ,.\'-]+$/i' name must match this regex
  * and must be between 1 and 30 characaters inclusively
+ * 
+ * Returns formatted phone number if valid or false if invalid
  *  
  * @param string $name
- * @return boolean
+ * @return boolean|string
  */
-function validateName(string $name): bool
+function validateName(string $name)
 {
 	//check length
 	//length of first name
@@ -42,8 +44,11 @@ function validateName(string $name): bool
 		//set response for invalid name format
 		return false;
 	}
+
+	//output of function set to userPhone w/ this format (###) ###-####
+	$userPhone = preg_replace($numberRegEx, '$1$2$3', $phone);
 	//passes validation
-	return true;
+	return $userPhone;
 }
 
 /**
@@ -219,20 +224,12 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 	}
 
 	// Check phone number
-	if (!validatePhone($body->phone)) {
+	$userPhone = validatePhone($body->phone);
+	if (!$userPhone) {
 		//set response message for invalid format
 		return badRequestResponse([
 			'field' => ['phone'],
 			'message' => 'invalid format for phone number',
-		], $response);
-	}
-	//output of function set to userPhone w/ this format (###) ###-####
-	$userPhone = preg_replace($numberRegEx, '$1$2$3', $body->phone);
-	//if length of phone isn't equal to ten return an error
-	if (strlen($userPhone) !== 10) {
-		return badRequestResponse([
-			'field' => ['phone'],
-			'message' => 'phone number must be 10 digits'
 		], $response);
 	}
 
@@ -250,13 +247,6 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 
 //Change info for a user that already exists
 $app->post('/user/{id}', function (Request $request, Response $response, array $args) {
-
-	//set preg_match regex for name -will be used for first and last name
-	$nameRegEx = '/^[a-z ,.\'-]+$/i';
-
-	//regex pattern for phone number
-	$numberRegEx = '/\(?(\d{3})[\)\s-]*(\d{3})[\s\-]?(\d{4})/';
-	// get int value of requested id
 	$id = intval($args['id']);
 	// check validity of id
 	if (!$id) {
@@ -275,7 +265,6 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	// get the request as a stdObject
 	$body = json_decode($request->getBody());
 
-
 	//Update user info that already exists
 	if (isset($body->first_name)) {
 		$userFirstName = $body->first_name;
@@ -284,7 +273,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			//set response for invalid name format
 			return badRequestResponse([
 				'field' => ['first_name'],
-				'message' => 'invalid character in first name'
+				'message' => 'invalid character or length of first name'
 			], $response);
 		}
 
@@ -295,7 +284,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	if (isset($body->last_name)) {
 		$userLastName = $body->last_name;
 		//check last_name format
-		if (!preg_match($nameRegEx, $userLastName)) {
+		if (!validateName($userLastName)) {
 			//return bad request response 
 			return badRequestResponse([
 				'field' => ['last_name'],
@@ -303,15 +292,6 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 			], $response);
 		}
 
-		//string length of last name
-		$stringLength = strlen($userLastName);
-		//if length of lastName isn't greater than or equal to one or less than or equal to thirty return an error
-		if (!$stringLength >= 1 && !$stringLength <= 30) {
-			return badRequestResponse([
-				'field' => ['last_name'],
-				'message' => 'last name must be between 1 and 30 characters'
-			], $response);
-		}
 		//set last name to $user
 		$user->setLastName($userLastName);
 	}
@@ -328,23 +308,15 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	if (isset($body->phone)) {
 		$userPhone = $body->phone;
 		//check user input against string pattern
-		if (!preg_match($numberRegEx, $userPhone)) {
+		$userPhone = validatePhone($userPhone);
+		if (!$userPhone) {
 			//return 400 error message
 			return badRequestResponse([
 				'field' => ['phone'],
 				'message' => 'invalid format for phone number',
 			], $response);
 		}
-
-		//output of function set to userPhone w/ this format (###) ###-####
-		$userPhone = preg_replace($numberRegEx, '$1$2$3', $userPhone);
-		//if length of phone isn't equal to ten return an error
-		if (strlen($userPhone) !== 10) {
-			return badRequestResponse([
-				'field' => ['phone'],
-				'message' => 'phone number must be 10 digits',
-			], $response);
-		}
+		
 		$user->setPhoneNumber($userPhone);
 	}
 
