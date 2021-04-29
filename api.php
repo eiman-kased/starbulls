@@ -28,12 +28,13 @@ require __DIR__ . '/src/Review.php';
  */
 function validateName(string $name)
 {
+
 	//check length
 	//length of first name
 	$stringLength = strlen($name);
 
 	//if length of firstName isn't greater than or equal to one or less than or equal to thirty return an error
-	if (!$stringLength >= 1 && !$stringLength <= 30) {
+	if (!($stringLength >= 1 && $stringLength <= 30)) {
 		return false;
 	}
 	//check for bad characters
@@ -203,32 +204,38 @@ $app->get('/user/{value}', function (Request $request, Response $response, array
 $app->post('/user/new', function (Request $request, Response $response, array $args) {
 	// get request body
 	$body = json_decode($request->getBody());
+	//create empty array
+	$errors = array();
 
 	//check first name input against string pattern 
 	if (!validateName($body->first_name)) {
 		//set response for invalid name format
-		return badRequestResponse([
+		$errors[] = [
 			'field' => ['first_name'],
 			'message' => 'invalid character or length of first name',
-		], $response);
+		];
 	}
 	//check last_name format
 	if (!validateName($body->last_name)) {
 		//set response for invalid name format
-		return badRequestResponse([
+		$errors[] = [
 			'field' => ['last_name'],
 			'message' => 'invalid character or length of last name',
-		], $response);
+		];
 	}
 
 	// Check phone number
 	$userPhone = validatePhone($body->phone);
 	if (!$userPhone) {
 		//set response message for invalid format
-		return badRequestResponse([
+		$errors[] = [
 			'field' => ['phone'],
 			'message' => 'invalid format for phone number',
-		], $response);
+		];
+	}
+	//check if any errors were reported
+	if (!empty($errors)) {
+		return badRequestResponse($errors, $response);
 	}
 
 	// create user from request values
@@ -246,17 +253,19 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 //Change info for a user that already exists
 $app->post('/user/{id}', function (Request $request, Response $response, array $args) {
 	$id = intval($args['id']);
+	//Create empty array for errors
+	$errors = array();
 	// check validity of id
 	if (!$id) {
-		// set the response message
-		return badRequestResponse(['message' => 'invalid id provided'], $response);
+		// add error message to error array 
+		$errors[] = ['message' => 'invalid id provided'];
 	}
 
 	// look up the user
 	$user = User::findUserById($id);
 	// if no matching user found
 	if (!$user) {
-		// set the response message
+		// set the response message for 404 not found
 		return notFoundResponse('no user found for id', $response);
 	}
 
@@ -268,11 +277,11 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		$userFirstName = $body->first_name;
 		//check name input against string pattern 
 		if (!validateName($userFirstName)) {
-			//set response for invalid name format
-			return badRequestResponse([
+			// pass error message through error array 
+			$errors[] = [
 				'field' => ['first_name'],
 				'message' => 'invalid character or length of first name'
-			], $response);
+			];
 		}
 
 		//set first name to $user
@@ -283,11 +292,11 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 		$userLastName = $body->last_name;
 		//check last_name format
 		if (!validateName($userLastName)) {
-			//return bad request response 
-			return badRequestResponse([
+			//pass error message through error array 
+			$errors[] = [
 				'field' => ['last_name'],
 				'message' => 'invalid character in last name'
-			], $response);
+			];
 		}
 
 		//set last name to $user
@@ -295,7 +304,8 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	}
 
 	if (isset($body->email)) {
-		// TODO check if valid email
+		// TODO check if valid email 
+		//TODO if not valid enter error into array
 		$user->setEmail($body->email);
 	}
 
@@ -304,20 +314,23 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	}
 
 	if (isset($body->phone)) {
-		$userPhone = $body->phone;
 		//check user input against string pattern
-		$userPhone = validatePhone($userPhone);
+		$userPhone = validatePhone($body->phone);
 		if (!$userPhone) {
-			//return 400 error message
-			return badRequestResponse([
+			//return 400 error message into array
+			$errors[] = [
 				'field' => ['phone'],
 				'message' => 'invalid format for phone number',
-			], $response);
+			];
+		} else {
+			$user->setPhoneNumber($userPhone);
 		}
-
-		$user->setPhoneNumber($userPhone);
 	}
-
+	//check for errors in the array
+	if (!empty($errors)) {
+		//return bad response 
+		return badRequestResponse($errors, $response);
+	}
 	// save the changes made to the db
 	$user->saveToDB();
 
