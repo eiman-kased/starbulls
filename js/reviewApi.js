@@ -61,6 +61,8 @@ function createNewReview(reviewObj, userObj = null) {
 	$.ajax(reviewSettings).then(
 		// successfully created new review
 		function (successfulReviewResponse) {
+			// clear the form
+			$('.reviewSectionForm').trigger('reset');
 			// if review was at least 3 out of 5
 			if (reviewObj.score > 3) {
 				// thank the reviewer
@@ -137,7 +139,6 @@ $(document).ready(function () {
 					$("#userForm #email").attr('readonly', 'readonly');
 					// set focus to first name field
 					$("#userForm #firstName").focus();
-
 					// attach submit event handler to user form
 					$("#userForm").submit(function (e) {
 						// prevent form from submitting to action target
@@ -164,7 +165,7 @@ $(document).ready(function () {
 									alert('there was an error creating your account: ' + invalidNewUserResponse.responseJSON.message);
 									console.log('invalid new user request:', invalidNewUserResponse.responseJSON.field);
 									// TODO highlight the offending field
-									$('[name="' +invalidNewUserResponse.responseJSON.field[0]+'"]').focus().addClass("is-invalid");
+									$('[name="' + invalidNewUserResponse.responseJSON.field[0] + '"]').focus().addClass("is-invalid");
 								}
 							});
 					});
