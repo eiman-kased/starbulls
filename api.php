@@ -19,7 +19,7 @@ require __DIR__ . '/src/Review.php';
  * validates $name passed into function for length and characters
  * 
  * '/^[a-z ,.\'-]+$/i' name must match this regex
- * and must be between 1 and 30 characaters inclusively
+ * and must be between 1 and 30 characters inclusively
  * 
  * Returns formatted phone number if valid or false if invalid
  *  
@@ -45,10 +45,7 @@ function validateName(string $name)
 		return false;
 	}
 
-	//output of function set to userPhone w/ this format (###) ###-####
-	$userPhone = preg_replace($numberRegEx, '$1$2$3', $phone);
-	//passes validation
-	return $userPhone;
+	return true;
 }
 
 /**
@@ -75,6 +72,7 @@ function validatePhone(string $phone)
 		//set response message for invalid format
 		return false;
 	}
+
 	$userPhone = preg_replace($numberRegEx, '$1$2$3', $phone);
 	return $userPhone;
 }
@@ -316,7 +314,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 				'message' => 'invalid format for phone number',
 			], $response);
 		}
-		
+
 		$user->setPhoneNumber($userPhone);
 	}
 
