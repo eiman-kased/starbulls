@@ -78,6 +78,25 @@ function validatePhone(string $phone)
 	return $userPhone;
 }
 
+/**
+ * validates email based on regex
+ * /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/i
+ *
+ * @param string $email
+ * @return boolean
+ */
+function validateEmail(string $email): bool
+{
+	// set email regex to pattern
+	$emailRegEx = '/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/i';
+	// check $email against the regex
+	if (!preg_match($emailRegEx, $email)) {
+		// email is not formatted correctly
+		return false;
+	}
+
+	return true;
+}
 
 
 //200 status code - ok
@@ -233,8 +252,19 @@ $app->post('/user/new', function (Request $request, Response $response, array $a
 			'message' => 'invalid format for phone number',
 		];
 	}
+
+	// validate the email
+	if (!validateEmail($body->email)) {
+		// push error to error array
+		$errors[] = [
+			'field' => ['email'],
+			'message' => 'invalid format for email',
+		];
+	}
+
 	//check if any errors were reported
 	if (!empty($errors)) {
+		// if so return invalid response with list of offending fields and messages
 		return badRequestResponse($errors, $response);
 	}
 
@@ -304,9 +334,17 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 	}
 
 	if (isset($body->email)) {
-		// TODO check if valid email 
-		//TODO if not valid enter error into array
-		$user->setEmail($body->email);
+		// TODO check if valid email
+		// validate the email
+		if (!validateEmail($body->email)) {
+			// push error to error array
+			$errors[] = [
+				'field' => ['email'],
+				'message' => 'invalid format for email',
+			];
+		} else {
+			$user->setEmail($body->email);
+		}
 	}
 
 	if (isset($body->password)) {
