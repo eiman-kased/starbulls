@@ -32,10 +32,7 @@ ini_set('display_errors', 1);
 			<div class="col-lg-6 my-5">
 				<!--left content-->
 				<h2>Application</h2>
-				<h3>*required fields</h3>
-				<div class="apply-form-container">
-					<?php include 'forms/apply.form.php'; ?>
-				</div>
+				<h5>Apply in Person</h5>
 			</div>
 			<div class="col-lg-6 my-lg-5">
 				<!--right content-->
